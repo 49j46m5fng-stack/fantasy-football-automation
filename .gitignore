@@ -219,3 +219,4 @@ __marimo__/
 # Project-specific local files
 .venv/
 data/cache/*.json
+data/test/

@@ -1,0 +1,46 @@
+name: TimBot Test Context
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-context:
+    name: Build temporary TimBot context
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build temporary TimBot context
+        run: |
+          python -m scripts.build_test_timbot_context
+
+      - name: Show generated file
+        run: |
+          echo "Generated TimBot test context:"
+          ls -lh data/test/
+          echo
+          echo "This is TEST-ONLY data."
+          echo "No official baseline was created or modified."
+
+      - name: Upload TimBot test JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: timbot-week-01-test-context
+          path: data/test/TEST_week_01_timbot_preview.json
+          if-no-files-found: error
+          retention-days: 7
