@@ -43,6 +43,16 @@ Do not replace an existing official snapshot.
 
 If snapshot correction functionality is introduced later, it must preserve the original historical record and be explicitly tested.
 
+Historical comparisons must use stored snapshot data only.
+
+Do not fetch current projections to reconstruct a baseline-to-Sunday comparison.
+
+Compare fantasy teams by `roster_id`, not manager display name.
+
+Lineup membership changes and lineup-slot changes are separate concepts.
+
+Missing historical projections must remain unresolved and must not silently become zero.
+
 ## Architecture Rules
 
 Keep external API calls separate from league-rule calculations.

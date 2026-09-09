@@ -203,3 +203,30 @@ The planned promotion_relegation.csv will preserve:
 - relegation_reason
 
 Season-ending promotion and relegation results should be stored rather than reconstructed from a future Sleeper league.
+
+## Baseline-to-Sunday Comparison
+
+Sunday team records will expose:
+
+- `stage_starters_raw`
+- `stage_projection`
+- `rostered_players`
+- `warnings`
+
+The comparison layer produces, per roster:
+
+- baseline starters
+- Sunday starters
+- added starters
+- removed starters
+- slot changes
+- baseline team projection
+- Sunday team projection
+- team projection delta
+- changed player projections
+- baseline warnings
+- Sunday warnings
+
+Player projection changes preserve whether the player was present on the roster in each snapshot.
+
+A projection delta is calculated only when both stored point values are numeric.

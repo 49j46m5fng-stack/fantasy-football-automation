@@ -163,3 +163,23 @@ If the target snapshot already exists, the program must stop with a visible erro
 There is intentionally no general `--force` overwrite behavior in the MVP.
 
 If a historical correction process is needed later, it should preserve the original record and create an auditable correction rather than silently replacing history.
+
+## Lineup Change Comparison
+
+Baseline-to-Sunday lineup changes are determined from stored snapshot starter IDs.
+
+A player is an added starter when the player appears in the populated Sunday starting lineup but not in the populated baseline starting lineup.
+
+A player is a removed starter when the player appears in the populated baseline starting lineup but not in the populated Sunday starting lineup.
+
+Moving an existing starter between lineup slots is recorded as a slot change but is not by itself a start/sit substitution.
+
+Empty starter values such as `0` or null remain empty slots and are never treated as player IDs.
+
+## Projection Movement
+
+Projection movement must compare values stored in the two historical snapshots.
+
+Current live projection data must not be substituted for either historical value.
+
+If either historical projection is unresolved, projection delta remains unresolved rather than treating the missing value as zero.

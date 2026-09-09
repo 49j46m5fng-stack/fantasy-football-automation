@@ -167,8 +167,20 @@ The project currently supports:
 - first-kickoff capture context
 - Markdown preview generation from immutable baseline snapshots
 - report generation that does not re-query live projection data
+- baseline-to-Sunday snapshot comparison
+- starter substitution detection
+- lineup-slot movement detection
+- player projection movement
+- team projection movement
+- historical missing-value preservation
 
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
+
+Baseline-to-Sunday comparison logic is implemented against stored snapshot documents.
+
+Sunday snapshot capture itself has not yet been implemented.
+
+Standings logic, win-probability simulation, Sunday reporting, final-stage analysis, and historical CSV aggregation remain to be implemented.
 
 BBaseline construction, immutable storage, scheduled Week 1 baseline capture,
 and baseline-driven preview report generation are implemented.
