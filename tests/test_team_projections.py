@@ -81,7 +81,7 @@ def test_explicit_out_player_without_ppr_gets_zero() -> None:
     assert result.starters[0].source == "sleeper_out_zero"
 
 
-def test_missing_ppr_without_safe_status_is_unresolved() -> None:
+def test_missing_ppr_defaults_to_zero() -> None:
     matchup = {
         "roster_id": 1,
         "starters": ["player-1"],
@@ -111,13 +111,20 @@ def test_missing_ppr_without_safe_status_is_unresolved() -> None:
         overrides={},
     )
 
-    assert result.complete is False
-    assert result.projected_points is None
-    assert result.starters[0].points is None
+    assert result.complete is True
+    assert result.projected_points == 0.0
+    assert result.known_projected_points == 0.0
+
+    starter = result.starters[0]
+
+    assert starter.points == 0.0
+    assert starter.source == "missing_projected_points_zero"
     assert (
-        result.starters[0].source
-        == "missing_projected_points"
+        starter.reason
+        == "Projection record exists but has no pts_ppr; "
+        "missing projections are treated as 0.0."
     )
+
 
 
 def test_manual_override_resolves_missing_projection() -> None:

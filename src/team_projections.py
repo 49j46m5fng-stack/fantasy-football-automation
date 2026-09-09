@@ -134,7 +134,7 @@ def resolve_player_projection(
     overrides: dict[str, ProjectionOverride],
     point_field: str = "pts_ppr",
 ) -> StarterProjection:
-    """Resolve one starter to projected points without unsafe guessing."""
+    """Resolve one starter projection, treating missing data as 0.0."""
 
     player_metadata = players.get(player_id) or {}
 
@@ -172,9 +172,12 @@ def resolve_player_projection(
             player_id=player_id,
             player_name=player_name,
             position=position,
-            points=None,
-            source="missing_projection_record",
-            reason="No weekly projection record was found.",
+            points=0.0,
+            source="missing_projection_zero",
+            reason=(
+                "No weekly projection record was found; "
+                "missing projections are treated as 0.0."
+            ),
         )
 
     projected_points = get_projected_points(
@@ -217,14 +220,14 @@ def resolve_player_projection(
         player_id=player_id,
         player_name=player_name,
         position=position,
-        points=None,
-        source="missing_projected_points",
+        points=0.0,
+        source="missing_projected_points_zero",
         reason=(
             f"Projection record exists but has no "
-            f"{point_field}, and no safe zero-point rule applies."
+            f"{point_field}; missing projections are "
+            f"treated as 0.0."
         ),
     )
-
 
 def calculate_team_projection(
     matchup_record: dict[str, Any],
