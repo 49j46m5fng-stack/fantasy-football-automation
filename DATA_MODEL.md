@@ -268,3 +268,16 @@ It is not yet an actual-points-plus-remaining-points forecast.
 The project must not claim that Sleeper's supplied weekly projection represents remaining in-game production unless that behavior has been explicitly verified.
 
 Raw Sunday matchup data is retained so richer live scoring logic can be added later without reconstructing history.
+
+### Sunday Capture Context
+
+The official Sunday snapshot capture context should preserve:
+
+- local and UTC capture timestamps
+- timezone
+- stage label
+- MNF game identity
+- MNF kickoff timestamp
+- capture purpose
+
+For the current workflow, the stage label is `sunday_pre_mnf`.

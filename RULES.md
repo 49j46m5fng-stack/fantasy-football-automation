@@ -205,3 +205,15 @@ The initial Sunday `stage_projection` is the current supplied projection total f
 It must not be described as a mathematically derived remaining-game forecast.
 
 A future remaining-projection model must explicitly document its data source and calculation.
+
+## Official Sunday/MNF Capture
+
+The official Sunday stage is a post-Sunday, pre-MNF checkpoint.
+
+For 2026 Week 1, the target capture window is Monday before the standalone Monday Night Football game.
+
+The snapshot must preserve the current live team scores, current starters, current roster, fresh projection-feed records, warnings, and raw Sleeper matchup records.
+
+Incomplete Sunday projection data does not invalidate the snapshot. Missing values must be preserved as missing.
+
+Undocumented Sleeper response fields may be retained in raw source data, but they must not become business-rule inputs until their semantics have been independently verified.

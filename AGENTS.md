@@ -88,3 +88,9 @@ Do not re-query current projections when generating a report that represents an 
 A baseline preview must use the immutable baseline snapshot.
 
 Later Sunday and final reports must preserve the baseline values separately from newer live or final values.
+
+Do not promote undocumented live Sleeper matchup fields into normalized business logic merely because they appear in one response.
+
+Preserve unexpected source fields in raw snapshot data and verify their meaning first.
+
+The Sunday/MNF snapshot may contain incomplete current projections. Capture the historical state rather than inventing replacements.

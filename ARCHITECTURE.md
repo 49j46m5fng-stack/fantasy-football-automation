@@ -180,6 +180,11 @@ The project currently supports:
 - commissioner custom-score preservation
 - current starter projection aggregation
 - complete rostered-player projection preservation
+- automated post-Sunday/pre-MNF snapshot capture
+- scheduled Sunday snapshot retries with kickoff cutoff
+- Sunday snapshot read-back and immutability validation
+- automatic baseline-to-Sunday comparison logging
+- non-writing live Sleeper matchup response-shape probe
 
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
