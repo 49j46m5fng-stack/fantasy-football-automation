@@ -4,8 +4,8 @@ import pytest
 
 from src.orchestration import (
     OrchestrationError,
-    preview_report_path,
     snapshot_pair_state,
+    snapshot_paths,
 )
 
 
@@ -92,14 +92,36 @@ def test_partial_snapshot_pair_rejected(
         )
 
 
-def test_preview_report_path() -> None:
-    path = preview_report_path(
+def test_snapshot_paths_use_canonical_layout(
+    tmp_path: Path,
+) -> None:
+    config = {
+        "leagues": {
+            "goats": {},
+            "doats": {},
+        }
+    }
+
+    paths = snapshot_paths(
+        config=config,
         season="2026",
-        league_key="goats",
         week=7,
+        stage="baseline",
+        data_root=tmp_path,
     )
 
-    assert path == Path(
-        "reports/2026/"
-        "goats_week_07_preview.md"
+    assert (
+        paths["goats"]
+        == tmp_path
+        / "2026"
+        / "goats"
+        / "week_07_baseline.json"
+    )
+
+    assert (
+        paths["doats"]
+        == tmp_path
+        / "2026"
+        / "doats"
+        / "week_07_baseline.json"
     )
