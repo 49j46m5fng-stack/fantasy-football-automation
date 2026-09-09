@@ -66,9 +66,11 @@ External API access, business rules, calculations, storage, and reporting should
 
 ## Current Status
 
-Project foundation established.
+PProject foundation established.
 
-Sleeper API integration has not yet been implemented.
+Initial Sleeper API integration supports league metadata, users, rosters, and weekly matchups.
+
+Historical snapshot storage, projections, and reporting have not yet been implemented.
 
 ## Development Setup
 

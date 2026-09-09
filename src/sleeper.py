@@ -46,6 +46,28 @@ class SleeperClient:
                 f"Sleeper returned invalid JSON for {url}"
             ) from exc
 
+    def _get_list(
+        self,
+        path: str,
+        description: str,
+    ) -> list[dict[str, Any]]:
+        """Retrieve a Sleeper endpoint expected to return a list of objects."""
+
+        data = self._get(path)
+
+        if not isinstance(data, list):
+            raise SleeperAPIError(
+                f"Expected {description} to be a JSON list, "
+                f"but received {type(data).__name__}"
+            )
+
+        if not all(isinstance(item, dict) for item in data):
+            raise SleeperAPIError(
+                f"Expected every {description} record to be a JSON object"
+            )
+
+        return data
+
     def get_league(self, league_id: str) -> dict[str, Any]:
         """Retrieve metadata for one Sleeper league."""
 
@@ -61,3 +83,43 @@ class SleeperClient:
             )
 
         return data
+
+    def get_users(self, league_id: str) -> list[dict[str, Any]]:
+        """Retrieve users associated with a Sleeper league."""
+
+        if not league_id:
+            raise ValueError("league_id cannot be empty")
+
+        return self._get_list(
+            f"league/{league_id}/users",
+            "league users",
+        )
+
+    def get_rosters(self, league_id: str) -> list[dict[str, Any]]:
+        """Retrieve fantasy rosters for a Sleeper league."""
+
+        if not league_id:
+            raise ValueError("league_id cannot be empty")
+
+        return self._get_list(
+            f"league/{league_id}/rosters",
+            "league rosters",
+        )
+
+    def get_matchups(
+        self,
+        league_id: str,
+        week: int,
+    ) -> list[dict[str, Any]]:
+        """Retrieve fantasy matchup records for one league and week."""
+
+        if not league_id:
+            raise ValueError("league_id cannot be empty")
+
+        if week < 1:
+            raise ValueError("week must be at least 1")
+
+        return self._get_list(
+            f"league/{league_id}/matchups/{week}",
+            "weekly matchups",
+        )
