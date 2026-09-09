@@ -22,6 +22,35 @@ Valid stages will initially include:
 - sunday
 - final
 
+## Snapshot File Layout
+
+Official weekly snapshots use the path convention:
+
+data/{season}/{league_key}/week_{week}_{stage}.json
+
+Examples:
+
+data/2026/goats/week_01_baseline.json
+
+data/2026/goats/week_01_sunday.json
+
+data/2026/goats/week_01_final.json
+
+Each stored snapshot has a metadata envelope containing:
+
+- schema_version
+- season
+- week
+- league_key
+- league_id
+- stage
+- created_at
+- data
+
+The `data` object contains the stage-specific fantasy information.
+
+Official snapshots are created with exclusive-write semantics and must not be silently overwritten.
+
 ## League Snapshot
 
 A league snapshot will eventually contain information such as:

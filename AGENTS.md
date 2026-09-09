@@ -35,6 +35,14 @@ Do not hardcode exceptional player IDs inside projection calculation code.
 
 Week-specific projection corrections belong in the committed projection override data.
 
+Official weekly snapshots must be written through the storage layer.
+
+Do not write baseline, Sunday, or final snapshot files directly with normal file-write mode.
+
+Do not replace an existing official snapshot.
+
+If snapshot correction functionality is introduced later, it must preserve the original historical record and be explicitly tested.
+
 ## Architecture Rules
 
 Keep external API calls separate from league-rule calculations.

@@ -151,3 +151,15 @@ Historical weekly snapshots are evidence.
 They should not be silently rewritten because projection sources, scoring logic, manager names, or APIs change in the future.
 
 If a correction system is introduced later, corrections should preserve the original historical record.
+
+### Snapshot Immutability
+
+Official baseline, Sunday, and final snapshots are historical records.
+
+Normal execution must create these files only when they do not already exist.
+
+If the target snapshot already exists, the program must stop with a visible error rather than replace it.
+
+There is intentionally no general `--force` overwrite behavior in the MVP.
+
+If a historical correction process is needed later, it should preserve the original record and create an auditable correction rather than silently replacing history.

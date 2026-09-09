@@ -157,7 +157,11 @@ The project currently supports:
 - auditable week-specific projection overrides
 - incomplete-projection detection
 - empty-lineup-slot warnings
+- canonical season/league/week snapshot paths
+- versioned snapshot metadata envelopes
+- exclusive immutable snapshot writes
+- historical snapshot validation and reading
 
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
-Historical snapshot storage, standings logic, win-probability analytics, and report generation have not yet been implemented.
+Real baseline snapshot construction, standings logic, win-probability analytics, and report generation have not yet been implemented.
