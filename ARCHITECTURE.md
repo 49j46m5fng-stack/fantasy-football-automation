@@ -132,7 +132,7 @@ If a weekly baseline already exists, baseline creation should refuse to replace 
 
 ## Current Status
 
-The repository contains configuration, documentation, test infrastructure, Sleeper API access, normalized roster/matchup models, and cached NFL player metadata support.
+The repository contains configuration, documentation, test infrastructure, documented Sleeper API access, normalized roster/matchup models, cached NFL player metadata, and an isolated projection provider.
 
 The project currently supports:
 
@@ -144,7 +144,10 @@ The project currently supports:
 - two-roster matchup pairing
 - cached Sleeper NFL player metadata
 - player-ID-to-name lookup
+- weekly projection retrieval
+- normalization of known projection response shapes
+- safe detection of missing projected-point fields
 
-The large NFL player map is treated as rebuildable cache and is not committed to Git.
+The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
-Historical snapshot storage, projections, analytics, standings logic, and reporting have not yet been implemented.
+Historical snapshot storage, team projection aggregation, standings logic, analytics, and reporting have not yet been implemented.
