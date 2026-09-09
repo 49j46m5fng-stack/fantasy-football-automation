@@ -76,6 +76,29 @@ The system should distinguish between:
 
 Reports should flag missing projection data visibly.
 
+### Missing Projected-Point Resolution
+
+For the initial Sleeper `pts_ppr` projection model:
+
+1. If `pts_ppr` exists, use it.
+2. If `pts_ppr` is absent and Sleeper explicitly reports the player as `Out`, use 0.0.
+3. A documented week-specific manual override may be used when reliable league information confirms a zero projection but Sleeper metadata is inconsistent.
+4. Otherwise, missing `pts_ppr` remains unresolved and must not silently become zero.
+
+Projection overrides must be stored in a committed historical file with a written reason.
+
+### MVP Projection Method
+
+The initial team projection model uses Sleeper's supplied `pts_ppr` field.
+
+This is appropriate as an MVP because GOATs and DOATs use identical full-PPR scoring.
+
+It must not be represented as exact custom-league scoring.
+
+Kicker and defense scoring in particular may differ from the generic supplied projection because not every league scoring category is available as a raw projected statistic.
+
+Future exact scoring should calculate projected fantasy points from raw projected statistics and the league's retrieved `scoring_settings` wherever practical.
+
 ### Empty Starting Slots
 
 Raw starting-lineup arrays should be preserved in snapshots.

@@ -50,6 +50,24 @@ Each fantasy team should eventually preserve:
 - baseline team projection
 - opponent roster_id
 - opening modeled win probability
+Each baseline starter should eventually preserve:
+
+- starter slot
+- player_id
+- player name
+- position
+- projected points
+- projection source
+- projection reason when applicable
+
+Projection source examples:
+
+- sleeper_pts_ppr
+- sleeper_out_zero
+- manual_override
+- empty_slot
+
+If a projection cannot be resolved safely, the baseline-generation process should flag it rather than silently substituting zero.
 
 ## Sunday Team Data
 

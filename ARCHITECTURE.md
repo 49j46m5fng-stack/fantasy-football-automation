@@ -152,7 +152,12 @@ The project currently supports:
 - projection-feed category preservation
 - default filtering to the `proj` category
 - duplicate-safe player projection lookup
+- starter-only fantasy-team projection aggregation
+- explicit Out-player zero projection handling
+- auditable week-specific projection overrides
+- incomplete-projection detection
+- empty-lineup-slot warnings
 
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
-Historical snapshot storage, team projection aggregation, standings logic, analytics, and reporting have not yet been implemented.
+Historical snapshot storage, standings logic, win-probability analytics, and report generation have not yet been implemented.

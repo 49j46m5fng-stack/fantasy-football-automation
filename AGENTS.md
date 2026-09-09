@@ -27,6 +27,14 @@ For weekly fantasy projections, use the `proj` category unless the architecture 
 
 Duplicate player IDs must not silently overwrite one another.
 
+Missing projected points are not automatically zero.
+
+A missing projection may become zero only through a tested explicit rule, such as Sleeper reporting the player as Out, or through a documented historical projection override.
+
+Do not hardcode exceptional player IDs inside projection calculation code.
+
+Week-specific projection corrections belong in the committed projection override data.
+
 ## Architecture Rules
 
 Keep external API calls separate from league-rule calculations.
