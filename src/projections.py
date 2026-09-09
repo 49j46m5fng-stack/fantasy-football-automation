@@ -13,6 +13,25 @@ DEFAULT_USER_AGENT = (
     "(compatible; fantasy-football-automation/0.1)"
 )
 
+PROJECTION_METADATA_KEYS = {
+    "category",
+    "company",
+    "date",
+    "game_id",
+    "last_modified",
+    "opponent",
+    "player",
+    "player_id",
+    "season",
+    "season_type",
+    "sport",
+    "status",
+    "team",
+    "updated_at",
+    "week",
+    "week_shard",
+}
+
 
 class ProjectionAPIError(RuntimeError):
     """Raised when projection data cannot be retrieved safely."""
@@ -20,12 +39,23 @@ class ProjectionAPIError(RuntimeError):
 
 @dataclass(frozen=True)
 class PlayerProjection:
-    """Normalized projection record for one player and week."""
+    """Normalized projection-related record for one player and week."""
 
     player_id: str
     season: str
     week: int
     stats: dict[str, Any]
+    category: str | None = None
+    company: str | None = None
+
+
+def _optional_string(value: Any) -> str | None:
+    """Convert an optional metadata value to a string."""
+
+    if value is None:
+        return None
+
+    return str(value)
 
 
 def _build_projection(
@@ -34,7 +64,7 @@ def _build_projection(
     season: str,
     week: int,
 ) -> PlayerProjection:
-    """Convert one raw projection record into our internal format."""
+    """Convert one raw projection-feed record into our internal format."""
 
     if not player_id:
         raise ProjectionAPIError(
@@ -51,16 +81,27 @@ def _build_projection(
             )
 
         stats = dict(nested_stats)
+
     else:
-        # Some versions of the unofficial feed put projected
-        # statistics directly on the player-ID record.
-        stats = dict(raw_record)
+        # Some response shapes store statistics directly on
+        # the player-ID record rather than under "stats".
+        stats = {
+            key: value
+            for key, value in raw_record.items()
+            if key not in PROJECTION_METADATA_KEYS
+        }
 
     return PlayerProjection(
         player_id=str(player_id),
         season=str(season),
         week=week,
         stats=stats,
+        category=_optional_string(
+            raw_record.get("category")
+        ),
+        company=_optional_string(
+            raw_record.get("company")
+        ),
     )
 
 
@@ -133,6 +174,51 @@ def normalize_week_projection_payload(
     )
 
 
+def filter_projection_category(
+    projections: list[PlayerProjection],
+    category: str | None,
+) -> list[PlayerProjection]:
+    """Select one projection-feed category without guessing."""
+
+    if category is None:
+        return list(projections)
+
+    has_category_metadata = any(
+        projection.category is not None
+        for projection in projections
+    )
+
+    # Older/alternate response shapes may contain no category field.
+    # In that case there is nothing useful to filter.
+    if not has_category_metadata:
+        return list(projections)
+
+    return [
+        projection
+        for projection in projections
+        if projection.category == category
+    ]
+
+
+def build_projection_lookup(
+    projections: list[PlayerProjection],
+) -> dict[str, PlayerProjection]:
+    """Build a player lookup while rejecting duplicate player IDs."""
+
+    lookup: dict[str, PlayerProjection] = {}
+
+    for projection in projections:
+        if projection.player_id in lookup:
+            raise ProjectionAPIError(
+                f"Duplicate projection record for "
+                f"player {projection.player_id}"
+            )
+
+        lookup[projection.player_id] = projection
+
+    return lookup
+
+
 class SleeperProjectionProvider:
     """Retrieve weekly projections from Sleeper's unofficial feed."""
 
@@ -149,8 +235,9 @@ class SleeperProjectionProvider:
         season: str,
         week: int,
         season_type: str = "regular",
+        category: str | None = "proj",
     ) -> list[PlayerProjection]:
-        """Retrieve and normalize projections for one NFL week."""
+        """Retrieve weekly records, selecting projection category by default."""
 
         if not season:
             raise ValueError("season cannot be empty")
@@ -192,10 +279,15 @@ class SleeperProjectionProvider:
                 f"Projection feed returned invalid JSON for {url}"
             ) from exc
 
-        return normalize_week_projection_payload(
+        normalized = normalize_week_projection_payload(
             payload,
             season=season,
             week=week,
+        )
+
+        return filter_projection_category(
+            normalized,
+            category,
         )
 
 

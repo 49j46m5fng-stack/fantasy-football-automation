@@ -19,6 +19,14 @@ Do not silently treat missing projection data as valid zero projections.
 
 Historical snapshots should remain readable after code changes.
 
+Projection-feed records must be category-aware.
+
+Do not create a player projection lookup from mixed projection-feed categories.
+
+For weekly fantasy projections, use the `proj` category unless the architecture is deliberately changed and tested.
+
+Duplicate player IDs must not silently overwrite one another.
+
 ## Architecture Rules
 
 Keep external API calls separate from league-rule calculations.

@@ -149,6 +149,9 @@ The project currently supports:
 - safe detection of missing projected-point fields
 - explicit handling of empty Sleeper starter slots
 - projection/scoring compatibility auditing
+- projection-feed category preservation
+- default filtering to the `proj` category
+- duplicate-safe player projection lookup
 
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
