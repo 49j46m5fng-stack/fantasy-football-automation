@@ -2,6 +2,7 @@ import pytest
 
 from src.normalize import (
     NormalizationError,
+    get_starting_player_ids,
     normalize_rosters,
     pair_matchups,
 )
@@ -136,3 +137,24 @@ def test_opponent_lookup_rejects_unrelated_roster() -> None:
         match="is not part of matchup",
     ):
         matchup.opponent_of(99)
+
+def test_empty_starting_slots_are_not_player_ids() -> None:
+    record = {
+        "starters": [
+            "player-1",
+            "0",
+            None,
+            "player-2",
+        ]
+    }
+
+    starters = get_starting_player_ids(record)
+
+    assert starters == [
+        "player-1",
+        "player-2",
+    ]
+
+
+def test_missing_starters_becomes_empty_list() -> None:
+    assert get_starting_player_ids({}) == []

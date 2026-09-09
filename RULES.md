@@ -64,6 +64,26 @@ Once a baseline snapshot has been created, normal program execution must not ove
 
 Baseline immutability is a core system invariant.
 
+### Missing Projection Data
+
+Missing projected points must not be silently converted to zero.
+
+The system should distinguish between:
+
+- a real projection of 0.0
+- a projection record with no usable fantasy-point field
+- no projection record at all
+
+Reports should flag missing projection data visibly.
+
+### Empty Starting Slots
+
+Raw starting-lineup arrays should be preserved in snapshots.
+
+Empty Sleeper starter values such as `0` or null must not be treated as player IDs.
+
+Reports should flag an incomplete starting lineup when relevant.
+
 ## Later Snapshots
 
 Later projections and scores must be stored separately from the baseline.

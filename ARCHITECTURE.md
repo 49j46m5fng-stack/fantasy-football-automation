@@ -147,6 +147,8 @@ The project currently supports:
 - weekly projection retrieval
 - normalization of known projection response shapes
 - safe detection of missing projected-point fields
+- explicit handling of empty Sleeper starter slots
+- projection/scoring compatibility auditing
 
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 

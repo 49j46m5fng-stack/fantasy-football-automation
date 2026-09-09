@@ -124,3 +124,23 @@ def pair_matchups(
         )
 
     return normalized
+
+
+def get_starting_player_ids(
+    matchup_record: dict[str, Any],
+) -> list[str]:
+    """Return populated starter IDs without inventing empty players."""
+
+    starters = matchup_record.get("starters") or []
+
+    if not isinstance(starters, list):
+        raise NormalizationError(
+            "Matchup starters must be a list"
+        )
+
+    return [
+        str(player_id)
+        for player_id in starters
+        if player_id
+        and str(player_id) != "0"
+    ]
