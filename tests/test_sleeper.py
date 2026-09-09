@@ -127,4 +127,35 @@ def test_empty_league_id_is_rejected() -> None:
     client = SleeperClient()
 
     with pytest.raises(ValueError, match="league_id cannot be empty"):
-        client.get_league("")
+        client.get_league("")@patch("src.sleeper.requests.get")
+@patch("src.sleeper.requests.get")
+def test_get_players_returns_player_map(mock_get: Mock) -> None:
+    fake_response = Mock()
+    fake_response.raise_for_status.return_value = None
+    fake_response.json.return_value = {
+        "4984": {
+            "player_id": "4984",
+            "full_name": "Example Player",
+            "position": "WR",
+        }
+    }
+
+    mock_get.return_value = fake_response
+
+    client = SleeperClient()
+    players = client.get_players()
+
+    assert "4984" in players
+    assert players["4984"]["position"] == "WR"
+
+    mock_get.assert_called_once_with(
+        "https://api.sleeper.app/v1/players/nfl",
+        timeout=15.0,
+    )
+
+
+def test_empty_sport_is_rejected() -> None:
+    client = SleeperClient()
+
+    with pytest.raises(ValueError, match="sport cannot be empty"):
+        client.get_players("")

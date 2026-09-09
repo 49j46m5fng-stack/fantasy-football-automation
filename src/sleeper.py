@@ -123,3 +123,32 @@ class SleeperClient:
             f"league/{league_id}/matchups/{week}",
             "weekly matchups",
         )
+
+    def get_players(
+        self,
+        sport: str = "nfl",
+    ) -> dict[str, dict[str, Any]]:
+        """Retrieve Sleeper's player-ID metadata map for one sport."""
+
+        if not sport:
+            raise ValueError("sport cannot be empty")
+
+        data = self._get(f"players/{sport}")
+
+        if not isinstance(data, dict):
+            raise SleeperAPIError(
+                f"Expected player data to be a JSON object, "
+                f"but received {type(data).__name__}"
+            )
+
+        if not all(
+            isinstance(player_id, str)
+            and isinstance(player, dict)
+            for player_id, player in data.items()
+        ):
+            raise SleeperAPIError(
+                "Expected player data to map string IDs "
+                "to JSON objects"
+            )
+
+        return data
