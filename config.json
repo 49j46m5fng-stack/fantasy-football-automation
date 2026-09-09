@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "season": "2026",
+  "season_type": "regular",
+  "timezone": "America/Chicago",
+
+  "leagues": {
+    "goats": {
+      "name": "GOATs",
+      "tier": 1,
+      "league_id": "1400610465024839680",
+      "playoff_spots": 8,
+      "relegation_spots": 2
+    },
+
+    "doats": {
+      "name": "DOATs",
+      "tier": 2,
+      "league_id": "1400610568489947136",
+      "promotion_spots": 2
+    }
+  },
+
+  "promotion_rules": {
+    "doats_regular_season_champion_promoted": true,
+    "doats_playoff_champion_promoted": true,
+    "if_same_champion_promote_playoff_runner_up": true
+  },
+
+  "analytics": {
+    "boom_threshold": 1.5,
+    "bust_threshold": 0.8,
+    "minimum_projection_for_ratio": 1.0
+  },
+
+  "simulation": {
+    "simulations": 10000,
+    "random_seed": 2026
+  }
+}

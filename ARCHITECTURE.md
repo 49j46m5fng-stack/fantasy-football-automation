@@ -1,0 +1,137 @@
+# Architecture
+
+## Purpose
+
+This project automates analytics and reporting for two Sleeper fantasy football leagues operating as a promotion/relegation pyramid:
+
+- GOATs — Tier 1
+- DOATs — Tier 2
+
+The architecture prioritizes correctness, historical preservation, and beginner-friendly maintenance.
+
+## Core Principles
+
+1. Correctness before automation.
+2. Historical data must be preserved.
+3. Baseline snapshots are immutable.
+4. External API access is separated from analysis logic.
+5. League rules are separated from API code.
+6. Report formatting is separated from calculations.
+7. Automated commands must be safe to rerun.
+8. Missing or questionable data should produce visible warnings.
+9. Important business rules require automated tests.
+10. Prefer standard Python and simple files before adding infrastructure.
+
+## Planned Layers
+
+### External Data
+
+Responsible for communicating with outside systems.
+
+Planned modules include:
+
+- Sleeper league API client
+- projection provider
+- NFL schedule/game-status provider
+
+External API response formats should not leak unnecessarily into analysis code.
+
+### Normalization
+
+Converts external API records into consistent internal structures for:
+
+- leagues
+- managers
+- rosters
+- players
+- starters
+- matchups
+- standings
+- projections
+- scores
+
+### Storage
+
+Stores durable structured records.
+
+Initial storage formats:
+
+- JSON for detailed weekly snapshots
+- CSV for season-long analytical tables
+- Markdown for human-readable reports
+
+SQLite may be considered later if multi-season analysis becomes cumbersome with files.
+
+### Rules and Analytics
+
+Contains calculations that do not directly perform HTTP requests.
+
+Examples:
+
+- matchup pairing
+- projection aggregation
+- boom/bust classification
+- GOATs relegation
+- DOATs promotion
+- win-probability simulations
+
+### Reports
+
+Generates human-readable Markdown from structured data.
+
+Reports should not independently fetch data when the needed information already exists in stored snapshots.
+
+### Orchestration
+
+A future command-line interface will coordinate the other layers.
+
+Planned commands include:
+
+python fantasy.py baseline
+
+python fantasy.py sunday
+
+python fantasy.py final
+
+These commands should operate on both leagues by default.
+
+## Weekly Data Flow
+
+### Baseline
+
+External APIs
+→ normalized data
+→ immutable baseline snapshot
+→ preview report
+
+### Sunday
+
+External APIs
++ stored baseline
+→ Sunday snapshot
+→ expected-final calculations
+→ win-probability simulation
+→ Sunday/MNF report
+
+### Final
+
+External APIs
++ stored baseline
++ final starters/results
+→ final snapshot
+→ history tables
+→ final recap
+
+## Idempotency
+
+Running a command multiple times should not silently corrupt historical data.
+
+The most important example is baseline creation.
+
+If a weekly baseline already exists, baseline creation should refuse to replace it.
+
+## Current Status
+
+The repository currently contains configuration, documentation, directory structure, and test infrastructure.
+
+Sleeper API integration has not yet been implemented.
