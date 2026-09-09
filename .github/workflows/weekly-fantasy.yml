@@ -1,0 +1,160 @@
+name: Weekly Fantasy Automation
+
+on:
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: Stage to run
+        required: true
+        default: auto
+        type: choice
+        options:
+          - auto
+          - baseline
+          - sunday
+
+      week:
+        description: Optional fantasy week for manual stage runs
+        required: false
+        type: string
+
+      check_only:
+        description: Validate without writing official snapshots
+        required: true
+        default: false
+        type: boolean
+
+  schedule:
+    # Monday — Sunday recap / MNF checkpoint.
+    - cron: "45 11 * * 1"
+      timezone: "America/Chicago"
+
+    - cron: "55 11 * * 1"
+      timezone: "America/Chicago"
+
+    - cron: "5 12 * * 1"
+      timezone: "America/Chicago"
+
+    # Thursday — normal weekly baseline + preview.
+    - cron: "45 11 * * 4"
+      timezone: "America/Chicago"
+
+    - cron: "55 11 * * 4"
+      timezone: "America/Chicago"
+
+    - cron: "5 12 * * 4"
+      timezone: "America/Chicago"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-fantasy-automation
+  cancel-in-progress: false
+
+jobs:
+  weekly:
+    name: Run weekly fantasy stage
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Record checked-out commit
+        id: base
+        shell: bash
+        run: |
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Run test suite
+        run: |
+          python -m pytest -q
+
+      - name: Run fantasy automation
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_STAGE: ${{ inputs.stage }}
+          INPUT_WEEK: ${{ inputs.week }}
+          INPUT_CHECK_ONLY: ${{ inputs.check_only }}
+        run: |
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            echo "Scheduled generic automation."
+            python fantasy.py auto --min-week 2
+            exit 0
+          fi
+
+          STAGE="${INPUT_STAGE:-auto}"
+
+          CHECK_FLAG=""
+
+          if [ "$INPUT_CHECK_ONLY" = "true" ]; then
+            CHECK_FLAG="--check-only"
+          fi
+
+          if [ "$STAGE" = "auto" ]; then
+            python fantasy.py auto \
+              --min-week 2 \
+              $CHECK_FLAG
+            exit 0
+          fi
+
+          if [ -n "$INPUT_WEEK" ]; then
+            python fantasy.py "$STAGE" \
+              --week "$INPUT_WEEK" \
+              $CHECK_FLAG
+          else
+            python fantasy.py "$STAGE" \
+              $CHECK_FLAG
+          fi
+
+      - name: Commit generated historical outputs
+        if: ${{ github.event_name == 'schedule' || !inputs.check_only }}
+        shell: bash
+        run: |
+          if git status --porcelain | grep -q .; then
+            echo "Generated changes detected."
+          else
+            echo "No generated files to commit."
+            exit 0
+          fi
+
+          git fetch origin main
+
+          REMOTE_SHA="$(git rev-parse origin/main)"
+          INITIAL_SHA="${{ steps.base.outputs.sha }}"
+
+          if [ "$REMOTE_SHA" != "$INITIAL_SHA" ]; then
+            echo "main changed while fantasy data was being prepared."
+            echo "Refusing to commit output produced from stale code."
+            echo "A later scheduled attempt can retry."
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data reports
+
+          if git diff --cached --quiet; then
+            echo "No historical output files need committing."
+            exit 0
+          fi
+
+          git commit -m "Run automated fantasy weekly checkpoint"
+
+          git push origin HEAD:main

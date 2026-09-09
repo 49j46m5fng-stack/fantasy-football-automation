@@ -185,17 +185,22 @@ The project currently supports:
 - Sunday snapshot read-back and immutability validation
 - automatic baseline-to-Sunday comparison logging
 - non-writing live Sleeper matchup response-shape probe
+- generic season/week schedule resolution
+- Week 1 date exceptions
+- reusable baseline orchestration
+- reusable Sunday-stage orchestration
+- generic `fantasy.py` CLI
+- automatic baseline preview generation
+- idempotent recurring GitHub workflow
+- schedule-driven automatic week resolution
+- stale-main protection before automated Git commits
 
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
-Baseline construction, immutable storage, scheduled baseline capture,
-baseline preview generation, baseline-to-Sunday comparison, and Sunday
-snapshot construction are implemented.
+Generic recurring baseline and Sunday orchestration is implemented.
 
-The official Sunday snapshot capture schedule has not yet been configured.
+Week 1 remains on previously validated one-time workflows while the generic recurring workflow begins with Week 2.
 
-Per-player live scoring and a verified remaining-game forecast model have
-not yet been implemented.
+The generic final-stage command is reserved but disabled until final snapshot construction is implemented.
 
-Standings logic, win-probability simulation, Sunday reporting, final-stage
-analysis, and historical CSV aggregation remain to be implemented.
+Sunday recap/MNF preview report generation, final-stage analysis, standings logic, win-probability simulation, and historical CSV aggregation remain to be implemented.

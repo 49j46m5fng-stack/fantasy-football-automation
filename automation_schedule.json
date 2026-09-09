@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "season": "2026",
+  "timezone": "America/Chicago",
+  "regular_season_weeks": 18,
+  "minimum_generic_week": 2,
+  "stages": {
+    "baseline": {
+      "enabled": true,
+      "anchor_week": 2,
+      "anchor_date": "2026-09-17",
+      "window_start": "11:30",
+      "window_end": "13:00",
+      "date_overrides": {
+        "1": "2026-09-09"
+      }
+    },
+    "sunday": {
+      "enabled": true,
+      "anchor_week": 2,
+      "anchor_date": "2026-09-21",
+      "window_start": "11:30",
+      "window_end": "13:00",
+      "date_overrides": {
+        "1": "2026-09-14"
+      }
+    },
+    "final": {
+      "enabled": false,
+      "anchor_week": 2,
+      "anchor_date": "2026-09-22",
+      "window_start": "11:30",
+      "window_end": "13:00",
+      "date_overrides": {
+        "1": "2026-09-15"
+      }
+    }
+  }
+}

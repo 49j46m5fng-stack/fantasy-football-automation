@@ -53,6 +53,18 @@ Lineup membership changes and lineup-slot changes are separate concepts.
 
 Missing historical projections must remain unresolved and must not silently become zero.
 
+Use `fantasy.py` and `src/orchestration.py` for recurring weekly execution.
+
+Do not add one-off week-specific automation scripts for future weeks unless there is a documented exceptional reason.
+
+Recurring dates and execution windows belong in `automation_schedule.json`.
+
+The generic GitHub workflow must remain idempotent: repeated scheduled attempts must either create missing historical outputs once or safely no-op when those outputs already exist.
+
+Do not bypass the storage layer from orchestration code.
+
+Week 1 temporary workflows are transitional safeguards and should be retired after their Week 1 responsibilities are complete.
+
 ## Architecture Rules
 
 Keep external API calls separate from league-rule calculations.

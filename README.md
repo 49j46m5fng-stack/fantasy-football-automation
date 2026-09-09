@@ -78,3 +78,15 @@ Activate the project's Python environment:
 
 ```bash
 source .venv/bin/activate
+
+## Weekly CLI
+
+The production automation entry point is `fantasy.py`.
+
+Commands:
+
+```bash
+python fantasy.py baseline
+python fantasy.py sunday
+python fantasy.py final
+python fantasy.py auto
