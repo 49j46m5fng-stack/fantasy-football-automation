@@ -288,3 +288,45 @@ Lineup efficiency is:
 
 Exact final starter totals are compared with Sleeper's unadjusted
 `final_points` as a scoring reconciliation check.
+
+## All-Play and Luck
+
+All-play compares each fantasy team's completed weekly score against
+every other fantasy team in the same league.
+
+For each comparison:
+
+- higher score = all-play win
+- equal score = all-play tie
+- lower score = all-play loss
+
+Weekly expected wins are:
+
+`(all_play_wins + 0.5 * all_play_ties) / (league_team_count - 1)`
+
+A scheduled win is worth 1.0 actual win equivalent.
+
+A scheduled tie is worth 0.5 actual win equivalent.
+
+A scheduled loss is worth 0.0 actual win equivalent.
+
+Luck wins are:
+
+`actual_win_equivalent - expected_wins`
+
+Positive luck means the actual schedule produced more wins than the
+team's all-play scoring performance would suggest.
+
+Negative luck means the actual schedule produced fewer wins than the
+team's all-play scoring performance would suggest.
+
+Luck is a schedule-result metric. It is not a claim about managerial
+skill or randomness in individual player outcomes.
+
+Season analytical rank currently sorts by:
+
+1. actual win equivalent
+2. points for
+3. roster ID
+
+Analytical rank is not labeled as official Sleeper playoff seeding.

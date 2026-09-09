@@ -143,3 +143,14 @@ Use the final roster for optimal-lineup analysis.
 Do not convert a missing player actual to zero.
 
 An explicitly empty final starter slot is a known zero.
+
+All-play, expected wins, and luck are calculated by Python.
+
+The AI Agent must not invent or recalculate these metrics.
+
+Positive `luck_wins` means a team earned more actual win-equivalent
+results than its weekly all-play scoring performance implied.
+
+Negative `luck_wins` means it earned fewer.
+
+Do not describe `analytical_rank` as official Sleeper playoff seeding.
