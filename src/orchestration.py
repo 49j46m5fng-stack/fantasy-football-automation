@@ -4,7 +4,7 @@ This module coordinates the major weekly stages:
 
 - baseline
 - Sunday / pre-MNF checkpoint
-- final (reserved for later implementation)
+- final
 - AI-agent context generation
 
 Immutable stage snapshots are the historical source of truth.
@@ -28,6 +28,9 @@ from src.baseline import (
 )
 from src.comparison import (
     compare_baseline_to_sunday,
+)
+from src.final import (
+    build_final_snapshot_data,
 )
 from src.players import (
     get_player_map,
@@ -309,7 +312,7 @@ def _fresh_week_inputs(
     dict[str, Any],
     dict[str, Any],
 ]:
-    """Fetch common live inputs once for a weekly stage."""
+    """Fetch common live inputs once for baseline or Sunday stages."""
 
     sleeper = SleeperClient()
 
@@ -693,7 +696,7 @@ def run_baseline(
 
         return 0
 
-    # Check again immediately before the irreversible write.
+    # Recheck immediately before immutable writes.
     _require_execution_window(
         schedule=schedule,
         stage="baseline",
@@ -720,7 +723,6 @@ def run_baseline(
             data=item["data"],
         )
 
-        # Read back immediately so a bad stored file fails the run.
         stored = read_snapshot(
             path
         )
@@ -1052,9 +1054,7 @@ def run_sunday(
 
         return 0
 
-    # Unlike baseline, incomplete projection data is allowed at Sunday stage.
-    # The historical state is preserved rather than manufacturing values.
-
+    # Sunday may legitimately contain incomplete projection values.
     _require_execution_window(
         schedule=schedule,
         stage="sunday",
@@ -1238,16 +1238,405 @@ def run_final(
     schedule: WeeklySchedule,
     check_only: bool = False,
 ) -> int:
-    """Reserved final-stage orchestration entry point."""
+    """Build or write one week's immutable final snapshots."""
 
-    del schedule
-    del check_only
-
-    raise OrchestrationError(
-        "Final-stage orchestration is not "
-        "implemented yet. "
-        f"Week requested: {week}"
+    config = (
+        load_project_config()
     )
+
+    season = (
+        _validate_project_season(
+            config,
+            schedule,
+        )
+    )
+
+    baseline_paths = (
+        snapshot_paths(
+            config=config,
+            season=season,
+            week=week,
+            stage="baseline",
+        )
+    )
+
+    sunday_paths = (
+        snapshot_paths(
+            config=config,
+            season=season,
+            week=week,
+            stage="sunday",
+        )
+    )
+
+    final_paths = (
+        snapshot_paths(
+            config=config,
+            season=season,
+            week=week,
+            stage="final",
+        )
+    )
+
+    baseline_state = (
+        snapshot_pair_state(
+            baseline_paths,
+            "baseline",
+        )
+    )
+
+    sunday_state = (
+        snapshot_pair_state(
+            sunday_paths,
+            "Sunday",
+        )
+    )
+
+    final_state = (
+        snapshot_pair_state(
+            final_paths,
+            "final",
+        )
+    )
+
+    print("=" * 72)
+    print(
+        f"{season} WEEK {week} FINAL"
+    )
+    print("=" * 72)
+
+    print(
+        f"Baseline state: {baseline_state}"
+    )
+
+    print(
+        f"Sunday state:   {sunday_state}"
+    )
+
+    print(
+        f"Final state:    {final_state}"
+    )
+
+    if final_state == "complete":
+        print()
+        print(
+            "Both immutable final "
+            "snapshots already exist."
+        )
+
+        return 0
+
+    if baseline_state != "complete":
+        if check_only:
+            print()
+            print(
+                "CHECK ONLY: baseline snapshots "
+                "do not exist yet."
+            )
+
+            return 0
+
+        raise OrchestrationError(
+            "Final stage requires both "
+            "immutable baseline snapshots"
+        )
+
+    if sunday_state == "absent":
+        print()
+        print(
+            "WARNING: Sunday snapshots "
+            "are absent. Final capture "
+            "may still proceed because "
+            "final historical truth should "
+            "not be lost."
+        )
+
+    window = stage_window(
+        schedule=schedule,
+        stage="final",
+        week=week,
+    )
+
+    if not check_only:
+        window = (
+            _require_execution_window(
+                schedule=schedule,
+                stage="final",
+                week=week,
+            )
+        )
+
+    baselines = {
+        league_key: read_snapshot(
+            path
+        )
+        for league_key, path
+        in baseline_paths.items()
+    }
+
+    sleeper = SleeperClient()
+
+    print()
+    print(
+        "Refreshing NFL player metadata..."
+    )
+
+    players = get_player_map(
+        sleeper,
+        refresh=True,
+    )
+
+    capture_context = (
+        _capture_context(
+            schedule=schedule,
+            window=window,
+            stage_label=(
+                "final_post_mnf"
+            ),
+        )
+    )
+
+    leagues = config[
+        "leagues"
+    ]
+
+    prepared: dict[
+        str,
+        dict[str, Any],
+    ] = {}
+
+    for league_key, league_config in (
+        leagues.items()
+    ):
+        if not isinstance(
+            league_config,
+            dict,
+        ):
+            raise OrchestrationError(
+                f"League config for "
+                f"{league_key} must be "
+                "an object"
+            )
+
+        league_id = (
+            league_config.get(
+                "league_id"
+            )
+        )
+
+        league_name = (
+            league_config.get(
+                "name",
+                league_key,
+            )
+        )
+
+        if not isinstance(
+            league_id,
+            str,
+        ):
+            raise OrchestrationError(
+                f"{league_name} is missing "
+                "a valid league_id"
+            )
+
+        print()
+        print(
+            f"Preparing {league_name}..."
+        )
+
+        league = sleeper.get_league(
+            league_id
+        )
+
+        users = sleeper.get_users(
+            league_id
+        )
+
+        rosters = sleeper.get_rosters(
+            league_id
+        )
+
+        matchups = sleeper.get_matchups(
+            league_id,
+            week=week,
+        )
+
+        final = (
+            build_final_snapshot_data(
+                season=season,
+                league_key=league_key,
+                league_id=league_id,
+                week=week,
+                baseline_snapshot=(
+                    baselines[
+                        league_key
+                    ]
+                ),
+                league=league,
+                users=users,
+                rosters=rosters,
+                matchup_records=(
+                    matchups
+                ),
+                players=players,
+                capture_context=(
+                    capture_context
+                ),
+            )
+        )
+
+        _validate_expected_team_count(
+            league_name=league_name,
+            league=league,
+            snapshot_data=final,
+        )
+
+        incomplete_scores = [
+            team
+            for team
+            in final["teams"]
+            if team[
+                "effective_final_points"
+            ]
+            is None
+        ]
+
+        if incomplete_scores:
+            print()
+            print(
+                f"{league_name} has "
+                "incomplete final scores:"
+            )
+
+            for team in incomplete_scores:
+                print(
+                    f"  roster="
+                    f"{team['roster_id']} "
+                    f"manager="
+                    f"{team['manager_name']}"
+                )
+
+            raise OrchestrationError(
+                f"{league_name} contains "
+                "incomplete final scores"
+            )
+
+        incomplete_matchups = [
+            matchup
+            for matchup
+            in final["matchups"]
+            if not matchup[
+                "score_complete"
+            ]
+        ]
+
+        if incomplete_matchups:
+            raise OrchestrationError(
+                f"{league_name} contains "
+                "incomplete final matchups"
+            )
+
+        prepared[
+            league_key
+        ] = {
+            "league_id": (
+                league_id
+            ),
+            "league_name": (
+                league_name
+            ),
+            "data": (
+                final
+            ),
+        }
+
+    print()
+    print("=" * 72)
+    print("FINAL SNAPSHOT SUMMARY")
+    print("=" * 72)
+
+    for item in prepared.values():
+        data = item[
+            "data"
+        ]
+
+        completed_matchups = [
+            matchup
+            for matchup
+            in data["matchups"]
+            if matchup[
+                "score_complete"
+            ]
+        ]
+
+        print(
+            f"{item['league_name']}: "
+            f"{len(data['teams'])} teams, "
+            f"{len(completed_matchups)} "
+            "completed matchups, "
+            f"{len(data['warnings'])} warnings"
+        )
+
+    if check_only:
+        print()
+        print(
+            "CHECK ONLY COMPLETE — "
+            "nothing was written."
+        )
+
+        return 0
+
+    # Recheck immediately before immutable final writes.
+    _require_execution_window(
+        schedule=schedule,
+        stage="final",
+        week=week,
+    )
+
+    print()
+    print("=" * 72)
+    print("WRITING FINAL SNAPSHOTS")
+    print("=" * 72)
+
+    for league_key, item in (
+        prepared.items()
+    ):
+        path = write_snapshot(
+            data_root=DATA_ROOT,
+            season=season,
+            week=week,
+            league_key=league_key,
+            league_id=(
+                item["league_id"]
+            ),
+            stage="final",
+            data=item["data"],
+        )
+
+        stored = read_snapshot(
+            path
+        )
+
+        if stored.get(
+            "stage"
+        ) != "final":
+            raise OrchestrationError(
+                f"Stored final snapshot "
+                f"failed read-back validation: "
+                f"{path}"
+            )
+
+        print(
+            f"CREATED: {path}"
+        )
+
+    print()
+    print(
+        "FINAL SNAPSHOT COMPLETE"
+    )
+
+    return 0
 
 
 def run_auto(

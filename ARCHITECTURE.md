@@ -194,16 +194,24 @@ The project currently supports:
 - idempotent recurring GitHub workflow
 - schedule-driven automatic week resolution
 - stale-main protection before automated Git commits
+- immutable final-stage snapshot construction
+- final starter preservation
+- final team-score capture
+- commissioner final-score override preservation
+- deterministic matchup winner and margin calculation
+- Tuesday recurring final-stage orchestration
 
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
-Generic recurring baseline and Sunday orchestration is implemented.
+Baseline, Sunday, and final immutable snapshot construction are implemented.
 
-Week 1 remains on previously validated one-time workflows while the generic recurring workflow begins with Week 2.
+The complete weekly snapshot lifecycle is now available:
 
-The generic final-stage command is reserved but disabled until final snapshot construction is implemented.
+baseline -> Sunday/pre-MNF -> final
 
-Sunday recap/MNF preview report generation, final-stage analysis, standings logic, win-probability simulation, and historical CSV aggregation remain to be implemented.
+Player-level actual scoring, boom/bust analytics, standings/luck analysis,
+power rankings, Monte Carlo season simulations, and final-stage AI context
+remain to be implemented.
 
 The Python system is the data and analytics engine.
 

@@ -26,7 +26,7 @@
       }
     },
     "final": {
-      "enabled": false,
+      "enabled": true,
       "anchor_week": 2,
       "anchor_date": "2026-09-22",
       "window_start": "11:30",

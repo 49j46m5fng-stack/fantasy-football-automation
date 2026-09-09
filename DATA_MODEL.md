@@ -320,3 +320,39 @@ Sunday context additionally includes:
 Missing values remain null.
 
 The Sunday current-starter projection must not be described as a final-score or remaining-game forecast. 
+
+## Final Snapshot
+
+The final stage preserves the post-MNF fantasy result for the week.
+
+Each final team record contains:
+
+- roster_id
+- owner identity
+- manager name
+- matchup_id
+- opponent roster_id
+- final_starters_raw
+- rostered_player_ids
+- final_points
+- custom_points
+- effective_final_points
+- starter metadata
+- rostered-player metadata
+- warnings
+
+Each final matchup includes:
+
+- both roster IDs
+- both effective final scores
+- score completeness
+- winner roster ID
+- loser roster ID
+- final margin
+- tie state
+
+A missing final score remains null.
+
+The final snapshot does not currently normalize per-player actual fantasy points.
+Raw Sleeper matchup data is retained so player-level scoring can be added after
+the source semantics are verified.

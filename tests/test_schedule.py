@@ -156,7 +156,7 @@ def test_generic_scheduler_ignores_week1() -> None:
     assert result is None
 
 
-def test_final_stage_is_disabled() -> None:
+def test_final_stage_resolves_week2() -> None:
     now = datetime(
         2026,
         9,
@@ -172,4 +172,4 @@ def test_final_stage_is_disabled() -> None:
         now,
     )
 
-    assert result is None
+    assert result == 2

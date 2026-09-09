@@ -12,6 +12,7 @@ on:
           - auto
           - baseline
           - sunday
+          - final
 
       week:
         description: Optional fantasy week for manual stage runs
@@ -35,7 +36,17 @@ on:
     - cron: "5 12 * * 1"
       timezone: "America/Chicago"
 
-    # Thursday — normal weekly baseline + preview.
+    # Tuesday — post-MNF final checkpoint.
+    - cron: "45 11 * * 2"
+      timezone: "America/Chicago"
+
+    - cron: "55 11 * * 2"
+      timezone: "America/Chicago"
+
+    - cron: "5 12 * * 2"
+      timezone: "America/Chicago"
+
+    # Thursday — normal weekly baseline.
     - cron: "45 11 * * 4"
       timezone: "America/Chicago"
 
@@ -91,15 +102,26 @@ jobs:
           INPUT_STAGE: ${{ inputs.stage }}
           INPUT_WEEK: ${{ inputs.week }}
           INPUT_CHECK_ONLY: ${{ inputs.check_only }}
+          TZ: America/Chicago
         run: |
           if [ "$EVENT_NAME" = "schedule" ]; then
-            echo "Scheduled generic automation."
-            python fantasy.py auto --min-week 2
+            DAY_OF_WEEK="$(date +%u)"
+
+            echo "Scheduled automation."
+            echo "Central day of week: $DAY_OF_WEEK"
+
+            if [ "$DAY_OF_WEEK" = "2" ]; then
+              echo "Tuesday final automation includes Week 1."
+              python fantasy.py auto --min-week 1
+            else
+              echo "Week 1 baseline/Sunday remain on temporary workflows."
+              python fantasy.py auto --min-week 2
+            fi
+
             exit 0
           fi
 
           STAGE="${INPUT_STAGE:-auto}"
-
           CHECK_FLAG=""
 
           if [ "$INPUT_CHECK_ONLY" = "true" ]; then
@@ -110,6 +132,7 @@ jobs:
             python fantasy.py auto \
               --min-week 2 \
               $CHECK_FLAG
+
             exit 0
           fi
 

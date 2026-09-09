@@ -116,3 +116,13 @@ Do not query current Sleeper data to rewrite historical agent context.
 Precompute arithmetic and league-rule outcomes in Python whenever practical so downstream narrative agents receive facts rather than being asked to infer them.
 
 Narrative generation does not belong in the core Python analytics layer.
+
+Final-stage team results come from the immutable final snapshot.
+
+Do not infer player fantasy points from team scores.
+
+Do not calculate boom/bust until a verified per-player actual-scoring source
+has been normalized.
+
+A missing Sunday checkpoint must not cause the system to discard an otherwise
+valid final weekly result.

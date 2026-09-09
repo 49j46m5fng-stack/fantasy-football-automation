@@ -231,3 +231,21 @@ Agent context must be derived only from stored snapshots and deterministic analy
 The AI must not silently convert null or unresolved values to zero.
 
 Agent-context files are replaceable derived artifacts. Immutable stage snapshots are not.
+
+## Final Stage
+
+The final snapshot records the platform-reported post-MNF weekly result.
+
+Final capture must not alter the baseline or Sunday snapshots.
+
+A final snapshot requires the immutable baseline to exist.
+
+A missing Sunday snapshot does not block final capture; losing final historical
+truth would be worse than losing the intermediate Sunday checkpoint.
+
+Official final capture refuses incomplete team scores.
+
+Commissioner custom_points are preserved separately and become the effective
+final score when present.
+
+Per-player actual fantasy points must not be inferred from team totals.
