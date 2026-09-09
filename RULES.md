@@ -330,3 +330,56 @@ Season analytical rank currently sorts by:
 3. roster ID
 
 Analytical rank is not labeled as official Sleeper playoff seeding.
+
+## Power Rankings
+
+Power rankings are deterministic Python analytics. The AI Agent does
+not calculate, modify, or reorder them.
+
+The default composite weights are:
+
+- scoring strength: 30%
+- all-play strength: 25%
+- recent form: 20%
+- projection strength: 15%
+- lineup efficiency: 10%
+
+All five raw components are converted to within-league percentile
+scores from 0 to 100 before weighting.
+
+Scoring strength is season points per game.
+
+All-play strength is season all-play percentage.
+
+Recent form is the average weekly expected-wins value over the most
+recent configured number of completed fantasy weeks. The default
+window is three weeks. Early in the season, every available completed
+week is used until three weeks exist.
+
+Projection strength is the team's current frozen baseline starting
+lineup projection.
+
+Lineup efficiency is the season-to-date exact lineup-efficiency
+percentage supplied by the lineup analytics layer.
+
+Composite power score is:
+
+`0.30 * scoring_strength_score`
+`+ 0.25 * all_play_score`
+`+ 0.20 * recent_form_score`
+`+ 0.15 * projection_strength_score`
+`+ 0.10 * lineup_efficiency_score`
+
+Power rankings are analytical rankings. They are not official Sleeper
+standings, playoff seeds, promotion positions, or relegation positions.
+
+Rank change is:
+
+`previous_rank - current_rank`
+
+Therefore:
+
+- positive = moved up
+- negative = moved down
+- zero = unchanged
+- null = no prior ranking available

@@ -213,6 +213,19 @@ Implemented analytics now include:
 - start/sit mistake identification
 - exact-starter-to-Sleeper team-score reconciliation
 
+Power-ranking analytics now provide:
+
+- season scoring strength
+- season all-play strength
+- schedule-neutral recent form
+- current frozen projection strength
+- season lineup efficiency
+- tie-aware within-league percentile normalization
+- deterministic weighted composite power scores
+- current rank
+- previous rank
+- rank movement
+
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
 Baseline, Sunday, and final immutable snapshot construction are implemented.

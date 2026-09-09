@@ -154,3 +154,23 @@ results than its weekly all-play scoring performance implied.
 Negative `luck_wins` means it earned fewer.
 
 Do not describe `analytical_rank` as official Sleeper playoff seeding.
+
+Power rankings are calculated by Python.
+
+The AI Agent may explain why a team ranked highly or moved up/down, but
+must not recalculate, reorder, or override the deterministic ranking.
+
+Use `composite_score` as the final analytical power score.
+
+Use the component scores to explain the ranking:
+
+- scoring_strength_score
+- all_play_score
+- recent_form_score
+- projection_strength_score
+- lineup_efficiency_score
+
+A positive `rank_change` means the team moved up.
+
+Do not describe power rank as official league standing, playoff seed,
+promotion position, or relegation position.
