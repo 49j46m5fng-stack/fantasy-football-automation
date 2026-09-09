@@ -132,15 +132,15 @@ If a weekly baseline already exists, baseline creation should refuse to replace 
 
 ## Current Status
 
-## Current Status
+The repository contains configuration, documentation, test infrastructure, Sleeper API access, and initial normalization models.
 
-The repository contains configuration, documentation, test infrastructure, and an initial Sleeper API client.
-
-The client currently retrieves:
+The project currently supports:
 
 - league metadata
 - league users
 - league rosters
 - weekly matchup records
+- owner-to-manager normalization
+- two-roster matchup pairing
 
-Normalization, historical snapshot storage, projections, analytics, and reporting have not yet been implemented.
+Historical snapshot storage, projections, analytics, standings logic, and reporting have not yet been implemented.
