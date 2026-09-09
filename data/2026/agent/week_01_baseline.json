@@ -1,0 +1,5281 @@
+{
+  "authoritative": false,
+  "competition": {
+    "analytics": {
+      "boom_threshold": 1.5,
+      "bust_threshold": 0.8,
+      "minimum_projection_for_ratio": 1.0,
+      "power_rankings": {
+        "all_play_weight": 0.25,
+        "lineup_efficiency_weight": 0.1,
+        "projection_strength_weight": 0.15,
+        "recent_form_weeks": 3,
+        "recent_form_weight": 0.2,
+        "scoring_strength_weight": 0.3
+      }
+    },
+    "leagues": {
+      "doats": {
+        "league_id": "1400610568489947136",
+        "name": "DOATs",
+        "promotion_spots": 2,
+        "tier": 2
+      },
+      "goats": {
+        "league_id": "1400610465024839680",
+        "name": "GOATs",
+        "playoff_spots": 8,
+        "relegation_spots": 2,
+        "tier": 1
+      }
+    },
+    "promotion_rules": {
+      "doats_playoff_champion_promoted": true,
+      "doats_regular_season_champion_promoted": true,
+      "if_same_champion_promote_playoff_runner_up": true
+    },
+    "simulation": {
+      "random_seed": 2026,
+      "simulations": 10000
+    }
+  },
+  "context_type": "fantasy_agent_context",
+  "derived_from": {
+    "doats": {
+      "baseline_snapshot": {
+        "created_at": "2026-09-09T21:45:18.051679+00:00",
+        "path": "data/2026/doats/week_01_baseline.json",
+        "schema_version": 1,
+        "sha256": "28ef23fdcf56a5a4514403cba7e19d368961ee8f82c1a4f5aaabc2815822d4ea",
+        "stage": "baseline"
+      }
+    },
+    "goats": {
+      "baseline_snapshot": {
+        "created_at": "2026-09-09T21:45:18.030974+00:00",
+        "path": "data/2026/goats/week_01_baseline.json",
+        "schema_version": 1,
+        "sha256": "00036d84c8dafa9f12628e34c1a5a03de32c2e9f6532b41ef87e850986a4afba",
+        "stage": "baseline"
+      }
+    }
+  },
+  "leagues": {
+    "doats": {
+      "league_id": "1400610568489947136",
+      "league_key": "doats",
+      "matchups": [
+        {
+          "matchup_id": 1,
+          "projection_lead": {
+            "leader_manager_name": "NeilCarlson",
+            "leader_roster_id": 5,
+            "margin": 3.549999999999983,
+            "tied": false
+          },
+          "team_a": {
+            "manager_name": "NeilCarlson",
+            "projection": 127.06,
+            "roster_id": 5
+          },
+          "team_b": {
+            "manager_name": "sofiacaballero",
+            "projection": 123.51000000000002,
+            "roster_id": 7
+          }
+        },
+        {
+          "matchup_id": 2,
+          "projection_lead": {
+            "leader_manager_name": "Bitcoin89",
+            "leader_roster_id": 2,
+            "margin": 9.600000000000009,
+            "tied": false
+          },
+          "team_a": {
+            "manager_name": "Bitcoin89",
+            "projection": 133.32,
+            "roster_id": 2
+          },
+          "team_b": {
+            "manager_name": "tlt292001",
+            "projection": 123.71999999999998,
+            "roster_id": 6
+          }
+        },
+        {
+          "matchup_id": 3,
+          "projection_lead": {
+            "leader_manager_name": "DOATGOAT",
+            "leader_roster_id": 3,
+            "margin": 2.980000000000004,
+            "tied": false
+          },
+          "team_a": {
+            "manager_name": "DOATGOAT",
+            "projection": 128.9,
+            "roster_id": 3
+          },
+          "team_b": {
+            "manager_name": "DBMixer",
+            "projection": 125.92,
+            "roster_id": 4
+          }
+        },
+        {
+          "matchup_id": 4,
+          "projection_lead": {
+            "leader_manager_name": "Nafedog1",
+            "leader_roster_id": 1,
+            "margin": 19.659999999999982,
+            "tied": false
+          },
+          "team_a": {
+            "manager_name": "Nafedog1",
+            "projection": 132.23,
+            "roster_id": 1
+          },
+          "team_b": {
+            "manager_name": "AGCallinAudible",
+            "projection": 112.57000000000001,
+            "roster_id": 8
+          }
+        }
+      ],
+      "name": "DOATs",
+      "projection_method": {
+        "category": "proj",
+        "exact_league_scoring": false,
+        "point_field": "pts_ppr",
+        "provider": "Sleeper unofficial projection feed"
+      },
+      "rules": {
+        "league_id": "1400610568489947136",
+        "name": "DOATs",
+        "promotion_spots": 2,
+        "tier": 2
+      },
+      "teams": [
+        {
+          "baseline_projection": 132.23,
+          "known_projected_points": 132.23,
+          "manager_name": "Nafedog1",
+          "matchup_id": 4,
+          "opponent_roster_id": 8,
+          "owner_id": "1400606924663205888",
+          "projection_complete": true,
+          "roster_id": 1,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "10229",
+              "player_name": "Rashee Rice",
+              "position": "WR",
+              "projected_points": 14.49,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11560",
+              "player_name": "Caleb Williams",
+              "position": "QB",
+              "projected_points": 19.56,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11581",
+              "player_name": "MarShawn Lloyd",
+              "position": "RB",
+              "projected_points": 10.93,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12507",
+              "player_name": "Omarion Hampton",
+              "position": "RB",
+              "projected_points": 15.62,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12518",
+              "player_name": "Tyler Warren",
+              "position": "TE",
+              "projected_points": 13.93,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "IND"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13286",
+              "player_name": "Jadarian Price",
+              "position": "RB",
+              "projected_points": 9.78,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SEA"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "13287",
+              "player_name": "Jeremiyah Love",
+              "position": "RB",
+              "projected_points": 13.32,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ARI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5846",
+              "player_name": "DK Metcalf",
+              "position": "WR",
+              "projected_points": 11.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PIT"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5859",
+              "player_name": "A.J. Brown",
+              "position": "WR",
+              "projected_points": 16.84,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6770",
+              "player_name": "Joe Burrow",
+              "position": "QB",
+              "projected_points": 20.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8148",
+              "player_name": "Jameson Williams",
+              "position": "WR",
+              "projected_points": 13.91,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DET"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "8259",
+              "player_name": "Cameron Dicker",
+              "position": "K",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9221",
+              "player_name": "Jahmyr Gibbs",
+              "position": "RB",
+              "projected_points": 23.68,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9756",
+              "player_name": "Jordan Addison",
+              "position": "WR",
+              "projected_points": 11.24,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "HOU",
+              "player_name": "Houston Texans",
+              "position": "DEF",
+              "projected_points": 7.07,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "HOU"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "6770",
+              "player_name": "Joe Burrow",
+              "position": "QB",
+              "projected_points": 20.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9221",
+              "player_name": "Jahmyr Gibbs",
+              "position": "RB",
+              "projected_points": 23.68,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12507",
+              "player_name": "Omarion Hampton",
+              "position": "RB",
+              "projected_points": 15.62,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5859",
+              "player_name": "A.J. Brown",
+              "position": "WR",
+              "projected_points": 16.84,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "NE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "10229",
+              "player_name": "Rashee Rice",
+              "position": "WR",
+              "projected_points": 14.49,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12518",
+              "player_name": "Tyler Warren",
+              "position": "TE",
+              "projected_points": 13.93,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "IND"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "13287",
+              "player_name": "Jeremiyah Love",
+              "position": "RB",
+              "projected_points": 13.32,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "ARI"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "8259",
+              "player_name": "Cameron Dicker",
+              "position": "K",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "HOU",
+              "player_name": "Houston Texans",
+              "position": "DEF",
+              "projected_points": 7.07,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "HOU"
+            }
+          ],
+          "starters_raw": [
+            "6770",
+            "9221",
+            "12507",
+            "5859",
+            "10229",
+            "12518",
+            "13287",
+            "8259",
+            "HOU"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 133.32,
+          "known_projected_points": 133.32,
+          "manager_name": "Bitcoin89",
+          "matchup_id": 2,
+          "opponent_roster_id": 6,
+          "owner_id": "1137284513362714624",
+          "projection_complete": true,
+          "roster_id": 2,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "11539",
+              "player_name": "Jake Bates",
+              "position": "K",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12489",
+              "player_name": "RJ Harvey",
+              "position": "RB",
+              "projected_points": 10.19,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12517",
+              "player_name": "Colston Loveland",
+              "position": "TE",
+              "projected_points": 14.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "3294",
+              "player_name": "Dak Prescott",
+              "position": "QB",
+              "projected_points": 18.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4034",
+              "player_name": "Christian McCaffrey",
+              "position": "RB",
+              "projected_points": 21.03,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SF"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "4217",
+              "player_name": "George Kittle",
+              "position": "TE",
+              "projected_points": 10.09,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5927",
+              "player_name": "Terry McLaurin",
+              "position": "WR",
+              "projected_points": 13.62,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "WAS"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6794",
+              "player_name": "Justin Jefferson",
+              "position": "WR",
+              "projected_points": 16.77,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIN"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "8142",
+              "player_name": "Alec Pierce",
+              "position": "WR",
+              "projected_points": 8.83,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "IND"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8144",
+              "player_name": "Chris Olave",
+              "position": "WR",
+              "projected_points": 16.21,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NO"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8155",
+              "player_name": "Breece Hall",
+              "position": "RB",
+              "projected_points": 13.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NYJ"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8167",
+              "player_name": "Christian Watson",
+              "position": "WR",
+              "projected_points": 13.67,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8183",
+              "player_name": "Brock Purdy",
+              "position": "QB",
+              "projected_points": 18.77,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9224",
+              "player_name": "Chase Brown",
+              "position": "RB",
+              "projected_points": 16.75,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "LAC",
+              "player_name": "Los Angeles Chargers",
+              "position": "DEF",
+              "projected_points": 8.45,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAC"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "3294",
+              "player_name": "Dak Prescott",
+              "position": "QB",
+              "projected_points": 18.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4034",
+              "player_name": "Christian McCaffrey",
+              "position": "RB",
+              "projected_points": 21.03,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "SF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9224",
+              "player_name": "Chase Brown",
+              "position": "RB",
+              "projected_points": 16.75,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6794",
+              "player_name": "Justin Jefferson",
+              "position": "WR",
+              "projected_points": 16.77,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8144",
+              "player_name": "Chris Olave",
+              "position": "WR",
+              "projected_points": 16.21,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "NO"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12517",
+              "player_name": "Colston Loveland",
+              "position": "TE",
+              "projected_points": 14.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8155",
+              "player_name": "Breece Hall",
+              "position": "RB",
+              "projected_points": 13.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "NYJ"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11539",
+              "player_name": "Jake Bates",
+              "position": "K",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "LAC",
+              "player_name": "Los Angeles Chargers",
+              "position": "DEF",
+              "projected_points": 8.45,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "LAC"
+            }
+          ],
+          "starters_raw": [
+            "3294",
+            "4034",
+            "9224",
+            "6794",
+            "8144",
+            "12517",
+            "8155",
+            "11539",
+            "LAC"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 128.9,
+          "known_projected_points": 128.9,
+          "manager_name": "DOATGOAT",
+          "matchup_id": 3,
+          "opponent_roster_id": 4,
+          "owner_id": "1400880872927817728",
+          "projection_complete": true,
+          "roster_id": 3,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "12015",
+              "player_name": "Harrison Mevis",
+              "position": "K",
+              "projected_points": 7.06,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "12527",
+              "player_name": "Ashton Jeanty",
+              "position": "RB",
+              "projected_points": 14.99,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LV"
+            },
+            {
+              "injury_status": null,
+              "player_id": "1466",
+              "player_name": "Travis Kelce",
+              "position": "TE",
+              "projected_points": 11.0,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "2216",
+              "player_name": "Mike Evans",
+              "position": "WR",
+              "projected_points": 12.77,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SF"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "4046",
+              "player_name": "Patrick Mahomes",
+              "position": "QB",
+              "projected_points": 17.13,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5012",
+              "player_name": "Mark Andrews",
+              "position": "TE",
+              "projected_points": 10.88,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6801",
+              "player_name": "Tee Higgins",
+              "position": "WR",
+              "projected_points": 15.64,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7526",
+              "player_name": "Jaylen Waddle",
+              "position": "WR",
+              "projected_points": 14.76,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7588",
+              "player_name": "Javonte Williams",
+              "position": "RB",
+              "projected_points": 15.48,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8150",
+              "player_name": "Kyren Williams",
+              "position": "RB",
+              "projected_points": 14.36,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9226",
+              "player_name": "De'Von Achane",
+              "position": "RB",
+              "projected_points": 17.47,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIA"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "9484",
+              "player_name": "Tucker Kraft",
+              "position": "TE",
+              "projected_points": 10.86,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9487",
+              "player_name": "Parker Washington",
+              "position": "WR",
+              "projected_points": 11.93,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9509",
+              "player_name": "Bijan Robinson",
+              "position": "RB",
+              "projected_points": 21.53,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ATL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "PIT",
+              "player_name": "Pittsburgh Steelers",
+              "position": "DEF",
+              "projected_points": 8.97,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PIT"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": "Questionable",
+              "player_id": "4046",
+              "player_name": "Patrick Mahomes",
+              "position": "QB",
+              "projected_points": 17.13,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9509",
+              "player_name": "Bijan Robinson",
+              "position": "RB",
+              "projected_points": 21.53,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "ATL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9226",
+              "player_name": "De'Von Achane",
+              "position": "RB",
+              "projected_points": 17.47,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "MIA"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6801",
+              "player_name": "Tee Higgins",
+              "position": "WR",
+              "projected_points": 15.64,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7526",
+              "player_name": "Jaylen Waddle",
+              "position": "WR",
+              "projected_points": 14.76,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "DEN"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "9484",
+              "player_name": "Tucker Kraft",
+              "position": "TE",
+              "projected_points": 10.86,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7588",
+              "player_name": "Javonte Williams",
+              "position": "RB",
+              "projected_points": 15.48,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12015",
+              "player_name": "Harrison Mevis",
+              "position": "K",
+              "projected_points": 7.06,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "PIT",
+              "player_name": "Pittsburgh Steelers",
+              "position": "DEF",
+              "projected_points": 8.97,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "PIT"
+            }
+          ],
+          "starters_raw": [
+            "4046",
+            "9509",
+            "9226",
+            "6801",
+            "7526",
+            "9484",
+            "7588",
+            "12015",
+            "PIT"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 125.92,
+          "known_projected_points": 125.92,
+          "manager_name": "DBMixer",
+          "matchup_id": 3,
+          "opponent_roster_id": 3,
+          "owner_id": "1022557249803284480",
+          "projection_complete": true,
+          "roster_id": 4,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "10859",
+              "player_name": "Sam LaPorta",
+              "position": "TE",
+              "projected_points": 13.49,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11533",
+              "player_name": "Brandon Aubrey",
+              "position": "K",
+              "projected_points": 6.84,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11584",
+              "player_name": "Bucky Irving",
+              "position": "RB",
+              "projected_points": 12.15,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11635",
+              "player_name": "Ladd McConkey",
+              "position": "WR",
+              "projected_points": 13.31,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12506",
+              "player_name": "Harold Fannin",
+              "position": "TE",
+              "projected_points": 11.58,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CLE"
+            },
+            {
+              "injury_status": "Out",
+              "player_id": "12529",
+              "player_name": "TreVeyon Henderson",
+              "position": "RB",
+              "projected_points": 0.0,
+              "projection_reason": "Sleeper reports injury_status='Out' and provides no pts_ppr value.",
+              "projection_source": "sleeper_out_zero",
+              "team": "NE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "2449",
+              "player_name": "Stefon Diggs",
+              "position": "WR",
+              "projected_points": 11.41,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "WAS"
+            },
+            {
+              "injury_status": null,
+              "player_id": "2747",
+              "player_name": "Jason Myers",
+              "position": "K",
+              "projected_points": 6.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SEA"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4984",
+              "player_name": "Josh Allen",
+              "position": "QB",
+              "projected_points": 21.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5892",
+              "player_name": "David Montgomery",
+              "position": "RB",
+              "projected_points": 13.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6797",
+              "player_name": "Justin Herbert",
+              "position": "QB",
+              "projected_points": 18.1,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6806",
+              "player_name": "J.K. Dobbins",
+              "position": "RB",
+              "projected_points": 10.99,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8112",
+              "player_name": "Drake London",
+              "position": "WR",
+              "projected_points": 15.83,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ATL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9493",
+              "player_name": "Puka Nacua",
+              "position": "WR",
+              "projected_points": 20.48,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "SEA",
+              "player_name": "Seattle Seahawks",
+              "position": "DEF",
+              "projected_points": 8.81,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SEA"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "4984",
+              "player_name": "Josh Allen",
+              "position": "QB",
+              "projected_points": 21.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11584",
+              "player_name": "Bucky Irving",
+              "position": "RB",
+              "projected_points": 12.15,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "TB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5892",
+              "player_name": "David Montgomery",
+              "position": "RB",
+              "projected_points": 13.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9493",
+              "player_name": "Puka Nacua",
+              "position": "WR",
+              "projected_points": 20.48,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8112",
+              "player_name": "Drake London",
+              "position": "WR",
+              "projected_points": 15.83,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "ATL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "10859",
+              "player_name": "Sam LaPorta",
+              "position": "TE",
+              "projected_points": 13.49,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11635",
+              "player_name": "Ladd McConkey",
+              "position": "WR",
+              "projected_points": 13.31,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11533",
+              "player_name": "Brandon Aubrey",
+              "position": "K",
+              "projected_points": 6.84,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "SEA",
+              "player_name": "Seattle Seahawks",
+              "position": "DEF",
+              "projected_points": 8.81,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "SEA"
+            }
+          ],
+          "starters_raw": [
+            "4984",
+            "11584",
+            "5892",
+            "9493",
+            "8112",
+            "10859",
+            "11635",
+            "11533",
+            "SEA"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 127.06,
+          "known_projected_points": 127.06,
+          "manager_name": "NeilCarlson",
+          "matchup_id": 1,
+          "opponent_roster_id": 7,
+          "owner_id": "1401026499263336448",
+          "projection_complete": true,
+          "roster_id": 5,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "11563",
+              "player_name": "Bo Nix",
+              "position": "QB",
+              "projected_points": 17.89,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12490",
+              "player_name": "Bhayshul Tuten",
+              "position": "RB",
+              "projected_points": 11.32,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12508",
+              "player_name": "Jaxson Dart",
+              "position": "QB",
+              "projected_points": 19.35,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12514",
+              "player_name": "Emeka Egbuka",
+              "position": "WR",
+              "projected_points": 11.67,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4983",
+              "player_name": "DJ Moore",
+              "position": "WR",
+              "projected_points": 12.09,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5967",
+              "player_name": "Tony Pollard",
+              "position": "RB",
+              "projected_points": 10.04,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6790",
+              "player_name": "D'Andre Swift",
+              "position": "RB",
+              "projected_points": 13.64,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7564",
+              "player_name": "Ja'Marr Chase",
+              "position": "WR",
+              "projected_points": 19.74,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7569",
+              "player_name": "Nico Collins",
+              "position": "WR",
+              "projected_points": 17.38,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7839",
+              "player_name": "Evan McPherson",
+              "position": "K",
+              "projected_points": 6.84,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8110",
+              "player_name": "Jake Ferguson",
+              "position": "TE",
+              "projected_points": 9.7,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8151",
+              "player_name": "Kenneth Walker",
+              "position": "RB",
+              "projected_points": 15.98,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9488",
+              "player_name": "Jaxon Smith-Njigba",
+              "position": "WR",
+              "projected_points": 19.69,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SEA"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "9997",
+              "player_name": "Zay Flowers",
+              "position": "WR",
+              "projected_points": 15.62,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "LAR",
+              "player_name": "Los Angeles Rams",
+              "position": "DEF",
+              "projected_points": 7.06,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "12508",
+              "player_name": "Jaxson Dart",
+              "position": "QB",
+              "projected_points": 19.35,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8151",
+              "player_name": "Kenneth Walker",
+              "position": "RB",
+              "projected_points": 15.98,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12490",
+              "player_name": "Bhayshul Tuten",
+              "position": "RB",
+              "projected_points": 11.32,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7564",
+              "player_name": "Ja'Marr Chase",
+              "position": "WR",
+              "projected_points": 19.74,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9488",
+              "player_name": "Jaxon Smith-Njigba",
+              "position": "WR",
+              "projected_points": 19.69,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "SEA"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8110",
+              "player_name": "Jake Ferguson",
+              "position": "TE",
+              "projected_points": 9.7,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7569",
+              "player_name": "Nico Collins",
+              "position": "WR",
+              "projected_points": 17.38,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7839",
+              "player_name": "Evan McPherson",
+              "position": "K",
+              "projected_points": 6.84,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "LAR",
+              "player_name": "Los Angeles Rams",
+              "position": "DEF",
+              "projected_points": 7.06,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "LAR"
+            }
+          ],
+          "starters_raw": [
+            "12508",
+            "8151",
+            "12490",
+            "7564",
+            "9488",
+            "8110",
+            "7569",
+            "7839",
+            "LAR"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 123.71999999999998,
+          "known_projected_points": 123.71999999999998,
+          "manager_name": "tlt292001",
+          "matchup_id": 2,
+          "opponent_roster_id": 2,
+          "owner_id": "1401224768325230592",
+          "projection_complete": true,
+          "roster_id": 6,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "10232",
+              "player_name": "Michael Wilson",
+              "position": "WR",
+              "projected_points": 11.33,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ARI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11631",
+              "player_name": "Brian Thomas",
+              "position": "WR",
+              "projected_points": 10.48,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "JAX"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "11632",
+              "player_name": "Malik Nabers",
+              "position": "WR",
+              "projected_points": 13.88,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11786",
+              "player_name": "Cam Little",
+              "position": "K",
+              "projected_points": 6.52,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12519",
+              "player_name": "Luther Burden",
+              "position": "WR",
+              "projected_points": 13.49,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13294",
+              "player_name": "Makai Lemon",
+              "position": "WR",
+              "projected_points": 6.03,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PHI"
+            },
+            {
+              "injury_status": "NA",
+              "player_id": "5850",
+              "player_name": "Josh Jacobs",
+              "position": "RB",
+              "projected_points": 0.0,
+              "projection_reason": "Josh Jacobs unavailable for Week 1 on the Commissioner Exempt list. Sleeper omitted pts_ppr and reported injury_status as NA.",
+              "projection_source": "manual_override",
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6786",
+              "player_name": "CeeDee Lamb",
+              "position": "WR",
+              "projected_points": 17.13,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6904",
+              "player_name": "Jalen Hurts",
+              "position": "QB",
+              "projected_points": 19.96,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7543",
+              "player_name": "Travis Etienne",
+              "position": "RB",
+              "projected_points": 15.04,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NO"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7594",
+              "player_name": "Chuba Hubbard",
+              "position": "RB",
+              "projected_points": 10.29,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8130",
+              "player_name": "Trey McBride",
+              "position": "TE",
+              "projected_points": 15.58,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ARI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8138",
+              "player_name": "James Cook",
+              "position": "RB",
+              "projected_points": 17.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8228",
+              "player_name": "Jaylen Warren",
+              "position": "RB",
+              "projected_points": 13.31,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PIT"
+            },
+            {
+              "injury_status": null,
+              "player_id": "DEN",
+              "player_name": "Denver Broncos",
+              "position": "DEF",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "6904",
+              "player_name": "Jalen Hurts",
+              "position": "QB",
+              "projected_points": 19.96,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8138",
+              "player_name": "James Cook",
+              "position": "RB",
+              "projected_points": 17.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7543",
+              "player_name": "Travis Etienne",
+              "position": "RB",
+              "projected_points": 15.04,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "NO"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6786",
+              "player_name": "CeeDee Lamb",
+              "position": "WR",
+              "projected_points": 17.13,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "DAL"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "11632",
+              "player_name": "Malik Nabers",
+              "position": "WR",
+              "projected_points": 13.88,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8130",
+              "player_name": "Trey McBride",
+              "position": "TE",
+              "projected_points": 15.58,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "ARI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "10232",
+              "player_name": "Michael Wilson",
+              "position": "WR",
+              "projected_points": 11.33,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "ARI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11786",
+              "player_name": "Cam Little",
+              "position": "K",
+              "projected_points": 6.52,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "DEN",
+              "player_name": "Denver Broncos",
+              "position": "DEF",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "DEN"
+            }
+          ],
+          "starters_raw": [
+            "6904",
+            "8138",
+            "7543",
+            "6786",
+            "11632",
+            "8130",
+            "10232",
+            "11786",
+            "DEN"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 123.51000000000002,
+          "known_projected_points": 123.51000000000002,
+          "manager_name": "sofiacaballero",
+          "matchup_id": 1,
+          "opponent_roster_id": 5,
+          "owner_id": "1401258645831839744",
+          "projection_complete": true,
+          "roster_id": 7,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "10236",
+              "player_name": "Dalton Kincaid",
+              "position": "TE",
+              "projected_points": 9.41,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11564",
+              "player_name": "Drake Maye",
+              "position": "QB",
+              "projected_points": 19.67,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NE"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "11620",
+              "player_name": "Rome Odunze",
+              "position": "WR",
+              "projected_points": 11.52,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11792",
+              "player_name": "Will Reichard",
+              "position": "K",
+              "projected_points": 6.65,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12512",
+              "player_name": "Quinshon Judkins",
+              "position": "RB",
+              "projected_points": 12.24,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CLE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "2133",
+              "player_name": "Davante Adams",
+              "position": "WR",
+              "projected_points": 12.28,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "3198",
+              "player_name": "Derrick Henry",
+              "position": "RB",
+              "projected_points": 15.68,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4037",
+              "player_name": "Chris Godwin",
+              "position": "WR",
+              "projected_points": 10.99,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "421",
+              "player_name": "Matthew Stafford",
+              "position": "QB",
+              "projected_points": 16.96,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6813",
+              "player_name": "Jonathan Taylor",
+              "position": "RB",
+              "projected_points": 19.57,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "IND"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7021",
+              "player_name": "Rico Dowdle",
+              "position": "RB",
+              "projected_points": 12.47,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PIT"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7525",
+              "player_name": "DeVonta Smith",
+              "position": "WR",
+              "projected_points": 14.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7553",
+              "player_name": "Kyle Pitts",
+              "position": "TE",
+              "projected_points": 10.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ATL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8137",
+              "player_name": "George Pickens",
+              "position": "WR",
+              "projected_points": 16.57,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "BAL",
+              "player_name": "Baltimore Ravens",
+              "position": "DEF",
+              "projected_points": 7.39,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BAL"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "11564",
+              "player_name": "Drake Maye",
+              "position": "QB",
+              "projected_points": 19.67,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "NE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6813",
+              "player_name": "Jonathan Taylor",
+              "position": "RB",
+              "projected_points": 19.57,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "IND"
+            },
+            {
+              "injury_status": null,
+              "player_id": "3198",
+              "player_name": "Derrick Henry",
+              "position": "RB",
+              "projected_points": 15.68,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8137",
+              "player_name": "George Pickens",
+              "position": "WR",
+              "projected_points": 16.57,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7525",
+              "player_name": "DeVonta Smith",
+              "position": "WR",
+              "projected_points": 14.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7553",
+              "player_name": "Kyle Pitts",
+              "position": "TE",
+              "projected_points": 10.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "ATL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12512",
+              "player_name": "Quinshon Judkins",
+              "position": "RB",
+              "projected_points": 12.24,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "CLE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11792",
+              "player_name": "Will Reichard",
+              "position": "K",
+              "projected_points": 6.65,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "BAL",
+              "player_name": "Baltimore Ravens",
+              "position": "DEF",
+              "projected_points": 7.39,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "BAL"
+            }
+          ],
+          "starters_raw": [
+            "11564",
+            "6813",
+            "3198",
+            "8137",
+            "7525",
+            "7553",
+            "12512",
+            "11792",
+            "BAL"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 112.57000000000001,
+          "known_projected_points": 112.57000000000001,
+          "manager_name": "AGCallinAudible",
+          "matchup_id": 4,
+          "opponent_roster_id": 1,
+          "owner_id": "1401274775250141184",
+          "projection_complete": true,
+          "roster_id": 8,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "11566",
+              "player_name": "Jayden Daniels",
+              "position": "QB",
+              "projected_points": 19.0,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "WAS"
+            },
+            {
+              "injury_status": "Doubtful",
+              "player_id": "11604",
+              "player_name": "Brock Bowers",
+              "position": "TE",
+              "projected_points": 0.0,
+              "projection_reason": "Projection record exists but has no pts_ppr; missing projections are treated as 0.0.",
+              "projection_source": "missing_projected_points_zero",
+              "team": "LV"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11628",
+              "player_name": "Marvin Harrison",
+              "position": "WR",
+              "projected_points": 10.68,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ARI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12481",
+              "player_name": "Cam Skattebo",
+              "position": "RB",
+              "projected_points": 13.98,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12526",
+              "player_name": "Tetairoa McMillan",
+              "position": "WR",
+              "projected_points": 14.0,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13279",
+              "player_name": "Carnell Tate",
+              "position": "WR",
+              "projected_points": 11.8,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "3451",
+              "player_name": "Ka'imi Fairbairn",
+              "position": "K",
+              "projected_points": 6.79,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4866",
+              "player_name": "Saquon Barkley",
+              "position": "RB",
+              "projected_points": 14.92,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4881",
+              "player_name": "Lamar Jackson",
+              "position": "QB",
+              "projected_points": 20.85,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5045",
+              "player_name": "Courtland Sutton",
+              "position": "WR",
+              "projected_points": 10.6,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7547",
+              "player_name": "Amon-Ra St. Brown",
+              "position": "WR",
+              "projected_points": 19.8,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7611",
+              "player_name": "Rhamondre Stevenson",
+              "position": "RB",
+              "projected_points": 16.43,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8146",
+              "player_name": "Garrett Wilson",
+              "position": "WR",
+              "projected_points": 13.53,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NYJ"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9480",
+              "player_name": "Brenton Strange",
+              "position": "TE",
+              "projected_points": 8.22,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "PHI",
+              "player_name": "Philadelphia Eagles",
+              "position": "DEF",
+              "projected_points": 8.7,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PHI"
+            }
+          ],
+          "special_projection_notes": [
+            {
+              "player_id": "11604",
+              "player_name": "Brock Bowers",
+              "projected_points": 0.0,
+              "projection_reason": "Projection record exists but has no pts_ppr; missing projections are treated as 0.0.",
+              "projection_source": "missing_projected_points_zero",
+              "slot": 6
+            }
+          ],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "4881",
+              "player_name": "Lamar Jackson",
+              "position": "QB",
+              "projected_points": 20.85,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4866",
+              "player_name": "Saquon Barkley",
+              "position": "RB",
+              "projected_points": 14.92,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12481",
+              "player_name": "Cam Skattebo",
+              "position": "RB",
+              "projected_points": 13.98,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7547",
+              "player_name": "Amon-Ra St. Brown",
+              "position": "WR",
+              "projected_points": 19.8,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12526",
+              "player_name": "Tetairoa McMillan",
+              "position": "WR",
+              "projected_points": 14.0,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "CAR"
+            },
+            {
+              "injury_status": "Doubtful",
+              "player_id": "11604",
+              "player_name": "Brock Bowers",
+              "position": "TE",
+              "projected_points": 0.0,
+              "projection_reason": "Projection record exists but has no pts_ppr; missing projections are treated as 0.0.",
+              "projection_source": "missing_projected_points_zero",
+              "slot": 6,
+              "team": "LV"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8146",
+              "player_name": "Garrett Wilson",
+              "position": "WR",
+              "projected_points": 13.53,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "NYJ"
+            },
+            {
+              "injury_status": null,
+              "player_id": "3451",
+              "player_name": "Ka'imi Fairbairn",
+              "position": "K",
+              "projected_points": 6.79,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "PHI",
+              "player_name": "Philadelphia Eagles",
+              "position": "DEF",
+              "projected_points": 8.7,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "PHI"
+            }
+          ],
+          "starters_raw": [
+            "4881",
+            "4866",
+            "12481",
+            "7547",
+            "12526",
+            "11604",
+            "8146",
+            "3451",
+            "PHI"
+          ],
+          "warnings": []
+        }
+      ],
+      "tier": 2,
+      "warnings": []
+    },
+    "goats": {
+      "league_id": "1400610465024839680",
+      "league_key": "goats",
+      "matchups": [
+        {
+          "matchup_id": 1,
+          "projection_lead": {
+            "leader_manager_name": "jevinjensen",
+            "leader_roster_id": 4,
+            "margin": 5.339999999999989,
+            "tied": false
+          },
+          "team_a": {
+            "manager_name": "jevinjensen",
+            "projection": 129.09,
+            "roster_id": 4
+          },
+          "team_b": {
+            "manager_name": "Porter1511",
+            "projection": 123.75000000000001,
+            "roster_id": 9
+          }
+        },
+        {
+          "matchup_id": 2,
+          "projection_lead": {
+            "leader_manager_name": "Hendrick82",
+            "leader_roster_id": 8,
+            "margin": 2.5600000000000023,
+            "tied": false
+          },
+          "team_a": {
+            "manager_name": "shawnthegoat33",
+            "projection": 119.72,
+            "roster_id": 5
+          },
+          "team_b": {
+            "manager_name": "Hendrick82",
+            "projection": 122.28,
+            "roster_id": 8
+          }
+        },
+        {
+          "matchup_id": 3,
+          "projection_lead": {
+            "leader_manager_name": "pdearani",
+            "leader_roster_id": 3,
+            "margin": 4.779999999999987,
+            "tied": false
+          },
+          "team_a": {
+            "manager_name": "pdearani",
+            "projection": 124.38000000000001,
+            "roster_id": 3
+          },
+          "team_b": {
+            "manager_name": "JBThink",
+            "projection": 119.60000000000002,
+            "roster_id": 10
+          }
+        },
+        {
+          "matchup_id": 4,
+          "projection_lead": {
+            "leader_manager_name": "DrewWright17",
+            "leader_roster_id": 2,
+            "margin": 12.61,
+            "tied": false
+          },
+          "team_a": {
+            "manager_name": "DrewWright17",
+            "projection": 123.55,
+            "roster_id": 2
+          },
+          "team_b": {
+            "manager_name": "BF14",
+            "projection": 110.94,
+            "roster_id": 7
+          }
+        },
+        {
+          "matchup_id": 5,
+          "projection_lead": {
+            "leader_manager_name": "rachelknowssports",
+            "leader_roster_id": 6,
+            "margin": 0.46000000000002217,
+            "tied": false
+          },
+          "team_a": {
+            "manager_name": "timmassie",
+            "projection": 125.82000000000001,
+            "roster_id": 1
+          },
+          "team_b": {
+            "manager_name": "rachelknowssports",
+            "projection": 126.28000000000003,
+            "roster_id": 6
+          }
+        }
+      ],
+      "name": "GOATs",
+      "projection_method": {
+        "category": "proj",
+        "exact_league_scoring": false,
+        "point_field": "pts_ppr",
+        "provider": "Sleeper unofficial projection feed"
+      },
+      "rules": {
+        "league_id": "1400610465024839680",
+        "name": "GOATs",
+        "playoff_spots": 8,
+        "relegation_spots": 2,
+        "tier": 1
+      },
+      "teams": [
+        {
+          "baseline_projection": 125.82000000000001,
+          "known_projected_points": 125.82000000000001,
+          "manager_name": "timmassie",
+          "matchup_id": 5,
+          "opponent_roster_id": 6,
+          "owner_id": "1394010747419234304",
+          "projection_complete": true,
+          "roster_id": 1,
+          "rostered_players": [
+            {
+              "injury_status": "Questionable",
+              "player_id": "11632",
+              "player_name": "Malik Nabers",
+              "position": "WR",
+              "projected_points": 13.88,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11786",
+              "player_name": "Cam Little",
+              "position": "K",
+              "projected_points": 6.52,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12506",
+              "player_name": "Harold Fannin",
+              "position": "TE",
+              "projected_points": 11.58,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CLE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12508",
+              "player_name": "Jaxson Dart",
+              "position": "QB",
+              "projected_points": 19.35,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NYG"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "4217",
+              "player_name": "George Kittle",
+              "position": "TE",
+              "projected_points": 10.09,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4983",
+              "player_name": "DJ Moore",
+              "position": "WR",
+              "projected_points": 12.09,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5859",
+              "player_name": "A.J. Brown",
+              "position": "WR",
+              "projected_points": 16.84,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5892",
+              "player_name": "David Montgomery",
+              "position": "RB",
+              "projected_points": 13.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6813",
+              "player_name": "Jonathan Taylor",
+              "position": "RB",
+              "projected_points": 19.57,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "IND"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7523",
+              "player_name": "Trevor Lawrence",
+              "position": "QB",
+              "projected_points": 17.83,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7567",
+              "player_name": "Kenny Gainwell",
+              "position": "RB",
+              "projected_points": 9.47,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7588",
+              "player_name": "Javonte Williams",
+              "position": "RB",
+              "projected_points": 15.48,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8134",
+              "player_name": "Khalil Shakir",
+              "position": "WR",
+              "projected_points": 11.39,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8167",
+              "player_name": "Christian Watson",
+              "position": "WR",
+              "projected_points": 13.67,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "PHI",
+              "player_name": "Philadelphia Eagles",
+              "position": "DEF",
+              "projected_points": 8.7,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PHI"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "12508",
+              "player_name": "Jaxson Dart",
+              "position": "QB",
+              "projected_points": 19.35,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6813",
+              "player_name": "Jonathan Taylor",
+              "position": "RB",
+              "projected_points": 19.57,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "IND"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7588",
+              "player_name": "Javonte Williams",
+              "position": "RB",
+              "projected_points": 15.48,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5859",
+              "player_name": "A.J. Brown",
+              "position": "WR",
+              "projected_points": 16.84,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "NE"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "11632",
+              "player_name": "Malik Nabers",
+              "position": "WR",
+              "projected_points": 13.88,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12506",
+              "player_name": "Harold Fannin",
+              "position": "TE",
+              "projected_points": 11.58,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "CLE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5892",
+              "player_name": "David Montgomery",
+              "position": "RB",
+              "projected_points": 13.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11786",
+              "player_name": "Cam Little",
+              "position": "K",
+              "projected_points": 6.52,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "PHI",
+              "player_name": "Philadelphia Eagles",
+              "position": "DEF",
+              "projected_points": 8.7,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "PHI"
+            }
+          ],
+          "starters_raw": [
+            "12508",
+            "6813",
+            "7588",
+            "5859",
+            "11632",
+            "12506",
+            "5892",
+            "11786",
+            "PHI"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 123.55,
+          "known_projected_points": 123.55,
+          "manager_name": "DrewWright17",
+          "matchup_id": 4,
+          "opponent_roster_id": 7,
+          "owner_id": "1400616770796056576",
+          "projection_complete": true,
+          "roster_id": 2,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "11539",
+              "player_name": "Jake Bates",
+              "position": "K",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12489",
+              "player_name": "RJ Harvey",
+              "position": "RB",
+              "projected_points": 10.19,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12501",
+              "player_name": "Matthew Golden",
+              "position": "WR",
+              "projected_points": 9.91,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12507",
+              "player_name": "Omarion Hampton",
+              "position": "RB",
+              "projected_points": 15.62,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12526",
+              "player_name": "Tetairoa McMillan",
+              "position": "WR",
+              "projected_points": 14.0,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12534",
+              "player_name": "Kyle Monangai",
+              "position": "RB",
+              "projected_points": 7.41,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "3198",
+              "player_name": "Derrick Henry",
+              "position": "RB",
+              "projected_points": 15.68,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BAL"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "4046",
+              "player_name": "Patrick Mahomes",
+              "position": "QB",
+              "projected_points": 17.13,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "421",
+              "player_name": "Matthew Stafford",
+              "position": "QB",
+              "projected_points": 16.96,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5927",
+              "player_name": "Terry McLaurin",
+              "position": "WR",
+              "projected_points": 13.62,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "WAS"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6797",
+              "player_name": "Justin Herbert",
+              "position": "QB",
+              "projected_points": 18.1,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7543",
+              "player_name": "Travis Etienne",
+              "position": "RB",
+              "projected_points": 15.04,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NO"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7564",
+              "player_name": "Ja'Marr Chase",
+              "position": "WR",
+              "projected_points": 19.74,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CIN"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "9484",
+              "player_name": "Tucker Kraft",
+              "position": "TE",
+              "projected_points": 10.86,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "DET",
+              "player_name": "Detroit Lions",
+              "position": "DEF",
+              "projected_points": 7.34,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DET"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "6797",
+              "player_name": "Justin Herbert",
+              "position": "QB",
+              "projected_points": 18.1,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "3198",
+              "player_name": "Derrick Henry",
+              "position": "RB",
+              "projected_points": 15.68,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12507",
+              "player_name": "Omarion Hampton",
+              "position": "RB",
+              "projected_points": 15.62,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7564",
+              "player_name": "Ja'Marr Chase",
+              "position": "WR",
+              "projected_points": 19.74,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12526",
+              "player_name": "Tetairoa McMillan",
+              "position": "WR",
+              "projected_points": 14.0,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "CAR"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "9484",
+              "player_name": "Tucker Kraft",
+              "position": "TE",
+              "projected_points": 10.86,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7543",
+              "player_name": "Travis Etienne",
+              "position": "RB",
+              "projected_points": 15.04,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "NO"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11539",
+              "player_name": "Jake Bates",
+              "position": "K",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "DET",
+              "player_name": "Detroit Lions",
+              "position": "DEF",
+              "projected_points": 7.34,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "DET"
+            }
+          ],
+          "starters_raw": [
+            "6797",
+            "3198",
+            "12507",
+            "7564",
+            "12526",
+            "9484",
+            "7543",
+            "11539",
+            "DET"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 124.38000000000001,
+          "known_projected_points": 124.38000000000001,
+          "manager_name": "pdearani",
+          "matchup_id": 3,
+          "opponent_roster_id": 10,
+          "owner_id": "727320702549585920",
+          "projection_complete": true,
+          "roster_id": 3,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "10236",
+              "player_name": "Dalton Kincaid",
+              "position": "TE",
+              "projected_points": 9.41,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11560",
+              "player_name": "Caleb Williams",
+              "position": "QB",
+              "projected_points": 19.56,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11586",
+              "player_name": "Blake Corum",
+              "position": "RB",
+              "projected_points": 8.52,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12015",
+              "player_name": "Harrison Mevis",
+              "position": "K",
+              "projected_points": 7.06,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12519",
+              "player_name": "Luther Burden",
+              "position": "WR",
+              "projected_points": 13.49,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CHI"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "12527",
+              "player_name": "Ashton Jeanty",
+              "position": "RB",
+              "projected_points": 14.99,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LV"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "13287",
+              "player_name": "Jeremiyah Love",
+              "position": "RB",
+              "projected_points": 13.32,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ARI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13417",
+              "player_name": "De'Zhaun Stribling",
+              "position": "WR",
+              "projected_points": 6.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7547",
+              "player_name": "Amon-Ra St. Brown",
+              "position": "WR",
+              "projected_points": 19.8,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7611",
+              "player_name": "Rhamondre Stevenson",
+              "position": "RB",
+              "projected_points": 16.43,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8144",
+              "player_name": "Chris Olave",
+              "position": "WR",
+              "projected_points": 16.21,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NO"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8146",
+              "player_name": "Garrett Wilson",
+              "position": "WR",
+              "projected_points": 13.53,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NYJ"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9500",
+              "player_name": "Josh Downs",
+              "position": "WR",
+              "projected_points": 12.53,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "IND"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9508",
+              "player_name": "Tyjae Spears",
+              "position": "RB",
+              "projected_points": 8.18,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "BAL",
+              "player_name": "Baltimore Ravens",
+              "position": "DEF",
+              "projected_points": 7.39,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BAL"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "11560",
+              "player_name": "Caleb Williams",
+              "position": "QB",
+              "projected_points": 19.56,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "CHI"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "12527",
+              "player_name": "Ashton Jeanty",
+              "position": "RB",
+              "projected_points": 14.99,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "LV"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7611",
+              "player_name": "Rhamondre Stevenson",
+              "position": "RB",
+              "projected_points": 16.43,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "NE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7547",
+              "player_name": "Amon-Ra St. Brown",
+              "position": "WR",
+              "projected_points": 19.8,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8144",
+              "player_name": "Chris Olave",
+              "position": "WR",
+              "projected_points": 16.21,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "NO"
+            },
+            {
+              "injury_status": null,
+              "player_id": "10236",
+              "player_name": "Dalton Kincaid",
+              "position": "TE",
+              "projected_points": 9.41,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8146",
+              "player_name": "Garrett Wilson",
+              "position": "WR",
+              "projected_points": 13.53,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "NYJ"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12015",
+              "player_name": "Harrison Mevis",
+              "position": "K",
+              "projected_points": 7.06,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "BAL",
+              "player_name": "Baltimore Ravens",
+              "position": "DEF",
+              "projected_points": 7.39,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "BAL"
+            }
+          ],
+          "starters_raw": [
+            "11560",
+            "12527",
+            "7611",
+            "7547",
+            "8144",
+            "10236",
+            "8146",
+            "12015",
+            "BAL"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 129.09,
+          "known_projected_points": 129.09,
+          "manager_name": "jevinjensen",
+          "matchup_id": 1,
+          "opponent_roster_id": 9,
+          "owner_id": "1400617538072686592",
+          "projection_complete": true,
+          "roster_id": 4,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "10222",
+              "player_name": "Jayden Reed",
+              "position": "WR",
+              "projected_points": 13.13,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12512",
+              "player_name": "Quinshon Judkins",
+              "position": "RB",
+              "projected_points": 12.24,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CLE"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "12533",
+              "player_name": "Jacory Croskey-Merritt",
+              "position": "RB",
+              "projected_points": 10.81,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "WAS"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13279",
+              "player_name": "Carnell Tate",
+              "position": "WR",
+              "projected_points": 11.8,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13293",
+              "player_name": "Ja'Kobi Lane",
+              "position": "WR",
+              "projected_points": 5.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13298",
+              "player_name": "KC Concepcion",
+              "position": "WR",
+              "projected_points": 9.47,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CLE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4034",
+              "player_name": "Christian McCaffrey",
+              "position": "RB",
+              "projected_points": 21.03,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4037",
+              "player_name": "Chris Godwin",
+              "position": "WR",
+              "projected_points": 10.99,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4881",
+              "player_name": "Lamar Jackson",
+              "position": "QB",
+              "projected_points": 20.85,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5967",
+              "player_name": "Tony Pollard",
+              "position": "RB",
+              "projected_points": 10.04,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8112",
+              "player_name": "Drake London",
+              "position": "WR",
+              "projected_points": 15.83,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ATL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8130",
+              "player_name": "Trey McBride",
+              "position": "TE",
+              "projected_points": 15.58,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ARI"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "8259",
+              "player_name": "Cameron Dicker",
+              "position": "K",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAC"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "9997",
+              "player_name": "Zay Flowers",
+              "position": "WR",
+              "projected_points": 15.62,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "PIT",
+              "player_name": "Pittsburgh Steelers",
+              "position": "DEF",
+              "projected_points": 8.97,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PIT"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "4881",
+              "player_name": "Lamar Jackson",
+              "position": "QB",
+              "projected_points": 20.85,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4034",
+              "player_name": "Christian McCaffrey",
+              "position": "RB",
+              "projected_points": 21.03,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "SF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12512",
+              "player_name": "Quinshon Judkins",
+              "position": "RB",
+              "projected_points": 12.24,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "CLE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8112",
+              "player_name": "Drake London",
+              "position": "WR",
+              "projected_points": 15.83,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "ATL"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "9997",
+              "player_name": "Zay Flowers",
+              "position": "WR",
+              "projected_points": 15.62,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8130",
+              "player_name": "Trey McBride",
+              "position": "TE",
+              "projected_points": 15.58,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "ARI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13279",
+              "player_name": "Carnell Tate",
+              "position": "WR",
+              "projected_points": 11.8,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "TEN"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "8259",
+              "player_name": "Cameron Dicker",
+              "position": "K",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "PIT",
+              "player_name": "Pittsburgh Steelers",
+              "position": "DEF",
+              "projected_points": 8.97,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "PIT"
+            }
+          ],
+          "starters_raw": [
+            "4881",
+            "4034",
+            "12512",
+            "8112",
+            "9997",
+            "8130",
+            "13279",
+            "8259",
+            "PIT"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 119.72,
+          "known_projected_points": 119.72,
+          "manager_name": "shawnthegoat33",
+          "matchup_id": 2,
+          "opponent_roster_id": 8,
+          "owner_id": "864344801687101440",
+          "projection_complete": true,
+          "roster_id": 5,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "11566",
+              "player_name": "Jayden Daniels",
+              "position": "QB",
+              "projected_points": 19.0,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "WAS"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11624",
+              "player_name": "Xavier Worthy",
+              "position": "WR",
+              "projected_points": 9.8,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12514",
+              "player_name": "Emeka Egbuka",
+              "position": "WR",
+              "projected_points": 11.67,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12518",
+              "player_name": "Tyler Warren",
+              "position": "TE",
+              "projected_points": 13.93,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "IND"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13345",
+              "player_name": "Jonah Coleman",
+              "position": "RB",
+              "projected_points": 2.86,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13545",
+              "player_name": "Trey Smack",
+              "position": "K",
+              "projected_points": 7.18,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "2133",
+              "player_name": "Davante Adams",
+              "position": "WR",
+              "projected_points": 12.28,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6786",
+              "player_name": "CeeDee Lamb",
+              "position": "WR",
+              "projected_points": 17.13,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6819",
+              "player_name": "Michael Pittman",
+              "position": "WR",
+              "projected_points": 10.75,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PIT"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8132",
+              "player_name": "Tyler Allgeier",
+              "position": "RB",
+              "projected_points": 8.47,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ARI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8138",
+              "player_name": "James Cook",
+              "position": "RB",
+              "projected_points": 17.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8150",
+              "player_name": "Kyren Williams",
+              "position": "RB",
+              "projected_points": 14.36,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8228",
+              "player_name": "Jaylen Warren",
+              "position": "RB",
+              "projected_points": 13.31,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PIT"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9756",
+              "player_name": "Jordan Addison",
+              "position": "WR",
+              "projected_points": 11.24,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "LAR",
+              "player_name": "Los Angeles Rams",
+              "position": "DEF",
+              "projected_points": 7.06,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "11566",
+              "player_name": "Jayden Daniels",
+              "position": "QB",
+              "projected_points": 19.0,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "WAS"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8138",
+              "player_name": "James Cook",
+              "position": "RB",
+              "projected_points": 17.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8150",
+              "player_name": "Kyren Williams",
+              "position": "RB",
+              "projected_points": 14.36,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6786",
+              "player_name": "CeeDee Lamb",
+              "position": "WR",
+              "projected_points": 17.13,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12514",
+              "player_name": "Emeka Egbuka",
+              "position": "WR",
+              "projected_points": 11.67,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "TB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12518",
+              "player_name": "Tyler Warren",
+              "position": "TE",
+              "projected_points": 13.93,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "IND"
+            },
+            {
+              "injury_status": null,
+              "player_id": "2133",
+              "player_name": "Davante Adams",
+              "position": "WR",
+              "projected_points": 12.28,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13545",
+              "player_name": "Trey Smack",
+              "position": "K",
+              "projected_points": 7.18,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "LAR",
+              "player_name": "Los Angeles Rams",
+              "position": "DEF",
+              "projected_points": 7.06,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "LAR"
+            }
+          ],
+          "starters_raw": [
+            "11566",
+            "8138",
+            "8150",
+            "6786",
+            "12514",
+            "12518",
+            "2133",
+            "13545",
+            "LAR"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 126.28000000000003,
+          "known_projected_points": 126.28000000000003,
+          "manager_name": "rachelknowssports",
+          "matchup_id": 5,
+          "opponent_roster_id": 1,
+          "owner_id": "1400702422095007744",
+          "projection_complete": true,
+          "roster_id": 6,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "11581",
+              "player_name": "MarShawn Lloyd",
+              "position": "RB",
+              "projected_points": 10.93,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "GB"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "11583",
+              "player_name": "Jonathon Brooks",
+              "position": "RB",
+              "projected_points": 9.42,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CAR"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "11620",
+              "player_name": "Rome Odunze",
+              "position": "WR",
+              "projected_points": 11.52,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12490",
+              "player_name": "Bhayshul Tuten",
+              "position": "RB",
+              "projected_points": 11.32,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "2747",
+              "player_name": "Jason Myers",
+              "position": "K",
+              "projected_points": 6.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SEA"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4984",
+              "player_name": "Josh Allen",
+              "position": "QB",
+              "projected_points": 21.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5849",
+              "player_name": "Kyler Murray",
+              "position": "QB",
+              "projected_points": 17.35,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6801",
+              "player_name": "Tee Higgins",
+              "position": "WR",
+              "projected_points": 15.64,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7002",
+              "player_name": "Juwan Johnson",
+              "position": "TE",
+              "projected_points": 10.43,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NO"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7526",
+              "player_name": "Jaylen Waddle",
+              "position": "WR",
+              "projected_points": 14.76,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8131",
+              "player_name": "Isaiah Likely",
+              "position": "TE",
+              "projected_points": 9.62,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8151",
+              "player_name": "Kenneth Walker",
+              "position": "RB",
+              "projected_points": 15.98,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9487",
+              "player_name": "Parker Washington",
+              "position": "WR",
+              "projected_points": 11.93,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9509",
+              "player_name": "Bijan Robinson",
+              "position": "RB",
+              "projected_points": 21.53,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ATL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "SEA",
+              "player_name": "Seattle Seahawks",
+              "position": "DEF",
+              "projected_points": 8.81,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SEA"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "4984",
+              "player_name": "Josh Allen",
+              "position": "QB",
+              "projected_points": 21.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "BUF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9509",
+              "player_name": "Bijan Robinson",
+              "position": "RB",
+              "projected_points": 21.53,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "ATL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8151",
+              "player_name": "Kenneth Walker",
+              "position": "RB",
+              "projected_points": 15.98,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6801",
+              "player_name": "Tee Higgins",
+              "position": "WR",
+              "projected_points": 15.64,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7526",
+              "player_name": "Jaylen Waddle",
+              "position": "WR",
+              "projected_points": 14.76,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "DEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8131",
+              "player_name": "Isaiah Likely",
+              "position": "TE",
+              "projected_points": 9.62,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9487",
+              "player_name": "Parker Washington",
+              "position": "WR",
+              "projected_points": 11.93,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "2747",
+              "player_name": "Jason Myers",
+              "position": "K",
+              "projected_points": 6.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "SEA"
+            },
+            {
+              "injury_status": null,
+              "player_id": "SEA",
+              "player_name": "Seattle Seahawks",
+              "position": "DEF",
+              "projected_points": 8.81,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "SEA"
+            }
+          ],
+          "starters_raw": [
+            "4984",
+            "9509",
+            "8151",
+            "6801",
+            "7526",
+            "8131",
+            "9487",
+            "2747",
+            "SEA"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 110.94,
+          "known_projected_points": 110.94,
+          "manager_name": "BF14",
+          "matchup_id": 4,
+          "opponent_roster_id": 2,
+          "owner_id": "1400865076692406272",
+          "projection_complete": true,
+          "roster_id": 7,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "11584",
+              "player_name": "Bucky Irving",
+              "position": "RB",
+              "projected_points": 12.15,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TB"
+            },
+            {
+              "injury_status": "Doubtful",
+              "player_id": "11604",
+              "player_name": "Brock Bowers",
+              "position": "TE",
+              "projected_points": 0.0,
+              "projection_reason": "Projection record exists but has no pts_ppr; missing projections are treated as 0.0.",
+              "projection_source": "missing_projected_points_zero",
+              "team": "LV"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11628",
+              "player_name": "Marvin Harrison",
+              "position": "WR",
+              "projected_points": 10.68,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ARI"
+            },
+            {
+              "injury_status": "Out",
+              "player_id": "12529",
+              "player_name": "TreVeyon Henderson",
+              "position": "RB",
+              "projected_points": 0.0,
+              "projection_reason": "Sleeper reports injury_status='Out' and provides no pts_ppr value.",
+              "projection_source": "sleeper_out_zero",
+              "team": "NE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13294",
+              "player_name": "Makai Lemon",
+              "position": "WR",
+              "projected_points": 6.03,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "1466",
+              "player_name": "Travis Kelce",
+              "position": "TE",
+              "projected_points": 11.0,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "1945",
+              "player_name": "Chris Boswell",
+              "position": "K",
+              "projected_points": 6.01,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PIT"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "5947",
+              "player_name": "Jakobi Meyers",
+              "position": "WR",
+              "projected_points": 10.43,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6904",
+              "player_name": "Jalen Hurts",
+              "position": "QB",
+              "projected_points": 19.96,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7569",
+              "player_name": "Nico Collins",
+              "position": "WR",
+              "projected_points": 17.38,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7594",
+              "player_name": "Chuba Hubbard",
+              "position": "RB",
+              "projected_points": 10.29,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8148",
+              "player_name": "Jameson Williams",
+              "position": "WR",
+              "projected_points": 13.91,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8183",
+              "player_name": "Brock Purdy",
+              "position": "QB",
+              "projected_points": 18.77,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9221",
+              "player_name": "Jahmyr Gibbs",
+              "position": "RB",
+              "projected_points": 23.68,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "DEN",
+              "player_name": "Denver Broncos",
+              "position": "DEF",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            }
+          ],
+          "special_projection_notes": [
+            {
+              "player_id": "11604",
+              "player_name": "Brock Bowers",
+              "projected_points": 0.0,
+              "projection_reason": "Projection record exists but has no pts_ppr; missing projections are treated as 0.0.",
+              "projection_source": "missing_projected_points_zero",
+              "slot": 6
+            }
+          ],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "6904",
+              "player_name": "Jalen Hurts",
+              "position": "QB",
+              "projected_points": 19.96,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9221",
+              "player_name": "Jahmyr Gibbs",
+              "position": "RB",
+              "projected_points": 23.68,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11584",
+              "player_name": "Bucky Irving",
+              "position": "RB",
+              "projected_points": 12.15,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "TB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7569",
+              "player_name": "Nico Collins",
+              "position": "WR",
+              "projected_points": 17.38,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8148",
+              "player_name": "Jameson Williams",
+              "position": "WR",
+              "projected_points": 13.91,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "DET"
+            },
+            {
+              "injury_status": "Doubtful",
+              "player_id": "11604",
+              "player_name": "Brock Bowers",
+              "position": "TE",
+              "projected_points": 0.0,
+              "projection_reason": "Projection record exists but has no pts_ppr; missing projections are treated as 0.0.",
+              "projection_source": "missing_projected_points_zero",
+              "slot": 6,
+              "team": "LV"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11628",
+              "player_name": "Marvin Harrison",
+              "position": "WR",
+              "projected_points": 10.68,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "ARI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "1945",
+              "player_name": "Chris Boswell",
+              "position": "K",
+              "projected_points": 6.01,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "PIT"
+            },
+            {
+              "injury_status": null,
+              "player_id": "DEN",
+              "player_name": "Denver Broncos",
+              "position": "DEF",
+              "projected_points": 7.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "DEN"
+            }
+          ],
+          "starters_raw": [
+            "6904",
+            "9221",
+            "11584",
+            "7569",
+            "8148",
+            "11604",
+            "11628",
+            "1945",
+            "DEN"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 122.28,
+          "known_projected_points": 122.28,
+          "manager_name": "Hendrick82",
+          "matchup_id": 2,
+          "opponent_roster_id": 5,
+          "owner_id": "1400973479599165449",
+          "projection_complete": true,
+          "roster_id": 8,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "10232",
+              "player_name": "Michael Wilson",
+              "position": "WR",
+              "projected_points": 11.33,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ARI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "10859",
+              "player_name": "Sam LaPorta",
+              "position": "TE",
+              "projected_points": 13.49,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11635",
+              "player_name": "Ladd McConkey",
+              "position": "WR",
+              "projected_points": 13.31,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "2216",
+              "player_name": "Mike Evans",
+              "position": "WR",
+              "projected_points": 12.77,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "3294",
+              "player_name": "Dak Prescott",
+              "position": "QB",
+              "projected_points": 18.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "3451",
+              "player_name": "Ka'imi Fairbairn",
+              "position": "K",
+              "projected_points": 6.79,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4199",
+              "player_name": "Aaron Jones",
+              "position": "RB",
+              "projected_points": 9.12,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5022",
+              "player_name": "Dallas Goedert",
+              "position": "TE",
+              "projected_points": 9.75,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6790",
+              "player_name": "D'Andre Swift",
+              "position": "RB",
+              "projected_points": 13.64,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6794",
+              "player_name": "Justin Jefferson",
+              "position": "WR",
+              "projected_points": 16.77,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6806",
+              "player_name": "J.K. Dobbins",
+              "position": "RB",
+              "projected_points": 10.99,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7525",
+              "player_name": "DeVonta Smith",
+              "position": "WR",
+              "projected_points": 14.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9226",
+              "player_name": "De'Von Achane",
+              "position": "RB",
+              "projected_points": 17.47,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIA"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9754",
+              "player_name": "Quentin Johnston",
+              "position": "WR",
+              "projected_points": 11.08,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "HOU",
+              "player_name": "Houston Texans",
+              "position": "DEF",
+              "projected_points": 7.07,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "HOU"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "3294",
+              "player_name": "Dak Prescott",
+              "position": "QB",
+              "projected_points": 18.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9226",
+              "player_name": "De'Von Achane",
+              "position": "RB",
+              "projected_points": 17.47,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "MIA"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6790",
+              "player_name": "D'Andre Swift",
+              "position": "RB",
+              "projected_points": 13.64,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6794",
+              "player_name": "Justin Jefferson",
+              "position": "WR",
+              "projected_points": 16.77,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7525",
+              "player_name": "DeVonta Smith",
+              "position": "WR",
+              "projected_points": 14.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "10859",
+              "player_name": "Sam LaPorta",
+              "position": "TE",
+              "projected_points": 13.49,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "DET"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11635",
+              "player_name": "Ladd McConkey",
+              "position": "WR",
+              "projected_points": 13.31,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "LAC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "3451",
+              "player_name": "Ka'imi Fairbairn",
+              "position": "K",
+              "projected_points": 6.79,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "HOU"
+            },
+            {
+              "injury_status": null,
+              "player_id": "HOU",
+              "player_name": "Houston Texans",
+              "position": "DEF",
+              "projected_points": 7.07,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "HOU"
+            }
+          ],
+          "starters_raw": [
+            "3294",
+            "9226",
+            "6790",
+            "6794",
+            "7525",
+            "10859",
+            "11635",
+            "3451",
+            "HOU"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 123.75000000000001,
+          "known_projected_points": 123.75000000000001,
+          "manager_name": "Porter1511",
+          "matchup_id": 1,
+          "opponent_roster_id": 4,
+          "owner_id": "1118723972591501312",
+          "projection_complete": true,
+          "roster_id": 9,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "10229",
+              "player_name": "Rashee Rice",
+              "position": "WR",
+              "projected_points": 14.49,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11792",
+              "player_name": "Will Reichard",
+              "position": "K",
+              "projected_points": 6.65,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12481",
+              "player_name": "Cam Skattebo",
+              "position": "RB",
+              "projected_points": 13.98,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5846",
+              "player_name": "DK Metcalf",
+              "position": "WR",
+              "projected_points": 11.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PIT"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5872",
+              "player_name": "Deebo Samuel",
+              "position": "WR",
+              "projected_points": 10.13,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SF"
+            },
+            {
+              "injury_status": null,
+              "player_id": "6770",
+              "player_name": "Joe Burrow",
+              "position": "QB",
+              "projected_points": 20.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7021",
+              "player_name": "Rico Dowdle",
+              "position": "RB",
+              "projected_points": 12.47,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PIT"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7553",
+              "player_name": "Kyle Pitts",
+              "position": "TE",
+              "projected_points": 10.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "ATL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8110",
+              "player_name": "Jake Ferguson",
+              "position": "TE",
+              "projected_points": 9.7,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": "Questionable",
+              "player_id": "8142",
+              "player_name": "Alec Pierce",
+              "position": "WR",
+              "projected_points": 8.83,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "IND"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8155",
+              "player_name": "Breece Hall",
+              "position": "RB",
+              "projected_points": 13.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NYJ"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8408",
+              "player_name": "Jordan Mason",
+              "position": "RB",
+              "projected_points": 9.12,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9224",
+              "player_name": "Chase Brown",
+              "position": "RB",
+              "projected_points": 16.75,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9488",
+              "player_name": "Jaxon Smith-Njigba",
+              "position": "WR",
+              "projected_points": 19.69,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SEA"
+            },
+            {
+              "injury_status": null,
+              "player_id": "MIN",
+              "player_name": "Minnesota Vikings",
+              "position": "DEF",
+              "projected_points": 7.31,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "MIN"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "6770",
+              "player_name": "Joe Burrow",
+              "position": "QB",
+              "projected_points": 20.11,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9224",
+              "player_name": "Chase Brown",
+              "position": "RB",
+              "projected_points": 16.75,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "CIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8155",
+              "player_name": "Breece Hall",
+              "position": "RB",
+              "projected_points": 13.9,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "NYJ"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9488",
+              "player_name": "Jaxon Smith-Njigba",
+              "position": "WR",
+              "projected_points": 19.69,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "SEA"
+            },
+            {
+              "injury_status": null,
+              "player_id": "10229",
+              "player_name": "Rashee Rice",
+              "position": "WR",
+              "projected_points": 14.49,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "KC"
+            },
+            {
+              "injury_status": null,
+              "player_id": "7553",
+              "player_name": "Kyle Pitts",
+              "position": "TE",
+              "projected_points": 10.87,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "ATL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12481",
+              "player_name": "Cam Skattebo",
+              "position": "RB",
+              "projected_points": 13.98,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "NYG"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11792",
+              "player_name": "Will Reichard",
+              "position": "K",
+              "projected_points": 6.65,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "MIN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "MIN",
+              "player_name": "Minnesota Vikings",
+              "position": "DEF",
+              "projected_points": 7.31,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "MIN"
+            }
+          ],
+          "starters_raw": [
+            "6770",
+            "9224",
+            "8155",
+            "9488",
+            "10229",
+            "7553",
+            "12481",
+            "11792",
+            "MIN"
+          ],
+          "warnings": []
+        },
+        {
+          "baseline_projection": 119.60000000000002,
+          "known_projected_points": 119.60000000000002,
+          "manager_name": "JBThink",
+          "matchup_id": 3,
+          "opponent_roster_id": 3,
+          "owner_id": "1403093575641628672",
+          "projection_complete": true,
+          "roster_id": 10,
+          "rostered_players": [
+            {
+              "injury_status": null,
+              "player_id": "11533",
+              "player_name": "Brandon Aubrey",
+              "position": "K",
+              "projected_points": 6.84,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11563",
+              "player_name": "Bo Nix",
+              "position": "QB",
+              "projected_points": 17.89,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11564",
+              "player_name": "Drake Maye",
+              "position": "QB",
+              "projected_points": 19.67,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11631",
+              "player_name": "Brian Thomas",
+              "position": "WR",
+              "projected_points": 10.48,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12517",
+              "player_name": "Colston Loveland",
+              "position": "TE",
+              "projected_points": 14.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13286",
+              "player_name": "Jadarian Price",
+              "position": "RB",
+              "projected_points": 9.78,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "SEA"
+            },
+            {
+              "injury_status": null,
+              "player_id": "2449",
+              "player_name": "Stefon Diggs",
+              "position": "WR",
+              "projected_points": 11.41,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "WAS"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4866",
+              "player_name": "Saquon Barkley",
+              "position": "RB",
+              "projected_points": 14.92,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5012",
+              "player_name": "Mark Andrews",
+              "position": "TE",
+              "projected_points": 10.88,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "BAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "5045",
+              "player_name": "Courtland Sutton",
+              "position": "WR",
+              "projected_points": 10.6,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DEN"
+            },
+            {
+              "injury_status": "NA",
+              "player_id": "5850",
+              "player_name": "Josh Jacobs",
+              "position": "RB",
+              "projected_points": 0.0,
+              "projection_reason": "Josh Jacobs unavailable for Week 1 on the Commissioner Exempt list. Sleeper omitted pts_ppr and reported injury_status as NA.",
+              "projection_source": "manual_override",
+              "team": "GB"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8126",
+              "player_name": "Wan'Dale Robinson",
+              "position": "WR",
+              "projected_points": 9.85,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "TEN"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8137",
+              "player_name": "George Pickens",
+              "position": "WR",
+              "projected_points": 16.57,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9493",
+              "player_name": "Puka Nacua",
+              "position": "WR",
+              "projected_points": 20.48,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "NE",
+              "player_name": "New England Patriots",
+              "position": "DEF",
+              "projected_points": 6.69,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "team": "NE"
+            }
+          ],
+          "special_projection_notes": [],
+          "starters": [
+            {
+              "injury_status": null,
+              "player_id": "11564",
+              "player_name": "Drake Maye",
+              "position": "QB",
+              "projected_points": 19.67,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 1,
+              "team": "NE"
+            },
+            {
+              "injury_status": null,
+              "player_id": "4866",
+              "player_name": "Saquon Barkley",
+              "position": "RB",
+              "projected_points": 14.92,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 2,
+              "team": "PHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "13286",
+              "player_name": "Jadarian Price",
+              "position": "RB",
+              "projected_points": 9.78,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 3,
+              "team": "SEA"
+            },
+            {
+              "injury_status": null,
+              "player_id": "9493",
+              "player_name": "Puka Nacua",
+              "position": "WR",
+              "projected_points": 20.48,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 4,
+              "team": "LAR"
+            },
+            {
+              "injury_status": null,
+              "player_id": "8137",
+              "player_name": "George Pickens",
+              "position": "WR",
+              "projected_points": 16.57,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 5,
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "12517",
+              "player_name": "Colston Loveland",
+              "position": "TE",
+              "projected_points": 14.17,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 6,
+              "team": "CHI"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11631",
+              "player_name": "Brian Thomas",
+              "position": "WR",
+              "projected_points": 10.48,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 7,
+              "team": "JAX"
+            },
+            {
+              "injury_status": null,
+              "player_id": "11533",
+              "player_name": "Brandon Aubrey",
+              "position": "K",
+              "projected_points": 6.84,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 8,
+              "team": "DAL"
+            },
+            {
+              "injury_status": null,
+              "player_id": "NE",
+              "player_name": "New England Patriots",
+              "position": "DEF",
+              "projected_points": 6.69,
+              "projection_reason": null,
+              "projection_source": "sleeper_pts_ppr",
+              "slot": 9,
+              "team": "NE"
+            }
+          ],
+          "starters_raw": [
+            "11564",
+            "4866",
+            "13286",
+            "9493",
+            "8137",
+            "12517",
+            "11631",
+            "11533",
+            "NE"
+          ],
+          "warnings": []
+        }
+      ],
+      "tier": 1,
+      "warnings": []
+    }
+  },
+  "schema_version": 1,
+  "season": "2026",
+  "semantics": {
+    "baseline_projection": "starter projection total stored at the baseline",
+    "effective_live_points": "commissioner custom_points when present, otherwise Sleeper points",
+    "missing_values": "null means unresolved or unavailable; never assume zero",
+    "projection_scoring": "current MVP uses stored Sleeper pts_ppr rather than exact custom league scoring",
+    "sunday_current_starter_projection": "fresh current-starter projection total; not a remaining-game or final-score forecast"
+  },
+  "source_of_truth": "immutable snapshot files listed in derived_from",
+  "stage": "baseline",
+  "week": 1
+}
