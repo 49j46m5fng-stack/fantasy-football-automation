@@ -383,3 +383,76 @@ Therefore:
 - negative = moved down
 - zero = unchanged
 - null = no prior ranking available
+
+## Monte Carlo Simulation
+
+Season probabilities are calculated by Python Monte Carlo simulation.
+
+The default simulation configuration is:
+
+- simulations: 10,000
+- random seed: 2026
+
+The random seed makes identical inputs reproducible.
+
+The simulation engine does not invent team-strength estimates.
+
+Each fantasy team must be supplied with:
+
+- current wins
+- current losses
+- current ties
+- current points for
+- expected weekly fantasy points
+- weekly scoring standard deviation
+
+Each remaining regular-season fantasy matchup is simulated by drawing
+an independent weekly team score from the supplied team distribution.
+
+Simulated weekly scores are:
+
+- normally distributed around the supplied mean
+- rounded to two decimal places
+- floored at zero
+
+Regular-season simulated standings sort by:
+
+1. win equivalent
+2. points for
+3. roster ID
+
+A tie counts as 0.5 win equivalent.
+
+Playoff qualification is based on simulated regular-season finish.
+
+The playoff simulation uses a fixed seeded single-elimination bracket.
+
+Eight-team bracket order is:
+
+- 1 vs 8
+- 4 vs 5
+- 2 vs 7
+- 3 vs 6
+
+Non-power-of-two playoff fields receive top-seed byes.
+
+A simulated playoff scoring tie advances the higher seed.
+
+GOATs relegation is determined from simulated regular-season finish,
+not playoff finish.
+
+The bottom configured number of GOATs regular-season finishers are
+relegated.
+
+DOATs promotion follows the league rule exactly:
+
+- regular-season champion is promoted
+- playoff champion is promoted
+- if the same manager wins both, the playoff runner-up receives the
+  second promotion spot
+
+Monte Carlo probability is:
+
+`number_of_simulations_where_event_occurs / total_simulations`
+
+Score margin is never labeled or treated as probability.

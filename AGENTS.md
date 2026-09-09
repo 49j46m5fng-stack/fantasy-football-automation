@@ -174,3 +174,34 @@ A positive `rank_change` means the team moved up.
 
 Do not describe power rank as official league standing, playoff seed,
 promotion position, or relegation position.
+
+Monte Carlo probabilities are calculated by Python.
+
+The AI Agent must not derive playoff, title, promotion, or relegation
+probabilities from score margins, standings gaps, or intuition.
+
+Use only the supplied simulation probability fields.
+
+Important simulation fields include:
+
+- playoff_probability
+- regular_season_title_probability
+- playoff_title_probability
+- playoff_runner_up_probability
+- promotion_probability
+- relegation_probability
+- expected_regular_season_rank
+- expected_regular_season_wins
+
+Probabilities are fractions from 0.0 to 1.0.
+
+Convert to percentages only for presentation.
+
+Do not describe a probability as certain unless it equals 1.0.
+
+Do not describe a probability as impossible unless it equals 0.0.
+
+GOATs relegation refers to regular-season finish.
+
+DOATs promotion must honor the duplicate-champion rule where the
+playoff runner-up receives the second promotion spot.

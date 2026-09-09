@@ -226,6 +226,30 @@ Power-ranking analytics now provide:
 - previous rank
 - rank movement
 
+Monte Carlo simulation now supports:
+
+- seeded reproducible simulations
+- remaining regular-season schedules
+- team-specific scoring means
+- team-specific weekly scoring volatility
+- regular-season finish distributions
+- playoff qualification probabilities
+- regular-season championship probabilities
+- fixed seeded playoff brackets
+- playoff championship probabilities
+- playoff runner-up probabilities
+- GOATs relegation probabilities
+- DOATs promotion probabilities
+- expected regular-season rank
+- expected regular-season wins
+
+The simulation engine is intentionally separate from team-strength
+estimation.
+
+Historical simulation inputs must ultimately be derived from stored
+authoritative snapshots and analytics rather than reconstructing old
+weeks from present-day external feeds.
+
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
 Baseline, Sunday, and final immutable snapshot construction are implemented.
