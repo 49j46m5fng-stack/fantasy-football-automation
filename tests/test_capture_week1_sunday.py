@@ -21,8 +21,8 @@ def test_wrong_capture_date() -> None:
         2026,
         9,
         13,
-        18,
-        30,
+        12,
+        0,
         tzinfo=TIMEZONE,
     )
 
@@ -37,8 +37,8 @@ def test_before_capture_window() -> None:
         2026,
         9,
         14,
-        17,
-        59,
+        11,
+        29,
         tzinfo=TIMEZONE,
     )
 
@@ -53,8 +53,8 @@ def test_capture_window_is_open() -> None:
         2026,
         9,
         14,
-        18,
-        30,
+        11,
+        45,
         tzinfo=TIMEZONE,
     )
 
@@ -85,10 +85,12 @@ def test_snapshot_pair_absent(
 ) -> None:
     paths = {
         "goats": (
-            tmp_path / "goats.json"
+            tmp_path
+            / "goats.json"
         ),
         "doats": (
-            tmp_path / "doats.json"
+            tmp_path
+            / "doats.json"
         ),
     }
 
@@ -106,10 +108,12 @@ def test_snapshot_pair_complete(
 ) -> None:
     paths = {
         "goats": (
-            tmp_path / "goats.json"
+            tmp_path
+            / "goats.json"
         ),
         "doats": (
-            tmp_path / "doats.json"
+            tmp_path
+            / "doats.json"
         ),
     }
 
@@ -133,14 +137,18 @@ def test_partial_snapshot_pair_is_rejected(
 ) -> None:
     paths = {
         "goats": (
-            tmp_path / "goats.json"
+            tmp_path
+            / "goats.json"
         ),
         "doats": (
-            tmp_path / "doats.json"
+            tmp_path
+            / "doats.json"
         ),
     }
 
-    paths["goats"].write_text(
+    paths[
+        "goats"
+    ].write_text(
         "{}",
         encoding="utf-8",
     )

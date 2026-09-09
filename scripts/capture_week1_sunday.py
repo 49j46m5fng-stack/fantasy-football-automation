@@ -46,12 +46,14 @@ CAPTURE_DATE = date(
     14,
 )
 
+# Target the Monday Sunday-recap/MNF-preview checkpoint
+# around noon Central.
 CAPTURE_WINDOW_START = datetime(
     2026,
     9,
     14,
-    18,
-    0,
+    11,
+    30,
     tzinfo=TIMEZONE,
 )
 
@@ -127,13 +129,26 @@ def snapshot_pair_state(
 def load_config() -> dict[str, Any]:
     """Load the project configuration."""
 
-    with Path("config.json").open(
-        "r",
-        encoding="utf-8",
-    ) as file:
-        config = json.load(file)
+    try:
+        with Path(
+            "config.json"
+        ).open(
+            "r",
+            encoding="utf-8",
+        ) as file:
+            config = json.load(file)
 
-    if config.get("season") != SEASON:
+    except (
+        OSError,
+        json.JSONDecodeError,
+    ) as exc:
+        raise SundayCaptureError(
+            "Could not read config.json"
+        ) from exc
+
+    if config.get(
+        "season"
+    ) != SEASON:
         raise SundayCaptureError(
             f"Expected season {SEASON}"
         )
@@ -213,12 +228,12 @@ def build_capture_context() -> dict[str, Any]:
 
     return {
         "mode": (
-            "github_actions_pre_mnf_capture"
+            "github_actions_monday_noon_capture"
             if os.environ.get(
                 "GITHUB_ACTIONS"
             )
             == "true"
-            else "manual_pre_mnf_capture"
+            else "manual_monday_noon_capture"
         ),
         "stage_label": (
             "sunday_pre_mnf"
@@ -236,7 +251,9 @@ def build_capture_context() -> dict[str, Any]:
             )
             .isoformat()
         ),
-        "mnf_game": MNF_GAME,
+        "mnf_game": (
+            MNF_GAME
+        ),
         "mnf_kickoff_local": (
             MNF_KICKOFF.isoformat()
         ),
@@ -248,8 +265,8 @@ def build_capture_context() -> dict[str, Any]:
             .isoformat()
         ),
         "capture_purpose": (
-            "Post-Sunday, pre-MNF "
-            "official weekly checkpoint"
+            "Monday noon Sunday recap "
+            "and pre-MNF checkpoint"
         ),
     }
 
@@ -380,7 +397,9 @@ def prepare_sunday_snapshots(
             "league_name": (
                 league_name
             ),
-            "data": sunday,
+            "data": (
+                sunday
+            ),
         }
 
     return prepared
@@ -400,7 +419,9 @@ def print_prepared_summary(
     print("=" * 72)
 
     for item in prepared.values():
-        data = item["data"]
+        data = item[
+            "data"
+        ]
 
         incomplete = [
             team
@@ -520,7 +541,6 @@ def print_comparison_summary(
 
 
 def write_sunday_snapshots(
-    config: dict[str, Any],
     prepared: dict[
         str,
         dict[str, Any],
@@ -534,7 +554,9 @@ def write_sunday_snapshots(
 
     if (
         capture_window_status(
-            datetime.now(TIMEZONE)
+            datetime.now(
+                TIMEZONE
+            )
         )
         != "open"
     ):
@@ -740,7 +762,8 @@ def main(
         print()
         print(
             "Both Sunday snapshots "
-            "already exist. No action required."
+            "already exist. "
+            "No action required."
         )
 
         return 0
@@ -834,7 +857,6 @@ def main(
     )
 
     write_sunday_snapshots(
-        config,
         prepared,
         baselines,
     )

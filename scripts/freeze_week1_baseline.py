@@ -33,12 +33,16 @@ WEEK = 1
 TIMEZONE_NAME = "America/Chicago"
 TIMEZONE = ZoneInfo(TIMEZONE_NAME)
 
+# Week 1 is a Wednesday-opening exception.
+#
+# The automated workflow begins shortly before noon so the immutable
+# baseline and preview can be published around noon Central.
 FREEZE_WINDOW_START = datetime(
     2026,
     9,
     9,
-    18,
-    0,
+    11,
+    30,
     tzinfo=TIMEZONE,
 )
 
@@ -178,7 +182,8 @@ def build_capture_context() -> dict[str, Any]:
     now = datetime.now(TIMEZONE)
 
     github_actions = (
-        os.environ.get("GITHUB_ACTIONS") == "true"
+        os.environ.get("GITHUB_ACTIONS")
+        == "true"
     )
 
     return {
@@ -188,10 +193,14 @@ def build_capture_context() -> dict[str, Any]:
             else "manual_freeze"
         ),
         "timezone": TIMEZONE_NAME,
-        "captured_at_local": now.isoformat(),
+        "captured_at_local": (
+            now.isoformat()
+        ),
         "captured_at_utc": (
             now
-            .astimezone(ZoneInfo("UTC"))
+            .astimezone(
+                ZoneInfo("UTC")
+            )
             .isoformat()
         ),
         "first_game": FIRST_GAME,
@@ -200,7 +209,9 @@ def build_capture_context() -> dict[str, Any]:
         ),
         "first_kickoff_utc": (
             FIRST_KICKOFF
-            .astimezone(ZoneInfo("UTC"))
+            .astimezone(
+                ZoneInfo("UTC")
+            )
             .isoformat()
         ),
         "kickoff_source": (
@@ -216,13 +227,19 @@ def prepare_baselines(
 
     sleeper = SleeperClient()
 
-    print("Refreshing NFL player metadata...")
+    print(
+        "Refreshing NFL player metadata..."
+    )
+
     players = get_player_map(
         sleeper,
         refresh=True,
     )
 
-    print("Fetching fresh Week 1 projections...")
+    print(
+        "Fetching fresh Week 1 projections..."
+    )
+
     projection_records = (
         SleeperProjectionProvider()
         .get_week_projections(
@@ -392,10 +409,14 @@ def print_summary(
     print("=" * 72)
 
     for item in prepared.values():
-        baseline = item["baseline"]
+        baseline = item[
+            "baseline"
+        ]
 
         print()
-        print(item["league_name"])
+        print(
+            item["league_name"]
+        )
 
         print(
             f"  teams:    "
@@ -429,9 +450,14 @@ def freeze_prepared_baselines(
 ) -> None:
     """Write and validate both official immutable snapshots."""
 
-    now = datetime.now(TIMEZONE)
+    now = datetime.now(
+        TIMEZONE
+    )
 
-    if freeze_window_status(now) != "open":
+    if (
+        freeze_window_status(now)
+        != "open"
+    ):
         raise FreezeBaselineError(
             "Freeze window closed while "
             "baseline data was being prepared"
@@ -604,7 +630,7 @@ def main(
         )
 
         print(
-            "No action is required."
+            "No baseline write is required."
         )
 
         return 0

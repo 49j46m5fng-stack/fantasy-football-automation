@@ -21,8 +21,8 @@ def test_freeze_window_before_opening() -> None:
         2026,
         9,
         9,
-        17,
-        59,
+        11,
+        29,
         tzinfo=TIMEZONE,
     )
 
@@ -37,8 +37,8 @@ def test_freeze_window_is_open() -> None:
         2026,
         9,
         9,
-        18,
-        30,
+        11,
+        45,
         tzinfo=TIMEZONE,
     )
 
@@ -124,7 +124,9 @@ def test_partial_snapshot_state_is_rejected(
         ),
     }
 
-    targets["goats"].write_text(
+    targets[
+        "goats"
+    ].write_text(
         "{}",
         encoding="utf-8",
     )

@@ -13,13 +13,13 @@ on:
           - freeze
 
   schedule:
-    - cron: "15 18 9 9 *"
+    - cron: "45 11 9 9 *"
       timezone: "America/Chicago"
 
-    - cron: "45 18 9 9 *"
+    - cron: "55 11 9 9 *"
       timezone: "America/Chicago"
 
-    - cron: "5 19 9 9 *"
+    - cron: "5 12 9 9 *"
       timezone: "America/Chicago"
 
 permissions:
@@ -31,7 +31,7 @@ concurrency:
 
 jobs:
   freeze:
-    name: Validate and freeze baseline
+    name: Freeze baseline and generate preview
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -74,16 +74,23 @@ jobs:
             python -m scripts.freeze_week1_baseline
           fi
 
-      - name: Commit frozen baseline snapshots
+      - name: Generate Week 1 preview reports
+        if: ${{ github.event_name == 'schedule' || inputs.mode == 'freeze' }}
+        run: |
+          python -m scripts.generate_week1_preview
+
+      - name: Commit frozen baselines and previews
         if: ${{ github.event_name == 'schedule' || inputs.mode == 'freeze' }}
         shell: bash
         run: |
-          BASELINE_STATUS="$(git status --porcelain -- \
+          OUTPUT_STATUS="$(git status --porcelain -- \
             data/2026/goats/week_01_baseline.json \
-            data/2026/doats/week_01_baseline.json)"
+            data/2026/doats/week_01_baseline.json \
+            reports/2026/goats_week_01_preview.md \
+            reports/2026/doats_week_01_preview.md)"
 
-          if [ -z "$BASELINE_STATUS" ]; then
-            echo "No new baseline snapshots to commit."
+          if [ -z "$OUTPUT_STATUS" ]; then
+            echo "No new baseline or preview files to commit."
             exit 0
           fi
 
@@ -94,7 +101,7 @@ jobs:
 
           if [ "$REMOTE_SHA" != "$INITIAL_SHA" ]; then
             echo "main changed while baseline data was being prepared."
-            echo "Refusing to commit a capture produced from stale code."
+            echo "Refusing to commit output produced from stale code."
             echo "A later scheduled attempt can retry from the new main."
             exit 1
           fi
@@ -104,8 +111,10 @@ jobs:
 
           git add \
             data/2026/goats/week_01_baseline.json \
-            data/2026/doats/week_01_baseline.json
+            data/2026/doats/week_01_baseline.json \
+            reports/2026/goats_week_01_preview.md \
+            reports/2026/doats_week_01_preview.md
 
-          git commit -m "Freeze 2026 Week 1 baseline"
+          git commit -m "Freeze 2026 Week 1 baseline and preview"
 
           git push origin HEAD:main

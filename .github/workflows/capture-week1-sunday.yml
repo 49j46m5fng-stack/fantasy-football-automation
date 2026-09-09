@@ -13,13 +13,13 @@ on:
           - capture
 
   schedule:
-    - cron: "15 18 14 9 *"
+    - cron: "45 11 14 9 *"
       timezone: "America/Chicago"
 
-    - cron: "35 18 14 9 *"
+    - cron: "55 11 14 9 *"
       timezone: "America/Chicago"
 
-    - cron: "55 18 14 9 *"
+    - cron: "5 12 14 9 *"
       timezone: "America/Chicago"
 
 permissions:
@@ -31,6 +31,7 @@ concurrency:
 
 jobs:
   capture:
+    name: Capture Sunday checkpoint
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
