@@ -165,9 +165,16 @@ The project currently supports:
 - preservation of raw baseline source records
 - starter and rostered-player baseline projections
 - first-kickoff capture context
+- Markdown preview generation from immutable baseline snapshots
+- report generation that does not re-query live projection data
 
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
-Baseline construction is implemented, but the first official baseline has not yet been frozen.
+BBaseline construction, immutable storage, scheduled Week 1 baseline capture,
+and baseline-driven preview report generation are implemented.
 
-Standings logic, win-probability analytics, and report generation have not yet been implemented.
+The first official Week 1 baseline and preview will be created when the
+scheduled pre-kickoff freeze runs.
+
+Standings logic, win-probability analytics, Sunday-stage analysis, final-stage
+analysis, and historical CSV aggregation have not yet been implemented.

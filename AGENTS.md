@@ -70,3 +70,11 @@ Add or update tests when business rules change.
 Do not add GitHub Actions automation until equivalent manual commands are working reliably.
 
 Never commit secrets, tokens, passwords, or credentials.
+
+Official reports must use the appropriate stored snapshot as their historical source.
+
+Do not re-query current projections when generating a report that represents an earlier stage.
+
+A baseline preview must use the immutable baseline snapshot.
+
+Later Sunday and final reports must preserve the baseline values separately from newer live or final values.
