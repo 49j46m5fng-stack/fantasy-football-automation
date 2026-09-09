@@ -201,6 +201,18 @@ The project currently supports:
 - deterministic matchup winner and margin calculation
 - Tuesday recurring final-stage orchestration
 
+Implemented analytics now include:
+
+- normalized player actuals with both PPR and exact scoring
+- boom / normal / bust classification
+- low-projection safeguards
+- legal optimal-lineup calculation
+- bench-point totals
+- exact lineup efficiency
+- points-left-on-bench calculation
+- start/sit mistake identification
+- exact-starter-to-Sleeper team-score reconciliation
+
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
 Baseline, Sunday, and final immutable snapshot construction are implemented.

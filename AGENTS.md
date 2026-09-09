@@ -126,3 +126,20 @@ has been normalized.
 
 A missing Sunday checkpoint must not cause the system to discard an otherwise
 valid final weekly result.
+
+Boom/bust and lineup efficiency use different scoring channels.
+
+Boom/bust:
+baseline pts_ppr projection vs actual pts_ppr.
+
+Lineup efficiency:
+exact league-scored actual points vs legal optimal exact lineup.
+
+Do not compare exact K/DEF league scoring directly with frozen pts_ppr
+projections when assigning boom/bust labels.
+
+Use the final roster for optimal-lineup analysis.
+
+Do not convert a missing player actual to zero.
+
+An explicitly empty final starter slot is a known zero.

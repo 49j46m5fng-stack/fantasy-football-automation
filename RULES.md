@@ -249,3 +249,42 @@ Commissioner custom_points are preserved separately and become the effective
 final score when present.
 
 Per-player actual fantasy points must not be inferred from team totals.
+
+## Performance and Lineup Analytics
+
+Boom/bust compares the frozen baseline `pts_ppr` projection with the
+player's actual Sleeper `pts_ppr`.
+
+This is intentionally an apples-to-apples comparison.
+
+Boom/bust thresholds are:
+
+- boom: actual >= 1.50 x baseline projection
+- normal: actual >= 0.80 x baseline projection and < 1.50 x
+- bust: actual < 0.80 x baseline projection
+- low_projection: baseline projection is below the configured minimum
+  projection for ratio analysis
+- unresolved: either projection or actual PPR value is unavailable
+
+Exact league scoring is used separately for lineup analytics.
+
+Lineup efficiency uses the final roster and final starting lineup, not
+the frozen baseline roster.
+
+The optimal lineup must satisfy the stored league roster positions.
+
+FLEX accepts RB, FB, WR, and TE.
+
+An empty lineup slot is a known zero-point lineup decision. A missing
+player actual is unresolved and must never silently become zero.
+
+Points left on the bench are:
+
+`optimal exact lineup points - actual exact lineup points`
+
+Lineup efficiency is:
+
+`actual exact lineup points / optimal exact lineup points`
+
+Exact final starter totals are compared with Sleeper's unadjusted
+`final_points` as a scoring reconciliation check.

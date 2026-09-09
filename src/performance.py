@@ -1,10 +1,20 @@
-"""Player and team performance analytics against frozen baseline projections."""
+"""Boom/bust analytics against frozen baseline PPR projections.
+
+Boom/bust deliberately compares like with like:
+
+    frozen baseline pts_ppr projection
+    vs
+    actual Sleeper pts_ppr
+
+Exact league-scored actual points are retained separately for later
+analytics but are not used in the boom/bust ratio.
+"""
 
 from dataclasses import dataclass
 from typing import Any
 
-from src.scoring import (
-    ScoredPlayerWeek,
+from src.actuals import (
+    PlayerActual,
 )
 
 
@@ -20,17 +30,34 @@ UNRESOLVED = "unresolved"
 
 
 @dataclass(frozen=True)
+class PerformanceClassification:
+    """One projection-vs-actual classification."""
+
+    baseline_projection: float | None
+    actual_ppr_points: float | None
+    difference: float | None
+    ratio: float | None
+    classification: str
+
+
+@dataclass(frozen=True)
 class PlayerPerformance:
-    """Actual player performance against the frozen baseline."""
+    """One rostered player's baseline-relative performance."""
 
     roster_id: int
     manager_name: str
+
     player_id: str
     player_name: str | None
     position: str | None
+
     was_baseline_starter: bool
+
     baseline_projection: float | None
-    actual_points: float | None
+
+    actual_ppr_points: float | None
+    exact_league_points: float | None
+
     difference: float | None
     ratio: float | None
     classification: str
@@ -38,7 +65,7 @@ class PlayerPerformance:
 
 @dataclass(frozen=True)
 class TeamPerformance:
-    """Baseline performance summary for one fantasy roster."""
+    """Boom/bust summary for one fantasy roster."""
 
     roster_id: int
     manager_name: str
@@ -52,7 +79,8 @@ class TeamPerformance:
     low_projection_count: int
     unresolved_count: int
 
-    baseline_starter_actual_points: float | None
+    baseline_starter_actual_ppr_points: float | None
+    baseline_starter_exact_points: float | None
 
     players: tuple[
         PlayerPerformance,
@@ -62,7 +90,7 @@ class TeamPerformance:
 
 @dataclass(frozen=True)
 class WeekPerformance:
-    """Performance analytics for one league and fantasy week."""
+    """Boom/bust analytics for one league and week."""
 
     season: str
     week: int
@@ -74,22 +102,11 @@ class WeekPerformance:
     ]
 
 
-@dataclass(frozen=True)
-class PerformanceClassification:
-    """Classification result for one projection/actual pair."""
-
-    baseline_projection: float | None
-    actual_points: float | None
-    difference: float | None
-    ratio: float | None
-    classification: str
-
-
 def _optional_number(
     value: Any,
     description: str,
 ) -> float | None:
-    """Normalize optional numeric data without manufacturing zero."""
+    """Normalize an optional numeric value without inventing zero."""
 
     if value is None:
         return None
@@ -120,7 +137,7 @@ def _thresholds(
     float,
     float,
 ]:
-    """Read and validate boom/bust configuration."""
+    """Read and validate boom/bust thresholds."""
 
     try:
         boom_threshold = float(
@@ -184,10 +201,10 @@ def _thresholds(
 
 def classify_player_performance(
     baseline_projection: Any,
-    actual_points: Any,
+    actual_ppr_points: Any,
     analytics_config: dict[str, Any],
 ) -> PerformanceClassification:
-    """Classify one actual result against its frozen projection."""
+    """Classify actual PPR performance against frozen PPR projection."""
 
     projection = (
         _optional_number(
@@ -198,8 +215,8 @@ def classify_player_performance(
 
     actual = (
         _optional_number(
-            actual_points,
-            "actual_points",
+            actual_ppr_points,
+            "actual_ppr_points",
         )
     )
 
@@ -217,12 +234,8 @@ def classify_player_performance(
     ):
         return (
             PerformanceClassification(
-                baseline_projection=(
-                    projection
-                ),
-                actual_points=(
-                    actual
-                ),
+                baseline_projection=projection,
+                actual_ppr_points=actual,
                 difference=None,
                 ratio=None,
                 classification=(
@@ -242,15 +255,9 @@ def classify_player_performance(
     ):
         return (
             PerformanceClassification(
-                baseline_projection=(
-                    projection
-                ),
-                actual_points=(
-                    actual
-                ),
-                difference=(
-                    difference
-                ),
+                baseline_projection=projection,
+                actual_ppr_points=actual,
+                difference=difference,
                 ratio=None,
                 classification=(
                     LOW_PROJECTION
@@ -267,40 +274,24 @@ def classify_player_performance(
         ratio
         >= boom_threshold
     ):
-        classification = (
-            BOOM
-        )
+        classification = BOOM
 
     elif (
         ratio
         >= bust_threshold
     ):
-        classification = (
-            NORMAL
-        )
+        classification = NORMAL
 
     else:
-        classification = (
-            BUST
-        )
+        classification = BUST
 
     return (
         PerformanceClassification(
-            baseline_projection=(
-                projection
-            ),
-            actual_points=(
-                actual
-            ),
-            difference=(
-                difference
-            ),
-            ratio=(
-                ratio
-            ),
-            classification=(
-                classification
-            ),
+            baseline_projection=projection,
+            actual_ppr_points=actual,
+            difference=difference,
+            ratio=ratio,
+            classification=classification,
         )
     )
 
@@ -312,7 +303,7 @@ def _validate_baseline_identity(
     int,
     str,
 ]:
-    """Validate baseline identity and return season/week/league."""
+    """Validate baseline identity."""
 
     if (
         baseline_snapshot.get(
@@ -378,19 +369,18 @@ def _validate_baseline_identity(
 
 def analyze_baseline_performance(
     baseline_snapshot: dict[str, Any],
-    exact_scores: dict[
+    actuals: dict[
         str,
-        ScoredPlayerWeek,
+        PlayerActual,
     ],
     analytics_config: dict[str, Any],
 ) -> WeekPerformance:
-    """Analyze all frozen baseline rostered players.
+    """Analyze frozen baseline roster performance.
 
-    Boom/bust counts in the team summary apply only to frozen baseline
+    All rostered players are retained in the output.
+
+    Team boom/bust counts include only players who were frozen baseline
     starters.
-
-    Bench players are also classified and retained so later lineup-
-    efficiency analytics can reuse the same deterministic information.
     """
 
     (
@@ -425,7 +415,7 @@ def analyze_baseline_performance(
             "Baseline snapshot is missing teams"
         )
 
-    results: list[
+    team_results: list[
         TeamPerformance
     ] = []
 
@@ -579,17 +569,15 @@ def analyze_baseline_performance(
                 player_id
             )
 
-            scored = (
-                exact_scores.get(
-                    player_id
-                )
+            actual = actuals.get(
+                player_id
             )
 
-            if scored is not None:
+            if actual is not None:
                 if (
-                    scored.season
+                    actual.season
                     != season
-                    or scored.week
+                    or actual.week
                     != week
                 ):
                     raise PerformanceAnalyticsError(
@@ -598,22 +586,29 @@ def analyze_baseline_performance(
                         "the wrong season/week"
                     )
 
-                actual_points: float | None = (
-                    scored.points
+                actual_ppr = (
+                    actual.ppr_points
+                )
+
+                exact_points: (
+                    float | None
+                ) = (
+                    actual.exact_points
                 )
 
             else:
-                actual_points = None
+                actual_ppr = None
+                exact_points = None
 
-            classification = (
+            classified = (
                 classify_player_performance(
                     baseline_projection=(
                         player.get(
                             "projected_points"
                         )
                     ),
-                    actual_points=(
-                        actual_points
+                    actual_ppr_points=(
+                        actual_ppr
                     ),
                     analytics_config=(
                         analytics_config
@@ -623,15 +618,11 @@ def analyze_baseline_performance(
 
             player_results.append(
                 PlayerPerformance(
-                    roster_id=(
-                        roster_id
-                    ),
+                    roster_id=roster_id,
                     manager_name=(
                         manager_name
                     ),
-                    player_id=(
-                        player_id
-                    ),
+                    player_id=player_id,
                     player_name=(
                         player.get(
                             "player_name"
@@ -647,34 +638,30 @@ def analyze_baseline_performance(
                         in starter_ids
                     ),
                     baseline_projection=(
-                        classification
+                        classified
                         .baseline_projection
                     ),
-                    actual_points=(
-                        classification
-                        .actual_points
+                    actual_ppr_points=(
+                        classified
+                        .actual_ppr_points
+                    ),
+                    exact_league_points=(
+                        exact_points
                     ),
                     difference=(
-                        classification
+                        classified
                         .difference
                     ),
                     ratio=(
-                        classification
+                        classified
                         .ratio
                     ),
                     classification=(
-                        classification
+                        classified
                         .classification
                     ),
                 )
             )
-
-        starter_results = [
-            player
-            for player
-            in player_results
-            if player.was_baseline_starter
-        ]
 
         missing_starter_ids = (
             starter_ids
@@ -689,43 +676,76 @@ def analyze_baseline_performance(
                 f"{sorted(missing_starter_ids)}"
             )
 
-        resolved_starters = [
+        starter_results = [
+            player
+            for player
+            in player_results
+            if player.was_baseline_starter
+        ]
+
+        resolved_classifications = [
             player
             for player
             in starter_results
             if (
-                player.actual_points
+                player.actual_ppr_points
                 is not None
             )
         ]
 
         if (
             len(
-                resolved_starters
+                resolved_classifications
             )
             == len(
                 starter_results
             )
         ):
-            starter_actual_total: (
+            starter_ppr_total: (
                 float | None
             ) = sum(
-                player.actual_points
+                player.actual_ppr_points
                 or 0.0
                 for player
-                in resolved_starters
+                in starter_results
             )
 
         else:
-            starter_actual_total = (
-                None
+            starter_ppr_total = None
+
+        exact_resolved = [
+            player
+            for player
+            in starter_results
+            if (
+                player.exact_league_points
+                is not None
+            )
+        ]
+
+        if (
+            len(
+                exact_resolved
+            )
+            == len(
+                starter_results
+            )
+        ):
+            starter_exact_total: (
+                float | None
+            ) = sum(
+                player.exact_league_points
+                or 0.0
+                for player
+                in starter_results
             )
 
-        results.append(
+        else:
+            starter_exact_total = None
+
+        team_results.append(
             TeamPerformance(
-                roster_id=(
-                    roster_id
-                ),
+                roster_id=roster_id,
                 manager_name=(
                     manager_name
                 ),
@@ -736,7 +756,7 @@ def analyze_baseline_performance(
                 ),
                 resolved_starter_count=(
                     len(
-                        resolved_starters
+                        resolved_classifications
                     )
                 ),
                 boom_count=sum(
@@ -784,8 +804,11 @@ def analyze_baseline_performance(
                         == UNRESOLVED
                     )
                 ),
-                baseline_starter_actual_points=(
-                    starter_actual_total
+                baseline_starter_actual_ppr_points=(
+                    starter_ppr_total
+                ),
+                baseline_starter_exact_points=(
+                    starter_exact_total
                 ),
                 players=tuple(
                     player_results
@@ -799,7 +822,7 @@ def analyze_baseline_performance(
             week=week,
             league_key=league_key,
             teams=tuple(
-                results
+                team_results
             ),
         )
     )

@@ -1,50 +1,82 @@
-"""Build exact player-week actual scoring from normalized Sleeper stats."""
+"""Normalize weekly player actuals for downstream analytics.
 
+Two scoring representations are intentionally preserved:
+
+- ppr_points:
+    Sleeper's actual pts_ppr value. This is compared with the frozen
+    baseline pts_ppr projection for boom/bust analytics.
+
+- exact_points:
+    Fantasy points calculated from raw stats using the league's exact
+    scoring_settings. This is used for lineup efficiency and optimal
+    lineup analytics.
+
+Missing actual records are never silently converted to zero.
+"""
+
+from dataclasses import dataclass
 from typing import Any
 
 from src.player_stats import (
+    PlayerStatsError,
     PlayerWeekStat,
+    actual_ppr_points,
 )
 from src.scoring import (
     FantasyScoringError,
-    ScoredPlayerWeek,
     score_player_week,
 )
 
 
 class ActualScoringError(ValueError):
-    """Raised when exact player actuals cannot be constructed safely."""
+    """Raised when normalized player actuals cannot be built safely."""
 
 
-def build_exact_score_lookup(
+@dataclass(frozen=True)
+class PlayerActual:
+    """Both comparison-PPR and exact league scoring for one player-week."""
+
+    player_id: str
+    season: str
+    week: int
+    ppr_points: float | None
+    exact_points: float
+
+
+def build_player_actual_lookup(
     records: list[PlayerWeekStat],
     scoring_settings: dict[str, Any],
-) -> dict[str, ScoredPlayerWeek]:
-    """Build player_id -> exact league-scored player-week result.
+) -> dict[str, PlayerActual]:
+    """Build player_id -> normalized actual scoring.
 
     Duplicate player records are rejected.
 
-    Missing players are not manufactured. If a player does not have a
-    normalized stat record, that player simply will not appear in the
-    returned lookup.
+    A record may legitimately have no pts_ppr value. In that case its
+    ppr_points remains None while its exact league score can still be
+    calculated from the raw statistics.
     """
 
     lookup: dict[
         str,
-        ScoredPlayerWeek,
+        PlayerActual,
     ] = {}
 
     for record in records:
-        if (
-            record.player_id
-            in lookup
-        ):
+        player_id = record.player_id
+
+        if player_id in lookup:
             raise ActualScoringError(
                 "Duplicate actual-stat record "
-                f"for player {record.player_id}"
+                f"for player {player_id}"
             )
 
         try:
+            ppr_points = (
+                actual_ppr_points(
+                    record
+                )
+            )
+
             scored = (
                 score_player_week(
                     record,
@@ -52,10 +84,13 @@ def build_exact_score_lookup(
                 )
             )
 
-        except FantasyScoringError as exc:
+        except (
+            PlayerStatsError,
+            FantasyScoringError,
+        ) as exc:
             raise ActualScoringError(
-                "Could not score actual stats "
-                f"for player {record.player_id}: "
+                "Could not normalize actual "
+                f"scoring for player {player_id}: "
                 f"{exc}"
             ) from exc
 
@@ -63,11 +98,19 @@ def build_exact_score_lookup(
             raise ActualScoringError(
                 "Existing player-stat record "
                 f"unexpectedly scored as null: "
-                f"{record.player_id}"
+                f"{player_id}"
             )
 
         lookup[
-            record.player_id
-        ] = scored
+            player_id
+        ] = PlayerActual(
+            player_id=player_id,
+            season=record.season,
+            week=record.week,
+            ppr_points=ppr_points,
+            exact_points=(
+                scored.points
+            ),
+        )
 
     return lookup
