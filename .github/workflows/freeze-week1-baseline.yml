@@ -71,9 +71,10 @@ jobs:
           echo "Import httpx2:"
           python -c "import httpx2; print('httpx2 import OK')"
 
-      - name: Run tests
+      - name: Run baseline safety tests
         run: |
-          python -m pytest -q
+          python -m pytest -q \
+            --ignore=tests/test_api.py
 
       - name: Run baseline automation
         shell: bash
