@@ -217,3 +217,17 @@ The snapshot must preserve the current live team scores, current starters, curre
 Incomplete Sunday projection data does not invalidate the snapshot. Missing values must be preserved as missing.
 
 Undocumented Sleeper response fields may be retained in raw source data, but they must not become business-rule inputs until their semantics have been independently verified.
+
+## AI Narrative Boundary
+
+Python owns factual data collection, normalization, historical storage, rules, calculations, and analytics.
+
+The AI agent owns narrative previews, recaps, commentary, and editorial presentation.
+
+The AI should consume derived agent-context data rather than reconstructing facts from live APIs.
+
+Agent context must be derived only from stored snapshots and deterministic analytics.
+
+The AI must not silently convert null or unresolved values to zero.
+
+Agent-context files are replaceable derived artifacts. Immutable stage snapshots are not.

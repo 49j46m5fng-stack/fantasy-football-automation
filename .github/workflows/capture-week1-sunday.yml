@@ -31,7 +31,7 @@ concurrency:
 
 jobs:
   capture:
-    name: Capture Sunday checkpoint
+    name: Capture Sunday checkpoint and build AI context
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -74,16 +74,24 @@ jobs:
             python -m scripts.capture_week1_sunday
           fi
 
-      - name: Commit Sunday snapshots
+      - name: Build Sunday AI context
+        if: ${{ github.event_name == 'schedule' || inputs.mode == 'capture' }}
+        run: |
+          python fantasy.py context \
+            --stage sunday \
+            --week 1
+
+      - name: Commit Sunday snapshots and AI context
         if: ${{ github.event_name == 'schedule' || inputs.mode == 'capture' }}
         shell: bash
         run: |
-          SNAPSHOT_STATUS="$(git status --porcelain -- \
+          OUTPUT_STATUS="$(git status --porcelain -- \
             data/2026/goats/week_01_sunday.json \
-            data/2026/doats/week_01_sunday.json)"
+            data/2026/doats/week_01_sunday.json \
+            data/2026/agent/week_01_sunday.json)"
 
-          if [ -z "$SNAPSHOT_STATUS" ]; then
-            echo "No new Sunday snapshots to commit."
+          if [ -z "$OUTPUT_STATUS" ]; then
+            echo "No new Sunday or AI-context files to commit."
             exit 0
           fi
 
@@ -104,7 +112,8 @@ jobs:
 
           git add \
             data/2026/goats/week_01_sunday.json \
-            data/2026/doats/week_01_sunday.json
+            data/2026/doats/week_01_sunday.json \
+            data/2026/agent/week_01_sunday.json
 
           git commit -m "Capture 2026 Week 1 Sunday snapshot"
 

@@ -190,7 +190,7 @@ The project currently supports:
 - reusable baseline orchestration
 - reusable Sunday-stage orchestration
 - generic `fantasy.py` CLI
-- automatic baseline preview generation
+- automatic AI-agent context generation from immutable snapshots
 - idempotent recurring GitHub workflow
 - schedule-driven automatic week resolution
 - stale-main protection before automated Git commits
@@ -204,3 +204,9 @@ Week 1 remains on previously validated one-time workflows while the generic recu
 The generic final-stage command is reserved but disabled until final snapshot construction is implemented.
 
 Sunday recap/MNF preview report generation, final-stage analysis, standings logic, win-probability simulation, and historical CSV aggregation remain to be implemented.
+
+The Python system is the data and analytics engine.
+
+Narrative previews and recaps are delegated to an external AI agent consuming structured context.
+
+Agent context is deterministic, replaceable, and source-linked using SHA-256 hashes of immutable snapshots.

@@ -106,3 +106,13 @@ Do not promote undocumented live Sleeper matchup fields into normalized business
 Preserve unexpected source fields in raw snapshot data and verify their meaning first.
 
 The Sunday/MNF snapshot may contain incomplete current projections. Capture the historical state rather than inventing replacements.
+
+AI-facing context files are derived artifacts.
+
+Never treat an agent-context file as the authoritative historical source when an immutable stage snapshot exists.
+
+Do not query current Sleeper data to rewrite historical agent context.
+
+Precompute arithmetic and league-rule outcomes in Python whenever practical so downstream narrative agents receive facts rather than being asked to infer them.
+
+Narrative generation does not belong in the core Python analytics layer.

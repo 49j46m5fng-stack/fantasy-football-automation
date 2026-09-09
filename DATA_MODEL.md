@@ -281,3 +281,42 @@ The official Sunday snapshot capture context should preserve:
 - capture purpose
 
 For the current workflow, the stage label is `sunday_pre_mnf`.
+
+## AI Agent Context
+
+AI-agent context is derived data, not historical source data.
+
+Canonical files are:
+
+- `data/{season}/agent/week_{week}_baseline.json`
+- `data/{season}/agent/week_{week}_sunday.json`
+- later: `data/{season}/agent/week_{week}_final.json`
+
+The immutable stage snapshots remain authoritative.
+
+Agent context may be regenerated and atomically replaced whenever its formatter improves.
+
+Agent context includes:
+
+- both league definitions and competition rules
+- manager identities
+- matchup structure
+- starter projections
+- compact rostered-player projection data
+- special projection-resolution notes
+- warnings
+- precomputed matchup margins
+- source snapshot hashes
+
+Sunday context additionally includes:
+
+- live team scores
+- current starter projections
+- baseline-to-Sunday lineup substitutions
+- lineup-slot changes
+- player projection movement
+- team projection movement
+
+Missing values remain null.
+
+The Sunday current-starter projection must not be described as a final-score or remaining-game forecast. 

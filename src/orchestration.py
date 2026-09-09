@@ -1,4 +1,17 @@
-"""Generic weekly fantasy-football stage orchestration."""
+"""Generic weekly fantasy-football orchestration.
+
+This module coordinates the major weekly stages:
+
+- baseline
+- Sunday / pre-MNF checkpoint
+- final (reserved for later implementation)
+- AI-agent context generation
+
+Immutable stage snapshots are the historical source of truth.
+
+AI-agent context files are derived artifacts and may be regenerated from
+those immutable snapshots.
+"""
 
 import json
 from datetime import datetime
@@ -6,6 +19,10 @@ from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
+from src.agent_context import (
+    AgentContextError,
+    write_agent_context_file,
+)
 from src.baseline import (
     build_baseline_snapshot_data,
 )
@@ -18,9 +35,6 @@ from src.players import (
 from src.projections import (
     SleeperProjectionProvider,
     build_projection_lookup,
-)
-from src.reports import (
-    write_preview_report,
 )
 from src.schedule import (
     StageWindow,
@@ -44,13 +58,7 @@ from src.team_projections import (
 )
 
 
-DATA_ROOT = Path(
-    "data"
-)
-
-REPORT_ROOT = Path(
-    "reports"
-)
+DATA_ROOT = Path("data")
 
 
 class OrchestrationError(RuntimeError):
@@ -58,20 +66,16 @@ class OrchestrationError(RuntimeError):
 
 
 def load_project_config(
-    path: Path = Path(
-        "config.json"
-    ),
+    path: Path = Path("config.json"),
 ) -> dict[str, Any]:
-    """Load the fantasy project configuration."""
+    """Load and minimally validate the project configuration."""
 
     try:
         with path.open(
             "r",
             encoding="utf-8",
         ) as file:
-            config = json.load(
-                file
-            )
+            config = json.load(file)
 
     except (
         OSError,
@@ -89,14 +93,36 @@ def load_project_config(
             "Project config must be a JSON object"
         )
 
+    season = config.get(
+        "season"
+    )
+
+    if (
+        not isinstance(
+            season,
+            str,
+        )
+        or not season
+    ):
+        raise OrchestrationError(
+            "Project config is missing season"
+        )
+
+    leagues = config.get(
+        "leagues"
+    )
+
     if not isinstance(
-        config.get(
-            "leagues"
-        ),
+        leagues,
         dict,
     ):
         raise OrchestrationError(
             "Project config is missing leagues"
+        )
+
+    if not leagues:
+        raise OrchestrationError(
+            "Project config contains no leagues"
         )
 
     return config
@@ -109,7 +135,19 @@ def snapshot_paths(
     stage: str,
     data_root: Path = DATA_ROOT,
 ) -> dict[str, Path]:
-    """Return both official snapshot paths for a stage."""
+    """Return official snapshot paths for every configured league."""
+
+    leagues = config.get(
+        "leagues"
+    )
+
+    if not isinstance(
+        leagues,
+        dict,
+    ):
+        raise OrchestrationError(
+            "Project config is missing leagues"
+        )
 
     return {
         league_key: build_snapshot_path(
@@ -120,7 +158,7 @@ def snapshot_paths(
             stage=stage,
         )
         for league_key
-        in config["leagues"]
+        in leagues
     }
 
 
@@ -128,7 +166,7 @@ def snapshot_pair_state(
     paths: dict[str, Path],
     label: str,
 ) -> str:
-    """Return absent/complete while rejecting partial historical state."""
+    """Return absent/complete while rejecting dangerous partial state."""
 
     existence = {
         league_key: path.exists()
@@ -161,29 +199,11 @@ def snapshot_pair_state(
     )
 
 
-def preview_report_path(
-    season: str,
-    league_key: str,
-    week: int,
-    report_root: Path = REPORT_ROOT,
-) -> Path:
-    """Return the canonical preview Markdown path."""
-
-    return (
-        report_root
-        / season
-        / (
-            f"{league_key}_"
-            f"week_{week:02d}_preview.md"
-        )
-    )
-
-
 def _validate_project_season(
     config: dict[str, Any],
     schedule: WeeklySchedule,
 ) -> str:
-    """Require project and automation seasons to match."""
+    """Require project and automation schedule seasons to match."""
 
     season = config.get(
         "season"
@@ -203,7 +223,8 @@ def _validate_project_season(
     if season != schedule.season:
         raise OrchestrationError(
             "Project season and automation "
-            "schedule season do not match"
+            "schedule season do not match: "
+            f"{season!r} != {schedule.season!r}"
         )
 
     return season
@@ -214,12 +235,12 @@ def _require_execution_window(
     stage: str,
     week: int,
 ) -> StageWindow:
-    """Require the current time to be inside a stage's write window."""
+    """Require the current time to be inside a stage write window."""
 
     window = stage_window(
-        schedule,
-        stage,
-        week,
+        schedule=schedule,
+        stage=stage,
+        week=week,
     )
 
     now = datetime.now(
@@ -242,9 +263,9 @@ def _require_execution_window(
 def _capture_context(
     schedule: WeeklySchedule,
     window: StageWindow,
-    stage: str,
+    stage_label: str,
 ) -> dict[str, Any]:
-    """Build generic capture metadata."""
+    """Build common metadata describing an automated capture."""
 
     now = datetime.now(
         schedule.timezone
@@ -254,7 +275,9 @@ def _capture_context(
         "mode": (
             "generic_weekly_orchestration"
         ),
-        "stage_label": stage,
+        "stage_label": (
+            stage_label
+        ),
         "timezone": (
             schedule.timezone_name
         ),
@@ -263,7 +286,7 @@ def _capture_context(
         ),
         "captured_at_utc": (
             now
-           .astimezone(
+            .astimezone(
                 ZoneInfo("UTC")
             )
             .isoformat()
@@ -286,7 +309,7 @@ def _fresh_week_inputs(
     dict[str, Any],
     dict[str, Any],
 ]:
-    """Fetch player metadata, projections, and overrides once."""
+    """Fetch common live inputs once for a weekly stage."""
 
     sleeper = SleeperClient()
 
@@ -317,12 +340,14 @@ def _fresh_week_inputs(
         )
     )
 
+    overrides_path = Path(
+        f"data/{season}/"
+        "projection_overrides.json"
+    )
+
     overrides = (
         load_week_projection_overrides(
-            Path(
-                f"data/{season}/"
-                "projection_overrides.json"
-            ),
+            overrides_path,
             week=week,
         )
     )
@@ -335,39 +360,75 @@ def _fresh_week_inputs(
     )
 
 
-def _ensure_preview_reports(
+def _write_agent_context(
+    config: dict[str, Any],
     season: str,
     week: int,
-    paths: dict[str, Path],
+    stage: str,
+) -> Path:
+    """Build or rebuild AI-agent context from stored snapshots."""
+
+    try:
+        path = (
+            write_agent_context_file(
+                data_root=DATA_ROOT,
+                project_config=config,
+                season=season,
+                week=week,
+                stage=stage,
+            )
+        )
+
+    except AgentContextError as exc:
+        raise OrchestrationError(
+            f"Could not build "
+            f"{stage} agent context: "
+            f"{exc}"
+        ) from exc
+
+    print(
+        f"AGENT CONTEXT: {path}"
+    )
+
+    return path
+
+
+def _validate_expected_team_count(
+    league_name: str,
+    league: dict[str, Any],
+    snapshot_data: dict[str, Any],
 ) -> None:
-    """Create missing previews strictly from frozen baselines."""
+    """Verify built team count against Sleeper when available."""
 
-    for league_key, snapshot_path in (
-        paths.items()
+    expected = league.get(
+        "total_rosters"
+    )
+
+    teams = snapshot_data.get(
+        "teams"
+    )
+
+    if not isinstance(
+        teams,
+        list,
     ):
-        report_path = (
-            preview_report_path(
-                season,
-                league_key,
-                week,
-            )
+        raise OrchestrationError(
+            f"{league_name} snapshot "
+            "is missing teams"
         )
 
-        if report_path.exists():
-            print(
-                f"Preview already exists: "
-                f"{report_path}"
-            )
-
-            continue
-
-        result = write_preview_report(
-            snapshot_path,
-            report_path,
+    if (
+        isinstance(
+            expected,
+            int,
         )
-
-        print(
-            f"CREATED: {result}"
+        and len(teams)
+        != expected
+    ):
+        raise OrchestrationError(
+            f"{league_name} team count "
+            "does not match Sleeper: "
+            f"{len(teams)} != {expected}"
         )
 
 
@@ -376,20 +437,24 @@ def run_baseline(
     schedule: WeeklySchedule,
     check_only: bool = False,
 ) -> int:
-    """Build or write one week's immutable baselines and previews."""
+    """Build or write one week's immutable baseline snapshots."""
 
-    config = load_project_config()
+    config = (
+        load_project_config()
+    )
 
-    season = _validate_project_season(
-        config,
-        schedule,
+    season = (
+        _validate_project_season(
+            config,
+            schedule,
+        )
     )
 
     paths = snapshot_paths(
-        config,
-        season,
-        week,
-        "baseline",
+        config=config,
+        season=season,
+        week=week,
+        stage="baseline",
     )
 
     state = snapshot_pair_state(
@@ -414,26 +479,27 @@ def run_baseline(
         )
 
         if not check_only:
-            _ensure_preview_reports(
-                season,
-                week,
-                paths,
+            _write_agent_context(
+                config=config,
+                season=season,
+                week=week,
+                stage="baseline",
             )
 
         return 0
 
     window = stage_window(
-        schedule,
-        "baseline",
-        week,
+        schedule=schedule,
+        stage="baseline",
+        week=week,
     )
 
     if not check_only:
         window = (
             _require_execution_window(
-                schedule,
-                "baseline",
-                week,
+                schedule=schedule,
+                stage="baseline",
+                week=week,
             )
         )
 
@@ -443,17 +509,21 @@ def run_baseline(
         projection_lookup,
         overrides,
     ) = _fresh_week_inputs(
-        season,
-        week,
+        season=season,
+        week=week,
     )
 
     capture_context = (
         _capture_context(
-            schedule,
-            window,
-            "baseline",
+            schedule=schedule,
+            window=window,
+            stage_label="baseline",
         )
     )
+
+    leagues = config[
+        "leagues"
+    ]
 
     prepared: dict[
         str,
@@ -461,16 +531,41 @@ def run_baseline(
     ] = {}
 
     for league_key, league_config in (
-        config["leagues"].items()
+        leagues.items()
     ):
+        if not isinstance(
+            league_config,
+            dict,
+        ):
+            raise OrchestrationError(
+                f"League config for "
+                f"{league_key} must be "
+                "an object"
+            )
+
         league_id = (
-            league_config["league_id"]
+            league_config.get(
+                "league_id"
+            )
         )
 
         league_name = (
-            league_config["name"]
+            league_config.get(
+                "name",
+                league_key,
+            )
         )
 
+        if not isinstance(
+            league_id,
+            str,
+        ):
+            raise OrchestrationError(
+                f"{league_name} is missing "
+                "a valid league_id"
+            )
+
+        print()
         print(
             f"Preparing {league_name}..."
         )
@@ -514,11 +609,16 @@ def run_baseline(
             )
         )
 
+        _validate_expected_team_count(
+            league_name=league_name,
+            league=league,
+            snapshot_data=baseline,
+        )
+
         incomplete = [
             team
-            for team in baseline[
-                "teams"
-            ]
+            for team
+            in baseline["teams"]
             if not team[
                 "projection_complete"
             ]
@@ -526,19 +626,26 @@ def run_baseline(
 
         if incomplete:
             print()
+            print(
+                f"{league_name} has incomplete "
+                "baseline projections:"
+            )
 
             for team in incomplete:
                 print(
-                    f"INCOMPLETE: "
-                    f"{team['manager_name']} "
-                    f"(roster {team['roster_id']})"
+                    f"  roster="
+                    f"{team['roster_id']} "
+                    f"manager="
+                    f"{team['manager_name']}"
                 )
 
-                for warning in team[
-                    "warnings"
-                ]:
+                for warning in team.get(
+                    "warnings",
+                    [],
+                ):
                     print(
-                        f"  {warning}"
+                        f"    WARNING: "
+                        f"{warning}"
                     )
 
             raise OrchestrationError(
@@ -549,9 +656,15 @@ def run_baseline(
         prepared[
             league_key
         ] = {
-            "league_id": league_id,
-            "league_name": league_name,
-            "data": baseline,
+            "league_id": (
+                league_id
+            ),
+            "league_name": (
+                league_name
+            ),
+            "data": (
+                baseline
+            ),
         }
 
     print()
@@ -580,11 +693,17 @@ def run_baseline(
 
         return 0
 
+    # Check again immediately before the irreversible write.
     _require_execution_window(
-        schedule,
-        "baseline",
-        week,
+        schedule=schedule,
+        stage="baseline",
+        week=week,
     )
+
+    print()
+    print("=" * 72)
+    print("WRITING BASELINE SNAPSHOTS")
+    print("=" * 72)
 
     for league_key, item in (
         prepared.items()
@@ -601,19 +720,33 @@ def run_baseline(
             data=item["data"],
         )
 
+        # Read back immediately so a bad stored file fails the run.
+        stored = read_snapshot(
+            path
+        )
+
+        if stored.get(
+            "stage"
+        ) != "baseline":
+            raise OrchestrationError(
+                f"Stored baseline failed "
+                f"read-back validation: {path}"
+            )
+
         print(
             f"CREATED: {path}"
         )
 
-    _ensure_preview_reports(
-        season,
-        week,
-        paths,
+    _write_agent_context(
+        config=config,
+        season=season,
+        week=week,
+        stage="baseline",
     )
 
     print()
     print(
-        "BASELINE + PREVIEW COMPLETE"
+        "BASELINE + AGENT CONTEXT COMPLETE"
     )
 
     return 0
@@ -626,25 +759,33 @@ def run_sunday(
 ) -> int:
     """Build or write one week's Monday-noon Sunday checkpoint."""
 
-    config = load_project_config()
-
-    season = _validate_project_season(
-        config,
-        schedule,
+    config = (
+        load_project_config()
     )
 
-    baseline_paths = snapshot_paths(
-        config,
-        season,
-        week,
-        "baseline",
+    season = (
+        _validate_project_season(
+            config,
+            schedule,
+        )
     )
 
-    sunday_paths = snapshot_paths(
-        config,
-        season,
-        week,
-        "sunday",
+    baseline_paths = (
+        snapshot_paths(
+            config=config,
+            season=season,
+            week=week,
+            stage="baseline",
+        )
+    )
+
+    sunday_paths = (
+        snapshot_paths(
+            config=config,
+            season=season,
+            week=week,
+            stage="sunday",
+        )
     )
 
     baseline_state = (
@@ -664,7 +805,7 @@ def run_sunday(
     print("=" * 72)
     print(
         f"{season} WEEK {week} "
-        "SUNDAY/MNF CHECKPOINT"
+        "SUNDAY / PRE-MNF CHECKPOINT"
     )
     print("=" * 72)
 
@@ -682,10 +823,19 @@ def run_sunday(
             "snapshots already exist."
         )
 
+        if not check_only:
+            _write_agent_context(
+                config=config,
+                season=season,
+                week=week,
+                stage="sunday",
+            )
+
         return 0
 
     if baseline_state != "complete":
         if check_only:
+            print()
             print(
                 "CHECK ONLY: baseline snapshots "
                 "do not exist yet."
@@ -699,17 +849,17 @@ def run_sunday(
         )
 
     window = stage_window(
-        schedule,
-        "sunday",
-        week,
+        schedule=schedule,
+        stage="sunday",
+        week=week,
     )
 
     if not check_only:
         window = (
             _require_execution_window(
-                schedule,
-                "sunday",
-                week,
+                schedule=schedule,
+                stage="sunday",
+                week=week,
             )
         )
 
@@ -727,17 +877,23 @@ def run_sunday(
         projection_lookup,
         overrides,
     ) = _fresh_week_inputs(
-        season,
-        week,
+        season=season,
+        week=week,
     )
 
     capture_context = (
         _capture_context(
-            schedule,
-            window,
-            "sunday_pre_mnf",
+            schedule=schedule,
+            window=window,
+            stage_label=(
+                "sunday_pre_mnf"
+            ),
         )
     )
+
+    leagues = config[
+        "leagues"
+    ]
 
     prepared: dict[
         str,
@@ -745,16 +901,41 @@ def run_sunday(
     ] = {}
 
     for league_key, league_config in (
-        config["leagues"].items()
+        leagues.items()
     ):
+        if not isinstance(
+            league_config,
+            dict,
+        ):
+            raise OrchestrationError(
+                f"League config for "
+                f"{league_key} must be "
+                "an object"
+            )
+
         league_id = (
-            league_config["league_id"]
+            league_config.get(
+                "league_id"
+            )
         )
 
         league_name = (
-            league_config["name"]
+            league_config.get(
+                "name",
+                league_key,
+            )
         )
 
+        if not isinstance(
+            league_id,
+            str,
+        ):
+            raise OrchestrationError(
+                f"{league_name} is missing "
+                "a valid league_id"
+            )
+
+        print()
         print(
             f"Preparing {league_name}..."
         )
@@ -804,12 +985,24 @@ def run_sunday(
             )
         )
 
+        _validate_expected_team_count(
+            league_name=league_name,
+            league=league,
+            snapshot_data=sunday,
+        )
+
         prepared[
             league_key
         ] = {
-            "league_id": league_id,
-            "league_name": league_name,
-            "data": sunday,
+            "league_id": (
+                league_id
+            ),
+            "league_name": (
+                league_name
+            ),
+            "data": (
+                sunday
+            ),
         }
 
     print()
@@ -822,10 +1015,31 @@ def run_sunday(
             "data"
         ]
 
+        incomplete = [
+            team
+            for team
+            in data["teams"]
+            if not team[
+                "projection_complete"
+            ]
+        ]
+
+        known_scores = [
+            team
+            for team
+            in data["teams"]
+            if team[
+                "effective_live_points"
+            ]
+            is not None
+        ]
+
         print(
             f"{item['league_name']}: "
             f"{len(data['teams'])} teams, "
             f"{len(data['matchups'])} matchups, "
+            f"{len(known_scores)} live scores, "
+            f"{len(incomplete)} incomplete projections, "
             f"{len(data['warnings'])} warnings"
         )
 
@@ -838,11 +1052,19 @@ def run_sunday(
 
         return 0
 
+    # Unlike baseline, incomplete projection data is allowed at Sunday stage.
+    # The historical state is preserved rather than manufacturing values.
+
     _require_execution_window(
-        schedule,
-        "sunday",
-        week,
+        schedule=schedule,
+        stage="sunday",
+        week=week,
     )
+
+    print()
+    print("=" * 72)
+    print("WRITING SUNDAY SNAPSHOTS")
+    print("=" * 72)
 
     stored: dict[
         str,
@@ -864,11 +1086,22 @@ def run_sunday(
             data=item["data"],
         )
 
-        stored[
-            league_key
-        ] = read_snapshot(
+        snapshot = read_snapshot(
             path
         )
+
+        if snapshot.get(
+            "stage"
+        ) != "sunday":
+            raise OrchestrationError(
+                f"Stored Sunday snapshot "
+                f"failed read-back validation: "
+                f"{path}"
+            )
+
+        stored[
+            league_key
+        ] = snapshot
 
         print(
             f"CREATED: {path}"
@@ -880,7 +1113,7 @@ def run_sunday(
     print("=" * 72)
 
     for league_key, league_config in (
-        config["leagues"].items()
+        leagues.items()
     ):
         comparison = (
             compare_baseline_to_sunday(
@@ -893,9 +1126,10 @@ def run_sunday(
             )
         )
 
-        changed = [
+        lineup_changed = [
             team
-            for team in comparison.teams
+            for team
+            in comparison.teams
             if (
                 team.added_starters
                 or team.removed_starters
@@ -903,15 +1137,97 @@ def run_sunday(
             )
         ]
 
+        team_projection_changed = [
+            team
+            for team
+            in comparison.teams
+            if (
+                team.team_projection_delta
+                is not None
+                and abs(
+                    team.team_projection_delta
+                )
+                >= 1e-9
+            )
+        ]
+
+        player_projection_changed = [
+            team
+            for team
+            in comparison.teams
+            if team.projection_changes
+        ]
+
         print(
-            f"{league_config['name']}: "
-            f"{len(changed)} teams "
-            "with lineup changes"
+            f"{league_config.get('name', league_key)}:"
         )
+
+        print(
+            f"  lineup changes: "
+            f"{len(lineup_changed)} teams"
+        )
+
+        print(
+            f"  team projection changes: "
+            f"{len(team_projection_changed)} teams"
+        )
+
+        print(
+            f"  player projection changes: "
+            f"{len(player_projection_changed)} teams"
+        )
+
+    _write_agent_context(
+        config=config,
+        season=season,
+        week=week,
+        stage="sunday",
+    )
 
     print()
     print(
-        "SUNDAY SNAPSHOT COMPLETE"
+        "SUNDAY SNAPSHOT + AGENT "
+        "CONTEXT COMPLETE"
+    )
+
+    return 0
+
+
+def run_context(
+    stage: str,
+    week: int,
+    schedule: WeeklySchedule,
+) -> int:
+    """Regenerate AI context from immutable stored snapshots."""
+
+    config = (
+        load_project_config()
+    )
+
+    season = (
+        _validate_project_season(
+            config,
+            schedule,
+        )
+    )
+
+    print("=" * 72)
+    print(
+        f"{season} WEEK {week} "
+        f"{stage.upper()} AGENT CONTEXT"
+    )
+    print("=" * 72)
+
+    _write_agent_context(
+        config=config,
+        season=season,
+        week=week,
+        stage=stage,
+    )
+
+    print()
+    print(
+        "AGENT CONTEXT COMPLETE"
     )
 
     return 0
@@ -922,7 +1238,10 @@ def run_final(
     schedule: WeeklySchedule,
     check_only: bool = False,
 ) -> int:
-    """Placeholder until final-stage construction is implemented."""
+    """Reserved final-stage orchestration entry point."""
+
+    del schedule
+    del check_only
 
     raise OrchestrationError(
         "Final-stage orchestration is not "
@@ -936,7 +1255,7 @@ def run_auto(
     check_only: bool = False,
     minimum_week: int | None = None,
 ) -> int:
-    """Run whichever generic stage is due right now."""
+    """Run whichever generic weekly stage is due now."""
 
     now = datetime.now(
         schedule.timezone
@@ -948,7 +1267,17 @@ def run_auto(
         minimum_week=minimum_week,
     )
 
+    print("=" * 72)
+    print("AUTOMATIC FANTASY ORCHESTRATION")
+    print("=" * 72)
+
+    print(
+        f"Current time: "
+        f"{now.isoformat()}"
+    )
+
     if due is None:
+        print()
         print(
             "No fantasy automation stage "
             "is due right now."
@@ -956,32 +1285,51 @@ def run_auto(
 
         return 0
 
+    print()
     print(
-        f"Resolved automation: "
-        f"{due.stage} Week {due.week}"
+        f"Resolved stage: "
+        f"{due.stage}"
     )
+
+    print(
+        f"Resolved week:  "
+        f"{due.week}"
+    )
+
+    print(
+        f"Window opens:   "
+        f"{due.window.opens_at.isoformat()}"
+    )
+
+    print(
+        f"Window closes:  "
+        f"{due.window.closes_at.isoformat()}"
+    )
+
+    print()
 
     if due.stage == "baseline":
         return run_baseline(
-            due.week,
-            schedule,
+            week=due.week,
+            schedule=schedule,
             check_only=check_only,
         )
 
     if due.stage == "sunday":
         return run_sunday(
-            due.week,
-            schedule,
+            week=due.week,
+            schedule=schedule,
             check_only=check_only,
         )
 
     if due.stage == "final":
         return run_final(
-            due.week,
-            schedule,
+            week=due.week,
+            schedule=schedule,
             check_only=check_only,
         )
 
     raise OrchestrationError(
-        f"Unsupported stage: {due.stage}"
+        f"Unsupported automation stage: "
+        f"{due.stage}"
     )

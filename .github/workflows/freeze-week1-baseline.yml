@@ -31,7 +31,7 @@ concurrency:
 
 jobs:
   freeze:
-    name: Freeze baseline and generate preview
+    name: Freeze baseline and build AI context
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -74,23 +74,24 @@ jobs:
             python -m scripts.freeze_week1_baseline
           fi
 
-      - name: Generate Week 1 preview reports
+      - name: Build Week 1 AI context
         if: ${{ github.event_name == 'schedule' || inputs.mode == 'freeze' }}
         run: |
-          python -m scripts.generate_week1_preview
+          python fantasy.py context \
+            --stage baseline \
+            --week 1
 
-      - name: Commit frozen baselines and previews
+      - name: Commit frozen baselines and AI context
         if: ${{ github.event_name == 'schedule' || inputs.mode == 'freeze' }}
         shell: bash
         run: |
           OUTPUT_STATUS="$(git status --porcelain -- \
             data/2026/goats/week_01_baseline.json \
             data/2026/doats/week_01_baseline.json \
-            reports/2026/goats_week_01_preview.md \
-            reports/2026/doats_week_01_preview.md)"
+            data/2026/agent/week_01_baseline.json)"
 
           if [ -z "$OUTPUT_STATUS" ]; then
-            echo "No new baseline or preview files to commit."
+            echo "No new baseline or AI-context files to commit."
             exit 0
           fi
 
@@ -102,7 +103,7 @@ jobs:
           if [ "$REMOTE_SHA" != "$INITIAL_SHA" ]; then
             echo "main changed while baseline data was being prepared."
             echo "Refusing to commit output produced from stale code."
-            echo "A later scheduled attempt can retry from the new main."
+            echo "A later scheduled attempt can retry."
             exit 1
           fi
 
@@ -112,9 +113,8 @@ jobs:
           git add \
             data/2026/goats/week_01_baseline.json \
             data/2026/doats/week_01_baseline.json \
-            reports/2026/goats_week_01_preview.md \
-            reports/2026/doats_week_01_preview.md
+            data/2026/agent/week_01_baseline.json
 
-          git commit -m "Freeze 2026 Week 1 baseline and preview"
+          git commit -m "Freeze 2026 Week 1 baseline"
 
           git push origin HEAD:main

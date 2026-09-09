@@ -90,3 +90,11 @@ python fantasy.py baseline
 python fantasy.py sunday
 python fantasy.py final
 python fantasy.py auto
+
+## AI Agent Context
+
+Generate structured context for a narrative AI agent:
+
+```bash
+python fantasy.py context --stage baseline --week 4
+python fantasy.py context --stage sunday --week 4

@@ -7,6 +7,7 @@ from src.orchestration import (
     OrchestrationError,
     run_auto,
     run_baseline,
+    run_context,
     run_final,
     run_sunday,
 )
@@ -71,6 +72,27 @@ def _resolve_week(
     )
 
 
+def _validate_explicit_week(
+    week: int,
+    schedule: object,
+) -> None:
+    """Validate a manually supplied fantasy week."""
+
+    regular_season_weeks = (
+        schedule.regular_season_weeks
+    )
+
+    if (
+        week < 1
+        or week
+        > regular_season_weeks
+    ):
+        raise ScheduleError(
+            f"Week must be between 1 and "
+            f"{regular_season_weeks}"
+        )
+
+
 def build_parser() -> argparse.ArgumentParser:
     """Create the project CLI parser."""
 
@@ -116,6 +138,36 @@ def build_parser() -> argparse.ArgumentParser:
                 "writing official snapshots."
             ),
         )
+
+    context_parser = (
+        subparsers.add_parser(
+            "context"
+        )
+    )
+
+    context_parser.add_argument(
+        "--stage",
+        required=True,
+        choices=(
+            "baseline",
+            "sunday",
+            "final",
+        ),
+        help=(
+            "Stored historical stage from "
+            "which to build AI context."
+        ),
+    )
+
+    context_parser.add_argument(
+        "--week",
+        required=True,
+        type=int,
+        help=(
+            "Fantasy week whose immutable "
+            "snapshot should be transformed."
+        ),
+    )
 
     auto_parser = (
         subparsers.add_parser(
@@ -163,6 +215,22 @@ def main() -> int:
                 minimum_week=(
                     args.min_week
                 ),
+            )
+
+        if args.command == "context":
+            schedule = (
+                load_weekly_schedule()
+            )
+
+            _validate_explicit_week(
+                args.week,
+                schedule,
+            )
+
+            return run_context(
+                stage=args.stage,
+                week=args.week,
+                schedule=schedule,
             )
 
         week, schedule = (
