@@ -98,6 +98,34 @@ Projection source examples:
 
 If a projection cannot be resolved safely, the baseline-generation process should flag it rather than silently substituting zero.
 
+## Detailed Baseline Contents
+
+The baseline should preserve both calculated outputs and the source information needed to explain them later.
+
+Each league baseline includes:
+
+- league configuration
+- scoring settings
+- roster positions
+- raw users
+- raw rosters
+- raw matchup records
+- normalized matchup pairings
+- manager identity
+- raw baseline starter IDs
+- rostered player IDs
+- starter-level projected points
+- projection source and reason
+- raw projected statistical fields
+- baseline fantasy-team projection
+- projection completeness
+- warnings
+- first-kickoff capture context
+
+Baseline projections for rostered bench players are also retained where available.
+
+This allows future lineup-change and start/sit analysis to use the projections that existed at baseline rather than later projection values.
+
 ## Sunday Team Data
 
 Sunday data should preserve the baseline and add information such as:

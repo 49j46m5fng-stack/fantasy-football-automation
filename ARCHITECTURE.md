@@ -161,7 +161,13 @@ The project currently supports:
 - versioned snapshot metadata envelopes
 - exclusive immutable snapshot writes
 - historical snapshot validation and reading
+- complete baseline document construction
+- preservation of raw baseline source records
+- starter and rostered-player baseline projections
+- first-kickoff capture context
 
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
-Real baseline snapshot construction, standings logic, win-probability analytics, and report generation have not yet been implemented.
+Baseline construction is implemented, but the first official baseline has not yet been frozen.
+
+Standings logic, win-probability analytics, and report generation have not yet been implemented.
