@@ -230,3 +230,41 @@ The comparison layer produces, per roster:
 Player projection changes preserve whether the player was present on the roster in each snapshot.
 
 A projection delta is calculated only when both stored point values are numeric.
+
+## Sunday Snapshot
+
+The Sunday stage preserves the current fantasy state without modifying the baseline.
+
+Each Sunday team record includes:
+
+- roster_id
+- manager identity
+- matchup_id
+- opponent roster_id
+- stage_starters_raw
+- rostered_player_ids
+- live_points
+- custom_points
+- effective_live_points
+- stage_projection
+- known_projected_points
+- projection completeness
+- warnings
+- detailed starter projections
+- detailed rostered-player projections
+
+`live_points` preserves Sleeper's normal team score.
+
+If Sleeper exposes a numeric `custom_points` commissioner override, `effective_live_points` uses the override. Otherwise it uses `live_points`.
+
+A missing live score remains null and must not silently become zero.
+
+### Sunday Projection Semantics
+
+`stage_projection` currently means the sum of the fresh Sleeper `pts_ppr` values for the current starting lineup.
+
+It is not yet an actual-points-plus-remaining-points forecast.
+
+The project must not claim that Sleeper's supplied weekly projection represents remaining in-game production unless that behavior has been explicitly verified.
+
+Raw Sunday matchup data is retained so richer live scoring logic can be added later without reconstructing history.

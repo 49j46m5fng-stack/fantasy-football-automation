@@ -173,20 +173,24 @@ The project currently supports:
 - player projection movement
 - team projection movement
 - historical missing-value preservation
+- Sunday-stage snapshot construction
+- baseline identity and roster-set validation
+- current starter preservation
+- documented live team-score capture
+- commissioner custom-score preservation
+- current starter projection aggregation
+- complete rostered-player projection preservation
 
 The Sleeper projection feed is treated as an unofficial external dependency and is isolated from the documented Sleeper API client.
 
-Baseline-to-Sunday comparison logic is implemented against stored snapshot documents.
+Baseline construction, immutable storage, scheduled baseline capture,
+baseline preview generation, baseline-to-Sunday comparison, and Sunday
+snapshot construction are implemented.
 
-Sunday snapshot capture itself has not yet been implemented.
+The official Sunday snapshot capture schedule has not yet been configured.
 
-Standings logic, win-probability simulation, Sunday reporting, final-stage analysis, and historical CSV aggregation remain to be implemented.
+Per-player live scoring and a verified remaining-game forecast model have
+not yet been implemented.
 
-BBaseline construction, immutable storage, scheduled Week 1 baseline capture,
-and baseline-driven preview report generation are implemented.
-
-The first official Week 1 baseline and preview will be created when the
-scheduled pre-kickoff freeze runs.
-
-Standings logic, win-probability analytics, Sunday-stage analysis, final-stage
-analysis, and historical CSV aggregation have not yet been implemented.
+Standings logic, win-probability simulation, Sunday reporting, final-stage
+analysis, and historical CSV aggregation remain to be implemented.

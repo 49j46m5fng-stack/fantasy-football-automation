@@ -183,3 +183,25 @@ Projection movement must compare values stored in the two historical snapshots.
 Current live projection data must not be substituted for either historical value.
 
 If either historical projection is unresolved, projection delta remains unresolved rather than treating the missing value as zero.
+
+## Sunday Stage
+
+The Sunday snapshot is separate from the immutable baseline.
+
+Capturing Sunday data must never alter or regenerate the baseline.
+
+Sunday lineup membership is taken from the current Sleeper matchup `starters` field.
+
+Sleeper team `points` are preserved as the live team score.
+
+If a commissioner `custom_points` override is present, it is preserved separately and may be used as the effective displayed live score.
+
+Missing live points must remain missing rather than silently becoming zero.
+
+### Sunday Forecast Safety
+
+The initial Sunday `stage_projection` is the current supplied projection total for the current starting lineup.
+
+It must not be described as a mathematically derived remaining-game forecast.
+
+A future remaining-projection model must explicitly document its data source and calculation.
