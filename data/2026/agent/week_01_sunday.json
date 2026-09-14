@@ -50,10 +50,10 @@
         "stage": "baseline"
       },
       "sunday_snapshot": {
-        "created_at": "2026-09-14T15:36:37.206849+00:00",
+        "created_at": "2026-09-14T19:14:07.184832+00:00",
         "path": "data/2026/doats/week_01_sunday.json",
         "schema_version": 1,
-        "sha256": "967a0814e555362eb8ba74985614f99001ed80835205cd0b6f57875a586d3604",
+        "sha256": "4f4c772cb0d79a9782dd06c22c6c53c6cdaf5fad6adfa66143eeea10b73b2316",
         "stage": "sunday"
       }
     },
@@ -66,10 +66,10 @@
         "stage": "baseline"
       },
       "sunday_snapshot": {
-        "created_at": "2026-09-14T15:36:36.640916+00:00",
+        "created_at": "2026-09-14T19:14:07.017068+00:00",
         "path": "data/2026/goats/week_01_sunday.json",
         "schema_version": 1,
-        "sha256": "aa2aef3b79d5d8a1c9ec4926fa5d2b34c2a3f98377d6605b730d956cf4f745aa",
+        "sha256": "3a18a3ecad24dd4a9499694c7632b8fdb6800bbac212164411be485486c67859",
         "stage": "sunday"
       }
     }
@@ -88,10 +88,10 @@
                 "baseline_points": 14.49,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -1.6799999999999997,
+                "delta": -1.6899999999999995,
                 "player_id": "10229",
                 "player_name": "Rashee Rice",
-                "sunday_points": 12.81,
+                "sunday_points": 12.8,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -223,8 +223,8 @@
             "sunday_warnings": [],
             "team_projection": {
               "baseline": 132.23,
-              "delta": -3.769999999999982,
-              "sunday": 128.46
+              "delta": -3.780000000000001,
+              "sunday": 128.45
             }
           },
           {
@@ -248,10 +248,10 @@
                 "baseline_points": 10.19,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -0.6899999999999995,
+                "delta": -0.5800000000000001,
                 "player_id": "12489",
                 "player_name": "RJ Harvey",
-                "sunday_points": 9.5,
+                "sunday_points": 9.61,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -430,10 +430,10 @@
                 "baseline_points": 11.0,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -1.4900000000000002,
+                "delta": -1.5199999999999996,
                 "player_id": "1466",
                 "player_name": "Travis Kelce",
-                "sunday_points": 9.51,
+                "sunday_points": 9.48,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -441,10 +441,10 @@
                 "baseline_points": 17.13,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -1.9999999999999982,
+                "delta": -2.0999999999999996,
                 "player_id": "4046",
                 "player_name": "Patrick Mahomes",
-                "sunday_points": 15.13,
+                "sunday_points": 15.03,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -474,10 +474,10 @@
                 "baseline_points": 14.76,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -0.4399999999999995,
+                "delta": -0.5399999999999991,
                 "player_id": "7526",
                 "player_name": "Jaylen Waddle",
-                "sunday_points": 14.32,
+                "sunday_points": 14.22,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -565,8 +565,8 @@
             "sunday_warnings": [],
             "team_projection": {
               "baseline": 128.9,
-              "delta": -3.6200000000000045,
-              "sunday": 125.28
+              "delta": -3.819999999999993,
+              "sunday": 125.08000000000001
             }
           },
           {
@@ -678,10 +678,10 @@
                 "baseline_points": 10.99,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -0.8900000000000006,
+                "delta": -0.9299999999999997,
                 "player_id": "6806",
                 "player_name": "J.K. Dobbins",
-                "sunday_points": 10.1,
+                "sunday_points": 10.06,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -728,10 +728,10 @@
                 "baseline_points": 17.89,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -0.9000000000000021,
+                "delta": -0.8900000000000006,
                 "player_id": "11563",
                 "player_name": "Bo Nix",
-                "sunday_points": 16.99,
+                "sunday_points": 17.0,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -838,10 +838,10 @@
                 "baseline_points": 15.98,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -2.24,
+                "delta": -2.3000000000000007,
                 "player_id": "8151",
                 "player_name": "Kenneth Walker",
-                "sunday_points": 13.74,
+                "sunday_points": 13.68,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -874,8 +874,8 @@
             "sunday_warnings": [],
             "team_projection": {
               "baseline": 127.06,
-              "delta": -4.409999999999997,
-              "sunday": 122.65
+              "delta": -4.469999999999999,
+              "sunday": 122.59
             }
           },
           {
@@ -1020,17 +1020,6 @@
                 "sunday_points": 13.46,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
-              },
-              {
-                "baseline_points": 7.17,
-                "baseline_present": true,
-                "baseline_source": "sleeper_pts_ppr",
-                "delta": 0.03000000000000025,
-                "player_id": "DEN",
-                "player_name": "Denver Broncos",
-                "sunday_points": 7.2,
-                "sunday_present": true,
-                "sunday_source": "sleeper_pts_ppr"
               }
             ],
             "removed_starters": [
@@ -1052,8 +1041,8 @@
             "sunday_warnings": [],
             "team_projection": {
               "baseline": 123.71999999999998,
-              "delta": -2.9899999999999807,
-              "sunday": 120.73
+              "delta": -3.019999999999982,
+              "sunday": 120.7
             }
           },
           {
@@ -1337,10 +1326,10 @@
                 "baseline_points": 10.6,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -0.33000000000000007,
+                "delta": -0.379999999999999,
                 "player_id": "5045",
                 "player_name": "Courtland Sutton",
-                "sunday_points": 10.27,
+                "sunday_points": 10.22,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -1434,7 +1423,7 @@
           "current_projection_lead": {
             "leader_manager_name": "NeilCarlson",
             "leader_roster_id": 5,
-            "margin": 1.230000000000004,
+            "margin": 1.1700000000000017,
             "tied": false
           },
           "live_score_lead": {
@@ -1445,7 +1434,7 @@
           },
           "matchup_id": 1,
           "team_a": {
-            "current_starter_projection": 122.65,
+            "current_starter_projection": 122.59,
             "effective_live_points": 110.6,
             "manager_name": "NeilCarlson",
             "roster_id": 5
@@ -1461,7 +1450,7 @@
           "current_projection_lead": {
             "leader_manager_name": "Bitcoin89",
             "leader_roster_id": 2,
-            "margin": 12.11,
+            "margin": 12.14,
             "tied": false
           },
           "live_score_lead": {
@@ -1478,7 +1467,7 @@
             "roster_id": 2
           },
           "team_b": {
-            "current_starter_projection": 120.73,
+            "current_starter_projection": 120.7,
             "effective_live_points": 121.42,
             "manager_name": "tlt292001",
             "roster_id": 6
@@ -1488,7 +1477,7 @@
           "current_projection_lead": {
             "leader_manager_name": "DBMixer",
             "leader_roster_id": 4,
-            "margin": 1.6800000000000068,
+            "margin": 1.8799999999999955,
             "tied": false
           },
           "live_score_lead": {
@@ -1499,7 +1488,7 @@
           },
           "matchup_id": 3,
           "team_a": {
-            "current_starter_projection": 125.28,
+            "current_starter_projection": 125.08000000000001,
             "effective_live_points": 105.5,
             "manager_name": "DOATGOAT",
             "roster_id": 3
@@ -1515,7 +1504,7 @@
           "current_projection_lead": {
             "leader_manager_name": "Nafedog1",
             "leader_roster_id": 1,
-            "margin": 1.5,
+            "margin": 1.4899999999999807,
             "tied": false
           },
           "live_score_lead": {
@@ -1526,7 +1515,7 @@
           },
           "matchup_id": 4,
           "team_a": {
-            "current_starter_projection": 128.46,
+            "current_starter_projection": 128.45,
             "effective_live_points": 85.96,
             "manager_name": "Nafedog1",
             "roster_id": 1
@@ -1555,10 +1544,10 @@
       },
       "teams": [
         {
-          "current_starter_projection": 128.46,
+          "current_starter_projection": 128.45,
           "custom_points": null,
           "effective_live_points": 85.96,
-          "known_projected_points": 128.46,
+          "known_projected_points": 128.45,
           "live_points": 85.96,
           "manager_name": "Nafedog1",
           "matchup_id": 4,
@@ -1572,7 +1561,7 @@
               "player_id": "10229",
               "player_name": "Rashee Rice",
               "position": "WR",
-              "projected_points": 12.81,
+              "projected_points": 12.8,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "KC"
@@ -1769,7 +1758,7 @@
               "player_id": "10229",
               "player_name": "Rashee Rice",
               "position": "WR",
-              "projected_points": 12.81,
+              "projected_points": 12.8,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "slot": 5,
@@ -1861,7 +1850,7 @@
               "player_id": "12489",
               "player_name": "RJ Harvey",
               "position": "RB",
-              "projected_points": 9.5,
+              "projected_points": 9.61,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"
@@ -2113,10 +2102,10 @@
           "warnings": []
         },
         {
-          "current_starter_projection": 125.28,
+          "current_starter_projection": 125.08000000000001,
           "custom_points": null,
           "effective_live_points": 105.5,
-          "known_projected_points": 125.28,
+          "known_projected_points": 125.08000000000001,
           "live_points": 105.5,
           "manager_name": "DOATGOAT",
           "matchup_id": 3,
@@ -2150,7 +2139,7 @@
               "player_id": "1466",
               "player_name": "Travis Kelce",
               "position": "TE",
-              "projected_points": 9.51,
+              "projected_points": 9.48,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "KC"
@@ -2170,7 +2159,7 @@
               "player_id": "4046",
               "player_name": "Patrick Mahomes",
               "position": "QB",
-              "projected_points": 15.13,
+              "projected_points": 15.03,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "KC"
@@ -2200,7 +2189,7 @@
               "player_id": "7526",
               "player_name": "Jaylen Waddle",
               "position": "WR",
-              "projected_points": 14.32,
+              "projected_points": 14.22,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"
@@ -2283,7 +2272,7 @@
               "player_id": "4046",
               "player_name": "Patrick Mahomes",
               "position": "QB",
-              "projected_points": 15.13,
+              "projected_points": 15.03,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "slot": 1,
@@ -2327,7 +2316,7 @@
               "player_id": "7526",
               "player_name": "Jaylen Waddle",
               "position": "WR",
-              "projected_points": 14.32,
+              "projected_points": 14.22,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "slot": 5,
@@ -2519,7 +2508,7 @@
               "player_id": "6806",
               "player_name": "J.K. Dobbins",
               "position": "RB",
-              "projected_points": 10.1,
+              "projected_points": 10.06,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"
@@ -2671,10 +2660,10 @@
           "warnings": []
         },
         {
-          "current_starter_projection": 122.65,
+          "current_starter_projection": 122.59,
           "custom_points": null,
           "effective_live_points": 110.6,
-          "known_projected_points": 122.65,
+          "known_projected_points": 122.59,
           "live_points": 110.6,
           "manager_name": "NeilCarlson",
           "matchup_id": 1,
@@ -2688,7 +2677,7 @@
               "player_id": "11563",
               "player_name": "Bo Nix",
               "position": "QB",
-              "projected_points": 16.99,
+              "projected_points": 17.0,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"
@@ -2798,7 +2787,7 @@
               "player_id": "8151",
               "player_name": "Kenneth Walker",
               "position": "RB",
-              "projected_points": 13.74,
+              "projected_points": 13.68,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "KC"
@@ -2852,7 +2841,7 @@
               "player_id": "8151",
               "player_name": "Kenneth Walker",
               "position": "RB",
-              "projected_points": 13.74,
+              "projected_points": 13.68,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "slot": 2,
@@ -2950,10 +2939,10 @@
           "warnings": []
         },
         {
-          "current_starter_projection": 120.73,
+          "current_starter_projection": 120.7,
           "custom_points": null,
           "effective_live_points": 121.42,
-          "known_projected_points": 120.73,
+          "known_projected_points": 120.7,
           "live_points": 121.42,
           "manager_name": "tlt292001",
           "matchup_id": 2,
@@ -3107,7 +3096,7 @@
               "player_id": "DEN",
               "player_name": "Denver Broncos",
               "position": "DEF",
-              "projected_points": 7.2,
+              "projected_points": 7.17,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"
@@ -3208,7 +3197,7 @@
               "player_id": "DEN",
               "player_name": "Denver Broncos",
               "position": "DEF",
-              "projected_points": 7.2,
+              "projected_points": 7.17,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "slot": 9,
@@ -3615,7 +3604,7 @@
               "player_id": "5045",
               "player_name": "Courtland Sutton",
               "position": "WR",
-              "projected_points": 10.27,
+              "projected_points": 10.22,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"
@@ -3963,10 +3952,10 @@
                 "baseline_points": 10.19,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -0.6899999999999995,
+                "delta": -0.5800000000000001,
                 "player_id": "12489",
                 "player_name": "RJ Harvey",
-                "sunday_points": 9.5,
+                "sunday_points": 9.61,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -4029,10 +4018,10 @@
                 "baseline_points": 17.13,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -1.9999999999999982,
+                "delta": -2.0999999999999996,
                 "player_id": "4046",
                 "player_name": "Patrick Mahomes",
-                "sunday_points": 15.13,
+                "sunday_points": 15.03,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -4487,10 +4476,10 @@
                 "baseline_points": 9.8,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -1.540000000000001,
+                "delta": -1.5899999999999999,
                 "player_id": "11624",
                 "player_name": "Xavier Worthy",
-                "sunday_points": 8.26,
+                "sunday_points": 8.21,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -4746,10 +4735,10 @@
                 "baseline_points": 14.76,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -0.4399999999999995,
+                "delta": -0.5399999999999991,
                 "player_id": "7526",
                 "player_name": "Jaylen Waddle",
-                "sunday_points": 14.32,
+                "sunday_points": 14.22,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -4768,10 +4757,10 @@
                 "baseline_points": 15.98,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -2.24,
+                "delta": -2.3000000000000007,
                 "player_id": "8151",
                 "player_name": "Kenneth Walker",
-                "sunday_points": 13.74,
+                "sunday_points": 13.68,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -4804,8 +4793,8 @@
             "sunday_warnings": [],
             "team_projection": {
               "baseline": 126.28000000000003,
-              "delta": -5.060000000000031,
-              "sunday": 121.22
+              "delta": -5.220000000000027,
+              "sunday": 121.06
             }
           },
           {
@@ -4867,10 +4856,10 @@
                 "baseline_points": 11.0,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -1.4900000000000002,
+                "delta": -1.5199999999999996,
                 "player_id": "1466",
                 "player_name": "Travis Kelce",
-                "sunday_points": 9.51,
+                "sunday_points": 9.48,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -4961,17 +4950,6 @@
                 "sunday_points": 22.1,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
-              },
-              {
-                "baseline_points": 7.17,
-                "baseline_present": true,
-                "baseline_source": "sleeper_pts_ppr",
-                "delta": 0.03000000000000025,
-                "player_id": "DEN",
-                "player_name": "Denver Broncos",
-                "sunday_points": 7.2,
-                "sunday_present": true,
-                "sunday_source": "sleeper_pts_ppr"
               }
             ],
             "removed_starters": [
@@ -4993,8 +4971,8 @@
             "sunday_warnings": [],
             "team_projection": {
               "baseline": 110.94,
-              "delta": 9.690000000000026,
-              "sunday": 120.63000000000002
+              "delta": 9.630000000000024,
+              "sunday": 120.57000000000002
             }
           },
           {
@@ -5095,10 +5073,10 @@
                 "baseline_points": 10.99,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -0.8900000000000006,
+                "delta": -0.9299999999999997,
                 "player_id": "6806",
                 "player_name": "J.K. Dobbins",
-                "sunday_points": 10.1,
+                "sunday_points": 10.06,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -5156,10 +5134,10 @@
                 "baseline_points": 14.49,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -1.6799999999999997,
+                "delta": -1.6899999999999995,
                 "player_id": "10229",
                 "player_name": "Rashee Rice",
-                "sunday_points": 12.81,
+                "sunday_points": 12.8,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -5313,8 +5291,8 @@
             "sunday_warnings": [],
             "team_projection": {
               "baseline": 123.75000000000001,
-              "delta": 1.0499999999999972,
-              "sunday": 124.80000000000001
+              "delta": 1.039999999999992,
+              "sunday": 124.79
             }
           },
           {
@@ -5338,10 +5316,10 @@
                 "baseline_points": 17.89,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -0.9000000000000021,
+                "delta": -0.8900000000000006,
                 "player_id": "11563",
                 "player_name": "Bo Nix",
-                "sunday_points": 16.99,
+                "sunday_points": 17.0,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -5404,10 +5382,10 @@
                 "baseline_points": 10.6,
                 "baseline_present": true,
                 "baseline_source": "sleeper_pts_ppr",
-                "delta": -0.33000000000000007,
+                "delta": -0.379999999999999,
                 "player_id": "5045",
                 "player_name": "Courtland Sutton",
-                "sunday_points": 10.27,
+                "sunday_points": 10.22,
                 "sunday_present": true,
                 "sunday_source": "sleeper_pts_ppr"
               },
@@ -5466,7 +5444,7 @@
           "current_projection_lead": {
             "leader_manager_name": "Porter1511",
             "leader_roster_id": 9,
-            "margin": 3.8600000000000136,
+            "margin": 3.8500000000000085,
             "tied": false
           },
           "live_score_lead": {
@@ -5483,7 +5461,7 @@
             "roster_id": 4
           },
           "team_b": {
-            "current_starter_projection": 124.80000000000001,
+            "current_starter_projection": 124.79,
             "effective_live_points": 110.06,
             "manager_name": "Porter1511",
             "roster_id": 9
@@ -5547,7 +5525,7 @@
           "current_projection_lead": {
             "leader_manager_name": "DrewWright17",
             "leader_roster_id": 2,
-            "margin": 4.409999999999997,
+            "margin": 4.469999999999999,
             "tied": false
           },
           "live_score_lead": {
@@ -5564,7 +5542,7 @@
             "roster_id": 2
           },
           "team_b": {
-            "current_starter_projection": 120.63000000000002,
+            "current_starter_projection": 120.57000000000002,
             "effective_live_points": 120.62,
             "manager_name": "BF14",
             "roster_id": 7
@@ -5574,7 +5552,7 @@
           "current_projection_lead": {
             "leader_manager_name": "timmassie",
             "leader_roster_id": 1,
-            "margin": 4.480000000000018,
+            "margin": 4.640000000000015,
             "tied": false
           },
           "live_score_lead": {
@@ -5591,7 +5569,7 @@
             "roster_id": 1
           },
           "team_b": {
-            "current_starter_projection": 121.22,
+            "current_starter_projection": 121.06,
             "effective_live_points": 142.96,
             "manager_name": "rachelknowssports",
             "roster_id": 6
@@ -5921,7 +5899,7 @@
               "player_id": "12489",
               "player_name": "RJ Harvey",
               "position": "RB",
-              "projected_points": 9.5,
+              "projected_points": 9.61,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"
@@ -5981,7 +5959,7 @@
               "player_id": "4046",
               "player_name": "Patrick Mahomes",
               "position": "QB",
-              "projected_points": 15.13,
+              "projected_points": 15.03,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "KC"
@@ -6758,7 +6736,7 @@
               "player_id": "11624",
               "player_name": "Xavier Worthy",
               "position": "WR",
-              "projected_points": 8.26,
+              "projected_points": 8.21,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "KC"
@@ -7010,10 +6988,10 @@
           "warnings": []
         },
         {
-          "current_starter_projection": 121.22,
+          "current_starter_projection": 121.06,
           "custom_points": null,
           "effective_live_points": 142.96,
-          "known_projected_points": 121.22,
+          "known_projected_points": 121.06,
           "live_points": 142.96,
           "manager_name": "rachelknowssports",
           "matchup_id": 5,
@@ -7117,7 +7095,7 @@
               "player_id": "7526",
               "player_name": "Jaylen Waddle",
               "position": "WR",
-              "projected_points": 14.32,
+              "projected_points": 14.22,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"
@@ -7137,7 +7115,7 @@
               "player_id": "8151",
               "player_name": "Kenneth Walker",
               "position": "RB",
-              "projected_points": 13.74,
+              "projected_points": 13.68,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "KC"
@@ -7202,7 +7180,7 @@
               "player_id": "8151",
               "player_name": "Kenneth Walker",
               "position": "RB",
-              "projected_points": 13.74,
+              "projected_points": 13.68,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "slot": 3,
@@ -7224,7 +7202,7 @@
               "player_id": "7526",
               "player_name": "Jaylen Waddle",
               "position": "WR",
-              "projected_points": 14.32,
+              "projected_points": 14.22,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "slot": 5,
@@ -7289,10 +7267,10 @@
           "warnings": []
         },
         {
-          "current_starter_projection": 120.63000000000002,
+          "current_starter_projection": 120.57000000000002,
           "custom_points": null,
           "effective_live_points": 120.62,
-          "known_projected_points": 120.63000000000002,
+          "known_projected_points": 120.57000000000002,
           "live_points": 120.62,
           "manager_name": "BF14",
           "matchup_id": 4,
@@ -7356,7 +7334,7 @@
               "player_id": "1466",
               "player_name": "Travis Kelce",
               "position": "TE",
-              "projected_points": 9.51,
+              "projected_points": 9.48,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "KC"
@@ -7446,7 +7424,7 @@
               "player_id": "DEN",
               "player_name": "Denver Broncos",
               "position": "DEF",
-              "projected_points": 7.2,
+              "projected_points": 7.17,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"
@@ -7514,7 +7492,7 @@
               "player_id": "1466",
               "player_name": "Travis Kelce",
               "position": "TE",
-              "projected_points": 9.51,
+              "projected_points": 9.48,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "slot": 6,
@@ -7547,7 +7525,7 @@
               "player_id": "DEN",
               "player_name": "Denver Broncos",
               "position": "DEF",
-              "projected_points": 7.2,
+              "projected_points": 7.17,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "slot": 9,
@@ -7685,7 +7663,7 @@
               "player_id": "6806",
               "player_name": "J.K. Dobbins",
               "position": "RB",
-              "projected_points": 10.1,
+              "projected_points": 10.06,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"
@@ -7847,10 +7825,10 @@
           "warnings": []
         },
         {
-          "current_starter_projection": 124.80000000000001,
+          "current_starter_projection": 124.79,
           "custom_points": null,
           "effective_live_points": 110.06,
-          "known_projected_points": 124.80000000000001,
+          "known_projected_points": 124.79,
           "live_points": 110.06,
           "manager_name": "Porter1511",
           "matchup_id": 1,
@@ -7864,7 +7842,7 @@
               "player_id": "10229",
               "player_name": "Rashee Rice",
               "position": "WR",
-              "projected_points": 12.81,
+              "projected_points": 12.8,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "KC"
@@ -7970,7 +7948,7 @@
               "team": "NYJ"
             },
             {
-              "injury_status": null,
+              "injury_status": "Questionable",
               "player_id": "8408",
               "player_name": "Jordan Mason",
               "position": "RB",
@@ -8061,7 +8039,7 @@
               "player_id": "10229",
               "player_name": "Rashee Rice",
               "position": "WR",
-              "projected_points": 12.81,
+              "projected_points": 12.8,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "slot": 5,
@@ -8153,7 +8131,7 @@
               "player_id": "11563",
               "player_name": "Bo Nix",
               "position": "QB",
-              "projected_points": 16.99,
+              "projected_points": 17.0,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"
@@ -8233,7 +8211,7 @@
               "player_id": "5045",
               "player_name": "Courtland Sutton",
               "position": "WR",
-              "projected_points": 10.27,
+              "projected_points": 10.22,
               "projection_reason": null,
               "projection_source": "sleeper_pts_ppr",
               "team": "DEN"

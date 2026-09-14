@@ -12,6 +12,9 @@ from zoneinfo import ZoneInfo
 from src.comparison import (
     compare_baseline_to_sunday,
 )
+from src.nfl_games import (
+    ESPNNFLGameProvider,
+)
 from src.players import get_player_map
 from src.projections import (
     SleeperProjectionProvider,
@@ -26,6 +29,10 @@ from src.storage import (
 )
 from src.sunday import (
     build_sunday_snapshot_data,
+)
+from src.sunday_remaining import (
+    attach_remaining_to_snapshot,
+    build_remaining_lookup,
 )
 from src.team_projections import (
     load_week_projection_overrides,
@@ -46,8 +53,7 @@ CAPTURE_DATE = date(
     14,
 )
 
-# Target the Monday Sunday-recap/MNF-preview checkpoint
-# beginning at 7:00 AM Central.
+# Monday Sunday-recap/MNF-preview checkpoint.
 CAPTURE_WINDOW_START = datetime(
     2026,
     9,
@@ -228,12 +234,12 @@ def build_capture_context() -> dict[str, Any]:
 
     return {
         "mode": (
-            "github_actions_monday_noon_capture"
+            "github_actions_monday_morning_capture"
             if os.environ.get(
                 "GITHUB_ACTIONS"
             )
             == "true"
-            else "manual_monday_noon_capture"
+            else "manual_monday_morning_capture"
         ),
         "stage_label": (
             "sunday_pre_mnf"
@@ -265,10 +271,36 @@ def build_capture_context() -> dict[str, Any]:
             .isoformat()
         ),
         "capture_purpose": (
-            "Monday noon Sunday recap "
+            "Monday morning Sunday recap "
             "and pre-MNF checkpoint"
         ),
     }
+
+
+def fetch_team_states() -> dict[str, Any]:
+    """Fetch NFL game states once for remaining-player analytics."""
+
+    print(
+        "Fetching NFL Week 1 game states..."
+    )
+
+    provider = (
+        ESPNNFLGameProvider()
+    )
+
+    team_states = (
+        provider.get_team_states(
+            season=int(SEASON),
+            week=WEEK,
+        )
+    )
+
+    print(
+        f"NFL team game states: "
+        f"{len(team_states)}"
+    )
+
+    return team_states
 
 
 def prepare_sunday_snapshots(
@@ -317,6 +349,10 @@ def prepare_sunday_snapshots(
             ),
             week=WEEK,
         )
+    )
+
+    team_states = (
+        fetch_team_states()
     )
 
     capture_context = (
@@ -388,6 +424,29 @@ def prepare_sunday_snapshots(
             )
         )
 
+        remaining_lookup = (
+            build_remaining_lookup(
+                matchup_records=(
+                    matchups
+                ),
+                projection_lookup=(
+                    projection_lookup
+                ),
+                players=players,
+                overrides=overrides,
+                team_states=(
+                    team_states
+                ),
+            )
+        )
+
+        sunday = (
+            attach_remaining_to_snapshot(
+                sunday,
+                remaining_lookup,
+            )
+        )
+
         prepared[
             league_key
         ] = {
@@ -403,6 +462,206 @@ def prepare_sunday_snapshots(
         }
 
     return prepared
+
+
+def remaining_summary(
+    data: dict[str, Any],
+) -> tuple[
+    int,
+    int,
+    int,
+]:
+    """Summarize remaining-player analytics."""
+
+    remaining = data.get(
+        "remaining"
+    )
+
+    if not isinstance(
+        remaining,
+        dict,
+    ):
+        return (
+            0,
+            0,
+            0,
+        )
+
+    teams = remaining.get(
+        "teams"
+    )
+
+    if not isinstance(
+        teams,
+        dict,
+    ):
+        return (
+            0,
+            0,
+            0,
+        )
+
+    teams_with_players_left = 0
+    remaining_players = 0
+    unresolved_teams = 0
+
+    for team_data in (
+        teams.values()
+    ):
+        if not isinstance(
+            team_data,
+            dict,
+        ):
+            continue
+
+        raw_count = (
+            team_data.get(
+                "remaining_player_count",
+                0,
+            )
+        )
+
+        count = (
+            int(raw_count)
+            if isinstance(
+                raw_count,
+                int,
+            )
+            and not isinstance(
+                raw_count,
+                bool,
+            )
+            else 0
+        )
+
+        if count > 0:
+            teams_with_players_left += 1
+
+        remaining_players += count
+
+        if (
+            team_data.get(
+                "projected_final_estimate"
+            )
+            is None
+        ):
+            unresolved_teams += 1
+
+    return (
+        teams_with_players_left,
+        remaining_players,
+        unresolved_teams,
+    )
+
+
+def print_remaining_players(
+    data: dict[str, Any],
+) -> None:
+    """Print players whose NFL games have not started."""
+
+    remaining = data.get(
+        "remaining"
+    )
+
+    if not isinstance(
+        remaining,
+        dict,
+    ):
+        return
+
+    teams = remaining.get(
+        "teams"
+    )
+
+    if not isinstance(
+        teams,
+        dict,
+    ):
+        return
+
+    found = False
+
+    for roster_id, team_data in (
+        sorted(
+            teams.items(),
+            key=lambda item: int(
+                item[0]
+            ),
+        )
+    ):
+        if not isinstance(
+            team_data,
+            dict,
+        ):
+            continue
+
+        players = team_data.get(
+            "players"
+        )
+
+        if not isinstance(
+            players,
+            list,
+        ):
+            continue
+
+        remaining_players = [
+            player
+            for player in players
+            if (
+                isinstance(
+                    player,
+                    dict,
+                )
+                and player.get(
+                    "still_to_play"
+                )
+                is True
+            )
+        ]
+
+        if not remaining_players:
+            continue
+
+        found = True
+
+        print()
+        print(
+            f"  roster {roster_id}:"
+        )
+
+        print(
+            f"    current points: "
+            f"{team_data.get('current_points')}"
+        )
+
+        print(
+            f"    remaining projection: "
+            f"{team_data.get('remaining_projected_points')}"
+        )
+
+        print(
+            f"    projected final: "
+            f"{team_data.get('projected_final_estimate')}"
+        )
+
+        for player in (
+            remaining_players
+        ):
+            print(
+                "    "
+                f"{player.get('player_name')}"
+                f" | {player.get('position')}"
+                f" | {player.get('nfl_team')}"
+                f" | projection="
+                f"{player.get('remaining_projection')}"
+            )
+
+    if not found:
+        print()
+        print(
+            "  No starters remain to play."
+        )
 
 
 def print_prepared_summary(
@@ -440,6 +699,14 @@ def print_prepared_summary(
             is not None
         ]
 
+        (
+            teams_with_players_left,
+            remaining_players,
+            unresolved_teams,
+        ) = remaining_summary(
+            data
+        )
+
         print()
         print(
             item["league_name"]
@@ -466,6 +733,21 @@ def print_prepared_summary(
         )
 
         print(
+            f"  teams with players remaining: "
+            f"{teams_with_players_left}"
+        )
+
+        print(
+            f"  players remaining: "
+            f"{remaining_players}"
+        )
+
+        print(
+            f"  unresolved projected finals: "
+            f"{unresolved_teams}"
+        )
+
+        print(
             f"  warnings: "
             f"{len(data['warnings'])}"
         )
@@ -477,6 +759,15 @@ def print_prepared_summary(
                 f"    WARNING: "
                 f"{warning}"
             )
+
+        print()
+        print(
+            "  MNF remaining-player detail:"
+        )
+
+        print_remaining_players(
+            data
+        )
 
 
 def print_comparison_summary(
@@ -537,6 +828,65 @@ def print_comparison_summary(
         print()
         print(
             "No lineup changes."
+        )
+
+
+def validate_stored_remaining(
+    stored: dict[str, Any],
+    league_key: str,
+) -> None:
+    """Validate remaining-player analytics survived storage."""
+
+    data = stored.get(
+        "data"
+    )
+
+    if not isinstance(
+        data,
+        dict,
+    ):
+        raise SundayCaptureError(
+            f"{league_key} stored snapshot "
+            "is missing data"
+        )
+
+    remaining = data.get(
+        "remaining"
+    )
+
+    if not isinstance(
+        remaining,
+        dict,
+    ):
+        raise SundayCaptureError(
+            f"{league_key} stored snapshot "
+            "is missing remaining analytics"
+        )
+
+    teams = remaining.get(
+        "teams"
+    )
+
+    if not isinstance(
+        teams,
+        dict,
+    ):
+        raise SundayCaptureError(
+            f"{league_key} stored snapshot "
+            "has invalid remaining teams"
+        )
+
+    if len(
+        teams
+    ) != len(
+        data.get(
+            "teams",
+            [],
+        )
+    ):
+        raise SundayCaptureError(
+            f"{league_key} remaining-team count "
+            "does not match fantasy-team count"
         )
 
 
@@ -603,7 +953,10 @@ def write_sunday_snapshots(
     print("READ-BACK VALIDATION")
     print("=" * 72)
 
-    stored_snapshots = {}
+    stored_snapshots: dict[
+        str,
+        dict[str, Any],
+    ] = {}
 
     for league_key, path in (
         written.items()
@@ -612,9 +965,26 @@ def write_sunday_snapshots(
             path
         )
 
+        validate_stored_remaining(
+            stored,
+            league_key,
+        )
+
         stored_snapshots[
             league_key
         ] = stored
+
+        data = stored[
+            "data"
+        ]
+
+        (
+            teams_with_players_left,
+            remaining_players,
+            unresolved_teams,
+        ) = remaining_summary(
+            data
+        )
 
         print()
         print(
@@ -628,7 +998,22 @@ def write_sunday_snapshots(
 
         print(
             f"  teams: "
-            f"{len(stored['data']['teams'])}"
+            f"{len(data['teams'])}"
+        )
+
+        print(
+            f"  teams with players remaining: "
+            f"{teams_with_players_left}"
+        )
+
+        print(
+            f"  players remaining: "
+            f"{remaining_players}"
+        )
+
+        print(
+            f"  unresolved projected finals: "
+            f"{unresolved_teams}"
         )
 
         print(
