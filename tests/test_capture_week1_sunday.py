@@ -37,8 +37,8 @@ def test_before_capture_window() -> None:
         2026,
         9,
         14,
-        11,
-        29,
+        6,
+        59,
         tzinfo=TIMEZONE,
     )
 

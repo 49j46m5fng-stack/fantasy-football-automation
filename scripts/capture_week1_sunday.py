@@ -47,13 +47,13 @@ CAPTURE_DATE = date(
 )
 
 # Target the Monday Sunday-recap/MNF-preview checkpoint
-# around noon Central.
+# beginning at 7:00 AM Central.
 CAPTURE_WINDOW_START = datetime(
     2026,
     9,
     14,
-    11,
-    30,
+    7,
+    0,
     tzinfo=TIMEZONE,
 )
 
