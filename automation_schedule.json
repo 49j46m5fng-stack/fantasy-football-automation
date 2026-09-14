@@ -19,7 +19,7 @@
       "enabled": true,
       "anchor_week": 2,
       "anchor_date": "2026-09-21",
-      "window_start": "11:30",
+      "window_start": "07:00",
       "window_end": "13:00",
       "date_overrides": {
         "1": "2026-09-14"
