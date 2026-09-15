@@ -1639,6 +1639,82 @@ def run_final(
     return 0
 
 
+def run_final_with_derived_analytics(
+    week: int,
+    schedule: WeeklySchedule,
+    check_only: bool = False,
+) -> int:
+    """Run the final stage, then refresh derived weekly analytics.
+
+    The immutable final snapshot is the historical record and must
+    succeed first. Donut-pool and season-analytics outputs are derived
+    artifacts: a failure there is reported but must not fail the run that
+    already captured final history.
+    """
+
+    # Imported lazily. Both orchestration modules depend on this one.
+    from src.donut_orchestration import (
+        run_donuts,
+    )
+    from src.season_orchestration import (
+        run_analytics,
+    )
+
+    status = run_final(
+        week=week,
+        schedule=schedule,
+        check_only=check_only,
+    )
+
+    if status != 0:
+        return status
+
+    derived_status = 0
+
+    for label, runner in (
+        (
+            "donut pool",
+            lambda: run_donuts(
+                through_week=week,
+                check_only=check_only,
+            ),
+        ),
+        (
+            "season analytics",
+            lambda: run_analytics(
+                through_week=week,
+                check_only=check_only,
+            ),
+        ),
+    ):
+        try:
+            result = runner()
+
+        except OrchestrationError as exc:
+            print()
+            print(
+                f"WARNING: {label} could not be "
+                f"refreshed: {exc}"
+            )
+
+            derived_status = 1
+
+            continue
+
+        if result != 0:
+            derived_status = result
+
+    if derived_status != 0:
+        print()
+        print(
+            "Final snapshots were written "
+            "successfully. Derived analytics "
+            "reported a problem above."
+        )
+
+    return derived_status
+
+
 def run_auto(
     schedule: WeeklySchedule,
     check_only: bool = False,
@@ -1712,7 +1788,7 @@ def run_auto(
         )
 
     if due.stage == "final":
-        return run_final(
+        return run_final_with_derived_analytics(
             week=due.week,
             schedule=schedule,
             check_only=check_only,

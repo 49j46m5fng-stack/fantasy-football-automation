@@ -13,6 +13,8 @@ on:
           - baseline
           - sunday
           - final
+          - donuts
+          - analytics
 
       week:
         description: Optional fantasy week for manual stage runs
@@ -136,9 +138,15 @@ jobs:
             exit 0
           fi
 
+          WEEK_FLAG_NAME="--week"
+
+          if [ "$STAGE" = "donuts" ] || [ "$STAGE" = "analytics" ]; then
+            WEEK_FLAG_NAME="--through-week"
+          fi
+
           if [ -n "$INPUT_WEEK" ]; then
             python fantasy.py "$STAGE" \
-              --week "$INPUT_WEEK" \
+              "$WEEK_FLAG_NAME" "$INPUT_WEEK" \
               $CHECK_FLAG
           else
             python fantasy.py "$STAGE" \

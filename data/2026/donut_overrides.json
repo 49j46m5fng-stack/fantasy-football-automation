@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "_comment": "Commissioner rulings for donut-pool scoring ties. A tie is never broken automatically under the default `unresolved` tie policy. Add an entry keyed by the scoring week naming the team that brings donuts, with a written reason.",
+  "_example": {
+    "3": {
+      "league_key": "doats",
+      "roster_id": 4,
+      "reason": "Week 3 tie at 71.84. Coin flip at the Tuesday league meeting, witnessed by the league."
+    }
+  },
+  "weeks": {}
+}

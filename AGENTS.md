@@ -205,3 +205,42 @@ GOATs relegation refers to regular-season finish.
 
 DOATs promotion must honor the duplicate-champion rule where the
 playoff runner-up receives the second promotion spot.
+## Donut Pool Invariants
+
+Donut-pool identity is `(league_key, roster_id)`. Never use manager name.
+
+A manager may be assigned donut duty at most once per season.
+
+Donut scoring reads `effective_final_points` from final snapshots only.
+
+A missing weekly score is never zero and can never win the donut.
+
+Do not add an automatic tiebreaker. Ties are resolved by a committed
+commissioner override with a written reason, or by an explicitly
+configured tie policy.
+
+Donut outputs are derived artifacts. Do not write them through the
+immutable snapshot storage layer.
+
+## Season Analytics Invariants
+
+Luck is `actual_win_equivalent - expected_wins`. Expected wins are
+always calculated within a league. Never compute all-play across
+leagues.
+
+Cross-league score rank is descriptive only. Never let it affect
+standings, expected wins, or any league outcome.
+
+Never estimate lineup efficiency, projections, or a remaining schedule.
+If an input is unavailable, omit the dependent analytic and warn.
+
+Season analytics and donut outputs are derived artifacts. Do not write
+them through the immutable snapshot storage layer.
+
+The final stage must write immutable snapshots before derived analytics
+run. A derived-analytics failure must never fail an already-captured
+final snapshot.
+
+Note that `all_play_percentage` is a 0-to-1 fraction while
+`lineup_efficiency_pct` is 0-to-100. Do not mix the two scales when
+formatting.

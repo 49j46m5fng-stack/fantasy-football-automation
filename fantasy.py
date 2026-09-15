@@ -3,12 +3,19 @@
 import argparse
 from datetime import datetime
 
+from src.donut_orchestration import (
+    run_donuts,
+)
+from src.season_orchestration import (
+    run_analytics,
+)
 from src.orchestration import (
     OrchestrationError,
     run_auto,
     run_baseline,
     run_context,
     run_final,
+    run_final_with_derived_analytics,
     run_sunday,
 )
 from src.schedule import (
@@ -169,6 +176,67 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
 
+    donuts_parser = (
+        subparsers.add_parser(
+            "donuts"
+        )
+    )
+
+    donuts_parser.add_argument(
+        "--through-week",
+        type=int,
+        default=None,
+        help=(
+            "Score completed weeks up to this "
+            "fantasy week. Defaults to the "
+            "configured donut season length."
+        ),
+    )
+
+    donuts_parser.add_argument(
+        "--check-only",
+        action="store_true",
+        help=(
+            "Recompute and print pool state "
+            "without writing derived files."
+        ),
+    )
+
+    analytics_parser = (
+        subparsers.add_parser(
+            "analytics"
+        )
+    )
+
+    analytics_parser.add_argument(
+        "--through-week",
+        type=int,
+        default=None,
+        help=(
+            "Analyze completed weeks up to "
+            "this fantasy week."
+        ),
+    )
+
+    analytics_parser.add_argument(
+        "--check-only",
+        action="store_true",
+        help=(
+            "Recompute and print analytics "
+            "without writing derived files."
+        ),
+    )
+
+    analytics_parser.add_argument(
+        "--skip-live-inputs",
+        action="store_true",
+        help=(
+            "Skip player stats and remaining "
+            "schedule fetches. Power rankings "
+            "and simulations are omitted."
+        ),
+    )
+
     auto_parser = (
         subparsers.add_parser(
             "auto"
@@ -217,6 +285,29 @@ def main() -> int:
                 ),
             )
 
+        if args.command == "analytics":
+            return run_analytics(
+                through_week=(
+                    args.through_week
+                ),
+                check_only=(
+                    args.check_only
+                ),
+                skip_live_inputs=(
+                    args.skip_live_inputs
+                ),
+            )
+
+        if args.command == "donuts":
+            return run_donuts(
+                through_week=(
+                    args.through_week
+                ),
+                check_only=(
+                    args.check_only
+                ),
+            )
+
         if args.command == "context":
             schedule = (
                 load_weekly_schedule()
@@ -261,7 +352,7 @@ def main() -> int:
             )
 
         if args.command == "final":
-            return run_final(
+            return run_final_with_derived_analytics(
                 week=week,
                 schedule=schedule,
                 check_only=(
