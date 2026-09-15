@@ -161,7 +161,7 @@ def test_final_stage_resolves_week2() -> None:
         2026,
         9,
         22,
-        11,
+        7,
         45,
         tzinfo=TIMEZONE,
     )

@@ -421,10 +421,152 @@ def _baseline_team_context(
     }
 
 
+def _remaining_team_lookup(
+    data: dict[str, Any],
+) -> dict[int, dict[str, Any]]:
+    """Return roster-keyed Monday remaining-player analytics.
+
+    Older Sunday snapshots may not contain this additive block. In that
+    case an empty lookup is returned so historical context can still be
+    generated without inventing remaining-game data.
+    """
+
+    remaining = data.get(
+        "remaining"
+    )
+
+    if remaining is None:
+        return {}
+
+    if not isinstance(
+        remaining,
+        dict,
+    ):
+        raise AgentContextError(
+            "Sunday remaining analytics must be an object"
+        )
+
+    teams = remaining.get(
+        "teams"
+    )
+
+    if teams is None:
+        return {}
+
+    if not isinstance(
+        teams,
+        dict,
+    ):
+        raise AgentContextError(
+            "Sunday remaining teams must be an object"
+        )
+
+    lookup: dict[
+        int,
+        dict[str, Any],
+    ] = {}
+
+    for raw_roster_id, record in teams.items():
+        try:
+            roster_id = int(
+                raw_roster_id
+            )
+        except (
+            TypeError,
+            ValueError,
+        ) as exc:
+            raise AgentContextError(
+                "Sunday remaining roster key must be an integer"
+            ) from exc
+
+        if not isinstance(
+            record,
+            dict,
+        ):
+            raise AgentContextError(
+                f"Sunday remaining roster {roster_id} must be an object"
+            )
+
+        if roster_id in lookup:
+            raise AgentContextError(
+                f"Duplicate Sunday remaining roster_id {roster_id}"
+            )
+
+        lookup[roster_id] = record
+
+    return lookup
+
+
+def _remaining_player_context(
+    record: dict[str, Any],
+) -> dict[str, Any]:
+    """Return AI-facing actual/game-state/remaining facts for a starter."""
+
+    if not isinstance(
+        record,
+        dict,
+    ):
+        raise AgentContextError(
+            "Sunday remaining player must be an object"
+        )
+
+    return {
+        "slot": record.get(
+            "slot"
+        ),
+        "player_id": record.get(
+            "player_id"
+        ),
+        "player_name": record.get(
+            "player_name"
+        ),
+        "position": record.get(
+            "position"
+        ),
+        "nfl_team": record.get(
+            "nfl_team"
+        ),
+        "actual_points": record.get(
+            "actual_points"
+        ),
+        "actual_source": record.get(
+            "actual_source"
+        ),
+        "fresh_projection": record.get(
+            "fresh_projection"
+        ),
+        "projection_source": record.get(
+            "projection_source"
+        ),
+        "game_state": record.get(
+            "game_state"
+        ),
+        "game_id": record.get(
+            "game_id"
+        ),
+        "opponent": record.get(
+            "opponent"
+        ),
+        "kickoff": record.get(
+            "kickoff"
+        ),
+        "still_to_play": record.get(
+            "still_to_play"
+        ),
+        "remaining_projection": record.get(
+            "remaining_projection"
+        ),
+        "reason": record.get(
+            "reason"
+        ),
+    }
+
+
 def _sunday_team_context(
     team: dict[str, Any],
+    remaining_team: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Build AI-facing Monday-noon facts for one roster."""
+    """Build AI-facing Monday-morning facts for one roster."""
 
     starters = team.get(
         "starters",
@@ -449,8 +591,135 @@ def _sunday_team_context(
         list,
     ):
         raise AgentContextError(
-            "Sunday rostered_players "
-            "must be a list"
+            "Sunday rostered_players must be a list"
+        )
+
+    remaining_players: list[dict[str, Any]] = []
+    remaining_player_lookup: dict[str, dict[str, Any]] = {}
+
+    current_points = team.get(
+        "effective_live_points"
+    )
+    remaining_player_count = None
+    remaining_projected_points = None
+    projected_final_estimate = None
+    remaining_warnings: list[Any] = []
+
+    if remaining_team is not None:
+        raw_players = remaining_team.get(
+            "players",
+            [],
+        )
+
+        if not isinstance(
+            raw_players,
+            list,
+        ):
+            raise AgentContextError(
+                "Sunday remaining players must be a list"
+            )
+
+        monday_starters = [
+            _remaining_player_context(
+                record
+            )
+            for record in raw_players
+        ]
+
+        remaining_player_lookup = {
+            str(record.get(
+                "player_id"
+            )): record
+            for record in monday_starters
+            if record.get(
+                "player_id"
+            ) is not None
+        }
+
+        remaining_players = [
+            record
+            for record in monday_starters
+            if record.get(
+                "still_to_play"
+            ) is True
+        ]
+
+        current_points = remaining_team.get(
+            "current_points",
+            current_points,
+        )
+        remaining_player_count = remaining_team.get(
+            "remaining_player_count"
+        )
+        remaining_projected_points = remaining_team.get(
+            "remaining_projected_points"
+        )
+        projected_final_estimate = remaining_team.get(
+            "projected_final_estimate"
+        )
+
+        raw_warnings = remaining_team.get(
+            "warnings",
+            [],
+        )
+        if isinstance(
+            raw_warnings,
+            list,
+        ):
+            remaining_warnings = list(
+                raw_warnings
+            )
+    else:
+        monday_starters = []
+
+    enriched_starters: list[dict[str, Any]] = []
+
+    for starter in starters:
+        base = _player_context(
+            starter
+        )
+        player_id = base.get(
+            "player_id"
+        )
+        remaining_record = remaining_player_lookup.get(
+            str(player_id)
+        )
+
+        if remaining_record is not None:
+            base.update(
+                {
+                    "actual_points": remaining_record.get(
+                        "actual_points"
+                    ),
+                    "actual_source": remaining_record.get(
+                        "actual_source"
+                    ),
+                    "fresh_projection": remaining_record.get(
+                        "fresh_projection"
+                    ),
+                    "game_state": remaining_record.get(
+                        "game_state"
+                    ),
+                    "game_id": remaining_record.get(
+                        "game_id"
+                    ),
+                    "opponent": remaining_record.get(
+                        "opponent"
+                    ),
+                    "kickoff": remaining_record.get(
+                        "kickoff"
+                    ),
+                    "still_to_play": remaining_record.get(
+                        "still_to_play"
+                    ),
+                    "remaining_projection": remaining_record.get(
+                        "remaining_projection"
+                    ),
+                }
+            )
+
+        enriched_starters.append(
+            base
         )
 
     return {
@@ -466,10 +735,8 @@ def _sunday_team_context(
         "matchup_id": team.get(
             "matchup_id"
         ),
-        "opponent_roster_id": (
-            team.get(
-                "opponent_roster_id"
-            )
+        "opponent_roster_id": team.get(
+            "opponent_roster_id"
         ),
         "live_points": team.get(
             "live_points"
@@ -477,46 +744,38 @@ def _sunday_team_context(
         "custom_points": team.get(
             "custom_points"
         ),
-        "effective_live_points": (
-            team.get(
-                "effective_live_points"
-            )
+        "effective_live_points": team.get(
+            "effective_live_points"
         ),
-        "current_starter_projection": (
-            team.get(
-                "stage_projection"
-            )
+        "current_points": current_points,
+        "current_starter_projection": team.get(
+            "stage_projection"
         ),
-        "known_projected_points": (
-            team.get(
-                "known_projected_points"
-            )
+        "remaining_player_count": remaining_player_count,
+        "remaining_projected_points": remaining_projected_points,
+        "projected_final_estimate": projected_final_estimate,
+        "known_projected_points": team.get(
+            "known_projected_points"
         ),
-        "projection_complete": (
-            team.get(
-                "projection_complete"
-            )
+        "projection_complete": team.get(
+            "projection_complete"
         ),
         "starters_raw": team.get(
             "stage_starters_raw"
         ),
-        "starters": [
-            _player_context(
-                starter
-            )
-            for starter in starters
-        ],
+        "starters": enriched_starters,
+        "monday_starters": monday_starters,
+        "remaining_players": remaining_players,
         "rostered_players": [
             _player_context(
                 player
             )
             for player in rostered_players
         ],
-        "special_projection_notes": (
-            _special_projection_notes(
-                team
-            )
+        "special_projection_notes": _special_projection_notes(
+            team
         ),
+        "remaining_warnings": remaining_warnings,
         "warnings": list(
             team.get(
                 "warnings",
@@ -524,7 +783,6 @@ def _sunday_team_context(
             )
         ),
     }
-
 
 def _lead_summary(
     team_a: dict[str, Any],
@@ -701,8 +959,9 @@ def _baseline_matchups(
 def _sunday_matchups(
     data: dict[str, Any],
     teams: dict[int, dict[str, Any]],
+    remaining_teams: dict[int, dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    """Build Monday-noon matchup facts."""
+    """Build Monday-morning matchup facts with expected-final estimates."""
 
     records = data.get(
         "matchups"
@@ -713,19 +972,15 @@ def _sunday_matchups(
         list,
     ):
         raise AgentContextError(
-            "Sunday snapshot is "
-            "missing matchups"
+            "Sunday snapshot is missing matchups"
         )
 
-    result: list[
-        dict[str, Any]
-    ] = []
+    result: list[dict[str, Any]] = []
 
     for matchup in records:
         roster_a_id = matchup.get(
             "roster_a_id"
         )
-
         roster_b_id = matchup.get(
             "roster_b_id"
         )
@@ -733,7 +988,6 @@ def _sunday_matchups(
         team_a = teams.get(
             roster_a_id
         )
-
         team_b = teams.get(
             roster_b_id
         )
@@ -743,76 +997,105 @@ def _sunday_matchups(
             or team_b is None
         ):
             raise AgentContextError(
-                "Matchup references "
-                "unknown roster"
+                "Matchup references unknown roster"
             )
+
+        remaining_a = remaining_teams.get(
+            roster_a_id
+        )
+        remaining_b = remaining_teams.get(
+            roster_b_id
+        )
+
+        context_a = _sunday_team_context(
+            team_a,
+            remaining_a,
+        )
+        context_b = _sunday_team_context(
+            team_b,
+            remaining_b,
+        )
 
         result.append(
             {
-                "matchup_id": (
-                    matchup.get(
-                        "matchup_id"
-                    )
+                "matchup_id": matchup.get(
+                    "matchup_id"
                 ),
                 "team_a": {
-                    "roster_id": (
-                        roster_a_id
+                    "roster_id": roster_a_id,
+                    "manager_name": team_a.get(
+                        "manager_name"
                     ),
-                    "manager_name": (
-                        team_a.get(
-                            "manager_name"
-                        )
+                    "effective_live_points": team_a.get(
+                        "effective_live_points"
                     ),
-                    "effective_live_points": (
-                        team_a.get(
-                            "effective_live_points"
-                        )
+                    "current_points": context_a.get(
+                        "current_points"
                     ),
-                    "current_starter_projection": (
-                        team_a.get(
-                            "stage_projection"
-                        )
+                    "current_starter_projection": team_a.get(
+                        "stage_projection"
+                    ),
+                    "remaining_player_count": context_a.get(
+                        "remaining_player_count"
+                    ),
+                    "remaining_projected_points": context_a.get(
+                        "remaining_projected_points"
+                    ),
+                    "projected_final_estimate": context_a.get(
+                        "projected_final_estimate"
+                    ),
+                    "remaining_players": context_a.get(
+                        "remaining_players",
+                        [],
                     ),
                 },
                 "team_b": {
-                    "roster_id": (
-                        roster_b_id
+                    "roster_id": roster_b_id,
+                    "manager_name": team_b.get(
+                        "manager_name"
                     ),
-                    "manager_name": (
-                        team_b.get(
-                            "manager_name"
-                        )
+                    "effective_live_points": team_b.get(
+                        "effective_live_points"
                     ),
-                    "effective_live_points": (
-                        team_b.get(
-                            "effective_live_points"
-                        )
+                    "current_points": context_b.get(
+                        "current_points"
                     ),
-                    "current_starter_projection": (
-                        team_b.get(
-                            "stage_projection"
-                        )
+                    "current_starter_projection": team_b.get(
+                        "stage_projection"
+                    ),
+                    "remaining_player_count": context_b.get(
+                        "remaining_player_count"
+                    ),
+                    "remaining_projected_points": context_b.get(
+                        "remaining_projected_points"
+                    ),
+                    "projected_final_estimate": context_b.get(
+                        "projected_final_estimate"
+                    ),
+                    "remaining_players": context_b.get(
+                        "remaining_players",
+                        [],
                     ),
                 },
-                "live_score_lead": (
-                    _lead_summary(
-                        team_a,
-                        team_b,
-                        "effective_live_points",
-                    )
+                "live_score_lead": _lead_summary(
+                    team_a,
+                    team_b,
+                    "effective_live_points",
                 ),
-                "current_projection_lead": (
-                    _lead_summary(
-                        team_a,
-                        team_b,
-                        "stage_projection",
-                    )
+                "current_projection_lead": _lead_summary(
+                    team_a,
+                    team_b,
+                    "stage_projection",
+                ),
+                "projected_final_lead": _lead_summary(
+                    context_a,
+                    context_b,
+                    "projected_final_estimate",
                 ),
             }
         )
 
     return result
-
 
 def _player_name_from_team_records(
     player_id: str,
@@ -1139,6 +1422,12 @@ def _sunday_league_context(
         )
     )
 
+    remaining_teams = (
+        _remaining_team_lookup(
+            sunday_data
+        )
+    )
+
     comparison = (
         compare_baseline_to_sunday(
             baseline_snapshot,
@@ -1201,19 +1490,62 @@ def _sunday_league_context(
             _sunday_matchups(
                 sunday_data,
                 sunday_teams,
+                remaining_teams,
             )
         ),
         "teams": [
             _sunday_team_context(
                 sunday_teams[
                     roster_id
-                ]
+                ],
+                remaining_teams.get(
+                    roster_id
+                ),
             )
             for roster_id
             in sorted(
                 sunday_teams
             )
         ],
+        "monday_mnf": {
+            "teams_with_players_remaining": [
+                _sunday_team_context(
+                    sunday_teams[roster_id],
+                    remaining_teams.get(
+                        roster_id
+                    ),
+                )
+                for roster_id in sorted(
+                    sunday_teams
+                )
+                if (
+                    remaining_teams.get(
+                        roster_id,
+                        {},
+                    ).get(
+                        "remaining_player_count",
+                        0,
+                    )
+                    > 0
+                )
+            ],
+            "remaining_player_count": sum(
+                int(
+                    record.get(
+                        "remaining_player_count",
+                        0,
+                    )
+                )
+                for record in remaining_teams.values()
+                if isinstance(
+                    record.get(
+                        "remaining_player_count",
+                        0,
+                    ),
+                    int,
+                )
+            ),
+        },
         "baseline_comparison": {
             "teams_with_lineup_changes": (
                 sum(
@@ -1450,6 +1782,18 @@ def build_agent_context_document(
                 "fresh current-starter projection "
                 "total; not a remaining-game or "
                 "final-score forecast"
+            ),
+            "remaining_projected_points": (
+                "fresh projections only for starters whose "
+                "NFL games have not started"
+            ),
+            "projected_final_estimate": (
+                "current actual fantasy-team points plus "
+                "remaining_projected_points"
+            ),
+            "game_state": (
+                "scheduled means not started; final means complete; "
+                "in_progress or unknown makes remaining projection unresolved"
             ),
             "effective_live_points": (
                 "commissioner custom_points when "
