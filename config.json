@@ -28,16 +28,31 @@
     "bust_threshold": 0.8,
     "minimum_projection_for_ratio": 1.0,
     "power_rankings": {
-      "scoring_strength_weight": 0.30,
+      "scoring_strength_weight": 0.3,
       "all_play_weight": 0.25,
-      "recent_form_weight": 0.20,
+      "recent_form_weight": 0.2,
       "projection_strength_weight": 0.15,
-      "lineup_efficiency_weight": 0.10,
+      "lineup_efficiency_weight": 0.1,
       "recent_form_weeks": 3
+    },
+    "donut_pool": {
+      "enabled": true,
+      "leagues": [
+        "goats",
+        "doats"
+      ],
+      "total_weeks": 17,
+      "delivery_offset_weeks": 1,
+      "tie_policy": "unresolved"
+    },
+    "luck": {
+      "unlucky_threshold": 0.5,
+      "lucky_threshold": 0.5
     }
   },
   "simulation": {
     "simulations": 10000,
     "random_seed": 2026
-  }
+  },
+  "regular_season_weeks": 18
 }

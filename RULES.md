@@ -455,4 +455,143 @@ Monte Carlo probability is:
 
 `number_of_simulations_where_event_occurs / total_simulations`
 
-Score margin is never labeled or treated as probability.
+Score margin is never labeled or treated as probability.## Donut Survival Pool
+
+The donut pool is a single cross-league elimination-by-futility contest.
+It spans GOATs and DOATs combined and is unrelated to promotion,
+relegation, playoff seeding, or power rankings.
+
+Each completed fantasy week, the lowest scoring fantasy team across both
+leagues combined brings donuts the following week.
+
+A manager may be assigned donut duty at most once per season. Once
+assigned, that manager is permanently removed from the eligible pool and
+can never be selected again, regardless of how badly they score later.
+
+For the 2026 season:
+
+- 18 entrants (10 GOATs, 8 DOATs)
+- 17 scored weeks including playoffs
+- 17 managers are eliminated
+- exactly 1 manager finishes unDOUGHfeated
+
+The system warns when entrant count does not equal scored weeks plus
+one, because that configuration cannot produce exactly one survivor.
+
+### Identity
+
+Donut-pool identity is the pair `(league_key, roster_id)`.
+
+Manager display name is never used as identity. GOATs roster 1 and DOATs
+roster 1 are different entrants.
+
+### Scoring Source
+
+Donut scoring uses `effective_final_points` from the immutable final
+snapshot, which already honors commissioner `custom_points` overrides.
+
+Baseline and Sunday snapshots must never be used to assign donut duty.
+
+The pool is scored only from contiguous completed weeks beginning at
+week 1. If a week's final snapshot is missing for any pool league,
+evaluation stops before that week. Skipping a gap would silently corrupt
+eligibility for every later week.
+
+### Missing Scores
+
+A missing or unresolved weekly score is not zero.
+
+A team without a resolved score that week is not eligible to be assigned
+donut duty for that week, and the omission produces a visible warning.
+
+A genuine score of 0.0 is a real score and can win the donut.
+
+### Ties
+
+Tied low scores are not broken by invented computer rules.
+
+The default `tie_policy` is `unresolved`. An unresolved tie assigns no
+donut, leaves eligibility unchanged, and blocks all later weeks until a
+commissioner ruling is committed.
+
+Commissioner rulings live in `data/<season>/donut_overrides.json`, keyed
+by scoring week, and require a written reason. The named team must be
+one of the tied teams.
+
+Two alternate policies exist and must be chosen deliberately:
+
+- `all_tied` — every tied team brings donuts and all are eliminated.
+  This consumes more than one elimination slot and breaks the
+  one-survivor arithmetic.
+- `lowest_season_points` — the tied team with the fewest resolved season
+  points to date is selected. If still tied, the week remains
+  unresolved.
+
+### Derived Artifact Status
+
+Donut-pool state is derived, not historical. It is recomputed from
+immutable final snapshots on every run and its outputs are replaceable:
+
+- `data/<season>/agent/donut_pool.json`
+- `reports/<season>/donut_pool.md`
+
+The donut pool never writes immutable stage snapshots and is always safe
+to rerun.
+
+
+## Weekly Luck
+
+Luck is measured per team per completed fantasy week.
+
+Expected wins are the all-play expected wins already defined in the
+All-Play and Luck section. They are calculated inside each league,
+because only same-league teams can actually play each other.
+
+Weekly luck is:
+
+`actual_win_equivalent - expected_wins`
+
+Classification thresholds are configurable in
+`analytics.luck` and default to 0.5:
+
+- `unlucky` — luck <= -unlucky_threshold
+- `lucky` — luck >= +lucky_threshold
+- `neutral` — anything between
+
+Cross-league score rank is reported alongside luck. It ranks every team
+in GOATs and DOATs combined by that week's score, so a strong score that
+still lost is visible. Cross-league rank is descriptive context only. It
+never changes expected wins, standings, or any league outcome.
+
+Tied weekly scores share the same rank.
+
+Luck is a schedule-result metric. It is not a claim about managerial
+skill.
+
+## Derived Season Analytics
+
+Standings, luck, power rankings, and Monte Carlo probabilities are
+recomputed from immutable final snapshots on every run. Their outputs
+are replaceable derived artifacts:
+
+- `data/<season>/agent/season_analytics.json`
+- `reports/<season>/season_report.md`
+
+Season analytics are scored only from contiguous completed weeks
+beginning at week 1, for the same reason the donut pool is: a gap would
+silently corrupt every later week.
+
+Power rankings require season lineup efficiency, which requires actual
+player statistics. Simulations require the remaining schedule. When
+either input cannot be retrieved, the dependent analytic is omitted with
+a visible warning. It is never estimated.
+
+The Tuesday final stage writes immutable final snapshots first. Donut
+and season-analytics refreshes run afterward. A failure while building
+derived analytics is reported but never invalidates final history that
+was already captured.
+
+Relegation and promotion warnings are derived from analytical rank and
+configured `relegation_spots` / `promotion_spots`. Simulated relegation
+and promotion probabilities are reported when simulations are available.
+Neither is an official Sleeper standing or a final league outcome.
