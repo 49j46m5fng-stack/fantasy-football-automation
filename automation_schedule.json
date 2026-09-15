@@ -30,7 +30,7 @@
       "anchor_week": 2,
       "anchor_date": "2026-09-22",
       "window_start": "07:00",
-      "window_end": "09:00",
+      "window_end": "23:00",
       "date_overrides": {
        "1": "2026-09-15"
       }
