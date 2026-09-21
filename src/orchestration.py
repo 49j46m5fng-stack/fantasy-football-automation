@@ -32,6 +32,10 @@ from src.comparison import (
 from src.final import (
     build_final_snapshot_data,
 )
+from src.nfl_games import (
+    ESPNNFLGameProvider,
+    TeamGameState,
+)
 from src.players import (
     get_player_map,
 )
@@ -55,6 +59,10 @@ from src.storage import (
 )
 from src.sunday import (
     build_sunday_snapshot_data,
+)
+from src.sunday_remaining import (
+    attach_remaining_to_snapshot,
+    build_remaining_lookup,
 )
 from src.team_projections import (
     load_week_projection_overrides,
@@ -361,6 +369,111 @@ def _fresh_week_inputs(
         projection_lookup,
         overrides,
     )
+
+
+def _fresh_nfl_team_states(
+    season: str,
+    week: int,
+) -> dict[str, TeamGameState]:
+    """Fetch the NFL schedule/game state used for remaining points."""
+
+    print(
+        f"Fetching NFL Week {week} game states..."
+    )
+
+    try:
+        numeric_season = int(
+            season
+        )
+    except ValueError as exc:
+        raise OrchestrationError(
+            f"Season must be numeric for NFL game-state lookup: {season!r}"
+        ) from exc
+
+    team_states = (
+        ESPNNFLGameProvider()
+        .get_team_states(
+            season=numeric_season,
+            week=week,
+        )
+    )
+
+    print(
+        f"NFL team game states: "
+        f"{len(team_states)}"
+    )
+
+    return team_states
+
+
+def _validate_sunday_remaining_snapshot(
+    data: dict[str, Any],
+    league_name: str,
+) -> None:
+    """Require Sunday snapshots to contain remaining-player analytics."""
+
+    teams = data.get(
+        "teams"
+    )
+
+    if not isinstance(
+        teams,
+        list,
+    ):
+        raise OrchestrationError(
+            f"{league_name} Sunday snapshot is missing teams"
+        )
+
+    remaining = data.get(
+        "remaining"
+    )
+
+    if not isinstance(
+        remaining,
+        dict,
+    ):
+        raise OrchestrationError(
+            f"{league_name} Sunday snapshot is missing "
+            "remaining-player analytics"
+        )
+
+    remaining_teams = remaining.get(
+        "teams"
+    )
+
+    if not isinstance(
+        remaining_teams,
+        dict,
+    ):
+        raise OrchestrationError(
+            f"{league_name} Sunday snapshot has invalid "
+            "remaining-player teams"
+        )
+
+    roster_ids = {
+        str(team.get(
+            "roster_id"
+        ))
+        for team in teams
+        if isinstance(
+            team,
+            dict,
+        )
+        and isinstance(
+            team.get(
+                "roster_id"
+            ),
+            int,
+        )
+    }
+
+    if set(
+        remaining_teams
+    ) != roster_ids:
+        raise OrchestrationError(
+            f"{league_name} Sunday remaining-player roster set "
+            "does not match the Sunday team roster set"
+        )
 
 
 def _write_agent_context(
@@ -820,6 +933,55 @@ def run_sunday(
     )
 
     if sunday_state == "complete":
+        for league_key, path in (
+            sunday_paths.items()
+        ):
+            stored_snapshot = (
+                read_snapshot(
+                    path
+                )
+            )
+
+            stored_data = (
+                stored_snapshot.get(
+                    "data"
+                )
+            )
+
+            if not isinstance(
+                stored_data,
+                dict,
+            ):
+                raise OrchestrationError(
+                    f"Stored Sunday snapshot has invalid data: {path}"
+                )
+
+            league_config = (
+                config["leagues"].get(
+                    league_key,
+                    {},
+                )
+            )
+
+            league_name = (
+                league_config.get(
+                    "name",
+                    league_key,
+                )
+                if isinstance(
+                    league_config,
+                    dict,
+                )
+                else league_key
+            )
+
+            _validate_sunday_remaining_snapshot(
+                data=stored_data,
+                league_name=str(
+                    league_name
+                ),
+            )
+
         print(
             "Both immutable Sunday "
             "snapshots already exist."
@@ -881,6 +1043,13 @@ def run_sunday(
     ) = _fresh_week_inputs(
         season=season,
         week=week,
+    )
+
+    team_states = (
+        _fresh_nfl_team_states(
+            season=season,
+            week=week,
+        )
     )
 
     capture_context = (
@@ -987,10 +1156,40 @@ def run_sunday(
             )
         )
 
+        remaining_lookup = (
+            build_remaining_lookup(
+                matchup_records=(
+                    matchups
+                ),
+                projection_lookup=(
+                    projection_lookup
+                ),
+                players=players,
+                overrides=overrides,
+                team_states=(
+                    team_states
+                ),
+            )
+        )
+
+        sunday = (
+            attach_remaining_to_snapshot(
+                sunday,
+                remaining_lookup,
+            )
+        )
+
         _validate_expected_team_count(
             league_name=league_name,
             league=league,
             snapshot_data=sunday,
+        )
+
+        _validate_sunday_remaining_snapshot(
+            data=sunday,
+            league_name=str(
+                league_name
+            ),
         )
 
         prepared[

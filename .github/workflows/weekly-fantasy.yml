@@ -12,6 +12,7 @@ on:
           - auto
           - baseline
           - sunday
+          - repair-sunday-remaining
           - final
           - donuts
           - analytics
@@ -134,6 +135,18 @@ jobs:
             python fantasy.py auto \
               --min-week 2 \
               $CHECK_FLAG
+
+            exit 0
+          fi
+
+          if [ "$STAGE" = "repair-sunday-remaining" ]; then
+            if [ -z "$INPUT_WEEK" ]; then
+              echo "repair-sunday-remaining requires a week input."
+              exit 2
+            fi
+
+            python -m scripts.repair_sunday_remaining \
+              --week "$INPUT_WEEK"
 
             exit 0
           fi
