@@ -1,42 +1,42 @@
 # Donut Survival Pool — 2026
 
-Through completed week 1 of 17.
+Through completed week 2 of 17.
 
-18 entrants. 1 on the hook. 17 still unDOUGHfeated.
+18 entrants. 2 on the hook. 16 still unDOUGHfeated.
 
 ## On the Hook
 
-**JBThink** (GOATS) brings donuts in week 2.
+**timmassie** (GOATS) brings donuts in week 3.
 
-Week 1 low score: 61.82 points, 34.04 behind the next-lowest eligible team.
+Week 2 low score: 79.80 points, 14.50 behind the next-lowest eligible team.
 
 ## Donut Ledger
 
 | Week | Delivers | Manager | League | Points | Margin | Resolution |
 | ---: | ---: | --- | --- | ---: | ---: | --- |
 | 1 | 2 | JBThink | GOATS | 61.82 | 34.04 | lowest_score |
+| 2 | 3 | timmassie | GOATS | 79.80 | 14.50 | lowest_score |
 
 ## Still Alive
 
 | Manager | League | Weeks Survived | Closest Call | Week | Season Low |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Nafedog1 | DOATS | 1 | 34.04 | 1 | 95.86 |
-| shawnthegoat33 | GOATS | 1 | 37.84 | 1 | 99.66 |
-| sofiacaballero | DOATS | 1 | 45.60 | 1 | 107.42 |
-| DrewWright17 | GOATS | 1 | 48.04 | 1 | 109.86 |
-| Porter1511 | GOATS | 1 | 58.14 | 1 | 119.96 |
-| tlt292001 | DOATS | 1 | 62.60 | 1 | 124.42 |
-| DOATGOAT | DOATS | 1 | 67.54 | 1 | 129.36 |
-| AGCallinAudible | DOATS | 1 | 68.74 | 1 | 130.56 |
-| jevinjensen | GOATS | 1 | 69.74 | 1 | 131.56 |
-| BF14 | GOATS | 1 | 71.90 | 1 | 133.72 |
-| Hendrick82 | GOATS | 1 | 72.08 | 1 | 133.90 |
-| Bitcoin89 | DOATS | 1 | 73.38 | 1 | 135.20 |
-| NeilCarlson | DOATS | 1 | 82.88 | 1 | 144.70 |
-| timmassie | GOATS | 1 | 83.58 | 1 | 145.40 |
-| DBMixer | DOATS | 1 | 83.94 | 1 | 145.76 |
-| rachelknowssports | GOATS | 1 | 116.44 | 1 | 178.26 |
-| pdearani | GOATS | 1 | 121.44 | 1 | 183.26 |
+| jevinjensen | GOATS | 2 | 14.50 | 2 | 94.30 |
+| Nafedog1 | DOATS | 2 | 23.22 | 2 | 95.86 |
+| AGCallinAudible | DOATS | 2 | 27.50 | 2 | 107.30 |
+| BF14 | GOATS | 2 | 31.46 | 2 | 111.26 |
+| shawnthegoat33 | GOATS | 2 | 37.84 | 1 | 99.66 |
+| DOATGOAT | DOATS | 2 | 44.88 | 2 | 124.68 |
+| sofiacaballero | DOATS | 2 | 45.60 | 1 | 107.42 |
+| pdearani | GOATS | 2 | 47.82 | 2 | 127.62 |
+| DrewWright17 | GOATS | 2 | 48.04 | 1 | 109.86 |
+| tlt292001 | DOATS | 2 | 52.06 | 2 | 124.42 |
+| Hendrick82 | GOATS | 2 | 53.06 | 2 | 132.86 |
+| Bitcoin89 | DOATS | 2 | 56.78 | 2 | 135.20 |
+| Porter1511 | GOATS | 2 | 58.14 | 1 | 119.96 |
+| DBMixer | DOATS | 2 | 59.72 | 2 | 139.52 |
+| NeilCarlson | DOATS | 2 | 73.30 | 2 | 144.70 |
+| rachelknowssports | GOATS | 2 | 74.32 | 2 | 154.12 |
 
 Closest call is the smallest number of points a manager finished above that week's donut-winning score.
 
@@ -45,6 +45,7 @@ Closest call is the smallest number of points a manager finished above that week
 | Week | Status | Low Score | Eligible Before | Eligible After |
 | ---: | --- | ---: | ---: | ---: |
 | 1 | Assigned | 61.82 | 18 | 17 |
+| 2 | Assigned | 79.80 | 17 | 16 |
 
 ## Warnings
 
