@@ -22,6 +22,7 @@ AGENT_CONTEXT_SCHEMA_VERSION = 1
 SUPPORTED_CONTEXT_STAGES = {
     "baseline",
     "sunday",
+    "final",
 }
 
 
@@ -1578,6 +1579,262 @@ def _sunday_league_context(
     }
 
 
+def _final_league_context(
+    final_snapshot: dict[str, Any],
+    league_config: dict[str, Any],
+) -> dict[str, Any]:
+    """Build one league's final post-week agent context."""
+
+    data = final_snapshot.get(
+        "data"
+    )
+
+    if not isinstance(
+        data,
+        dict,
+    ):
+        raise AgentContextError(
+            "Final snapshot is missing data"
+        )
+
+    teams = _team_lookup(
+        data,
+        "Final snapshot",
+    )
+
+    league_data = data.get(
+        "league",
+        {},
+    )
+
+    raw_matchups = data.get(
+        "matchups",
+        [],
+    )
+
+    if not isinstance(
+        raw_matchups,
+        list,
+    ):
+        raise AgentContextError(
+            "Final snapshot matchups must be a list"
+        )
+
+    matchup_contexts: list[
+        dict[str, Any]
+    ] = []
+
+    for matchup in raw_matchups:
+        if not isinstance(
+            matchup,
+            dict,
+        ):
+            raise AgentContextError(
+                "Final matchup must be an object"
+            )
+
+        roster_a_id = matchup.get(
+            "roster_a_id"
+        )
+        roster_b_id = matchup.get(
+            "roster_b_id"
+        )
+
+        if (
+            not isinstance(
+                roster_a_id,
+                int,
+            )
+            or not isinstance(
+                roster_b_id,
+                int,
+            )
+            or roster_a_id not in teams
+            or roster_b_id not in teams
+        ):
+            raise AgentContextError(
+                "Final matchup references an unknown roster"
+            )
+
+        team_a = teams[
+            roster_a_id
+        ]
+        team_b = teams[
+            roster_b_id
+        ]
+
+        winner_id = matchup.get(
+            "winner_roster_id"
+        )
+        loser_id = matchup.get(
+            "loser_roster_id"
+        )
+
+        matchup_contexts.append(
+            {
+                "matchup_id": matchup.get(
+                    "matchup_id"
+                ),
+                "score_complete": matchup.get(
+                    "score_complete"
+                ),
+                "tied": matchup.get(
+                    "tied"
+                ),
+                "margin": matchup.get(
+                    "margin"
+                ),
+                "winner_roster_id": winner_id,
+                "winner_manager_name": (
+                    teams[winner_id].get(
+                        "manager_name"
+                    )
+                    if isinstance(
+                        winner_id,
+                        int,
+                    )
+                    and winner_id in teams
+                    else None
+                ),
+                "loser_roster_id": loser_id,
+                "loser_manager_name": (
+                    teams[loser_id].get(
+                        "manager_name"
+                    )
+                    if isinstance(
+                        loser_id,
+                        int,
+                    )
+                    and loser_id in teams
+                    else None
+                ),
+                "team_a": {
+                    "roster_id": roster_a_id,
+                    "manager_name": team_a.get(
+                        "manager_name"
+                    ),
+                    "final_points": team_a.get(
+                        "effective_final_points"
+                    ),
+                },
+                "team_b": {
+                    "roster_id": roster_b_id,
+                    "manager_name": team_b.get(
+                        "manager_name"
+                    ),
+                    "final_points": team_b.get(
+                        "effective_final_points"
+                    ),
+                },
+            }
+        )
+
+    team_contexts: list[
+        dict[str, Any]
+    ] = []
+
+    for roster_id in sorted(
+        teams
+    ):
+        team = teams[
+            roster_id
+        ]
+
+        team_contexts.append(
+            {
+                "roster_id": roster_id,
+                "owner_id": team.get(
+                    "owner_id"
+                ),
+                "manager_name": team.get(
+                    "manager_name"
+                ),
+                "matchup_id": team.get(
+                    "matchup_id"
+                ),
+                "opponent_roster_id": team.get(
+                    "opponent_roster_id"
+                ),
+                "final_points": team.get(
+                    "final_points"
+                ),
+                "custom_points": team.get(
+                    "custom_points"
+                ),
+                "effective_final_points": team.get(
+                    "effective_final_points"
+                ),
+                "players_points": dict(
+                    team.get(
+                        "players_points",
+                        {},
+                    )
+                )
+                if isinstance(
+                    team.get(
+                        "players_points",
+                        {},
+                    ),
+                    dict,
+                )
+                else {},
+                "starters": list(
+                    team.get(
+                        "starters",
+                        [],
+                    )
+                ),
+                "rostered_players": list(
+                    team.get(
+                        "rostered_players",
+                        [],
+                    )
+                ),
+                "warnings": list(
+                    team.get(
+                        "warnings",
+                        [],
+                    )
+                ),
+            }
+        )
+
+    return {
+        "league_key": final_snapshot.get(
+            "league_key"
+        ),
+        "league_id": final_snapshot.get(
+            "league_id"
+        ),
+        "name": (
+            league_data.get(
+                "name"
+            )
+            if isinstance(
+                league_data,
+                dict,
+            )
+            else league_config.get(
+                "name"
+            )
+        ),
+        "tier": league_config.get(
+            "tier"
+        ),
+        "rules": dict(
+            league_config
+        ),
+        "matchups": matchup_contexts,
+        "teams": team_contexts,
+        "warnings": list(
+            data.get(
+                "warnings",
+                [],
+            )
+        ),
+    }
+
+
 def build_agent_context_document(
     data_root: Path,
     project_config: dict[str, Any],
@@ -1750,6 +2007,16 @@ def build_agent_context_document(
                 )
             )
 
+        elif stage == "final":
+            league_contexts[
+                league_key
+            ] = (
+                _final_league_context(
+                    stage_snapshot,
+                    league_config,
+                )
+            )
+
         derived_from[
             league_key
         ] = sources
@@ -1803,6 +2070,16 @@ def build_agent_context_document(
                 "current MVP uses stored Sleeper "
                 "pts_ppr rather than exact custom "
                 "league scoring"
+            ),
+            "effective_final_points": (
+                "commissioner custom_points when present, "
+                "otherwise Sleeper final points"
+            ),
+            "players_points": (
+                "Sleeper matchup-level per-player final fantasy "
+                "points using the league scoring settings; used "
+                "as an exact-score fallback when bulk player "
+                "statistics omit a player"
             ),
         },
         "competition": {

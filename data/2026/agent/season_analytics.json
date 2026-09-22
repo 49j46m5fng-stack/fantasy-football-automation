@@ -138,7 +138,88 @@
           "luck_wins": -0.77777778
         }
       ],
-      "power_rankings": null,
+      "power_rankings": [
+        {
+          "current_rank": 1,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 6,
+          "manager_name": "rachelknowssports",
+          "composite_score": 91.66666667
+        },
+        {
+          "current_rank": 2,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 3,
+          "manager_name": "pdearani",
+          "composite_score": 81.66666667
+        },
+        {
+          "current_rank": 3,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 5,
+          "manager_name": "shawnthegoat33",
+          "composite_score": 68.05555556
+        },
+        {
+          "current_rank": 4,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 8,
+          "manager_name": "Hendrick82",
+          "composite_score": 60.55555556
+        },
+        {
+          "current_rank": 5,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 9,
+          "manager_name": "Porter1511",
+          "composite_score": 58.61111111
+        },
+        {
+          "current_rank": 6,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 7,
+          "manager_name": "BF14",
+          "composite_score": 50.55555555
+        },
+        {
+          "current_rank": 7,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 2,
+          "manager_name": "DrewWright17",
+          "composite_score": 32.5
+        },
+        {
+          "current_rank": 8,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 1,
+          "manager_name": "timmassie",
+          "composite_score": 29.16666667
+        },
+        {
+          "current_rank": 9,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 4,
+          "manager_name": "jevinjensen",
+          "composite_score": 17.77777778
+        },
+        {
+          "current_rank": 10,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 10,
+          "manager_name": "JBThink",
+          "composite_score": 9.44444445
+        }
+      ],
       "simulation": {
         "simulations": 10000,
         "random_seed": 2026,
@@ -327,9 +408,7 @@
           "warning": "timmassie is currently 10 of 10 and sits in the relegation zone."
         }
       ],
-      "warnings": [
-        "Power rankings unavailable: Lineup-efficiency roster set does not match season standings"
-      ]
+      "warnings": []
     },
     {
       "league_key": "doats",
@@ -440,7 +519,72 @@
           "luck_wins": 0.0
         }
       ],
-      "power_rankings": null,
+      "power_rankings": [
+        {
+          "current_rank": 1,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 5,
+          "manager_name": "NeilCarlson",
+          "composite_score": 82.14285714
+        },
+        {
+          "current_rank": 2,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 4,
+          "manager_name": "DBMixer",
+          "composite_score": 82.14285714
+        },
+        {
+          "current_rank": 3,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 2,
+          "manager_name": "Bitcoin89",
+          "composite_score": 74.28571429
+        },
+        {
+          "current_rank": 4,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 7,
+          "manager_name": "sofiacaballero",
+          "composite_score": 44.28571428
+        },
+        {
+          "current_rank": 5,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 6,
+          "manager_name": "tlt292001",
+          "composite_score": 42.14285714
+        },
+        {
+          "current_rank": 6,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 8,
+          "manager_name": "AGCallinAudible",
+          "composite_score": 37.14285714
+        },
+        {
+          "current_rank": 7,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 3,
+          "manager_name": "DOATGOAT",
+          "composite_score": 33.57142857
+        },
+        {
+          "current_rank": 8,
+          "previous_rank": null,
+          "rank_change": null,
+          "roster_id": 1,
+          "manager_name": "Nafedog1",
+          "composite_score": 4.28571429
+        }
+      ],
       "simulation": {
         "simulations": 10000,
         "random_seed": 2026,
@@ -593,9 +737,7 @@
           "warning": null
         }
       ],
-      "warnings": [
-        "Power rankings unavailable: Lineup-efficiency roster set does not match season standings"
-      ]
+      "warnings": []
     }
   ],
   "luck": {
@@ -1425,8 +1567,5 @@
       }
     ]
   },
-  "warnings": [
-    "goats: Power rankings unavailable: Lineup-efficiency roster set does not match season standings",
-    "doats: Power rankings unavailable: Lineup-efficiency roster set does not match season standings"
-  ]
+  "warnings": []
 }

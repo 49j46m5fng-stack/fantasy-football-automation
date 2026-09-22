@@ -85,6 +85,11 @@ def sample_inputs():
             ],
             "points": 121.5,
             "custom_points": None,
+            "players_points": {
+                "a": 60.0,
+                "b": 61.5,
+                "e": 0.0,
+            },
         },
         {
             "roster_id": 2,
@@ -99,6 +104,10 @@ def sample_inputs():
             ],
             "points": 115.25,
             "custom_points": None,
+            "players_points": {
+                "c": 55.25,
+                "d": 60.0,
+            },
         },
     ]
 
@@ -427,3 +436,14 @@ def test_roster_set_must_match_baseline() -> None:
             players=players,
             capture_context={},
         )
+
+def test_final_preserves_players_points() -> None:
+    final = build_sample()
+
+    team = final["teams"][0]
+
+    assert team["players_points"] == {
+        "a": 60.0,
+        "b": 61.5,
+        "e": 0.0,
+    }

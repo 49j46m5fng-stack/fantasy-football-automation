@@ -479,3 +479,23 @@ def test_unsupported_starting_slot_rejected() -> None:
             snapshot,
             _actuals(),
         )
+
+def test_players_points_fallback_resolves_missing_bulk_actual() -> None:
+    snapshot = _final_snapshot()
+    snapshot["data"]["teams"][0]["players_points"] = {
+        "r2": 20.0,
+    }
+
+    actuals = _actuals()
+    actuals.pop("r2")
+
+    result = analyze_final_lineup_efficiency(
+        snapshot,
+        actuals,
+    )
+
+    team = result.teams[0]
+
+    assert team.optimization_complete is True
+    assert team.optimal_lineup_points == pytest.approx(45.0)
+    assert "r2" not in team.unresolved_player_ids

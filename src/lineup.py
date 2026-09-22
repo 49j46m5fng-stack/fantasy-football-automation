@@ -718,6 +718,65 @@ def analyze_final_lineup_efficiency(
                 "starters must be a list"
             )
 
+        players_points = team.get(
+            "players_points",
+            {},
+        )
+
+        if not isinstance(
+            players_points,
+            dict,
+        ):
+            raise LineupAnalyticsError(
+                f"Roster {roster_id} "
+                "players_points must be an object"
+            )
+
+        def exact_points_for(
+            player_id: str,
+        ) -> float | None:
+            actual = actuals.get(
+                player_id
+            )
+
+            if actual is not None:
+                _validate_actual_period(
+                    actual,
+                    season,
+                    week,
+                )
+
+                return actual.exact_points
+
+            raw_fallback = (
+                players_points.get(
+                    player_id
+                )
+            )
+
+            if raw_fallback is None:
+                return None
+
+            if (
+                isinstance(
+                    raw_fallback,
+                    bool,
+                )
+                or not isinstance(
+                    raw_fallback,
+                    (int, float),
+                )
+            ):
+                raise LineupAnalyticsError(
+                    f"Roster {roster_id} "
+                    f"players_points[{player_id}] "
+                    "must be numeric or null"
+                )
+
+            return float(
+                raw_fallback
+            )
+
         if (
             len(
                 starters
@@ -823,21 +882,15 @@ def analyze_final_lineup_efficiency(
             if not could_start:
                 continue
 
-            actual = actuals.get(
+            exact_points = exact_points_for(
                 player_id
             )
 
-            if actual is None:
+            if exact_points is None:
                 unresolved_for_optimization.add(
                     player_id
                 )
                 continue
-
-            _validate_actual_period(
-                actual,
-                season,
-                week,
-            )
 
             player = LineupPlayer(
                 player_id=player_id,
@@ -848,7 +901,7 @@ def analyze_final_lineup_efficiency(
                 ),
                 position=position,
                 exact_points=(
-                    actual.exact_points
+                    exact_points
                 ),
             )
 
@@ -975,27 +1028,14 @@ def analyze_final_lineup_efficiency(
                     f"for {slot.slot_type}"
                 )
 
-            actual = actuals.get(
+            exact_points = exact_points_for(
                 player_id
             )
 
-            if actual is None:
+            if exact_points is None:
                 actual_complete = False
-                exact_points: (
-                    float | None
-                ) = None
 
             else:
-                _validate_actual_period(
-                    actual,
-                    season,
-                    week,
-                )
-
-                exact_points = (
-                    actual.exact_points
-                )
-
                 actual_total += (
                     exact_points
                 )
@@ -1047,22 +1087,16 @@ def analyze_final_lineup_efficiency(
         for player_id in (
             bench_player_ids
         ):
-            actual = actuals.get(
+            exact_points = exact_points_for(
                 player_id
             )
 
-            if actual is None:
+            if exact_points is None:
                 bench_complete = False
                 continue
 
-            _validate_actual_period(
-                actual,
-                season,
-                week,
-            )
-
             bench_total += (
-                actual.exact_points
+                exact_points
             )
 
         bench_points = (

@@ -1868,6 +1868,20 @@ def run_final_with_derived_analytics(
     if status != 0:
         return status
 
+    if not check_only:
+        config = load_project_config()
+        season = _validate_project_season(
+            config,
+            schedule,
+        )
+
+        _write_agent_context(
+            config=config,
+            season=season,
+            week=week,
+            stage="final",
+        )
+
     derived_status = 0
 
     for label, runner in (

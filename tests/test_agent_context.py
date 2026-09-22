@@ -352,6 +352,52 @@ def write_sunday(
     )
 
 
+
+
+def final_data() -> dict:
+    return {
+        "league": {"name": "GOATs"},
+        "matchups": [{
+            "matchup_id": 1, "roster_a_id": 1, "roster_b_id": 2,
+            "roster_a_points": 101.0, "roster_b_points": 99.0,
+            "score_complete": True, "winner_roster_id": 1,
+            "loser_roster_id": 2, "margin": 2.0, "tied": False,
+        }],
+        "teams": [
+            {
+                "roster_id": 1, "owner_id": "u1", "manager_name": "Manager One",
+                "matchup_id": 1, "opponent_roster_id": 2,
+                "final_points": 101.0, "custom_points": None,
+                "effective_final_points": 101.0, "players_points": {"a": 101.0},
+                "warnings": [],
+                "starters": [{"slot": 1, "player_id": "a", "player_name": "Player A",
+                              "position": "RB", "team": "TST", "injury_status": None}],
+                "rostered_players": [{"player_id": "a", "player_name": "Player A",
+                                      "position": "RB", "team": "TST", "injury_status": None}],
+            },
+            {
+                "roster_id": 2, "owner_id": "u2", "manager_name": "Manager Two",
+                "matchup_id": 1, "opponent_roster_id": 1,
+                "final_points": 99.0, "custom_points": None,
+                "effective_final_points": 99.0, "players_points": {"c": 99.0},
+                "warnings": [],
+                "starters": [{"slot": 1, "player_id": "c", "player_name": "Player C",
+                              "position": "RB", "team": "TST", "injury_status": None}],
+                "rostered_players": [{"player_id": "c", "player_name": "Player C",
+                                      "position": "RB", "team": "TST", "injury_status": None}],
+            },
+        ],
+        "warnings": [],
+    }
+
+
+def write_final(tmp_path: Path) -> Path:
+    return write_snapshot(
+        data_root=tmp_path, season=SEASON, week=1, league_key="goats",
+        league_id=LEAGUE_ID, stage="final", data=final_data(),
+    )
+
+
 def test_agent_context_path() -> None:
     path = agent_context_path(
         Path("data"),
@@ -625,17 +671,21 @@ def test_derived_context_can_be_rebuilt_deterministically(
     )
 
 
-def test_final_context_not_implemented(
+def test_final_context_contains_results(
     tmp_path: Path,
 ) -> None:
-    with pytest.raises(
-        AgentContextError,
-        match="not implemented",
-    ):
-        build_agent_context_document(
-            data_root=tmp_path,
-            project_config=config(),
-            season=SEASON,
-            week=1,
-            stage="final",
-        )
+    write_final(tmp_path)
+
+    document = build_agent_context_document(
+        data_root=tmp_path,
+        project_config=config(),
+        season=SEASON,
+        week=1,
+        stage="final",
+    )
+
+    assert document["stage"] == "final"
+    league = document["leagues"]["goats"]
+    assert league["matchups"][0]["winner_manager_name"] == "Manager One"
+    assert league["teams"][0]["effective_final_points"] == 101.0
+    assert league["teams"][0]["players_points"]["a"] == 101.0

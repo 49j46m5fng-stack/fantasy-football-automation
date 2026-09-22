@@ -501,6 +501,56 @@ def build_final_snapshot_data(
             else final_points
         )
 
+        raw_players_points = (
+            matchup_record.get(
+                "players_points"
+            )
+            or {}
+        )
+
+        if not isinstance(
+            raw_players_points,
+            dict,
+        ):
+            raise FinalBuildError(
+                f"Roster {roster_id} "
+                "players_points must be an object"
+            )
+
+        players_points: dict[
+            str,
+            float,
+        ] = {}
+
+        for (
+            raw_player_id,
+            raw_points,
+        ) in raw_players_points.items():
+            player_id = str(
+                raw_player_id
+            )
+
+            if (
+                not player_id
+                or player_id == "0"
+            ):
+                continue
+
+            points = _optional_points(
+                raw_points,
+                (
+                    f"Roster {roster_id} "
+                    f"players_points[{player_id}]"
+                ),
+            )
+
+            if points is None:
+                continue
+
+            players_points[
+                player_id
+            ] = points
+
         starter_records: list[
             dict[str, Any]
         ] = []
@@ -650,6 +700,9 @@ def build_final_snapshot_data(
                 ),
                 "effective_final_points": (
                     effective_final_points
+                ),
+                "players_points": (
+                    players_points
                 ),
                 "warnings": (
                     team_warnings

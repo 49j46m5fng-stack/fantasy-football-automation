@@ -83,7 +83,18 @@ Luck compares what the schedule returned against what the week's scoring earned.
 
 ### Power Rankings
 
-Power rankings are not available for this run.
+| Rank | Move | Manager | Composite | PPG | All-Play % | Lineup Eff. |
+| ---: | :-: | --- | ---: | ---: | ---: | ---: |
+| 1 | new | rachelknowssports | 91.7 | 166.19 | 88.9% | 94.9% |
+| 2 | new | pdearani | 81.7 | 155.44 | 72.2% | 97.5% |
+| 3 | new | shawnthegoat33 | 68.1 | 133.75 | 55.6% | 96.4% |
+| 4 | new | Hendrick82 | 60.6 | 133.38 | 66.7% | 92.8% |
+| 5 | new | Porter1511 | 58.6 | 136.57 | 55.6% | 95.9% |
+| 6 | new | BF14 | 50.6 | 122.49 | 44.4% | 86.8% |
+| 7 | new | DrewWright17 | 32.5 | 119.07 | 38.9% | 87.4% |
+| 8 | new | timmassie | 29.2 | 112.60 | 38.9% | 75.1% |
+| 9 | new | jevinjensen | 17.8 | 112.93 | 27.8% | 92.2% |
+| 10 | new | JBThink | 9.4 | 80.22 | 11.1% | 81.7% |
 
 ### Season Outlook
 
@@ -102,10 +113,6 @@ Power rankings are not available for this run.
 | Porter1511 | 9.5 | 99.0% | 1.0% | 0.0% |
 | JBThink | 2.6 | 1.3% | 98.7% | 0.0% |
 
-### Notes
-
-- Power rankings unavailable: Lineup-efficiency roster set does not match season standings
-
 ## DOATs
 
 ### Standings
@@ -123,7 +130,16 @@ Power rankings are not available for this run.
 
 ### Power Rankings
 
-Power rankings are not available for this run.
+| Rank | Move | Manager | Composite | PPG | All-Play % | Lineup Eff. |
+| ---: | :-: | --- | ---: | ---: | ---: | ---: |
+| 1 | new | NeilCarlson | 82.1 | 148.90 | 92.9% | 80.5% |
+| 2 | new | DBMixer | 82.1 | 142.64 | 85.7% | 90.8% |
+| 3 | new | Bitcoin89 | 74.3 | 135.89 | 64.3% | 88.8% |
+| 4 | new | sofiacaballero | 44.3 | 124.17 | 50.0% | 78.2% |
+| 5 | new | tlt292001 | 42.1 | 128.14 | 35.7% | 91.5% |
+| 6 | new | AGCallinAudible | 37.1 | 118.93 | 35.7% | 93.3% |
+| 7 | new | DOATGOAT | 33.6 | 127.02 | 35.7% | 78.1% |
+| 8 | new | Nafedog1 | 4.3 | 99.44 | 0.0% | 84.5% |
 
 ### Season Outlook
 
@@ -139,10 +155,6 @@ Power rankings are not available for this run.
 | tlt292001 | 7.4 | 0.0% | 0.0% | 0.0% |
 | sofiacaballero | 8.0 | 0.0% | 0.0% | 0.0% |
 | AGCallinAudible | 6.1 | 0.0% | 0.0% | 0.0% |
-
-### Notes
-
-- Power rankings unavailable: Lineup-efficiency roster set does not match season standings
 
 ## Method
 
