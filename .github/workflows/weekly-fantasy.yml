@@ -40,13 +40,13 @@ on:
       timezone: "America/Chicago"
 
     # Tuesday — post-MNF final checkpoint.
-    - cron: "45 11 * * 2"
+    - cron: "00 7 * * 2"
       timezone: "America/Chicago"
 
-    - cron: "55 11 * * 2"
+    - cron: "20 7 * * 2"
       timezone: "America/Chicago"
 
-    - cron: "5 12 * * 2"
+    - cron: "30 7 * * 2"
       timezone: "America/Chicago"
 
     # Thursday — normal weekly baseline.

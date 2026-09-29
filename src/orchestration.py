@@ -1920,12 +1920,18 @@ def run_final_with_derived_analytics(
     if derived_status != 0:
         print()
         print(
-            "Final snapshots were written "
+            "Final snapshots and Agent context were written "
             "successfully. Derived analytics "
             "reported a problem above."
         )
 
-    return derived_status
+        print(
+            "Preserving a successful final capture so the "
+            "workflow can commit it. Later scheduled attempts "
+            "can retry the derived analytics."
+        )
+
+    return 0
 
 
 def run_auto(

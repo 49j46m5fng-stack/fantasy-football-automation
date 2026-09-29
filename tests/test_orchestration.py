@@ -5,6 +5,7 @@ import pytest
 from src.orchestration import (
     OrchestrationError,
     _validate_sunday_remaining_snapshot,
+    run_final_with_derived_analytics,
     snapshot_pair_state,
     snapshot_paths,
 )
@@ -199,3 +200,49 @@ def test_sunday_remaining_rosters_accept_complete_set() -> None:
         data=data,
         league_name="GOATs",
     )
+
+
+def test_final_capture_survives_derived_analytics_failure(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """A derived failure must not block committing final history."""
+
+    agent_context_calls: list[tuple[str, int, str]] = []
+
+    monkeypatch.setattr(
+        "src.orchestration.run_final",
+        lambda **kwargs: 0,
+    )
+    monkeypatch.setattr(
+        "src.orchestration.load_project_config",
+        lambda: {"season": "2026"},
+    )
+    monkeypatch.setattr(
+        "src.orchestration._validate_project_season",
+        lambda config, schedule: "2026",
+    )
+    monkeypatch.setattr(
+        "src.orchestration._write_agent_context",
+        lambda config, season, week, stage: agent_context_calls.append(
+            (season, week, stage)
+        ),
+    )
+    monkeypatch.setattr(
+        "src.donut_orchestration.run_donuts",
+        lambda **kwargs: 1,
+    )
+    monkeypatch.setattr(
+        "src.season_orchestration.run_analytics",
+        lambda **kwargs: 0,
+    )
+
+    status = run_final_with_derived_analytics(
+        week=3,
+        schedule=object(),
+        check_only=False,
+    )
+
+    assert status == 0
+    assert agent_context_calls == [
+        ("2026", 3, "final"),
+    ]
