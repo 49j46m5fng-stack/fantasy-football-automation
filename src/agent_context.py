@@ -1886,6 +1886,7 @@ def build_agent_context_document(
         str,
         dict[str, Any],
     ] = {}
+    reconstruction_sources: dict[str, list[str]] = {}
 
     for league_key, league_config in (
         leagues_config.items()
@@ -1922,6 +1923,9 @@ def build_agent_context_document(
                 stage_path
             )
         )
+        stage_capture = stage_snapshot.get("data", {}).get("capture_context", {})
+        if isinstance(stage_capture, dict) and stage_capture.get("reconstructed") is True:
+            reconstruction_sources.setdefault(league_key, []).append(stage)
 
         _validate_snapshot_identity(
             snapshot=stage_snapshot,
@@ -1975,6 +1979,9 @@ def build_agent_context_document(
                     baseline_path
                 )
             )
+            baseline_capture = baseline_snapshot.get("data", {}).get("capture_context", {})
+            if isinstance(baseline_capture, dict) and baseline_capture.get("reconstructed") is True:
+                reconstruction_sources.setdefault(league_key, []).append("baseline")
 
             _validate_snapshot_identity(
                 snapshot=(
@@ -2029,6 +2036,12 @@ def build_agent_context_document(
             "fantasy_agent_context"
         ),
         "authoritative": False,
+        "reconstructed": bool(reconstruction_sources),
+        "reconstruction_sources": reconstruction_sources,
+        "reconstruction_warning": (
+            "Derived from out-of-window live captures, not historical checkpoint truth."
+            if reconstruction_sources else None
+        ),
         "season": season,
         "week": week,
         "stage": stage,

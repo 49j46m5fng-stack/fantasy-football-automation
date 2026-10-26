@@ -552,6 +552,7 @@ def run_baseline(
     week: int,
     schedule: WeeklySchedule,
     check_only: bool = False,
+    recovery: bool = False,
 ) -> int:
     """Build or write one week's immutable baseline snapshots."""
 
@@ -610,7 +611,7 @@ def run_baseline(
         week=week,
     )
 
-    if not check_only:
+    if not check_only and not recovery:
         window = (
             _require_execution_window(
                 schedule=schedule,
@@ -636,6 +637,18 @@ def run_baseline(
             stage_label="baseline",
         )
     )
+
+    if recovery and not check_only:
+        capture_context.update({
+            "reconstructed": True,
+            "recovery_reason": "manual_out_of_window_capture",
+            "historical_window_capture": False,
+            "warning": (
+                "Live data captured outside the scheduled window; "
+                "not an authentic historical checkpoint."
+            ),
+        })
+        print("WARNING: RECOVERY MODE - reconstructed live data, not historical truth.")
 
     leagues = config[
         "leagues"
@@ -810,11 +823,12 @@ def run_baseline(
         return 0
 
     # Recheck immediately before immutable writes.
-    _require_execution_window(
-        schedule=schedule,
-        stage="baseline",
-        week=week,
-    )
+    if not recovery:
+        _require_execution_window(
+            schedule=schedule,
+            stage="baseline",
+            week=week,
+        )
 
     print()
     print("=" * 72)
@@ -871,6 +885,7 @@ def run_sunday(
     week: int,
     schedule: WeeklySchedule,
     check_only: bool = False,
+    recovery: bool = False,
 ) -> int:
     """Build or write one week's Monday-noon Sunday checkpoint."""
 
@@ -1018,7 +1033,7 @@ def run_sunday(
         week=week,
     )
 
-    if not check_only:
+    if not check_only and not recovery:
         window = (
             _require_execution_window(
                 schedule=schedule,
@@ -1061,6 +1076,18 @@ def run_sunday(
             ),
         )
     )
+
+    if recovery and not check_only:
+        capture_context.update({
+            "reconstructed": True,
+            "recovery_reason": "manual_out_of_window_capture",
+            "historical_window_capture": False,
+            "warning": (
+                "Live data captured outside the scheduled window; "
+                "not an authentic historical checkpoint."
+            ),
+        })
+        print("WARNING: RECOVERY MODE - reconstructed live data, not historical truth.")
 
     leagues = config[
         "leagues"
@@ -1254,11 +1281,12 @@ def run_sunday(
         return 0
 
     # Sunday may legitimately contain incomplete projection values.
-    _require_execution_window(
-        schedule=schedule,
-        stage="sunday",
-        week=week,
-    )
+    if not recovery:
+        _require_execution_window(
+            schedule=schedule,
+            stage="sunday",
+            week=week,
+        )
 
     print()
     print("=" * 72)

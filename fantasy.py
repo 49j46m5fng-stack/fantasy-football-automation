@@ -137,6 +137,13 @@ def build_parser() -> argparse.ArgumentParser:
             ),
         )
 
+        if command in ("baseline", "sunday"):
+            stage_parser.add_argument(
+                "--recovery",
+                action="store_true",
+                help="Explicit manual out-of-window reconstruction; never scheduled.",
+            )
+
         stage_parser.add_argument(
             "--check-only",
             action="store_true",
@@ -340,6 +347,7 @@ def main() -> int:
                 check_only=(
                     args.check_only
                 ),
+                recovery=args.recovery,
             )
 
         if args.command == "sunday":
@@ -349,6 +357,7 @@ def main() -> int:
                 check_only=(
                     args.check_only
                 ),
+                recovery=args.recovery,
             )
 
         if args.command == "final":

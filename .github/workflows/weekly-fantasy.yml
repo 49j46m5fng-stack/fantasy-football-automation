@@ -22,6 +22,12 @@ on:
         required: false
         type: string
 
+      recovery:
+        description: Manual out-of-window reconstruction (baseline/sunday only; explicitly labeled)
+        required: true
+        default: false
+        type: boolean
+
       check_only:
         description: Validate without writing official snapshots
         required: true
@@ -105,6 +111,7 @@ jobs:
           INPUT_STAGE: ${{ inputs.stage }}
           INPUT_WEEK: ${{ inputs.week }}
           INPUT_CHECK_ONLY: ${{ inputs.check_only }}
+          INPUT_RECOVERY: ${{ inputs.recovery }}
           TZ: America/Chicago
         run: |
           if [ "$EVENT_NAME" = "schedule" ]; then
@@ -131,6 +138,11 @@ jobs:
             CHECK_FLAG="--check-only"
           fi
 
+          if [ "$INPUT_RECOVERY" = "true" ] && { [ "$STAGE" != "baseline" ] && [ "$STAGE" != "sunday" ]; }; then
+            echo "Recovery is only available for baseline or sunday."
+            exit 2
+          fi
+
           if [ "$STAGE" = "auto" ]; then
             python fantasy.py auto \
               --min-week 2 \
@@ -151,6 +163,19 @@ jobs:
             exit 0
           fi
 
+          RECOVERY_FLAG=""
+          if [ "$INPUT_RECOVERY" = "true" ]; then
+            if [ "$STAGE" != "baseline" ] && [ "$STAGE" != "sunday" ]; then
+              echo "Recovery only supports baseline or sunday."
+              exit 2
+            fi
+            if [ -z "$INPUT_WEEK" ]; then
+              echo "Recovery requires an explicit week."
+              exit 2
+            fi
+            RECOVERY_FLAG="--recovery"
+          fi
+
           WEEK_FLAG_NAME="--week"
 
           if [ "$STAGE" = "donuts" ] || [ "$STAGE" = "analytics" ]; then
@@ -160,10 +185,10 @@ jobs:
           if [ -n "$INPUT_WEEK" ]; then
             python fantasy.py "$STAGE" \
               "$WEEK_FLAG_NAME" "$INPUT_WEEK" \
-              $CHECK_FLAG
+              $CHECK_FLAG $RECOVERY_FLAG
           else
             python fantasy.py "$STAGE" \
-              $CHECK_FLAG
+              $CHECK_FLAG $RECOVERY_FLAG
           fi
 
       - name: Commit generated historical outputs
