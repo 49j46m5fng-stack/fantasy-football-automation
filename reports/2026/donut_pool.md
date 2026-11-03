@@ -1,14 +1,14 @@
 # Donut Survival Pool — 2026
 
-Through completed week 7 of 17.
+Through completed week 8 of 17.
 
-18 entrants. 7 on the hook. 11 still unDOUGHfeated.
+18 entrants. 8 on the hook. 10 still unDOUGHfeated.
 
 ## On the Hook
 
-**sofiacaballero** (DOATS) brings donuts in week 8.
+**jevinjensen** (GOATS) brings donuts in week 9.
 
-Week 7 low score: 84.24 points, 7.66 behind the next-lowest eligible team.
+Week 8 low score: 78.60 points, 11.70 behind the next-lowest eligible team.
 
 ## Donut Ledger
 
@@ -21,22 +21,22 @@ Week 7 low score: 84.24 points, 7.66 behind the next-lowest eligible team.
 | 5 | 6 | AGCallinAudible | DOATS | 89.40 | 21.44 | lowest_score |
 | 6 | 7 | DBMixer | DOATS | 77.60 | 19.98 | lowest_score |
 | 7 | 8 | sofiacaballero | DOATS | 84.24 | 7.66 | lowest_score |
+| 8 | 9 | jevinjensen | GOATS | 78.60 | 11.70 | lowest_score |
 
 ## Still Alive
 
 | Manager | League | Weeks Survived | Closest Call | Week | Season Low |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Nafedog1 | DOATS | 7 | 4.74 | 4 | 92.82 |
-| DrewWright17 | GOATS | 7 | 7.66 | 7 | 91.90 |
-| jevinjensen | GOATS | 7 | 14.50 | 2 | 94.30 |
-| Porter1511 | GOATS | 7 | 15.34 | 7 | 99.58 |
-| Bitcoin89 | DOATS | 7 | 17.08 | 7 | 101.32 |
-| DOATGOAT | DOATS | 7 | 19.98 | 6 | 97.58 |
-| rachelknowssports | GOATS | 7 | 20.12 | 7 | 104.36 |
-| BF14 | GOATS | 7 | 26.96 | 6 | 104.56 |
-| NeilCarlson | DOATS | 7 | 28.40 | 6 | 106.00 |
-| tlt292001 | DOATS | 7 | 30.78 | 5 | 120.18 |
-| shawnthegoat33 | GOATS | 7 | 37.20 | 6 | 99.66 |
+| Nafedog1 | DOATS | 8 | 4.74 | 4 | 92.82 |
+| DrewWright17 | GOATS | 8 | 7.66 | 7 | 91.90 |
+| Bitcoin89 | DOATS | 8 | 11.70 | 8 | 90.30 |
+| shawnthegoat33 | GOATS | 8 | 13.98 | 8 | 92.58 |
+| Porter1511 | GOATS | 8 | 15.34 | 7 | 99.58 |
+| DOATGOAT | DOATS | 8 | 19.98 | 6 | 97.58 |
+| rachelknowssports | GOATS | 8 | 20.12 | 7 | 104.36 |
+| BF14 | GOATS | 8 | 26.96 | 6 | 104.56 |
+| NeilCarlson | DOATS | 8 | 28.40 | 6 | 106.00 |
+| tlt292001 | DOATS | 8 | 30.78 | 5 | 120.18 |
 
 Closest call is the smallest number of points a manager finished above that week's donut-winning score.
 
@@ -51,6 +51,7 @@ Closest call is the smallest number of points a manager finished above that week
 | 5 | Assigned | 89.40 | 14 | 13 |
 | 6 | Assigned | 77.60 | 13 | 12 |
 | 7 | Assigned | 84.24 | 12 | 11 |
+| 8 | Assigned | 78.60 | 11 | 10 |
 
 ## Warnings
 

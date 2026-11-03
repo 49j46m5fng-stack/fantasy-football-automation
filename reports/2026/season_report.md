@@ -1,64 +1,64 @@
-# 2026 Season Report — Through Week 7
+# 2026 Season Report — Through Week 8
 
 ## Relegation Warnings
 
-- **JBThink** (GOATS) — JBThink is currently 9 of 10 and sits in the relegation zone. Simulated relegation probability: 94.5%.
-- **Porter1511** (GOATS) — Porter1511 is currently 10 of 10 and sits in the relegation zone. Simulated relegation probability: 39.5%.
+- **Porter1511** (GOATS) — Porter1511 is currently 9 of 10 and sits in the relegation zone. Simulated relegation probability: 26.8%.
+- **JBThink** (GOATS) — JBThink is currently 10 of 10 and sits in the relegation zone. Simulated relegation probability: 94.3%.
 
 ## Luck Tracker
 
 Luck compares what the schedule returned against what the week's scoring earned. Expected wins come from all-play performance inside each league. Cross-league rank compares every team in both leagues combined.
 
-### Week 7
+### Week 8
 
 | Manager | League | Points | Result | Cross-League Rank | Expected Wins | Luck |
 | --- | --- | ---: | --- | ---: | ---: | ---: |
-| tlt292001 | DOATS | 132.30 | loss | 6 of 18 | 0.57 | -0.57 |
-| rachelknowssports | GOATS | 104.36 | loss | 11 of 18 | 0.44 | -0.44 |
-| Nafedog1 | DOATS | 108.28 | loss | 10 of 18 | 0.43 | -0.43 |
-| Porter1511 | GOATS | 99.58 | loss | 13 of 18 | 0.33 | -0.33 |
-| JBThink | GOATS | 98.64 | loss | 14 of 18 | 0.22 | -0.22 |
-| AGCallinAudible | DOATS | 90.30 | loss | 17 of 18 | 0.14 | -0.14 |
-| DrewWright17 | GOATS | 91.90 | loss | 15 of 18 | 0.11 | -0.11 |
-| DOATGOAT | DOATS | 135.76 | win | 3 of 18 | 1.00 | +0.00 |
-| sofiacaballero | DOATS | 84.24 | loss | 18 of 18 | 0.00 | +0.00 |
-| jevinjensen | GOATS | 172.32 | win | 1 of 18 | 1.00 | +0.00 |
-| Hendrick82 | GOATS | 90.48 | loss | 16 of 18 | 0.00 | +0.00 |
-| shawnthegoat33 | GOATS | 138.82 | win | 2 of 18 | 0.89 | +0.11 |
-| NeilCarlson | DOATS | 134.92 | win | 4 of 18 | 0.86 | +0.14 |
-| pdearani | GOATS | 126.12 | win | 7 of 18 | 0.78 | +0.22 |
-| DBMixer | DOATS | 133.52 | win | 5 of 18 | 0.71 | +0.29 |
-| BF14 | GOATS | 116.32 | win | 8 of 18 | 0.67 | +0.33 |
-| timmassie | GOATS | 109.02 | win | 9 of 18 | 0.56 | +0.44 |
-| Bitcoin89 | DOATS | 101.32 | win | 12 of 18 | 0.29 | +0.71 |
+| JBThink | GOATS | 142.06 | loss | 6 of 18 | 0.56 | -0.56 |
+| Hendrick82 | GOATS | 139.90 | loss | 7 of 18 | 0.44 | -0.44 |
+| AGCallinAudible | DOATS | 102.30 | loss | 11 of 18 | 0.43 | -0.43 |
+| pdearani | GOATS | 101.58 | loss | 12 of 18 | 0.33 | -0.33 |
+| Bitcoin89 | DOATS | 90.30 | loss | 15 of 18 | 0.29 | -0.29 |
+| DBMixer | DOATS | 87.16 | loss | 16 of 18 | 0.14 | -0.14 |
+| shawnthegoat33 | GOATS | 92.58 | loss | 14 of 18 | 0.11 | -0.11 |
+| tlt292001 | DOATS | 157.18 | win | 2 of 18 | 1.00 | +0.00 |
+| sofiacaballero | DOATS | 82.26 | loss | 17 of 18 | 0.00 | +0.00 |
+| jevinjensen | GOATS | 78.60 | loss | 18 of 18 | 0.00 | +0.00 |
+| BF14 | GOATS | 169.88 | win | 1 of 18 | 1.00 | +0.00 |
+| rachelknowssports | GOATS | 153.86 | win | 3 of 18 | 0.89 | +0.11 |
+| DOATGOAT | DOATS | 137.12 | win | 8 of 18 | 0.86 | +0.14 |
+| DrewWright17 | GOATS | 145.44 | win | 4 of 18 | 0.78 | +0.22 |
+| Nafedog1 | DOATS | 130.88 | win | 9 of 18 | 0.71 | +0.29 |
+| Porter1511 | GOATS | 142.58 | win | 5 of 18 | 0.67 | +0.33 |
+| NeilCarlson | DOATS | 115.24 | win | 10 of 18 | 0.57 | +0.43 |
+| timmassie | GOATS | 95.10 | win | 13 of 18 | 0.22 | +0.78 |
 
-**Week 7 storylines**
+**Week 8 storylines**
 
-- **Unlucky — tlt292001 (DOATS)**: Lost despite scoring 6 of 18 across both leagues (all-play 4-3).
-- **Lucky — Bitcoin89 (DOATS)**: Won while scoring 12 of 18 across both leagues (all-play 2-5).
+- **Unlucky — JBThink (GOATS)**: Lost despite scoring 6 of 18 across both leagues (all-play 5-4).
+- **Lucky — timmassie (GOATS)**: Won while scoring 13 of 18 across both leagues (all-play 2-7).
 
 ### Season Luck
 
 | Manager | League | Games | Actual | Expected | Luck | Unlucky Wks | Lucky Wks |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Porter1511 | GOATS | 7 | 1.0 | 3.00 | -2.00 | 1 | 0 |
-| DrewWright17 | GOATS | 7 | 2.0 | 3.11 | -1.11 | 1 | 0 |
-| DOATGOAT | DOATS | 7 | 3.0 | 4.00 | -1.00 | 0 | 0 |
-| DBMixer | DOATS | 7 | 3.0 | 3.71 | -0.71 | 1 | 0 |
-| sofiacaballero | DOATS | 7 | 2.0 | 2.71 | -0.71 | 1 | 0 |
-| shawnthegoat33 | GOATS | 7 | 5.0 | 5.44 | -0.44 | 1 | 0 |
-| Nafedog1 | DOATS | 7 | 3.0 | 3.43 | -0.43 | 0 | 0 |
-| pdearani | GOATS | 7 | 3.0 | 3.11 | -0.11 | 1 | 1 |
-| Bitcoin89 | DOATS | 7 | 4.0 | 4.00 | +0.00 | 2 | 1 |
-| timmassie | GOATS | 7 | 4.0 | 3.89 | +0.11 | 1 | 0 |
-| rachelknowssports | GOATS | 7 | 5.0 | 4.89 | +0.11 | 1 | 1 |
-| tlt292001 | DOATS | 7 | 4.0 | 3.71 | +0.29 | 1 | 1 |
-| AGCallinAudible | DOATS | 7 | 2.0 | 1.71 | +0.29 | 1 | 1 |
-| BF14 | GOATS | 7 | 5.0 | 4.56 | +0.44 | 1 | 0 |
-| jevinjensen | GOATS | 7 | 4.0 | 3.44 | +0.56 | 0 | 2 |
-| JBThink | GOATS | 7 | 2.0 | 1.33 | +0.67 | 0 | 2 |
-| Hendrick82 | GOATS | 7 | 4.0 | 2.22 | +1.78 | 0 | 1 |
-| NeilCarlson | DOATS | 7 | 7.0 | 4.71 | +2.29 | 0 | 3 |
+| Porter1511 | GOATS | 8 | 2.0 | 3.67 | -1.67 | 1 | 0 |
+| DrewWright17 | GOATS | 8 | 3.0 | 3.89 | -0.89 | 1 | 0 |
+| DOATGOAT | DOATS | 8 | 4.0 | 4.86 | -0.86 | 0 | 0 |
+| DBMixer | DOATS | 8 | 3.0 | 3.86 | -0.86 | 1 | 0 |
+| sofiacaballero | DOATS | 8 | 2.0 | 2.71 | -0.71 | 1 | 0 |
+| shawnthegoat33 | GOATS | 8 | 5.0 | 5.56 | -0.56 | 1 | 0 |
+| pdearani | GOATS | 8 | 3.0 | 3.44 | -0.44 | 1 | 1 |
+| Bitcoin89 | DOATS | 8 | 4.0 | 4.29 | -0.29 | 2 | 1 |
+| Nafedog1 | DOATS | 8 | 4.0 | 4.14 | -0.14 | 0 | 0 |
+| AGCallinAudible | DOATS | 8 | 2.0 | 2.14 | -0.14 | 1 | 1 |
+| JBThink | GOATS | 8 | 2.0 | 1.89 | +0.11 | 1 | 2 |
+| rachelknowssports | GOATS | 8 | 6.0 | 5.78 | +0.22 | 1 | 1 |
+| tlt292001 | DOATS | 8 | 5.0 | 4.71 | +0.29 | 1 | 1 |
+| BF14 | GOATS | 8 | 6.0 | 5.56 | +0.44 | 1 | 0 |
+| jevinjensen | GOATS | 8 | 4.0 | 3.44 | +0.56 | 0 | 2 |
+| timmassie | GOATS | 8 | 5.0 | 4.11 | +0.89 | 1 | 1 |
+| Hendrick82 | GOATS | 8 | 4.0 | 2.67 | +1.33 | 0 | 1 |
+| NeilCarlson | DOATS | 8 | 8.0 | 5.29 | +2.71 | 0 | 3 |
 
 ## GOATs
 
@@ -66,31 +66,31 @@ Luck compares what the schedule returned against what the week's scoring earned.
 
 | Rank | Manager | Record | Points For | All-Play % | Luck |
 | ---: | --- | --- | ---: | ---: | ---: |
-| 1 | shawnthegoat33 | 5-2 | 995.62 | 77.8% | -0.44 |
-| 2 | rachelknowssports | 5-2 | 981.42 | 69.8% | +0.11 |
-| 3 | BF14 | 5-2 | 913.52 | 65.1% | +0.44 |
-| 4 | jevinjensen | 4-3 | 909.42 | 49.2% | +0.56 |
-| 5 | timmassie | 4-3 | 903.34 | 55.6% | +0.11 |
-| 6 | Hendrick82 | 4-3 | 785.72 | 31.7% | +1.78 |
-| 7 | pdearani | 3-4 | 853.46 | 44.4% | -0.11 |
-| 8 | DrewWright17 | 2-5 | 822.98 | 44.4% | -1.11 |
-| 9 | JBThink | 2-5 | 677.14 | 19.0% | +0.67 |
-| 10 | Porter1511 | 1-6 | 852.70 | 42.9% | -2.00 |
+| 1 | rachelknowssports | 6-2 | 1135.28 | 72.2% | +0.22 |
+| 2 | BF14 | 6-2 | 1083.40 | 69.4% | +0.44 |
+| 3 | shawnthegoat33 | 5-3 | 1088.20 | 69.4% | -0.56 |
+| 4 | timmassie | 5-3 | 998.44 | 51.4% | +0.89 |
+| 5 | jevinjensen | 4-4 | 988.02 | 43.1% | +0.56 |
+| 6 | Hendrick82 | 4-4 | 925.62 | 33.3% | +1.33 |
+| 7 | DrewWright17 | 3-5 | 968.42 | 48.6% | -0.89 |
+| 8 | pdearani | 3-5 | 955.04 | 43.1% | -0.44 |
+| 9 | Porter1511 | 2-6 | 995.28 | 45.8% | -1.67 |
+| 10 | JBThink | 2-6 | 819.20 | 23.6% | +0.11 |
 
 ### Power Rankings
 
 | Rank | Move | Manager | Composite | PPG | All-Play % | Lineup Eff. |
 | ---: | :-: | --- | ---: | ---: | ---: | ---: |
-| 1 | new | shawnthegoat33 | 88.3 | 142.23 | 77.8% | 94.7% |
-| 2 | new | BF14 | 76.7 | 130.50 | 65.1% | 88.8% |
-| 3 | new | rachelknowssports | 74.4 | 140.20 | 69.8% | 88.9% |
-| 4 | new | jevinjensen | 67.8 | 129.92 | 49.2% | 91.7% |
-| 5 | new | timmassie | 66.7 | 129.05 | 55.6% | 85.6% |
-| 6 | new | pdearani | 45.8 | 121.92 | 44.4% | 89.6% |
-| 7 | new | DrewWright17 | 36.4 | 117.57 | 44.4% | 89.1% |
-| 8 | new | Porter1511 | 26.7 | 121.81 | 42.9% | 89.9% |
-| 9 | new | Hendrick82 | 11.1 | 112.25 | 31.7% | 83.2% |
-| 10 | new | JBThink | 6.1 | 96.73 | 19.0% | 84.2% |
+| 1 | new | rachelknowssports | 86.7 | 141.91 | 72.2% | 88.5% |
+| 2 | new | shawnthegoat33 | 80.8 | 136.03 | 69.4% | 93.2% |
+| 3 | new | BF14 | 77.5 | 135.43 | 69.4% | 90.2% |
+| 4 | new | timmassie | 65.6 | 124.81 | 51.4% | 85.6% |
+| 5 | new | jevinjensen | 54.2 | 123.50 | 43.1% | 89.5% |
+| 6 | new | Porter1511 | 49.4 | 124.41 | 45.8% | 90.8% |
+| 7 | new | DrewWright17 | 45.6 | 121.05 | 48.6% | 90.4% |
+| 8 | new | pdearani | 25.8 | 119.38 | 43.1% | 89.9% |
+| 9 | new | Hendrick82 | 7.8 | 115.70 | 33.3% | 85.2% |
+| 10 | new | JBThink | 6.7 | 102.40 | 23.6% | 85.2% |
 
 ### Season Outlook
 
@@ -98,16 +98,16 @@ Luck compares what the schedule returned against what the week's scoring earned.
 
 | Manager | Exp. Wins | Playoffs | Relegation | Promotion |
 | --- | ---: | ---: | ---: | ---: |
-| timmassie | 10.0 | 99.0% | 1.0% | 0.0% |
-| DrewWright17 | 6.8 | 66.3% | 33.7% | 0.0% |
-| pdearani | 8.2 | 88.6% | 11.4% | 0.0% |
-| jevinjensen | 10.1 | 99.3% | 0.7% | 0.0% |
-| shawnthegoat33 | 12.5 | 100.0% | 0.0% | 0.0% |
-| rachelknowssports | 12.5 | 100.0% | 0.0% | 0.0% |
-| BF14 | 11.3 | 99.9% | 0.1% | 0.0% |
-| Hendrick82 | 7.9 | 81.0% | 19.0% | 0.0% |
-| Porter1511 | 6.4 | 60.5% | 39.5% | 0.0% |
-| JBThink | 4.3 | 5.5% | 94.5% | 0.0% |
+| timmassie | 10.0 | 98.1% | 1.9% | 0.0% |
+| DrewWright17 | 7.6 | 78.0% | 22.0% | 0.0% |
+| pdearani | 7.5 | 73.2% | 26.8% | 0.0% |
+| jevinjensen | 8.9 | 93.7% | 6.3% | 0.0% |
+| shawnthegoat33 | 11.1 | 99.8% | 0.2% | 0.0% |
+| rachelknowssports | 13.1 | 100.0% | 0.0% | 0.0% |
+| BF14 | 12.2 | 100.0% | 0.0% | 0.0% |
+| Hendrick82 | 8.0 | 78.3% | 21.7% | 0.0% |
+| Porter1511 | 7.1 | 73.2% | 26.8% | 0.0% |
+| JBThink | 4.6 | 5.7% | 94.3% | 0.0% |
 
 ## DOATs
 
@@ -115,27 +115,27 @@ Luck compares what the schedule returned against what the week's scoring earned.
 
 | Rank | Manager | Record | Points For | All-Play % | Luck |
 | ---: | --- | --- | ---: | ---: | ---: |
-| 1 | NeilCarlson | 7-0 | 949.16 | 67.3% | +2.29 |
-| 2 | tlt292001 | 4-3 | 930.02 | 53.1% | +0.29 |
-| 3 | Bitcoin89 | 4-3 | 921.70 | 57.1% | +0.00 |
-| 4 | DOATGOAT | 3-4 | 916.90 | 57.1% | -1.00 |
-| 5 | DBMixer | 3-4 | 873.58 | 53.1% | -0.71 |
-| 6 | Nafedog1 | 3-4 | 864.10 | 49.0% | -0.43 |
-| 7 | sofiacaballero | 2-5 | 828.16 | 38.8% | -0.71 |
-| 8 | AGCallinAudible | 2-5 | 719.38 | 24.5% | +0.29 |
+| 1 | NeilCarlson | 8-0 | 1064.40 | 66.1% | +2.71 |
+| 2 | tlt292001 | 5-3 | 1087.20 | 58.9% | +0.29 |
+| 3 | DOATGOAT | 4-4 | 1054.02 | 60.7% | -0.86 |
+| 4 | Bitcoin89 | 4-4 | 1012.00 | 53.6% | -0.29 |
+| 5 | Nafedog1 | 4-4 | 994.98 | 51.8% | -0.14 |
+| 6 | DBMixer | 3-5 | 960.74 | 48.2% | -0.86 |
+| 7 | sofiacaballero | 2-6 | 910.42 | 33.9% | -0.71 |
+| 8 | AGCallinAudible | 2-6 | 821.68 | 26.8% | -0.14 |
 
 ### Power Rankings
 
 | Rank | Move | Manager | Composite | PPG | All-Play % | Lineup Eff. |
 | ---: | :-: | --- | ---: | ---: | ---: | ---: |
-| 1 | new | NeilCarlson | 83.6 | 135.59 | 67.3% | 84.9% |
-| 2 | new | Bitcoin89 | 68.9 | 131.67 | 57.1% | 91.9% |
-| 3 | new | DOATGOAT | 67.5 | 130.99 | 57.1% | 84.3% |
-| 4 | new | tlt292001 | 57.5 | 132.86 | 53.1% | 86.3% |
-| 5 | new | DBMixer | 52.5 | 124.80 | 53.1% | 86.8% |
-| 6 | new | Nafedog1 | 50.0 | 123.44 | 49.0% | 85.9% |
-| 7 | new | sofiacaballero | 17.9 | 118.31 | 38.8% | 80.4% |
-| 8 | new | AGCallinAudible | 2.1 | 102.77 | 24.5% | 78.2% |
+| 1 | new | tlt292001 | 89.3 | 135.90 | 58.9% | 87.0% |
+| 2 | new | NeilCarlson | 80.0 | 133.05 | 66.1% | 82.8% |
+| 3 | new | DOATGOAT | 76.4 | 131.75 | 60.7% | 84.6% |
+| 4 | new | Bitcoin89 | 56.4 | 126.50 | 53.6% | 91.7% |
+| 5 | new | Nafedog1 | 53.6 | 124.37 | 51.8% | 85.4% |
+| 6 | new | DBMixer | 30.0 | 120.09 | 48.2% | 84.1% |
+| 7 | new | sofiacaballero | 12.1 | 113.80 | 33.9% | 81.6% |
+| 8 | new | AGCallinAudible | 2.1 | 102.71 | 26.8% | 79.3% |
 
 ### Season Outlook
 
@@ -143,14 +143,14 @@ Luck compares what the schedule returned against what the week's scoring earned.
 
 | Manager | Exp. Wins | Playoffs | Relegation | Promotion |
 | --- | ---: | ---: | ---: | ---: |
-| Nafedog1 | 8.1 | 4.2% | 0.0% | 4.2% |
-| Bitcoin89 | 10.2 | 30.2% | 0.0% | 30.2% |
-| DOATGOAT | 9.4 | 16.3% | 0.0% | 16.3% |
-| DBMixer | 8.3 | 4.9% | 0.0% | 4.9% |
-| NeilCarlson | 14.0 | 96.7% | 0.0% | 96.7% |
-| tlt292001 | 10.7 | 47.5% | 0.0% | 47.5% |
-| sofiacaballero | 6.2 | 0.2% | 0.0% | 0.2% |
-| AGCallinAudible | 4.9 | 0.0% | 0.0% | 0.0% |
+| Nafedog1 | 8.7 | 4.1% | 0.0% | 4.1% |
+| Bitcoin89 | 9.2 | 5.7% | 0.0% | 5.7% |
+| DOATGOAT | 10.3 | 19.5% | 0.0% | 19.5% |
+| DBMixer | 7.6 | 0.7% | 0.0% | 0.7% |
+| NeilCarlson | 14.1 | 94.1% | 0.0% | 94.1% |
+| tlt292001 | 11.9 | 75.9% | 0.0% | 75.9% |
+| sofiacaballero | 5.6 | 0.0% | 0.0% | 0.0% |
+| AGCallinAudible | 4.7 | 0.0% | 0.0% | 0.0% |
 
 ## Method
 

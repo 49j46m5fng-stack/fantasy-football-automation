@@ -1,21 +1,21 @@
 {
   "donut_pool_format_version": 1,
   "season": "2026",
-  "through_week": 7,
+  "through_week": 8,
   "total_weeks": 17,
   "tie_policy": "unresolved",
   "complete": false,
   "blocked_week": null,
   "entrant_count": 18,
-  "survivor_count": 11,
+  "survivor_count": 10,
   "next_delivery": {
-    "scoring_week": 7,
-    "delivery_week": 8,
-    "league_key": "doats",
-    "roster_id": 7,
-    "manager_name": "sofiacaballero",
-    "points": 84.24,
-    "margin_to_next_lowest": 7.660000000000011
+    "scoring_week": 8,
+    "delivery_week": 9,
+    "league_key": "goats",
+    "roster_id": 4,
+    "manager_name": "jevinjensen",
+    "points": 78.6,
+    "margin_to_next_lowest": 11.700000000000003
   },
   "undoughfeated": null,
   "eliminated": [
@@ -102,6 +102,18 @@
       "tie_broken": false,
       "resolution": "lowest_score",
       "reason": null
+    },
+    {
+      "scoring_week": 8,
+      "delivery_week": 9,
+      "league_key": "goats",
+      "roster_id": 4,
+      "manager_name": "jevinjensen",
+      "points": 78.6,
+      "margin_to_next_lowest": 11.700000000000003,
+      "tie_broken": false,
+      "resolution": "lowest_score",
+      "reason": null
     }
   ],
   "survivors": [
@@ -109,7 +121,7 @@
       "league_key": "doats",
       "roster_id": 1,
       "manager_name": "Nafedog1",
-      "weeks_survived": 7,
+      "weeks_survived": 8,
       "closest_call_margin": 4.739999999999995,
       "closest_call_week": 4,
       "lowest_weekly_points": 92.82,
@@ -119,27 +131,37 @@
       "league_key": "goats",
       "roster_id": 2,
       "manager_name": "DrewWright17",
-      "weeks_survived": 7,
+      "weeks_survived": 8,
       "closest_call_margin": 7.660000000000011,
       "closest_call_week": 7,
       "lowest_weekly_points": 91.9,
       "lowest_weekly_points_week": 7
     },
     {
+      "league_key": "doats",
+      "roster_id": 2,
+      "manager_name": "Bitcoin89",
+      "weeks_survived": 8,
+      "closest_call_margin": 11.700000000000003,
+      "closest_call_week": 8,
+      "lowest_weekly_points": 90.3,
+      "lowest_weekly_points_week": 8
+    },
+    {
       "league_key": "goats",
-      "roster_id": 4,
-      "manager_name": "jevinjensen",
-      "weeks_survived": 7,
-      "closest_call_margin": 14.5,
-      "closest_call_week": 2,
-      "lowest_weekly_points": 94.3,
-      "lowest_weekly_points_week": 2
+      "roster_id": 5,
+      "manager_name": "shawnthegoat33",
+      "weeks_survived": 8,
+      "closest_call_margin": 13.980000000000004,
+      "closest_call_week": 8,
+      "lowest_weekly_points": 92.58,
+      "lowest_weekly_points_week": 8
     },
     {
       "league_key": "goats",
       "roster_id": 9,
       "manager_name": "Porter1511",
-      "weeks_survived": 7,
+      "weeks_survived": 8,
       "closest_call_margin": 15.340000000000003,
       "closest_call_week": 7,
       "lowest_weekly_points": 99.58,
@@ -147,19 +169,9 @@
     },
     {
       "league_key": "doats",
-      "roster_id": 2,
-      "manager_name": "Bitcoin89",
-      "weeks_survived": 7,
-      "closest_call_margin": 17.08,
-      "closest_call_week": 7,
-      "lowest_weekly_points": 101.32,
-      "lowest_weekly_points_week": 7
-    },
-    {
-      "league_key": "doats",
       "roster_id": 3,
       "manager_name": "DOATGOAT",
-      "weeks_survived": 7,
+      "weeks_survived": 8,
       "closest_call_margin": 19.980000000000004,
       "closest_call_week": 6,
       "lowest_weekly_points": 97.58,
@@ -169,7 +181,7 @@
       "league_key": "goats",
       "roster_id": 6,
       "manager_name": "rachelknowssports",
-      "weeks_survived": 7,
+      "weeks_survived": 8,
       "closest_call_margin": 20.120000000000005,
       "closest_call_week": 7,
       "lowest_weekly_points": 104.36,
@@ -179,7 +191,7 @@
       "league_key": "goats",
       "roster_id": 7,
       "manager_name": "BF14",
-      "weeks_survived": 7,
+      "weeks_survived": 8,
       "closest_call_margin": 26.960000000000008,
       "closest_call_week": 6,
       "lowest_weekly_points": 104.56,
@@ -189,7 +201,7 @@
       "league_key": "doats",
       "roster_id": 5,
       "manager_name": "NeilCarlson",
-      "weeks_survived": 7,
+      "weeks_survived": 8,
       "closest_call_margin": 28.400000000000006,
       "closest_call_week": 6,
       "lowest_weekly_points": 106.0,
@@ -199,21 +211,11 @@
       "league_key": "doats",
       "roster_id": 6,
       "manager_name": "tlt292001",
-      "weeks_survived": 7,
+      "weeks_survived": 8,
       "closest_call_margin": 30.78,
       "closest_call_week": 5,
       "lowest_weekly_points": 120.18,
       "lowest_weekly_points_week": 5
-    },
-    {
-      "league_key": "goats",
-      "roster_id": 5,
-      "manager_name": "shawnthegoat33",
-      "weeks_survived": 7,
-      "closest_call_margin": 37.2,
-      "closest_call_week": 6,
-      "lowest_weekly_points": 99.66,
-      "lowest_weekly_points_week": 1
     }
   ],
   "weeks": [
@@ -299,6 +301,18 @@
       ],
       "eligible_before": 12,
       "eligible_after": 11,
+      "warnings": []
+    },
+    {
+      "scoring_week": 8,
+      "delivery_week": 9,
+      "status": "assigned",
+      "lowest_points": 78.6,
+      "tied_team_keys": [
+        "goats:4"
+      ],
+      "eligible_before": 11,
+      "eligible_after": 10,
       "warnings": []
     }
   ],
