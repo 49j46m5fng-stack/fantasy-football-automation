@@ -1,0 +1,4139 @@
+{
+  "created_at": "2026-11-10T14:44:29.203551+00:00",
+  "data": {
+    "baseline_reference": {
+      "created_at": "2026-11-05T23:13:27.535461+00:00",
+      "schema_version": 1
+    },
+    "capture_context": {
+      "captured_at_local": "2026-11-10T08:44:28.134481-06:00",
+      "captured_at_utc": "2026-11-10T14:44:28.134481+00:00",
+      "mode": "generic_weekly_orchestration",
+      "scheduled_window_close": "2026-11-10T23:00:00-06:00",
+      "scheduled_window_open": "2026-11-10T07:00:00-06:00",
+      "stage_label": "final_post_mnf",
+      "timezone": "America/Chicago"
+    },
+    "final_format_version": 1,
+    "league": {
+      "name": "GOATs",
+      "roster_positions": [
+        "QB",
+        "RB",
+        "RB",
+        "WR",
+        "WR",
+        "TE",
+        "FLEX",
+        "K",
+        "DEF",
+        "BN",
+        "BN",
+        "BN",
+        "BN",
+        "BN",
+        "BN"
+      ],
+      "scoring_settings": {
+        "blk_kick": 2.0,
+        "def_2pt": 2.0,
+        "def_st_ff": 1.0,
+        "def_st_fum_rec": 1.0,
+        "def_st_td": 6.0,
+        "def_td": 6.0,
+        "ff": 1.0,
+        "fgm_0_19": 3.0,
+        "fgm_20_29": 3.0,
+        "fgm_30_39": 3.0,
+        "fgm_40_49": 4.0,
+        "fgm_50_59": 5.0,
+        "fgm_60p": 6.0,
+        "fgmiss": -1.0,
+        "fum": 0.0,
+        "fum_lost": -2.0,
+        "fum_rec": 2.0,
+        "fum_rec_td": 6.0,
+        "int": 2.0,
+        "pass_2pt": 2.0,
+        "pass_int": -1.0,
+        "pass_td": 4.0,
+        "pass_yd": 0.04,
+        "pts_allow_0": 5.0,
+        "pts_allow_14_20": 1.0,
+        "pts_allow_1_6": 4.0,
+        "pts_allow_21_27": 0.0,
+        "pts_allow_28_34": -1.0,
+        "pts_allow_35p": -4.0,
+        "pts_allow_7_13": 2.0,
+        "rec": 1.0,
+        "rec_2pt": 2.0,
+        "rec_td": 6.0,
+        "rec_yd": 0.1,
+        "rush_2pt": 2.0,
+        "rush_td": 6.0,
+        "rush_yd": 0.1,
+        "sack": 1.0,
+        "safe": 2.0,
+        "st_ff": 1.0,
+        "st_fum_rec": 1.0,
+        "st_td": 6.0,
+        "xpm": 1.0,
+        "xpmiss": -1.0,
+        "yds_allow_0_100": 5.0,
+        "yds_allow_100_199": 4.0,
+        "yds_allow_200_299": 2.0,
+        "yds_allow_300_349": 1.0,
+        "yds_allow_350_399": 0.0,
+        "yds_allow_400_449": -1.0,
+        "yds_allow_450_499": -4.0,
+        "yds_allow_500_549": -5.0,
+        "yds_allow_550p": -5.0
+      },
+      "season": "2026",
+      "season_type": "regular",
+      "settings": {
+        "bench_lock": 0,
+        "best_ball": 0,
+        "capacity_override": 1,
+        "commissioner_direct_invite": 0,
+        "daily_waivers": 0,
+        "daily_waivers_days": 5461,
+        "daily_waivers_hour": 0,
+        "daily_waivers_last_ran": 3,
+        "disable_adds": 0,
+        "disable_trades": 0,
+        "draft_rounds": 3,
+        "faab_suggestions": 1,
+        "last_report": 8,
+        "last_scored_leg": 9,
+        "league_average_match": 0,
+        "leg": 9,
+        "max_keepers": 1,
+        "max_subs": 0,
+        "num_teams": 10,
+        "offseason_adds": 0,
+        "pick_trading": 1,
+        "playoff_round_type": 0,
+        "playoff_seed_type": 0,
+        "playoff_teams": 8,
+        "playoff_type": 0,
+        "playoff_week_start": 15,
+        "reserve_allow_cov": 0,
+        "reserve_allow_dnr": 0,
+        "reserve_allow_doubtful": 0,
+        "reserve_allow_na": 0,
+        "reserve_allow_out": 0,
+        "reserve_allow_sus": 0,
+        "reserve_slots": 1,
+        "start_week": 1,
+        "sub_lock_if_starter_active": 0,
+        "sub_start_time_eligibility": 0,
+        "taxi_allow_vets": 0,
+        "taxi_deadline": 0,
+        "taxi_slots": 0,
+        "taxi_years": 0,
+        "trade_deadline": 11,
+        "trade_review_days": 2,
+        "type": 0,
+        "veto_auto_poll": 0,
+        "veto_show_votes": 0,
+        "veto_votes_needed": 5,
+        "waiver_bid_min": 0,
+        "waiver_budget": 100,
+        "waiver_clear_days": 2,
+        "waiver_day_of_week": 2,
+        "waiver_type": 0
+      },
+      "status": "in_season",
+      "total_rosters": 10
+    },
+    "matchups": [
+      {
+        "loser_roster_id": 8,
+        "margin": 26.539999999999992,
+        "matchup_id": 1,
+        "roster_a_id": 8,
+        "roster_a_points": 71.7,
+        "roster_b_id": 9,
+        "roster_b_points": 98.24,
+        "score_complete": true,
+        "tied": false,
+        "winner_roster_id": 9
+      },
+      {
+        "loser_roster_id": 4,
+        "margin": 9.239999999999995,
+        "matchup_id": 2,
+        "roster_a_id": 3,
+        "roster_a_points": 101.16,
+        "roster_b_id": 4,
+        "roster_b_points": 91.92,
+        "score_complete": true,
+        "tied": false,
+        "winner_roster_id": 3
+      },
+      {
+        "loser_roster_id": 5,
+        "margin": 43.420000000000016,
+        "matchup_id": 3,
+        "roster_a_id": 5,
+        "roster_a_points": 115.16,
+        "roster_b_id": 7,
+        "roster_b_points": 158.58,
+        "score_complete": true,
+        "tied": false,
+        "winner_roster_id": 7
+      },
+      {
+        "loser_roster_id": 10,
+        "margin": 60.8,
+        "matchup_id": 4,
+        "roster_a_id": 6,
+        "roster_a_points": 168.26,
+        "roster_b_id": 10,
+        "roster_b_points": 107.46,
+        "score_complete": true,
+        "tied": false,
+        "winner_roster_id": 6
+      },
+      {
+        "loser_roster_id": 2,
+        "margin": 0.8400000000000034,
+        "matchup_id": 5,
+        "roster_a_id": 1,
+        "roster_a_points": 130.5,
+        "roster_b_id": 2,
+        "roster_b_points": 129.66,
+        "score_complete": true,
+        "tied": false,
+        "winner_roster_id": 1
+      }
+    ],
+    "source_data": {
+      "league": {
+        "avatar": "f0ae0f7ae7a0ef4be183d6d53d427e40",
+        "bracket_id": null,
+        "bracket_overrides_id": null,
+        "company_id": null,
+        "draft_id": "1400610465570107392",
+        "group_id": null,
+        "last_author_avatar": null,
+        "last_author_display_name": "sys",
+        "last_author_id": "166666666666666666",
+        "last_author_is_bot": true,
+        "last_message_attachment": null,
+        "last_message_id": "1424996823923167232",
+        "last_message_text_map": null,
+        "last_message_time": 1794108227285,
+        "last_pinned_message_id": "1401330387971530752",
+        "last_read_id": null,
+        "league_id": "1400610465024839680",
+        "loser_bracket_id": null,
+        "loser_bracket_overrides_id": null,
+        "metadata": {
+          "auto_continue": "on",
+          "keeper_deadline": "0"
+        },
+        "name": "GOATs",
+        "previous_league_id": null,
+        "roster_positions": [
+          "QB",
+          "RB",
+          "RB",
+          "WR",
+          "WR",
+          "TE",
+          "FLEX",
+          "K",
+          "DEF",
+          "BN",
+          "BN",
+          "BN",
+          "BN",
+          "BN",
+          "BN"
+        ],
+        "scoring_settings": {
+          "blk_kick": 2.0,
+          "def_2pt": 2.0,
+          "def_st_ff": 1.0,
+          "def_st_fum_rec": 1.0,
+          "def_st_td": 6.0,
+          "def_td": 6.0,
+          "ff": 1.0,
+          "fgm_0_19": 3.0,
+          "fgm_20_29": 3.0,
+          "fgm_30_39": 3.0,
+          "fgm_40_49": 4.0,
+          "fgm_50_59": 5.0,
+          "fgm_60p": 6.0,
+          "fgmiss": -1.0,
+          "fum": 0.0,
+          "fum_lost": -2.0,
+          "fum_rec": 2.0,
+          "fum_rec_td": 6.0,
+          "int": 2.0,
+          "pass_2pt": 2.0,
+          "pass_int": -1.0,
+          "pass_td": 4.0,
+          "pass_yd": 0.04,
+          "pts_allow_0": 5.0,
+          "pts_allow_14_20": 1.0,
+          "pts_allow_1_6": 4.0,
+          "pts_allow_21_27": 0.0,
+          "pts_allow_28_34": -1.0,
+          "pts_allow_35p": -4.0,
+          "pts_allow_7_13": 2.0,
+          "rec": 1.0,
+          "rec_2pt": 2.0,
+          "rec_td": 6.0,
+          "rec_yd": 0.1,
+          "rush_2pt": 2.0,
+          "rush_td": 6.0,
+          "rush_yd": 0.1,
+          "sack": 1.0,
+          "safe": 2.0,
+          "st_ff": 1.0,
+          "st_fum_rec": 1.0,
+          "st_td": 6.0,
+          "xpm": 1.0,
+          "xpmiss": -1.0,
+          "yds_allow_0_100": 5.0,
+          "yds_allow_100_199": 4.0,
+          "yds_allow_200_299": 2.0,
+          "yds_allow_300_349": 1.0,
+          "yds_allow_350_399": 0.0,
+          "yds_allow_400_449": -1.0,
+          "yds_allow_450_499": -4.0,
+          "yds_allow_500_549": -5.0,
+          "yds_allow_550p": -5.0
+        },
+        "season": "2026",
+        "season_type": "regular",
+        "settings": {
+          "bench_lock": 0,
+          "best_ball": 0,
+          "capacity_override": 1,
+          "commissioner_direct_invite": 0,
+          "daily_waivers": 0,
+          "daily_waivers_days": 5461,
+          "daily_waivers_hour": 0,
+          "daily_waivers_last_ran": 3,
+          "disable_adds": 0,
+          "disable_trades": 0,
+          "draft_rounds": 3,
+          "faab_suggestions": 1,
+          "last_report": 8,
+          "last_scored_leg": 9,
+          "league_average_match": 0,
+          "leg": 9,
+          "max_keepers": 1,
+          "max_subs": 0,
+          "num_teams": 10,
+          "offseason_adds": 0,
+          "pick_trading": 1,
+          "playoff_round_type": 0,
+          "playoff_seed_type": 0,
+          "playoff_teams": 8,
+          "playoff_type": 0,
+          "playoff_week_start": 15,
+          "reserve_allow_cov": 0,
+          "reserve_allow_dnr": 0,
+          "reserve_allow_doubtful": 0,
+          "reserve_allow_na": 0,
+          "reserve_allow_out": 0,
+          "reserve_allow_sus": 0,
+          "reserve_slots": 1,
+          "start_week": 1,
+          "sub_lock_if_starter_active": 0,
+          "sub_start_time_eligibility": 0,
+          "taxi_allow_vets": 0,
+          "taxi_deadline": 0,
+          "taxi_slots": 0,
+          "taxi_years": 0,
+          "trade_deadline": 11,
+          "trade_review_days": 2,
+          "type": 0,
+          "veto_auto_poll": 0,
+          "veto_show_votes": 0,
+          "veto_votes_needed": 5,
+          "waiver_bid_min": 0,
+          "waiver_budget": 100,
+          "waiver_clear_days": 2,
+          "waiver_day_of_week": 2,
+          "waiver_type": 0
+        },
+        "shard": 839,
+        "sport": "nfl",
+        "status": "in_season",
+        "total_rosters": 10
+      },
+      "matchups": [
+        {
+          "custom_points": null,
+          "matchup_id": 5,
+          "players": [
+            "11632",
+            "11646",
+            "12506",
+            "12534",
+            "13276",
+            "3163",
+            "3451",
+            "4217",
+            "4983",
+            "5859",
+            "6813",
+            "7523",
+            "7588",
+            "8167",
+            "HOU"
+          ],
+          "players_points": {
+            "11632": 9.3,
+            "11646": 6.6,
+            "12506": 12.2,
+            "12534": 0.0,
+            "13276": 13.8,
+            "3163": 6.3,
+            "3451": 17.0,
+            "4217": 9.8,
+            "4983": 6.6,
+            "5859": 0.0,
+            "6813": 9.4,
+            "7523": 13.58,
+            "7588": 22.4,
+            "8167": 30.1,
+            "HOU": 14.0
+          },
+          "points": 130.5,
+          "roster_id": 1,
+          "starters": [
+            "3163",
+            "6813",
+            "7588",
+            "8167",
+            "11632",
+            "4217",
+            "12506",
+            "3451",
+            "HOU"
+          ],
+          "starters_points": [
+            6.3,
+            9.4,
+            22.4,
+            30.1,
+            9.3,
+            9.8,
+            12.2,
+            17.0,
+            14.0
+          ]
+        },
+        {
+          "custom_points": null,
+          "matchup_id": 5,
+          "players": [
+            "12501",
+            "12507",
+            "12526",
+            "13337",
+            "13346",
+            "13424",
+            "1479",
+            "3198",
+            "4046",
+            "421",
+            "6083",
+            "6130",
+            "7543",
+            "7564",
+            "9480",
+            "JAX"
+          ],
+          "players_points": {
+            "12501": 32.4,
+            "12507": 6.0,
+            "12526": 15.6,
+            "13337": 9.4,
+            "13346": 15.8,
+            "13424": 11.2,
+            "1479": 6.6,
+            "3198": 5.58,
+            "4046": 16.48,
+            "421": 12.22,
+            "6083": 7.0,
+            "6130": 5.9,
+            "7543": 0.0,
+            "7564": 31.5,
+            "9480": 4.2,
+            "JAX": 11.0
+          },
+          "points": 129.66,
+          "roster_id": 2,
+          "starters": [
+            "4046",
+            "3198",
+            "6130",
+            "12526",
+            "12501",
+            "9480",
+            "7564",
+            "6083",
+            "JAX"
+          ],
+          "starters_points": [
+            16.48,
+            5.58,
+            5.9,
+            15.6,
+            32.4,
+            4.2,
+            31.5,
+            7.0,
+            11.0
+          ]
+        },
+        {
+          "custom_points": null,
+          "matchup_id": 2,
+          "players": [
+            "10236",
+            "11560",
+            "11586",
+            "12519",
+            "12527",
+            "13287",
+            "2747",
+            "5844",
+            "7547",
+            "7611",
+            "8144",
+            "8146",
+            "9500",
+            "9508",
+            "KC"
+          ],
+          "players_points": {
+            "10236": 5.8,
+            "11560": 16.76,
+            "11586": 11.8,
+            "12519": 20.7,
+            "12527": 7.0,
+            "13287": 0.0,
+            "2747": 6.0,
+            "5844": 7.3,
+            "7547": 16.6,
+            "7611": 14.8,
+            "8144": 16.8,
+            "8146": 0.0,
+            "9500": 5.4,
+            "9508": 0.0,
+            "KC": 12.0
+          },
+          "points": 101.16,
+          "roster_id": 3,
+          "starters": [
+            "11560",
+            "7611",
+            "12527",
+            "7547",
+            "12519",
+            "5844",
+            "8146",
+            "2747",
+            "KC"
+          ],
+          "starters_points": [
+            16.76,
+            14.8,
+            7.0,
+            16.6,
+            20.7,
+            7.3,
+            0.0,
+            6.0,
+            12.0
+          ]
+        },
+        {
+          "custom_points": null,
+          "matchup_id": 2,
+          "players": [
+            "12474",
+            "12512",
+            "13279",
+            "13298",
+            "13545",
+            "4034",
+            "4037",
+            "4881",
+            "5967",
+            "8112",
+            "8130",
+            "8161",
+            "9758",
+            "9997",
+            "NO",
+            "PIT"
+          ],
+          "players_points": {
+            "12474": 8.4,
+            "12512": 5.5,
+            "13279": 0.0,
+            "13298": 18.8,
+            "13545": 16.0,
+            "4034": 22.7,
+            "4037": 4.8,
+            "4881": 0.0,
+            "5967": 0.0,
+            "8112": 11.8,
+            "8130": 12.4,
+            "8161": 4.82,
+            "9758": 36.36,
+            "9997": 5.3,
+            "NO": 5.0,
+            "PIT": 0.0
+          },
+          "points": 91.92,
+          "roster_id": 4,
+          "starters": [
+            "8161",
+            "12512",
+            "4034",
+            "8112",
+            "9997",
+            "8130",
+            "12474",
+            "13545",
+            "NO"
+          ],
+          "starters_points": [
+            4.82,
+            5.5,
+            22.7,
+            11.8,
+            5.3,
+            12.4,
+            8.4,
+            16.0,
+            5.0
+          ]
+        },
+        {
+          "custom_points": null,
+          "matchup_id": 3,
+          "players": [
+            "10213",
+            "11566",
+            "11786",
+            "12495",
+            "12514",
+            "12518",
+            "2133",
+            "5850",
+            "5872",
+            "6786",
+            "7553",
+            "8138",
+            "8150",
+            "8228",
+            "9753",
+            "DEN"
+          ],
+          "players_points": {
+            "10213": 9.5,
+            "11566": 14.56,
+            "11786": 17.0,
+            "12495": 7.4,
+            "12514": 6.9,
+            "12518": 8.4,
+            "2133": 0.0,
+            "5850": 0.5,
+            "5872": 0.0,
+            "6786": 33.5,
+            "7553": 5.3,
+            "8138": 16.7,
+            "8150": 9.1,
+            "8228": 0.0,
+            "9753": 9.6,
+            "DEN": 9.0
+          },
+          "points": 115.16,
+          "roster_id": 5,
+          "starters": [
+            "11566",
+            "8138",
+            "8150",
+            "6786",
+            "10213",
+            "7553",
+            "5850",
+            "11786",
+            "DEN"
+          ],
+          "starters_points": [
+            14.56,
+            16.7,
+            9.1,
+            33.5,
+            9.5,
+            5.3,
+            0.5,
+            17.0,
+            9.0
+          ]
+        },
+        {
+          "custom_points": null,
+          "matchup_id": 4,
+          "players": [
+            "11533",
+            "11620",
+            "12490",
+            "13281",
+            "13345",
+            "4984",
+            "6801",
+            "6804",
+            "7526",
+            "8131",
+            "8151",
+            "9484",
+            "9487",
+            "9509",
+            "SEA"
+          ],
+          "players_points": {
+            "11533": 9.0,
+            "11620": 16.0,
+            "12490": 8.9,
+            "13281": 5.0,
+            "13345": 18.8,
+            "4984": 13.86,
+            "6801": 20.2,
+            "6804": 36.18,
+            "7526": 3.2,
+            "8131": 16.3,
+            "8151": 36.3,
+            "9484": 1.9,
+            "9487": 14.1,
+            "9509": 26.7,
+            "SEA": 13.0
+          },
+          "points": 168.26,
+          "roster_id": 6,
+          "starters": [
+            "4984",
+            "9509",
+            "8151",
+            "6801",
+            "9487",
+            "8131",
+            "13345",
+            "11533",
+            "SEA"
+          ],
+          "starters_points": [
+            13.86,
+            26.7,
+            36.3,
+            20.2,
+            14.1,
+            16.3,
+            18.8,
+            9.0,
+            13.0
+          ]
+        },
+        {
+          "custom_points": null,
+          "matchup_id": 3,
+          "players": [
+            "11563",
+            "11584",
+            "11604",
+            "11628",
+            "12529",
+            "13294",
+            "1466",
+            "5947",
+            "7569",
+            "7594",
+            "7839",
+            "8148",
+            "8183",
+            "9221",
+            "SF"
+          ],
+          "players_points": {
+            "11563": 16.68,
+            "11584": 28.5,
+            "11604": 22.3,
+            "11628": 4.0,
+            "12529": 0.0,
+            "13294": 12.1,
+            "1466": 17.3,
+            "5947": 10.5,
+            "7569": 15.5,
+            "7594": 13.6,
+            "7839": 13.0,
+            "8148": 5.0,
+            "8183": 26.28,
+            "9221": 13.4,
+            "SF": 21.0
+          },
+          "points": 158.58,
+          "roster_id": 7,
+          "starters": [
+            "8183",
+            "9221",
+            "11584",
+            "8148",
+            "7569",
+            "11604",
+            "7594",
+            "7839",
+            "SF"
+          ],
+          "starters_points": [
+            26.28,
+            13.4,
+            28.5,
+            5.0,
+            15.5,
+            22.3,
+            13.6,
+            13.0,
+            21.0
+          ]
+        },
+        {
+          "custom_points": null,
+          "matchup_id": 1,
+          "players": [
+            "10232",
+            "10859",
+            "11435",
+            "11635",
+            "2216",
+            "3294",
+            "4199",
+            "5022",
+            "6650",
+            "6790",
+            "6794",
+            "6806",
+            "7525",
+            "9226",
+            "9754",
+            "WAS"
+          ],
+          "players_points": {
+            "10232": 12.0,
+            "10859": 7.2,
+            "11435": 0.0,
+            "11635": 0.0,
+            "2216": 0.0,
+            "3294": 19.5,
+            "4199": 3.1,
+            "5022": 10.0,
+            "6650": 10.0,
+            "6790": 3.1,
+            "6794": 8.8,
+            "6806": 3.2,
+            "7525": 0.0,
+            "9226": 0.0,
+            "9754": 13.3,
+            "WAS": 8.0
+          },
+          "points": 71.7,
+          "roster_id": 8,
+          "starters": [
+            "3294",
+            "4199",
+            "6790",
+            "10232",
+            "6794",
+            "10859",
+            "11635",
+            "6650",
+            "WAS"
+          ],
+          "starters_points": [
+            19.5,
+            3.1,
+            3.1,
+            12.0,
+            8.8,
+            7.2,
+            0.0,
+            10.0,
+            8.0
+          ]
+        },
+        {
+          "custom_points": null,
+          "matchup_id": 1,
+          "players": [
+            "10229",
+            "11576",
+            "11624",
+            "11792",
+            "12481",
+            "4993",
+            "5846",
+            "6770",
+            "8110",
+            "8155",
+            "8408",
+            "9224",
+            "9488",
+            "9756",
+            "MIN"
+          ],
+          "players_points": {
+            "10229": 9.9,
+            "11576": 5.4,
+            "11624": 10.8,
+            "11792": 9.0,
+            "12481": 0.0,
+            "4993": 3.1,
+            "5846": 0.0,
+            "6770": 29.54,
+            "8110": 10.1,
+            "8155": 11.7,
+            "8408": 6.2,
+            "9224": 10.5,
+            "9488": 12.1,
+            "9756": 4.8,
+            "MIN": 7.0
+          },
+          "points": 98.24,
+          "roster_id": 9,
+          "starters": [
+            "6770",
+            "11576",
+            "9224",
+            "9488",
+            "10229",
+            "4993",
+            "8155",
+            "11792",
+            "MIN"
+          ],
+          "starters_points": [
+            29.54,
+            5.4,
+            10.5,
+            12.1,
+            9.9,
+            3.1,
+            11.7,
+            9.0,
+            7.0
+          ]
+        },
+        {
+          "custom_points": null,
+          "matchup_id": 4,
+          "players": [
+            "11564",
+            "12517",
+            "13286",
+            "2020",
+            "2449",
+            "4035",
+            "4866",
+            "5012",
+            "8132",
+            "8136",
+            "8137",
+            "9228",
+            "9493",
+            "9501",
+            "NE"
+          ],
+          "players_points": {
+            "11564": 21.26,
+            "12517": 9.4,
+            "13286": 11.8,
+            "2020": 9.0,
+            "2449": 8.1,
+            "4035": 7.9,
+            "4866": 8.2,
+            "5012": 3.9,
+            "8132": 6.6,
+            "8136": 6.9,
+            "8137": 0.0,
+            "9228": 21.34,
+            "9493": 35.0,
+            "9501": 15.2,
+            "NE": -4.0
+          },
+          "points": 107.46,
+          "roster_id": 10,
+          "starters": [
+            "11564",
+            "8132",
+            "8136",
+            "9493",
+            "9501",
+            "12517",
+            "2449",
+            "2020",
+            "NE"
+          ],
+          "starters_points": [
+            21.26,
+            6.6,
+            6.9,
+            35.0,
+            15.2,
+            9.4,
+            8.1,
+            9.0,
+            -4.0
+          ]
+        }
+      ],
+      "rosters": [
+        {
+          "co_owners": null,
+          "keepers": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "record": "LLLWWWWWW",
+            "streak": "6W"
+          },
+          "owner_id": "1394010747419234304",
+          "player_map": null,
+          "players": [
+            "11632",
+            "11646",
+            "12506",
+            "12534",
+            "13276",
+            "3163",
+            "3451",
+            "4217",
+            "4983",
+            "5859",
+            "6813",
+            "7523",
+            "7588",
+            "8167",
+            "HOU"
+          ],
+          "reserve": null,
+          "roster_id": 1,
+          "settings": {
+            "fpts": 1128,
+            "fpts_against": 1088,
+            "fpts_against_decimal": 46,
+            "fpts_decimal": 94,
+            "losses": 3,
+            "ppts": 1301,
+            "ppts_decimal": 80,
+            "ties": 0,
+            "total_moves": 0,
+            "waiver_budget_used": 0,
+            "waiver_position": 5,
+            "wins": 6
+          },
+          "starters": [
+            "3163",
+            "6813",
+            "7588",
+            "8167",
+            "11632",
+            "4217",
+            "12506",
+            "3451",
+            "HOU"
+          ],
+          "taxi": null
+        },
+        {
+          "co_owners": null,
+          "keepers": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "record": "LLLWLWLWL",
+            "streak": "1L"
+          },
+          "owner_id": "1400616770796056576",
+          "player_map": null,
+          "players": [
+            "12501",
+            "12507",
+            "12526",
+            "13337",
+            "13346",
+            "13424",
+            "1479",
+            "3198",
+            "4046",
+            "421",
+            "6083",
+            "6130",
+            "7543",
+            "7564",
+            "9480",
+            "JAX"
+          ],
+          "reserve": [
+            "7543"
+          ],
+          "roster_id": 2,
+          "settings": {
+            "fpts": 1098,
+            "fpts_against": 1205,
+            "fpts_against_decimal": 18,
+            "fpts_decimal": 8,
+            "losses": 6,
+            "ppts": 1218,
+            "ppts_decimal": 70,
+            "ties": 0,
+            "total_moves": 0,
+            "waiver_budget_used": 0,
+            "waiver_position": 3,
+            "wins": 3
+          },
+          "starters": [
+            "4046",
+            "3198",
+            "6130",
+            "12526",
+            "12501",
+            "9480",
+            "7564",
+            "6083",
+            "JAX"
+          ],
+          "taxi": null
+        },
+        {
+          "co_owners": null,
+          "keepers": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "record": "WWLLLLWLW",
+            "streak": "1W"
+          },
+          "owner_id": "727320702549585920",
+          "player_map": null,
+          "players": [
+            "10236",
+            "11560",
+            "11586",
+            "12519",
+            "12527",
+            "13287",
+            "2747",
+            "5844",
+            "7547",
+            "7611",
+            "8144",
+            "8146",
+            "9500",
+            "9508",
+            "KC"
+          ],
+          "reserve": null,
+          "roster_id": 3,
+          "settings": {
+            "fpts": 1056,
+            "fpts_against": 1020,
+            "fpts_against_decimal": 80,
+            "fpts_decimal": 20,
+            "losses": 5,
+            "ppts": 1177,
+            "ppts_decimal": 10,
+            "ties": 0,
+            "total_moves": 0,
+            "waiver_budget_used": 0,
+            "waiver_position": 8,
+            "wins": 4
+          },
+          "starters": [
+            "11560",
+            "7611",
+            "12527",
+            "7547",
+            "12519",
+            "5844",
+            "8146",
+            "2747",
+            "KC"
+          ],
+          "taxi": null
+        },
+        {
+          "co_owners": null,
+          "keepers": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "record": "WLWLLWWLL",
+            "streak": "2L"
+          },
+          "owner_id": "1400617538072686592",
+          "player_map": null,
+          "players": [
+            "12474",
+            "12512",
+            "13279",
+            "13298",
+            "13545",
+            "4034",
+            "4037",
+            "4881",
+            "5967",
+            "8112",
+            "8130",
+            "8161",
+            "9758",
+            "9997",
+            "NO",
+            "PIT"
+          ],
+          "reserve": [
+            "4881"
+          ],
+          "roster_id": 4,
+          "settings": {
+            "fpts": 1079,
+            "fpts_against": 1084,
+            "fpts_against_decimal": 20,
+            "fpts_decimal": 94,
+            "losses": 5,
+            "ppts": 1233,
+            "ppts_decimal": 98,
+            "ties": 0,
+            "total_moves": 0,
+            "waiver_budget_used": 0,
+            "waiver_position": 2,
+            "wins": 4
+          },
+          "starters": [
+            "8161",
+            "12512",
+            "4034",
+            "8112",
+            "9997",
+            "8130",
+            "12474",
+            "13545",
+            "NO"
+          ],
+          "taxi": null
+        },
+        {
+          "co_owners": null,
+          "keepers": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "record": "LWWWWLWLL",
+            "streak": "2L"
+          },
+          "owner_id": "864344801687101440",
+          "player_map": null,
+          "players": [
+            "10213",
+            "11566",
+            "11786",
+            "12495",
+            "12514",
+            "12518",
+            "2133",
+            "5850",
+            "5872",
+            "6786",
+            "7553",
+            "8138",
+            "8150",
+            "8228",
+            "9753",
+            "DEN"
+          ],
+          "reserve": [
+            "2133"
+          ],
+          "roster_id": 5,
+          "settings": {
+            "fpts": 1203,
+            "fpts_against": 1135,
+            "fpts_against_decimal": 70,
+            "fpts_decimal": 36,
+            "losses": 4,
+            "ppts": 1291,
+            "ppts_decimal": 96,
+            "ties": 0,
+            "total_moves": 0,
+            "waiver_budget_used": 0,
+            "waiver_position": 4,
+            "wins": 5
+          },
+          "starters": [
+            "11566",
+            "8138",
+            "8150",
+            "6786",
+            "10213",
+            "7553",
+            "5850",
+            "11786",
+            "DEN"
+          ],
+          "taxi": null
+        },
+        {
+          "co_owners": null,
+          "keepers": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "record": "WWWLWWLWW",
+            "streak": "2W"
+          },
+          "owner_id": "1400702422095007744",
+          "player_map": null,
+          "players": [
+            "11533",
+            "11620",
+            "12490",
+            "13281",
+            "13345",
+            "4984",
+            "6801",
+            "6804",
+            "7526",
+            "8131",
+            "8151",
+            "9484",
+            "9487",
+            "9509",
+            "SEA"
+          ],
+          "reserve": null,
+          "roster_id": 6,
+          "settings": {
+            "fpts": 1303,
+            "fpts_against": 1032,
+            "fpts_against_decimal": 56,
+            "fpts_decimal": 54,
+            "losses": 2,
+            "ppts": 1467,
+            "ppts_decimal": 62,
+            "ties": 0,
+            "total_moves": 0,
+            "waiver_budget_used": 0,
+            "waiver_position": 7,
+            "wins": 7
+          },
+          "starters": [
+            "4984",
+            "9509",
+            "8151",
+            "6801",
+            "9487",
+            "8131",
+            "13345",
+            "11533",
+            "SEA"
+          ],
+          "taxi": null
+        },
+        {
+          "co_owners": null,
+          "keepers": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "record": "WLWWWLWWW",
+            "streak": "3W"
+          },
+          "owner_id": "1400865076692406272",
+          "player_map": null,
+          "players": [
+            "11563",
+            "11584",
+            "11604",
+            "11628",
+            "12529",
+            "13294",
+            "1466",
+            "5947",
+            "7569",
+            "7594",
+            "7839",
+            "8148",
+            "8183",
+            "9221",
+            "SF"
+          ],
+          "reserve": null,
+          "roster_id": 7,
+          "settings": {
+            "fpts": 1241,
+            "fpts_against": 1178,
+            "fpts_against_decimal": 72,
+            "fpts_decimal": 98,
+            "losses": 2,
+            "ppts": 1372,
+            "ppts_decimal": 16,
+            "ties": 0,
+            "total_moves": 0,
+            "waiver_budget_used": 0,
+            "waiver_position": 10,
+            "wins": 7
+          },
+          "starters": [
+            "8183",
+            "9221",
+            "11584",
+            "8148",
+            "7569",
+            "11604",
+            "7594",
+            "7839",
+            "SF"
+          ],
+          "taxi": null
+        },
+        {
+          "co_owners": null,
+          "keepers": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "record": "WWLWWLLLL",
+            "streak": "4L"
+          },
+          "owner_id": "1400973479599165449",
+          "player_map": null,
+          "players": [
+            "10232",
+            "10859",
+            "11435",
+            "11635",
+            "2216",
+            "3294",
+            "4199",
+            "5022",
+            "6650",
+            "6790",
+            "6794",
+            "6806",
+            "7525",
+            "9226",
+            "9754",
+            "WAS"
+          ],
+          "reserve": [
+            "9226"
+          ],
+          "roster_id": 8,
+          "settings": {
+            "fpts": 997,
+            "fpts_against": 1054,
+            "fpts_against_decimal": 16,
+            "fpts_decimal": 32,
+            "losses": 5,
+            "ppts": 1168,
+            "ppts_decimal": 34,
+            "ties": 0,
+            "total_moves": 0,
+            "waiver_budget_used": 0,
+            "waiver_position": 1,
+            "wins": 4
+          },
+          "starters": [
+            "3294",
+            "4199",
+            "6790",
+            "10232",
+            "6794",
+            "10859",
+            "11635",
+            "6650",
+            "WAS"
+          ],
+          "taxi": null
+        },
+        {
+          "co_owners": null,
+          "keepers": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "record": "LLWLLLLWW",
+            "streak": "2W"
+          },
+          "owner_id": "1118723972591501312",
+          "player_map": null,
+          "players": [
+            "10229",
+            "11576",
+            "11624",
+            "11792",
+            "12481",
+            "4993",
+            "5846",
+            "6770",
+            "8110",
+            "8155",
+            "8408",
+            "9224",
+            "9488",
+            "9756",
+            "MIN"
+          ],
+          "reserve": null,
+          "roster_id": 9,
+          "settings": {
+            "fpts": 1093,
+            "fpts_against": 1064,
+            "fpts_against_decimal": 48,
+            "fpts_decimal": 52,
+            "losses": 6,
+            "ppts": 1207,
+            "ppts_decimal": 72,
+            "ties": 0,
+            "total_moves": 0,
+            "waiver_budget_used": 0,
+            "waiver_position": 9,
+            "wins": 3
+          },
+          "starters": [
+            "6770",
+            "11576",
+            "9224",
+            "9488",
+            "10229",
+            "4993",
+            "8155",
+            "11792",
+            "MIN"
+          ],
+          "taxi": null
+        },
+        {
+          "co_owners": null,
+          "keepers": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "record": "LWLLLWLLL",
+            "streak": "3L"
+          },
+          "owner_id": "1403093575641628672",
+          "player_map": null,
+          "players": [
+            "11564",
+            "12517",
+            "13286",
+            "2020",
+            "2449",
+            "4035",
+            "4866",
+            "5012",
+            "8132",
+            "8136",
+            "8137",
+            "9228",
+            "9493",
+            "9501",
+            "NE"
+          ],
+          "reserve": null,
+          "roster_id": 10,
+          "settings": {
+            "fpts": 927,
+            "fpts_against": 1266,
+            "fpts_against_decimal": 28,
+            "fpts_decimal": 66,
+            "losses": 7,
+            "ppts": 1062,
+            "ppts_decimal": 94,
+            "ties": 0,
+            "total_moves": 0,
+            "waiver_budget_used": 0,
+            "waiver_position": 6,
+            "wins": 2
+          },
+          "starters": [
+            "11564",
+            "8132",
+            "8136",
+            "9493",
+            "9501",
+            "12517",
+            "2449",
+            "2020",
+            "NE"
+          ],
+          "taxi": null
+        }
+      ],
+      "users": [
+        {
+          "avatar": "b3338675f635c2c1f42b469621d38ec6",
+          "display_name": "pdearani",
+          "is_bot": false,
+          "is_owner": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "allow_pn": "on",
+            "mention_pn": "on",
+            "team_name": "PDenali"
+          },
+          "settings": null,
+          "user_id": "727320702549585920"
+        },
+        {
+          "avatar": "3ae38b1b53e8f142bc4c40dbf1da116c",
+          "display_name": "shawnthegoat33",
+          "is_bot": false,
+          "is_owner": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "allow_pn": "on",
+            "avatar": "https://sleepercdn.com/uploads/79104008f5aa13397dd9b11cfe03bea1",
+            "mention_pn": "on",
+            "team_name": "The Grazing Goats"
+          },
+          "settings": null,
+          "user_id": "864344801687101440"
+        },
+        {
+          "avatar": "f0edbf4278f53f9425db175073df6584",
+          "display_name": "Porter1511",
+          "is_bot": false,
+          "is_owner": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "allow_pn": "on",
+            "mention_pn": "on",
+            "team_name": "PC Porter"
+          },
+          "settings": null,
+          "user_id": "1118723972591501312"
+        },
+        {
+          "avatar": null,
+          "display_name": "timmassie",
+          "is_bot": false,
+          "is_owner": true,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "allow_pn": "on",
+            "avatar": "https://sleepercdn.com/uploads/83f5dfc79f1b0514823b5041730bf7e3",
+            "mention_pn": "on",
+            "team_name": "Shawn's Skol Squad"
+          },
+          "settings": null,
+          "user_id": "1394010747419234304"
+        },
+        {
+          "avatar": null,
+          "display_name": "DrewWright17",
+          "is_bot": false,
+          "is_owner": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "allow_pn": "on",
+            "mention_pn": "on",
+            "team_name": "Griddy to cRumble"
+          },
+          "settings": null,
+          "user_id": "1400616770796056576"
+        },
+        {
+          "avatar": null,
+          "display_name": "jevinjensen",
+          "is_bot": false,
+          "is_owner": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "allow_pn": "on",
+            "allow_sms": "on",
+            "avatar": "https://sleepercdn.com/uploads/1c64aaf33a626d6ea4e848d82e2cf814",
+            "mention_pn": "on",
+            "team_name": "Outsourced Thinking"
+          },
+          "settings": null,
+          "user_id": "1400617538072686592"
+        },
+        {
+          "avatar": "51385ba57cd089261f6de9ce483b8716",
+          "display_name": "rachelknowssports",
+          "is_bot": false,
+          "is_owner": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "allow_pn": "on",
+            "allow_sms": "on",
+            "mention_pn": "on"
+          },
+          "settings": null,
+          "user_id": "1400702422095007744"
+        },
+        {
+          "avatar": "cc47943dc21e18f95744f5a7b3d27675",
+          "display_name": "BF14",
+          "is_bot": false,
+          "is_owner": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "allow_pn": "on",
+            "avatar": "https://sleepercdn.com/uploads/63ec07c44529ce636f7dab15f622292c",
+            "mention_pn": "on",
+            "team_name": "Solder Squad"
+          },
+          "settings": null,
+          "user_id": "1400865076692406272"
+        },
+        {
+          "avatar": "578c6b253dd7b4bab45382e1af102204",
+          "display_name": "Hendrick82",
+          "is_bot": false,
+          "is_owner": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "allow_pn": "on",
+            "mention_pn": "on",
+            "team_name": "DOAT n GOATs Clothing"
+          },
+          "settings": null,
+          "user_id": "1400973479599165449"
+        },
+        {
+          "avatar": null,
+          "display_name": "JBThink",
+          "is_bot": false,
+          "is_owner": null,
+          "league_id": "1400610465024839680",
+          "metadata": {
+            "allow_pn": "on",
+            "mention_pn": "on",
+            "team_name": "Blown Fuses"
+          },
+          "settings": null,
+          "user_id": "1403093575641628672"
+        }
+      ]
+    },
+    "teams": [
+      {
+        "custom_points": null,
+        "effective_final_points": 130.5,
+        "final_points": 130.5,
+        "final_starters_raw": [
+          "3163",
+          "6813",
+          "7588",
+          "8167",
+          "11632",
+          "4217",
+          "12506",
+          "3451",
+          "HOU"
+        ],
+        "manager_name": "timmassie",
+        "matchup_id": 5,
+        "opponent_roster_id": 2,
+        "owner_id": "1394010747419234304",
+        "players_points": {
+          "11632": 9.3,
+          "11646": 6.6,
+          "12506": 12.2,
+          "12534": 0.0,
+          "13276": 13.8,
+          "3163": 6.3,
+          "3451": 17.0,
+          "4217": 9.8,
+          "4983": 6.6,
+          "5859": 0.0,
+          "6813": 9.4,
+          "7523": 13.58,
+          "7588": 22.4,
+          "8167": 30.1,
+          "HOU": 14.0
+        },
+        "roster_id": 1,
+        "rostered_player_ids": [
+          "11632",
+          "11646",
+          "12506",
+          "12534",
+          "13276",
+          "3163",
+          "3451",
+          "4217",
+          "4983",
+          "5859",
+          "6813",
+          "7523",
+          "7588",
+          "8167",
+          "HOU"
+        ],
+        "rostered_players": [
+          {
+            "injury_status": null,
+            "player_id": "11632",
+            "player_name": "Malik Nabers",
+            "position": "WR",
+            "team": "NYG"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11646",
+            "player_name": "Jalen Coker",
+            "position": "WR",
+            "team": "CAR"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12506",
+            "player_name": "Harold Fannin Jr.",
+            "position": "TE",
+            "team": "CLE"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "12534",
+            "player_name": "Kyle Monangai",
+            "position": "RB",
+            "team": "CHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "13276",
+            "player_name": "Omar Cooper Jr.",
+            "position": "WR",
+            "team": "NYJ"
+          },
+          {
+            "injury_status": null,
+            "player_id": "3163",
+            "player_name": "Jared Goff",
+            "position": "QB",
+            "team": "DET"
+          },
+          {
+            "injury_status": null,
+            "player_id": "3451",
+            "player_name": "Ka'imi Fairbairn",
+            "position": "K",
+            "team": "HOU"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4217",
+            "player_name": "George Kittle",
+            "position": "TE",
+            "team": "SF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4983",
+            "player_name": "DJ Moore",
+            "position": "WR",
+            "team": "BUF"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "5859",
+            "player_name": "A.J. Brown",
+            "position": "WR",
+            "team": "NE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6813",
+            "player_name": "Jonathan Taylor",
+            "position": "RB",
+            "team": "IND"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7523",
+            "player_name": "Trevor Lawrence",
+            "position": "QB",
+            "team": "JAX"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7588",
+            "player_name": "Javonte Williams",
+            "position": "RB",
+            "team": "DAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8167",
+            "player_name": "Christian Watson",
+            "position": "WR",
+            "team": "GB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "HOU",
+            "player_name": "Houston Texans",
+            "position": "DEF",
+            "team": "HOU"
+          }
+        ],
+        "starters": [
+          {
+            "injury_status": null,
+            "player_id": "3163",
+            "player_name": "Jared Goff",
+            "position": "QB",
+            "slot": 1,
+            "team": "DET"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6813",
+            "player_name": "Jonathan Taylor",
+            "position": "RB",
+            "slot": 2,
+            "team": "IND"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7588",
+            "player_name": "Javonte Williams",
+            "position": "RB",
+            "slot": 3,
+            "team": "DAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8167",
+            "player_name": "Christian Watson",
+            "position": "WR",
+            "slot": 4,
+            "team": "GB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11632",
+            "player_name": "Malik Nabers",
+            "position": "WR",
+            "slot": 5,
+            "team": "NYG"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4217",
+            "player_name": "George Kittle",
+            "position": "TE",
+            "slot": 6,
+            "team": "SF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12506",
+            "player_name": "Harold Fannin Jr.",
+            "position": "TE",
+            "slot": 7,
+            "team": "CLE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "3451",
+            "player_name": "Ka'imi Fairbairn",
+            "position": "K",
+            "slot": 8,
+            "team": "HOU"
+          },
+          {
+            "injury_status": null,
+            "player_id": "HOU",
+            "player_name": "Houston Texans",
+            "position": "DEF",
+            "slot": 9,
+            "team": "HOU"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "custom_points": null,
+        "effective_final_points": 129.66,
+        "final_points": 129.66,
+        "final_starters_raw": [
+          "4046",
+          "3198",
+          "6130",
+          "12526",
+          "12501",
+          "9480",
+          "7564",
+          "6083",
+          "JAX"
+        ],
+        "manager_name": "DrewWright17",
+        "matchup_id": 5,
+        "opponent_roster_id": 1,
+        "owner_id": "1400616770796056576",
+        "players_points": {
+          "12501": 32.4,
+          "12507": 6.0,
+          "12526": 15.6,
+          "13337": 9.4,
+          "13346": 15.8,
+          "13424": 11.2,
+          "1479": 6.6,
+          "3198": 5.58,
+          "4046": 16.48,
+          "421": 12.22,
+          "6083": 7.0,
+          "6130": 5.9,
+          "7543": 0.0,
+          "7564": 31.5,
+          "9480": 4.2,
+          "JAX": 11.0
+        },
+        "roster_id": 2,
+        "rostered_player_ids": [
+          "12501",
+          "12507",
+          "12526",
+          "13337",
+          "13346",
+          "13424",
+          "1479",
+          "3198",
+          "4046",
+          "421",
+          "6083",
+          "6130",
+          "7543",
+          "7564",
+          "9480",
+          "JAX"
+        ],
+        "rostered_players": [
+          {
+            "injury_status": null,
+            "player_id": "12501",
+            "player_name": "Matthew Golden",
+            "position": "WR",
+            "team": "GB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12507",
+            "player_name": "Omarion Hampton",
+            "position": "RB",
+            "team": "LAC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12526",
+            "player_name": "Tetairoa McMillan",
+            "position": "WR",
+            "team": "CAR"
+          },
+          {
+            "injury_status": null,
+            "player_id": "13337",
+            "player_name": "Emmett Johnson",
+            "position": "RB",
+            "team": "KC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "13346",
+            "player_name": "Denzel Boston",
+            "position": "WR",
+            "team": "CLE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "13424",
+            "player_name": "Seth McGowan",
+            "position": "RB",
+            "team": "IND"
+          },
+          {
+            "injury_status": null,
+            "player_id": "1479",
+            "player_name": "Keenan Allen",
+            "position": "WR",
+            "team": "IND"
+          },
+          {
+            "injury_status": null,
+            "player_id": "3198",
+            "player_name": "Derrick Henry",
+            "position": "RB",
+            "team": "BAL"
+          },
+          {
+            "injury_status": "Questionable",
+            "player_id": "4046",
+            "player_name": "Patrick Mahomes",
+            "position": "QB",
+            "team": "KC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "421",
+            "player_name": "Matthew Stafford",
+            "position": "QB",
+            "team": "LAR"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6083",
+            "player_name": "Matt Gay",
+            "position": "K",
+            "team": "LV"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6130",
+            "player_name": "Devin Singletary",
+            "position": "RB",
+            "team": "NYG"
+          },
+          {
+            "injury_status": "IR",
+            "player_id": "7543",
+            "player_name": "Travis Etienne Jr.",
+            "position": "RB",
+            "team": "NO"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7564",
+            "player_name": "Ja'Marr Chase",
+            "position": "WR",
+            "team": "CIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9480",
+            "player_name": "Brenton Strange",
+            "position": "TE",
+            "team": "JAX"
+          },
+          {
+            "injury_status": null,
+            "player_id": "JAX",
+            "player_name": "Jacksonville Jaguars",
+            "position": "DEF",
+            "team": "JAX"
+          }
+        ],
+        "starters": [
+          {
+            "injury_status": "Questionable",
+            "player_id": "4046",
+            "player_name": "Patrick Mahomes",
+            "position": "QB",
+            "slot": 1,
+            "team": "KC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "3198",
+            "player_name": "Derrick Henry",
+            "position": "RB",
+            "slot": 2,
+            "team": "BAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6130",
+            "player_name": "Devin Singletary",
+            "position": "RB",
+            "slot": 3,
+            "team": "NYG"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12526",
+            "player_name": "Tetairoa McMillan",
+            "position": "WR",
+            "slot": 4,
+            "team": "CAR"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12501",
+            "player_name": "Matthew Golden",
+            "position": "WR",
+            "slot": 5,
+            "team": "GB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9480",
+            "player_name": "Brenton Strange",
+            "position": "TE",
+            "slot": 6,
+            "team": "JAX"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7564",
+            "player_name": "Ja'Marr Chase",
+            "position": "WR",
+            "slot": 7,
+            "team": "CIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6083",
+            "player_name": "Matt Gay",
+            "position": "K",
+            "slot": 8,
+            "team": "LV"
+          },
+          {
+            "injury_status": null,
+            "player_id": "JAX",
+            "player_name": "Jacksonville Jaguars",
+            "position": "DEF",
+            "slot": 9,
+            "team": "JAX"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "custom_points": null,
+        "effective_final_points": 101.16,
+        "final_points": 101.16,
+        "final_starters_raw": [
+          "11560",
+          "7611",
+          "12527",
+          "7547",
+          "12519",
+          "5844",
+          "8146",
+          "2747",
+          "KC"
+        ],
+        "manager_name": "pdearani",
+        "matchup_id": 2,
+        "opponent_roster_id": 4,
+        "owner_id": "727320702549585920",
+        "players_points": {
+          "10236": 5.8,
+          "11560": 16.76,
+          "11586": 11.8,
+          "12519": 20.7,
+          "12527": 7.0,
+          "13287": 0.0,
+          "2747": 6.0,
+          "5844": 7.3,
+          "7547": 16.6,
+          "7611": 14.8,
+          "8144": 16.8,
+          "8146": 0.0,
+          "9500": 5.4,
+          "9508": 0.0,
+          "KC": 12.0
+        },
+        "roster_id": 3,
+        "rostered_player_ids": [
+          "10236",
+          "11560",
+          "11586",
+          "12519",
+          "12527",
+          "13287",
+          "2747",
+          "5844",
+          "7547",
+          "7611",
+          "8144",
+          "8146",
+          "9500",
+          "9508",
+          "KC"
+        ],
+        "rostered_players": [
+          {
+            "injury_status": null,
+            "player_id": "10236",
+            "player_name": "Dalton Kincaid",
+            "position": "TE",
+            "team": "BUF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11560",
+            "player_name": "Caleb Williams",
+            "position": "QB",
+            "team": "CHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11586",
+            "player_name": "Blake Corum",
+            "position": "RB",
+            "team": "LAR"
+          },
+          {
+            "injury_status": "Questionable",
+            "player_id": "12519",
+            "player_name": "Luther Burden III",
+            "position": "WR",
+            "team": "CHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12527",
+            "player_name": "Ashton Jeanty",
+            "position": "RB",
+            "team": "LV"
+          },
+          {
+            "injury_status": "IR",
+            "player_id": "13287",
+            "player_name": "Jeremiyah Love",
+            "position": "RB",
+            "team": "ARI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "2747",
+            "player_name": "Jason Myers",
+            "position": "K",
+            "team": "SEA"
+          },
+          {
+            "injury_status": null,
+            "player_id": "5844",
+            "player_name": "T.J. Hockenson",
+            "position": "TE",
+            "team": "MIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7547",
+            "player_name": "Amon-Ra St. Brown",
+            "position": "WR",
+            "team": "DET"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "7611",
+            "player_name": "Rhamondre Stevenson",
+            "position": "RB",
+            "team": "NE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8144",
+            "player_name": "Chris Olave",
+            "position": "WR",
+            "team": "NO"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "8146",
+            "player_name": "Garrett Wilson",
+            "position": "WR",
+            "team": "NYJ"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9500",
+            "player_name": "Josh Downs",
+            "position": "WR",
+            "team": "IND"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "9508",
+            "player_name": "Tyjae Spears",
+            "position": "RB",
+            "team": "TEN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "KC",
+            "player_name": "Kansas City Chiefs",
+            "position": "DEF",
+            "team": "KC"
+          }
+        ],
+        "starters": [
+          {
+            "injury_status": null,
+            "player_id": "11560",
+            "player_name": "Caleb Williams",
+            "position": "QB",
+            "slot": 1,
+            "team": "CHI"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "7611",
+            "player_name": "Rhamondre Stevenson",
+            "position": "RB",
+            "slot": 2,
+            "team": "NE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12527",
+            "player_name": "Ashton Jeanty",
+            "position": "RB",
+            "slot": 3,
+            "team": "LV"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7547",
+            "player_name": "Amon-Ra St. Brown",
+            "position": "WR",
+            "slot": 4,
+            "team": "DET"
+          },
+          {
+            "injury_status": "Questionable",
+            "player_id": "12519",
+            "player_name": "Luther Burden III",
+            "position": "WR",
+            "slot": 5,
+            "team": "CHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "5844",
+            "player_name": "T.J. Hockenson",
+            "position": "TE",
+            "slot": 6,
+            "team": "MIN"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "8146",
+            "player_name": "Garrett Wilson",
+            "position": "WR",
+            "slot": 7,
+            "team": "NYJ"
+          },
+          {
+            "injury_status": null,
+            "player_id": "2747",
+            "player_name": "Jason Myers",
+            "position": "K",
+            "slot": 8,
+            "team": "SEA"
+          },
+          {
+            "injury_status": null,
+            "player_id": "KC",
+            "player_name": "Kansas City Chiefs",
+            "position": "DEF",
+            "slot": 9,
+            "team": "KC"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "custom_points": null,
+        "effective_final_points": 91.92,
+        "final_points": 91.92,
+        "final_starters_raw": [
+          "8161",
+          "12512",
+          "4034",
+          "8112",
+          "9997",
+          "8130",
+          "12474",
+          "13545",
+          "NO"
+        ],
+        "manager_name": "jevinjensen",
+        "matchup_id": 2,
+        "opponent_roster_id": 3,
+        "owner_id": "1400617538072686592",
+        "players_points": {
+          "12474": 8.4,
+          "12512": 5.5,
+          "13279": 0.0,
+          "13298": 18.8,
+          "13545": 16.0,
+          "4034": 22.7,
+          "4037": 4.8,
+          "4881": 0.0,
+          "5967": 0.0,
+          "8112": 11.8,
+          "8130": 12.4,
+          "8161": 4.82,
+          "9758": 36.36,
+          "9997": 5.3,
+          "NO": 5.0,
+          "PIT": 0.0
+        },
+        "roster_id": 4,
+        "rostered_player_ids": [
+          "12474",
+          "12512",
+          "13279",
+          "13298",
+          "13545",
+          "4034",
+          "4037",
+          "4881",
+          "5967",
+          "8112",
+          "8130",
+          "8161",
+          "9758",
+          "9997",
+          "NO",
+          "PIT"
+        ],
+        "rostered_players": [
+          {
+            "injury_status": null,
+            "player_id": "12474",
+            "player_name": "Woody Marks",
+            "position": "RB",
+            "team": "HOU"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12512",
+            "player_name": "Quinshon Judkins",
+            "position": "RB",
+            "team": "CLE"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "13279",
+            "player_name": "Carnell Tate",
+            "position": "WR",
+            "team": "TEN"
+          },
+          {
+            "injury_status": "Questionable",
+            "player_id": "13298",
+            "player_name": "KC Concepcion Jr.",
+            "position": "WR",
+            "team": "CLE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "13545",
+            "player_name": "Trey Smack",
+            "position": "K",
+            "team": "GB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4034",
+            "player_name": "Christian McCaffrey",
+            "position": "RB",
+            "team": "SF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4037",
+            "player_name": "Chris Godwin Jr.",
+            "position": "WR",
+            "team": "TB"
+          },
+          {
+            "injury_status": "IR",
+            "player_id": "4881",
+            "player_name": "Lamar Jackson",
+            "position": "QB",
+            "team": "BAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "5967",
+            "player_name": "Tony Pollard",
+            "position": "RB",
+            "team": "TEN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8112",
+            "player_name": "Drake London",
+            "position": "WR",
+            "team": "ATL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8130",
+            "player_name": "Trey McBride",
+            "position": "TE",
+            "team": "ARI"
+          },
+          {
+            "injury_status": "Questionable",
+            "player_id": "8161",
+            "player_name": "Malik Willis",
+            "position": "QB",
+            "team": "MIA"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9758",
+            "player_name": "C.J. Stroud",
+            "position": "QB",
+            "team": "HOU"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9997",
+            "player_name": "Zay Flowers",
+            "position": "WR",
+            "team": "BAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "NO",
+            "player_name": "New Orleans Saints",
+            "position": "DEF",
+            "team": "NO"
+          },
+          {
+            "injury_status": null,
+            "player_id": "PIT",
+            "player_name": "Pittsburgh Steelers",
+            "position": "DEF",
+            "team": "PIT"
+          }
+        ],
+        "starters": [
+          {
+            "injury_status": "Questionable",
+            "player_id": "8161",
+            "player_name": "Malik Willis",
+            "position": "QB",
+            "slot": 1,
+            "team": "MIA"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12512",
+            "player_name": "Quinshon Judkins",
+            "position": "RB",
+            "slot": 2,
+            "team": "CLE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4034",
+            "player_name": "Christian McCaffrey",
+            "position": "RB",
+            "slot": 3,
+            "team": "SF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8112",
+            "player_name": "Drake London",
+            "position": "WR",
+            "slot": 4,
+            "team": "ATL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9997",
+            "player_name": "Zay Flowers",
+            "position": "WR",
+            "slot": 5,
+            "team": "BAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8130",
+            "player_name": "Trey McBride",
+            "position": "TE",
+            "slot": 6,
+            "team": "ARI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12474",
+            "player_name": "Woody Marks",
+            "position": "RB",
+            "slot": 7,
+            "team": "HOU"
+          },
+          {
+            "injury_status": null,
+            "player_id": "13545",
+            "player_name": "Trey Smack",
+            "position": "K",
+            "slot": 8,
+            "team": "GB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "NO",
+            "player_name": "New Orleans Saints",
+            "position": "DEF",
+            "slot": 9,
+            "team": "NO"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "custom_points": null,
+        "effective_final_points": 115.16,
+        "final_points": 115.16,
+        "final_starters_raw": [
+          "11566",
+          "8138",
+          "8150",
+          "6786",
+          "10213",
+          "7553",
+          "5850",
+          "11786",
+          "DEN"
+        ],
+        "manager_name": "shawnthegoat33",
+        "matchup_id": 3,
+        "opponent_roster_id": 7,
+        "owner_id": "864344801687101440",
+        "players_points": {
+          "10213": 9.5,
+          "11566": 14.56,
+          "11786": 17.0,
+          "12495": 7.4,
+          "12514": 6.9,
+          "12518": 8.4,
+          "2133": 0.0,
+          "5850": 0.5,
+          "5872": 0.0,
+          "6786": 33.5,
+          "7553": 5.3,
+          "8138": 16.7,
+          "8150": 9.1,
+          "8228": 0.0,
+          "9753": 9.6,
+          "DEN": 9.0
+        },
+        "roster_id": 5,
+        "rostered_player_ids": [
+          "10213",
+          "11566",
+          "11786",
+          "12495",
+          "12514",
+          "12518",
+          "2133",
+          "5850",
+          "5872",
+          "6786",
+          "7553",
+          "8138",
+          "8150",
+          "8228",
+          "9753",
+          "DEN"
+        ],
+        "rostered_players": [
+          {
+            "injury_status": null,
+            "player_id": "10213",
+            "player_name": "Tre Tucker",
+            "position": "WR",
+            "team": "LV"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11566",
+            "player_name": "Jayden Daniels",
+            "position": "QB",
+            "team": "WAS"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11786",
+            "player_name": "Cam Little",
+            "position": "K",
+            "team": "JAX"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12495",
+            "player_name": "Ollie Gordon II",
+            "position": "RB",
+            "team": "MIA"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12514",
+            "player_name": "Emeka Egbuka",
+            "position": "WR",
+            "team": "TB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12518",
+            "player_name": "Tyler Warren",
+            "position": "TE",
+            "team": "IND"
+          },
+          {
+            "injury_status": "IR",
+            "player_id": "2133",
+            "player_name": "Davante Adams",
+            "position": "WR",
+            "team": "LAR"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "5850",
+            "player_name": "Josh Jacobs",
+            "position": "RB",
+            "team": "GB"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "5872",
+            "player_name": "Deebo Samuel Sr.",
+            "position": "WR",
+            "team": "SF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6786",
+            "player_name": "CeeDee Lamb",
+            "position": "WR",
+            "team": "DAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7553",
+            "player_name": "Kyle Pitts Sr.",
+            "position": "TE",
+            "team": "ATL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8138",
+            "player_name": "James Cook III",
+            "position": "RB",
+            "team": "BUF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8150",
+            "player_name": "Kyren Williams",
+            "position": "RB",
+            "team": "LAR"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8228",
+            "player_name": "Jaylen Warren",
+            "position": "RB",
+            "team": "PIT"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9753",
+            "player_name": "Zach Charbonnet",
+            "position": "RB",
+            "team": "SEA"
+          },
+          {
+            "injury_status": null,
+            "player_id": "DEN",
+            "player_name": "Denver Broncos",
+            "position": "DEF",
+            "team": "DEN"
+          }
+        ],
+        "starters": [
+          {
+            "injury_status": null,
+            "player_id": "11566",
+            "player_name": "Jayden Daniels",
+            "position": "QB",
+            "slot": 1,
+            "team": "WAS"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8138",
+            "player_name": "James Cook III",
+            "position": "RB",
+            "slot": 2,
+            "team": "BUF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8150",
+            "player_name": "Kyren Williams",
+            "position": "RB",
+            "slot": 3,
+            "team": "LAR"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6786",
+            "player_name": "CeeDee Lamb",
+            "position": "WR",
+            "slot": 4,
+            "team": "DAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "10213",
+            "player_name": "Tre Tucker",
+            "position": "WR",
+            "slot": 5,
+            "team": "LV"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7553",
+            "player_name": "Kyle Pitts Sr.",
+            "position": "TE",
+            "slot": 6,
+            "team": "ATL"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "5850",
+            "player_name": "Josh Jacobs",
+            "position": "RB",
+            "slot": 7,
+            "team": "GB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11786",
+            "player_name": "Cam Little",
+            "position": "K",
+            "slot": 8,
+            "team": "JAX"
+          },
+          {
+            "injury_status": null,
+            "player_id": "DEN",
+            "player_name": "Denver Broncos",
+            "position": "DEF",
+            "slot": 9,
+            "team": "DEN"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "custom_points": null,
+        "effective_final_points": 168.26,
+        "final_points": 168.26,
+        "final_starters_raw": [
+          "4984",
+          "9509",
+          "8151",
+          "6801",
+          "9487",
+          "8131",
+          "13345",
+          "11533",
+          "SEA"
+        ],
+        "manager_name": "rachelknowssports",
+        "matchup_id": 4,
+        "opponent_roster_id": 10,
+        "owner_id": "1400702422095007744",
+        "players_points": {
+          "11533": 9.0,
+          "11620": 16.0,
+          "12490": 8.9,
+          "13281": 5.0,
+          "13345": 18.8,
+          "4984": 13.86,
+          "6801": 20.2,
+          "6804": 36.18,
+          "7526": 3.2,
+          "8131": 16.3,
+          "8151": 36.3,
+          "9484": 1.9,
+          "9487": 14.1,
+          "9509": 26.7,
+          "SEA": 13.0
+        },
+        "roster_id": 6,
+        "rostered_player_ids": [
+          "11533",
+          "11620",
+          "12490",
+          "13281",
+          "13345",
+          "4984",
+          "6801",
+          "6804",
+          "7526",
+          "8131",
+          "8151",
+          "9484",
+          "9487",
+          "9509",
+          "SEA"
+        ],
+        "rostered_players": [
+          {
+            "injury_status": null,
+            "player_id": "11533",
+            "player_name": "Brandon Aubrey",
+            "position": "K",
+            "team": "DAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11620",
+            "player_name": "Rome Odunze",
+            "position": "WR",
+            "team": "CHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12490",
+            "player_name": "Bhayshul Tuten",
+            "position": "RB",
+            "team": "JAX"
+          },
+          {
+            "injury_status": null,
+            "player_id": "13281",
+            "player_name": "Jordyn Tyson",
+            "position": "WR",
+            "team": "NO"
+          },
+          {
+            "injury_status": null,
+            "player_id": "13345",
+            "player_name": "Jonah Coleman",
+            "position": "RB",
+            "team": "DEN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4984",
+            "player_name": "Josh Allen",
+            "position": "QB",
+            "team": "BUF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6801",
+            "player_name": "Tee Higgins",
+            "position": "WR",
+            "team": "CIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6804",
+            "player_name": "Jordan Love",
+            "position": "QB",
+            "team": "GB"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "7526",
+            "player_name": "Jaylen Waddle",
+            "position": "WR",
+            "team": "DEN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8131",
+            "player_name": "Isaiah Likely",
+            "position": "TE",
+            "team": "NYG"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8151",
+            "player_name": "Kenneth Walker III",
+            "position": "RB",
+            "team": "KC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9484",
+            "player_name": "Tucker Kraft",
+            "position": "TE",
+            "team": "GB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9487",
+            "player_name": "Parker Washington",
+            "position": "WR",
+            "team": "JAX"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9509",
+            "player_name": "Bijan Robinson",
+            "position": "RB",
+            "team": "ATL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "SEA",
+            "player_name": "Seattle Seahawks",
+            "position": "DEF",
+            "team": "SEA"
+          }
+        ],
+        "starters": [
+          {
+            "injury_status": null,
+            "player_id": "4984",
+            "player_name": "Josh Allen",
+            "position": "QB",
+            "slot": 1,
+            "team": "BUF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9509",
+            "player_name": "Bijan Robinson",
+            "position": "RB",
+            "slot": 2,
+            "team": "ATL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8151",
+            "player_name": "Kenneth Walker III",
+            "position": "RB",
+            "slot": 3,
+            "team": "KC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6801",
+            "player_name": "Tee Higgins",
+            "position": "WR",
+            "slot": 4,
+            "team": "CIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9487",
+            "player_name": "Parker Washington",
+            "position": "WR",
+            "slot": 5,
+            "team": "JAX"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8131",
+            "player_name": "Isaiah Likely",
+            "position": "TE",
+            "slot": 6,
+            "team": "NYG"
+          },
+          {
+            "injury_status": null,
+            "player_id": "13345",
+            "player_name": "Jonah Coleman",
+            "position": "RB",
+            "slot": 7,
+            "team": "DEN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11533",
+            "player_name": "Brandon Aubrey",
+            "position": "K",
+            "slot": 8,
+            "team": "DAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "SEA",
+            "player_name": "Seattle Seahawks",
+            "position": "DEF",
+            "slot": 9,
+            "team": "SEA"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "custom_points": null,
+        "effective_final_points": 158.58,
+        "final_points": 158.58,
+        "final_starters_raw": [
+          "8183",
+          "9221",
+          "11584",
+          "8148",
+          "7569",
+          "11604",
+          "7594",
+          "7839",
+          "SF"
+        ],
+        "manager_name": "BF14",
+        "matchup_id": 3,
+        "opponent_roster_id": 5,
+        "owner_id": "1400865076692406272",
+        "players_points": {
+          "11563": 16.68,
+          "11584": 28.5,
+          "11604": 22.3,
+          "11628": 4.0,
+          "12529": 0.0,
+          "13294": 12.1,
+          "1466": 17.3,
+          "5947": 10.5,
+          "7569": 15.5,
+          "7594": 13.6,
+          "7839": 13.0,
+          "8148": 5.0,
+          "8183": 26.28,
+          "9221": 13.4,
+          "SF": 21.0
+        },
+        "roster_id": 7,
+        "rostered_player_ids": [
+          "11563",
+          "11584",
+          "11604",
+          "11628",
+          "12529",
+          "13294",
+          "1466",
+          "5947",
+          "7569",
+          "7594",
+          "7839",
+          "8148",
+          "8183",
+          "9221",
+          "SF"
+        ],
+        "rostered_players": [
+          {
+            "injury_status": null,
+            "player_id": "11563",
+            "player_name": "Bo Nix",
+            "position": "QB",
+            "team": "DEN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11584",
+            "player_name": "Bucky Irving",
+            "position": "RB",
+            "team": "TB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11604",
+            "player_name": "Brock Bowers",
+            "position": "TE",
+            "team": "LV"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11628",
+            "player_name": "Marvin Harrison Jr.",
+            "position": "WR",
+            "team": "HOU"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "12529",
+            "player_name": "TreVeyon Henderson",
+            "position": "RB",
+            "team": "NE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "13294",
+            "player_name": "Makai Lemon",
+            "position": "WR",
+            "team": "PHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "1466",
+            "player_name": "Travis Kelce",
+            "position": "TE",
+            "team": "KC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "5947",
+            "player_name": "Jakobi Meyers",
+            "position": "WR",
+            "team": "JAX"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7569",
+            "player_name": "Nico Collins",
+            "position": "WR",
+            "team": "HOU"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7594",
+            "player_name": "Chuba Hubbard",
+            "position": "RB",
+            "team": "CAR"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7839",
+            "player_name": "Evan McPherson",
+            "position": "K",
+            "team": "CIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8148",
+            "player_name": "Jameson Williams",
+            "position": "WR",
+            "team": "DET"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8183",
+            "player_name": "Brock Purdy",
+            "position": "QB",
+            "team": "SF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9221",
+            "player_name": "Jahmyr Gibbs",
+            "position": "RB",
+            "team": "DET"
+          },
+          {
+            "injury_status": null,
+            "player_id": "SF",
+            "player_name": "San Francisco 49ers",
+            "position": "DEF",
+            "team": "SF"
+          }
+        ],
+        "starters": [
+          {
+            "injury_status": null,
+            "player_id": "8183",
+            "player_name": "Brock Purdy",
+            "position": "QB",
+            "slot": 1,
+            "team": "SF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9221",
+            "player_name": "Jahmyr Gibbs",
+            "position": "RB",
+            "slot": 2,
+            "team": "DET"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11584",
+            "player_name": "Bucky Irving",
+            "position": "RB",
+            "slot": 3,
+            "team": "TB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8148",
+            "player_name": "Jameson Williams",
+            "position": "WR",
+            "slot": 4,
+            "team": "DET"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7569",
+            "player_name": "Nico Collins",
+            "position": "WR",
+            "slot": 5,
+            "team": "HOU"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11604",
+            "player_name": "Brock Bowers",
+            "position": "TE",
+            "slot": 6,
+            "team": "LV"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7594",
+            "player_name": "Chuba Hubbard",
+            "position": "RB",
+            "slot": 7,
+            "team": "CAR"
+          },
+          {
+            "injury_status": null,
+            "player_id": "7839",
+            "player_name": "Evan McPherson",
+            "position": "K",
+            "slot": 8,
+            "team": "CIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "SF",
+            "player_name": "San Francisco 49ers",
+            "position": "DEF",
+            "slot": 9,
+            "team": "SF"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "custom_points": null,
+        "effective_final_points": 71.7,
+        "final_points": 71.7,
+        "final_starters_raw": [
+          "3294",
+          "4199",
+          "6790",
+          "10232",
+          "6794",
+          "10859",
+          "11635",
+          "6650",
+          "WAS"
+        ],
+        "manager_name": "Hendrick82",
+        "matchup_id": 1,
+        "opponent_roster_id": 9,
+        "owner_id": "1400973479599165449",
+        "players_points": {
+          "10232": 12.0,
+          "10859": 7.2,
+          "11435": 0.0,
+          "11635": 0.0,
+          "2216": 0.0,
+          "3294": 19.5,
+          "4199": 3.1,
+          "5022": 10.0,
+          "6650": 10.0,
+          "6790": 3.1,
+          "6794": 8.8,
+          "6806": 3.2,
+          "7525": 0.0,
+          "9226": 0.0,
+          "9754": 13.3,
+          "WAS": 8.0
+        },
+        "roster_id": 8,
+        "rostered_player_ids": [
+          "10232",
+          "10859",
+          "11435",
+          "11635",
+          "2216",
+          "3294",
+          "4199",
+          "5022",
+          "6650",
+          "6790",
+          "6794",
+          "6806",
+          "7525",
+          "9226",
+          "9754",
+          "WAS"
+        ],
+        "rostered_players": [
+          {
+            "injury_status": "Out",
+            "player_id": "10232",
+            "player_name": "Michael Wilson",
+            "position": "WR",
+            "team": "ARI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "10859",
+            "player_name": "Sam LaPorta",
+            "position": "TE",
+            "team": "DET"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11435",
+            "player_name": "Emanuel Wilson",
+            "position": "RB",
+            "team": "SEA"
+          },
+          {
+            "injury_status": "Questionable",
+            "player_id": "11635",
+            "player_name": "Ladd McConkey",
+            "position": "WR",
+            "team": "LAC"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "2216",
+            "player_name": "Mike Evans",
+            "position": "WR",
+            "team": "SF"
+          },
+          {
+            "injury_status": null,
+            "player_id": "3294",
+            "player_name": "Dak Prescott",
+            "position": "QB",
+            "team": "DAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4199",
+            "player_name": "Aaron Jones Sr.",
+            "position": "RB",
+            "team": "MIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "5022",
+            "player_name": "Dallas Goedert",
+            "position": "TE",
+            "team": "PHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6650",
+            "player_name": "Chase McLaughlin",
+            "position": "K",
+            "team": "TB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6790",
+            "player_name": "D'Andre Swift",
+            "position": "RB",
+            "team": "CHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6794",
+            "player_name": "Justin Jefferson",
+            "position": "WR",
+            "team": "MIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6806",
+            "player_name": "J.K. Dobbins",
+            "position": "RB",
+            "team": "DEN"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "7525",
+            "player_name": "DeVonta Smith",
+            "position": "WR",
+            "team": "PHI"
+          },
+          {
+            "injury_status": "IR",
+            "player_id": "9226",
+            "player_name": "De'Von Achane",
+            "position": "RB",
+            "team": "MIA"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9754",
+            "player_name": "Quentin Johnston",
+            "position": "WR",
+            "team": "LAC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "WAS",
+            "player_name": "Washington Commanders",
+            "position": "DEF",
+            "team": "WAS"
+          }
+        ],
+        "starters": [
+          {
+            "injury_status": null,
+            "player_id": "3294",
+            "player_name": "Dak Prescott",
+            "position": "QB",
+            "slot": 1,
+            "team": "DAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4199",
+            "player_name": "Aaron Jones Sr.",
+            "position": "RB",
+            "slot": 2,
+            "team": "MIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6790",
+            "player_name": "D'Andre Swift",
+            "position": "RB",
+            "slot": 3,
+            "team": "CHI"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "10232",
+            "player_name": "Michael Wilson",
+            "position": "WR",
+            "slot": 4,
+            "team": "ARI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6794",
+            "player_name": "Justin Jefferson",
+            "position": "WR",
+            "slot": 5,
+            "team": "MIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "10859",
+            "player_name": "Sam LaPorta",
+            "position": "TE",
+            "slot": 6,
+            "team": "DET"
+          },
+          {
+            "injury_status": "Questionable",
+            "player_id": "11635",
+            "player_name": "Ladd McConkey",
+            "position": "WR",
+            "slot": 7,
+            "team": "LAC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6650",
+            "player_name": "Chase McLaughlin",
+            "position": "K",
+            "slot": 8,
+            "team": "TB"
+          },
+          {
+            "injury_status": null,
+            "player_id": "WAS",
+            "player_name": "Washington Commanders",
+            "position": "DEF",
+            "slot": 9,
+            "team": "WAS"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "custom_points": null,
+        "effective_final_points": 98.24,
+        "final_points": 98.24,
+        "final_starters_raw": [
+          "6770",
+          "11576",
+          "9224",
+          "9488",
+          "10229",
+          "4993",
+          "8155",
+          "11792",
+          "MIN"
+        ],
+        "manager_name": "Porter1511",
+        "matchup_id": 1,
+        "opponent_roster_id": 8,
+        "owner_id": "1118723972591501312",
+        "players_points": {
+          "10229": 9.9,
+          "11576": 5.4,
+          "11624": 10.8,
+          "11792": 9.0,
+          "12481": 0.0,
+          "4993": 3.1,
+          "5846": 0.0,
+          "6770": 29.54,
+          "8110": 10.1,
+          "8155": 11.7,
+          "8408": 6.2,
+          "9224": 10.5,
+          "9488": 12.1,
+          "9756": 4.8,
+          "MIN": 7.0
+        },
+        "roster_id": 9,
+        "rostered_player_ids": [
+          "10229",
+          "11576",
+          "11624",
+          "11792",
+          "12481",
+          "4993",
+          "5846",
+          "6770",
+          "8110",
+          "8155",
+          "8408",
+          "9224",
+          "9488",
+          "9756",
+          "MIN"
+        ],
+        "rostered_players": [
+          {
+            "injury_status": null,
+            "player_id": "10229",
+            "player_name": "Rashee Rice",
+            "position": "WR",
+            "team": "KC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11576",
+            "player_name": "Braelon Allen",
+            "position": "RB",
+            "team": "NYJ"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "11624",
+            "player_name": "Xavier Worthy",
+            "position": "WR",
+            "team": "KC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11792",
+            "player_name": "Will Reichard",
+            "position": "K",
+            "team": "MIN"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "12481",
+            "player_name": "Cam Skattebo",
+            "position": "RB",
+            "team": "NYG"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4993",
+            "player_name": "Mike Gesicki",
+            "position": "TE",
+            "team": "CIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "5846",
+            "player_name": "DK Metcalf",
+            "position": "WR",
+            "team": "PIT"
+          },
+          {
+            "injury_status": null,
+            "player_id": "6770",
+            "player_name": "Joe Burrow",
+            "position": "QB",
+            "team": "CIN"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "8110",
+            "player_name": "Jake Ferguson",
+            "position": "TE",
+            "team": "DAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8155",
+            "player_name": "Breece Hall",
+            "position": "RB",
+            "team": "NYJ"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8408",
+            "player_name": "Jordan Mason",
+            "position": "RB",
+            "team": "MIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9224",
+            "player_name": "Chase Brown",
+            "position": "RB",
+            "team": "CIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9488",
+            "player_name": "Jaxon Smith-Njigba",
+            "position": "WR",
+            "team": "SEA"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9756",
+            "player_name": "Jordan Addison",
+            "position": "WR",
+            "team": "MIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "MIN",
+            "player_name": "Minnesota Vikings",
+            "position": "DEF",
+            "team": "MIN"
+          }
+        ],
+        "starters": [
+          {
+            "injury_status": null,
+            "player_id": "6770",
+            "player_name": "Joe Burrow",
+            "position": "QB",
+            "slot": 1,
+            "team": "CIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11576",
+            "player_name": "Braelon Allen",
+            "position": "RB",
+            "slot": 2,
+            "team": "NYJ"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9224",
+            "player_name": "Chase Brown",
+            "position": "RB",
+            "slot": 3,
+            "team": "CIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9488",
+            "player_name": "Jaxon Smith-Njigba",
+            "position": "WR",
+            "slot": 4,
+            "team": "SEA"
+          },
+          {
+            "injury_status": null,
+            "player_id": "10229",
+            "player_name": "Rashee Rice",
+            "position": "WR",
+            "slot": 5,
+            "team": "KC"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4993",
+            "player_name": "Mike Gesicki",
+            "position": "TE",
+            "slot": 6,
+            "team": "CIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8155",
+            "player_name": "Breece Hall",
+            "position": "RB",
+            "slot": 7,
+            "team": "NYJ"
+          },
+          {
+            "injury_status": null,
+            "player_id": "11792",
+            "player_name": "Will Reichard",
+            "position": "K",
+            "slot": 8,
+            "team": "MIN"
+          },
+          {
+            "injury_status": null,
+            "player_id": "MIN",
+            "player_name": "Minnesota Vikings",
+            "position": "DEF",
+            "slot": 9,
+            "team": "MIN"
+          }
+        ],
+        "warnings": []
+      },
+      {
+        "custom_points": null,
+        "effective_final_points": 107.46,
+        "final_points": 107.46,
+        "final_starters_raw": [
+          "11564",
+          "8132",
+          "8136",
+          "9493",
+          "9501",
+          "12517",
+          "2449",
+          "2020",
+          "NE"
+        ],
+        "manager_name": "JBThink",
+        "matchup_id": 4,
+        "opponent_roster_id": 6,
+        "owner_id": "1403093575641628672",
+        "players_points": {
+          "11564": 21.26,
+          "12517": 9.4,
+          "13286": 11.8,
+          "2020": 9.0,
+          "2449": 8.1,
+          "4035": 7.9,
+          "4866": 8.2,
+          "5012": 3.9,
+          "8132": 6.6,
+          "8136": 6.9,
+          "8137": 0.0,
+          "9228": 21.34,
+          "9493": 35.0,
+          "9501": 15.2,
+          "NE": -4.0
+        },
+        "roster_id": 10,
+        "rostered_player_ids": [
+          "11564",
+          "12517",
+          "13286",
+          "2020",
+          "2449",
+          "4035",
+          "4866",
+          "5012",
+          "8132",
+          "8136",
+          "8137",
+          "9228",
+          "9493",
+          "9501",
+          "NE"
+        ],
+        "rostered_players": [
+          {
+            "injury_status": null,
+            "player_id": "11564",
+            "player_name": "Drake Maye",
+            "position": "QB",
+            "team": "NE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12517",
+            "player_name": "Colston Loveland",
+            "position": "TE",
+            "team": "CHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "13286",
+            "player_name": "Jadarian Price",
+            "position": "RB",
+            "team": "SEA"
+          },
+          {
+            "injury_status": null,
+            "player_id": "2020",
+            "player_name": "Cairo Santos",
+            "position": "K",
+            "team": "CHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "2449",
+            "player_name": "Stefon Diggs",
+            "position": "WR",
+            "team": "WAS"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4035",
+            "player_name": "Alvin Kamara",
+            "position": "RB",
+            "team": "NO"
+          },
+          {
+            "injury_status": null,
+            "player_id": "4866",
+            "player_name": "Saquon Barkley",
+            "position": "RB",
+            "team": "PHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "5012",
+            "player_name": "Mark Andrews",
+            "position": "TE",
+            "team": "BAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8132",
+            "player_name": "Tyler Allgeier",
+            "position": "RB",
+            "team": "ARI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8136",
+            "player_name": "Rachaad White",
+            "position": "RB",
+            "team": "WAS"
+          },
+          {
+            "injury_status": "Out",
+            "player_id": "8137",
+            "player_name": "George Pickens",
+            "position": "WR",
+            "team": "DAL"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9228",
+            "player_name": "Bryce Young",
+            "position": "QB",
+            "team": "CAR"
+          },
+          {
+            "injury_status": "Questionable",
+            "player_id": "9493",
+            "player_name": "Puka Nacua",
+            "position": "WR",
+            "team": "LAR"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9501",
+            "player_name": "DeMario Douglas",
+            "position": "WR",
+            "team": "NE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "NE",
+            "player_name": "New England Patriots",
+            "position": "DEF",
+            "team": "NE"
+          }
+        ],
+        "starters": [
+          {
+            "injury_status": null,
+            "player_id": "11564",
+            "player_name": "Drake Maye",
+            "position": "QB",
+            "slot": 1,
+            "team": "NE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8132",
+            "player_name": "Tyler Allgeier",
+            "position": "RB",
+            "slot": 2,
+            "team": "ARI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "8136",
+            "player_name": "Rachaad White",
+            "position": "RB",
+            "slot": 3,
+            "team": "WAS"
+          },
+          {
+            "injury_status": "Questionable",
+            "player_id": "9493",
+            "player_name": "Puka Nacua",
+            "position": "WR",
+            "slot": 4,
+            "team": "LAR"
+          },
+          {
+            "injury_status": null,
+            "player_id": "9501",
+            "player_name": "DeMario Douglas",
+            "position": "WR",
+            "slot": 5,
+            "team": "NE"
+          },
+          {
+            "injury_status": null,
+            "player_id": "12517",
+            "player_name": "Colston Loveland",
+            "position": "TE",
+            "slot": 6,
+            "team": "CHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "2449",
+            "player_name": "Stefon Diggs",
+            "position": "WR",
+            "slot": 7,
+            "team": "WAS"
+          },
+          {
+            "injury_status": null,
+            "player_id": "2020",
+            "player_name": "Cairo Santos",
+            "position": "K",
+            "slot": 8,
+            "team": "CHI"
+          },
+          {
+            "injury_status": null,
+            "player_id": "NE",
+            "player_name": "New England Patriots",
+            "position": "DEF",
+            "slot": 9,
+            "team": "NE"
+          }
+        ],
+        "warnings": []
+      }
+    ],
+    "warnings": []
+  },
+  "league_id": "1400610465024839680",
+  "league_key": "goats",
+  "schema_version": 1,
+  "season": "2026",
+  "stage": "final",
+  "week": 9
+}
