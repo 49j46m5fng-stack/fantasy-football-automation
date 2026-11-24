@@ -1,14 +1,14 @@
 # Donut Survival Pool — 2026
 
-Through completed week 10 of 17.
+Through completed week 11 of 17.
 
-18 entrants. 10 on the hook. 8 still unDOUGHfeated.
+18 entrants. 11 on the hook. 7 still unDOUGHfeated.
 
 ## On the Hook
 
-**DOATGOAT** (DOATS) brings donuts in week 11.
+**shawnthegoat33** (GOATS) brings donuts in week 12.
 
-Week 10 low score: 112.82 points, 15.40 behind the next-lowest eligible team.
+Week 11 low score: 117.96 points, 0.10 behind the next-lowest eligible team.
 
 ## Donut Ledger
 
@@ -24,19 +24,19 @@ Week 10 low score: 112.82 points, 15.40 behind the next-lowest eligible team.
 | 8 | 9 | jevinjensen | GOATS | 78.60 | 11.70 | lowest_score |
 | 9 | 10 | Porter1511 | GOATS | 98.24 | 16.92 | lowest_score |
 | 10 | 11 | DOATGOAT | DOATS | 112.82 | 15.40 | lowest_score |
+| 11 | 12 | shawnthegoat33 | GOATS | 117.96 | 0.10 | lowest_score |
 
 ## Still Alive
 
 | Manager | League | Weeks Survived | Closest Call | Week | Season Low |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Nafedog1 | DOATS | 10 | 4.74 | 4 | 92.82 |
-| DrewWright17 | GOATS | 10 | 7.66 | 7 | 91.90 |
-| Bitcoin89 | DOATS | 10 | 11.70 | 8 | 90.30 |
-| shawnthegoat33 | GOATS | 10 | 13.98 | 8 | 92.58 |
-| rachelknowssports | GOATS | 10 | 20.12 | 7 | 104.36 |
-| NeilCarlson | DOATS | 10 | 25.46 | 9 | 106.00 |
-| BF14 | GOATS | 10 | 26.96 | 6 | 104.56 |
-| tlt292001 | DOATS | 10 | 30.78 | 5 | 120.18 |
+| NeilCarlson | DOATS | 11 | 0.10 | 11 | 106.00 |
+| rachelknowssports | GOATS | 11 | 0.50 | 11 | 104.36 |
+| Bitcoin89 | DOATS | 11 | 1.14 | 11 | 90.30 |
+| DrewWright17 | GOATS | 11 | 4.50 | 11 | 91.90 |
+| Nafedog1 | DOATS | 11 | 4.74 | 4 | 92.82 |
+| BF14 | GOATS | 11 | 26.96 | 6 | 104.56 |
+| tlt292001 | DOATS | 11 | 30.78 | 5 | 120.18 |
 
 Closest call is the smallest number of points a manager finished above that week's donut-winning score.
 
@@ -54,6 +54,7 @@ Closest call is the smallest number of points a manager finished above that week
 | 8 | Assigned | 78.60 | 11 | 10 |
 | 9 | Assigned | 98.24 | 10 | 9 |
 | 10 | Assigned | 112.82 | 9 | 8 |
+| 11 | Assigned | 117.96 | 8 | 7 |
 
 ## Warnings
 

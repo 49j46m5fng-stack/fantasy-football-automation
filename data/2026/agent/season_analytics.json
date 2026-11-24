@@ -1,7 +1,7 @@
 {
   "season_analytics_format_version": 1,
   "season": "2026",
-  "through_week": 10,
+  "through_week": 11,
   "leagues": [
     {
       "league_key": "goats",
@@ -9,133 +9,133 @@
       "standings": [
         {
           "analytical_rank": 1,
-          "roster_id": 6,
-          "manager_name": "rachelknowssports",
-          "wins": 8,
+          "roster_id": 7,
+          "manager_name": "BF14",
+          "wins": 9,
           "losses": 2,
           "ties": 0,
-          "points_for": 1474.38,
-          "points_against": 1122.14,
-          "all_play_percentage": 0.76666667,
-          "expected_wins": 7.66666667,
-          "luck_wins": 0.33333333
+          "points_for": 1547.54,
+          "points_against": 1424.4,
+          "all_play_percentage": 0.74747475,
+          "expected_wins": 8.22222224,
+          "luck_wins": 0.77777776
         },
         {
           "analytical_rank": 2,
-          "roster_id": 7,
-          "manager_name": "BF14",
+          "roster_id": 6,
+          "manager_name": "rachelknowssports",
           "wins": 8,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "points_for": 1401.74,
-          "points_against": 1305.94,
-          "all_play_percentage": 0.72222222,
-          "expected_wins": 7.22222224,
-          "luck_wins": 0.77777776
+          "points_for": 1592.84,
+          "points_against": 1267.94,
+          "all_play_percentage": 0.74747475,
+          "expected_wins": 8.22222223,
+          "luck_wins": -0.22222223
         },
         {
           "analytical_rank": 3,
           "roster_id": 5,
           "manager_name": "shawnthegoat33",
-          "wins": 6,
+          "wins": 7,
           "losses": 4,
           "ties": 0,
-          "points_for": 1347.62,
-          "points_against": 1232.02,
-          "all_play_percentage": 0.66666667,
-          "expected_wins": 6.66666668,
-          "luck_wins": -0.66666668
+          "points_for": 1465.58,
+          "points_against": 1314.52,
+          "all_play_percentage": 0.64646465,
+          "expected_wins": 7.11111112,
+          "luck_wins": -0.11111112
         },
         {
           "analytical_rank": 4,
           "roster_id": 1,
           "manager_name": "timmassie",
-          "wins": 6,
+          "wins": 7,
           "losses": 4,
           "ties": 0,
-          "points_for": 1218.52,
-          "points_against": 1259.3,
-          "all_play_percentage": 0.48888889,
-          "expected_wins": 4.8888889,
-          "luck_wins": 1.1111111
+          "points_for": 1354.76,
+          "points_against": 1362.34,
+          "all_play_percentage": 0.52525253,
+          "expected_wins": 5.77777779,
+          "luck_wins": 1.22222221
         },
         {
           "analytical_rank": 5,
           "roster_id": 9,
           "manager_name": "Porter1511",
           "wins": 4,
-          "losses": 6,
+          "losses": 7,
           "ties": 0,
-          "points_for": 1276.18,
-          "points_against": 1210.62,
-          "all_play_percentage": 0.48888889,
+          "points_for": 1358.68,
+          "points_against": 1328.58,
+          "all_play_percentage": 0.44444444,
           "expected_wins": 4.88888888,
           "luck_wins": -0.88888888
         },
         {
           "analytical_rank": 6,
-          "roster_id": 4,
-          "manager_name": "jevinjensen",
+          "roster_id": 2,
+          "manager_name": "DrewWright17",
           "wins": 4,
-          "losses": 6,
+          "losses": 7,
           "ties": 0,
-          "points_for": 1226.08,
-          "points_against": 1266.86,
-          "all_play_percentage": 0.42222222,
-          "expected_wins": 4.22222221,
-          "luck_wins": -0.22222221
+          "points_for": 1348.76,
+          "points_against": 1485.74,
+          "all_play_percentage": 0.52525253,
+          "expected_wins": 5.77777778,
+          "luck_wins": -1.77777778
         },
         {
           "analytical_rank": 7,
-          "roster_id": 3,
-          "manager_name": "pdearani",
+          "roster_id": 4,
+          "manager_name": "jevinjensen",
           "wins": 4,
-          "losses": 6,
+          "losses": 7,
           "ties": 0,
-          "points_for": 1165.68,
-          "points_against": 1135.52,
-          "all_play_percentage": 0.4,
-          "expected_wins": 3.99999999,
-          "luck_wins": 1e-08
+          "points_for": 1332.04,
+          "points_against": 1381.92,
+          "all_play_percentage": 0.4040404,
+          "expected_wins": 4.44444443,
+          "luck_wins": -0.44444443
         },
         {
           "analytical_rank": 8,
-          "roster_id": 8,
-          "manager_name": "Hendrick82",
+          "roster_id": 3,
+          "manager_name": "pdearani",
           "wins": 4,
-          "losses": 6,
+          "losses": 7,
           "ties": 0,
-          "points_for": 1093.64,
-          "points_against": 1198.42,
-          "all_play_percentage": 0.27777778,
-          "expected_wins": 2.77777778,
-          "luck_wins": 1.22222222
+          "points_for": 1268.72,
+          "points_against": 1271.76,
+          "all_play_percentage": 0.37373737,
+          "expected_wins": 4.1111111,
+          "luck_wins": -0.1111111
         },
         {
           "analytical_rank": 9,
-          "roster_id": 2,
-          "manager_name": "DrewWright17",
-          "wins": 3,
+          "roster_id": 8,
+          "manager_name": "Hendrick82",
+          "wins": 4,
           "losses": 7,
           "ties": 0,
-          "points_for": 1226.3,
-          "points_against": 1364.94,
-          "all_play_percentage": 0.5,
-          "expected_wins": 5.0,
-          "luck_wins": -2.0
+          "points_for": 1214.44,
+          "points_against": 1320.88,
+          "all_play_percentage": 0.31313131,
+          "expected_wins": 3.44444445,
+          "luck_wins": 0.55555555
         },
         {
           "analytical_rank": 10,
           "roster_id": 10,
           "manager_name": "JBThink",
-          "wins": 3,
+          "wins": 4,
           "losses": 7,
           "ties": 0,
-          "points_for": 1041.38,
-          "points_against": 1375.76,
-          "all_play_percentage": 0.26666667,
-          "expected_wins": 2.66666665,
-          "luck_wins": 0.33333335
+          "points_for": 1156.44,
+          "points_against": 1481.72,
+          "all_play_percentage": 0.27272727,
+          "expected_wins": 2.99999998,
+          "luck_wins": 1.00000002
         }
       ],
       "power_rankings": [
@@ -145,7 +145,7 @@
           "rank_change": null,
           "roster_id": 6,
           "manager_name": "rachelknowssports",
-          "composite_score": 96.66666667
+          "composite_score": 91.94444444
         },
         {
           "current_rank": 2,
@@ -153,7 +153,7 @@
           "rank_change": null,
           "roster_id": 7,
           "manager_name": "BF14",
-          "composite_score": 82.77777778
+          "composite_score": 86.38888889
         },
         {
           "current_rank": 3,
@@ -161,31 +161,31 @@
           "rank_change": null,
           "roster_id": 5,
           "manager_name": "shawnthegoat33",
-          "composite_score": 73.33333333
+          "composite_score": 74.72222222
         },
         {
           "current_rank": 4,
           "previous_rank": null,
           "rank_change": null,
-          "roster_id": 9,
-          "manager_name": "Porter1511",
-          "composite_score": 62.5
+          "roster_id": 1,
+          "manager_name": "timmassie",
+          "composite_score": 59.72222222
         },
         {
           "current_rank": 5,
           "previous_rank": null,
           "rank_change": null,
-          "roster_id": 2,
-          "manager_name": "DrewWright17",
-          "composite_score": 57.22222222
+          "roster_id": 9,
+          "manager_name": "Porter1511",
+          "composite_score": 55.55555555
         },
         {
           "current_rank": 6,
           "previous_rank": null,
           "rank_change": null,
-          "roster_id": 1,
-          "manager_name": "timmassie",
-          "composite_score": 42.5
+          "roster_id": 2,
+          "manager_name": "DrewWright17",
+          "composite_score": 54.16666667
         },
         {
           "current_rank": 7,
@@ -193,7 +193,7 @@
           "rank_change": null,
           "roster_id": 4,
           "manager_name": "jevinjensen",
-          "composite_score": 37.22222222
+          "composite_score": 38.05555555
         },
         {
           "current_rank": 8,
@@ -201,7 +201,7 @@
           "rank_change": null,
           "roster_id": 3,
           "manager_name": "pdearani",
-          "composite_score": 25.55555555
+          "composite_score": 20.55555555
         },
         {
           "current_rank": 9,
@@ -209,7 +209,7 @@
           "rank_change": null,
           "roster_id": 10,
           "manager_name": "JBThink",
-          "composite_score": 12.22222222
+          "composite_score": 10.55555555
         },
         {
           "current_rank": 10,
@@ -217,7 +217,7 @@
           "rank_change": null,
           "roster_id": 8,
           "manager_name": "Hendrick82",
-          "composite_score": 10.0
+          "composite_score": 8.33333333
         }
       ],
       "simulation": {
@@ -227,42 +227,42 @@
           {
             "roster_id": 1,
             "manager_name": "timmassie",
-            "playoff_probability": 0.9938,
-            "relegation_probability": 0.0062,
+            "playoff_probability": 0.9998,
+            "relegation_probability": 0.0002,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 9.94585
+            "expected_regular_season_wins": 10.5562
           },
           {
             "roster_id": 2,
             "manager_name": "DrewWright17",
-            "playoff_probability": 0.7838,
-            "relegation_probability": 0.2162,
+            "playoff_probability": 0.8852,
+            "relegation_probability": 0.1148,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 6.98585
+            "expected_regular_season_wins": 7.39195
           },
           {
             "roster_id": 3,
             "manager_name": "pdearani",
-            "playoff_probability": 0.7362,
-            "relegation_probability": 0.2638,
+            "playoff_probability": 0.6343,
+            "relegation_probability": 0.3657,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 7.05455
+            "expected_regular_season_wins": 6.58945
           },
           {
             "roster_id": 4,
             "manager_name": "jevinjensen",
-            "playoff_probability": 0.8992,
-            "relegation_probability": 0.1008,
+            "playoff_probability": 0.8147,
+            "relegation_probability": 0.1853,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 7.84865
+            "expected_regular_season_wins": 7.0583
           },
           {
             "roster_id": 5,
             "manager_name": "shawnthegoat33",
-            "playoff_probability": 0.9996,
-            "relegation_probability": 0.0004,
+            "playoff_probability": 1.0,
+            "relegation_probability": 0.0,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 10.73925
+            "expected_regular_season_wins": 11.10305
           },
           {
             "roster_id": 6,
@@ -270,7 +270,7 @@
             "playoff_probability": 1.0,
             "relegation_probability": 0.0,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 13.9765
+            "expected_regular_season_wins": 13.3114
           },
           {
             "roster_id": 7,
@@ -278,38 +278,38 @@
             "playoff_probability": 1.0,
             "relegation_probability": 0.0,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 13.37955
+            "expected_regular_season_wins": 14.1173
           },
           {
             "roster_id": 8,
             "manager_name": "Hendrick82",
-            "playoff_probability": 0.5249,
-            "relegation_probability": 0.4751,
+            "playoff_probability": 0.5156,
+            "relegation_probability": 0.4844,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 6.70715
+            "expected_regular_season_wins": 6.47395
           },
           {
             "roster_id": 9,
             "manager_name": "Porter1511",
-            "playoff_probability": 0.9456,
-            "relegation_probability": 0.0544,
+            "playoff_probability": 0.8899,
+            "relegation_probability": 0.1101,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 8.22605
+            "expected_regular_season_wins": 7.51565
           },
           {
             "roster_id": 10,
             "manager_name": "JBThink",
-            "playoff_probability": 0.1169,
-            "relegation_probability": 0.8831,
+            "playoff_probability": 0.2605,
+            "relegation_probability": 0.7395,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 5.1366
+            "expected_regular_season_wins": 5.88275
           }
         ]
       },
       "watch": [
         {
-          "roster_id": 6,
-          "manager_name": "rachelknowssports",
+          "roster_id": 7,
+          "manager_name": "BF14",
           "analytical_rank": 1,
           "in_relegation_zone": false,
           "in_promotion_position": false,
@@ -318,8 +318,8 @@
           "warning": null
         },
         {
-          "roster_id": 7,
-          "manager_name": "BF14",
+          "roster_id": 6,
+          "manager_name": "rachelknowssports",
           "analytical_rank": 2,
           "in_relegation_zone": false,
           "in_promotion_position": false,
@@ -333,7 +333,7 @@
           "analytical_rank": 3,
           "in_relegation_zone": false,
           "in_promotion_position": false,
-          "relegation_probability": 0.0004,
+          "relegation_probability": 0.0,
           "promotion_probability": 0.0,
           "warning": null
         },
@@ -343,7 +343,7 @@
           "analytical_rank": 4,
           "in_relegation_zone": false,
           "in_promotion_position": false,
-          "relegation_probability": 0.0062,
+          "relegation_probability": 0.0002,
           "promotion_probability": 0.0,
           "warning": null
         },
@@ -353,49 +353,49 @@
           "analytical_rank": 5,
           "in_relegation_zone": false,
           "in_promotion_position": false,
-          "relegation_probability": 0.0544,
-          "promotion_probability": 0.0,
-          "warning": null
-        },
-        {
-          "roster_id": 4,
-          "manager_name": "jevinjensen",
-          "analytical_rank": 6,
-          "in_relegation_zone": false,
-          "in_promotion_position": false,
-          "relegation_probability": 0.1008,
-          "promotion_probability": 0.0,
-          "warning": null
-        },
-        {
-          "roster_id": 3,
-          "manager_name": "pdearani",
-          "analytical_rank": 7,
-          "in_relegation_zone": false,
-          "in_promotion_position": false,
-          "relegation_probability": 0.2638,
-          "promotion_probability": 0.0,
-          "warning": null
-        },
-        {
-          "roster_id": 8,
-          "manager_name": "Hendrick82",
-          "analytical_rank": 8,
-          "in_relegation_zone": false,
-          "in_promotion_position": false,
-          "relegation_probability": 0.4751,
+          "relegation_probability": 0.1101,
           "promotion_probability": 0.0,
           "warning": null
         },
         {
           "roster_id": 2,
           "manager_name": "DrewWright17",
+          "analytical_rank": 6,
+          "in_relegation_zone": false,
+          "in_promotion_position": false,
+          "relegation_probability": 0.1148,
+          "promotion_probability": 0.0,
+          "warning": null
+        },
+        {
+          "roster_id": 4,
+          "manager_name": "jevinjensen",
+          "analytical_rank": 7,
+          "in_relegation_zone": false,
+          "in_promotion_position": false,
+          "relegation_probability": 0.1853,
+          "promotion_probability": 0.0,
+          "warning": null
+        },
+        {
+          "roster_id": 3,
+          "manager_name": "pdearani",
+          "analytical_rank": 8,
+          "in_relegation_zone": false,
+          "in_promotion_position": false,
+          "relegation_probability": 0.3657,
+          "promotion_probability": 0.0,
+          "warning": null
+        },
+        {
+          "roster_id": 8,
+          "manager_name": "Hendrick82",
           "analytical_rank": 9,
           "in_relegation_zone": true,
           "in_promotion_position": false,
-          "relegation_probability": 0.2162,
+          "relegation_probability": 0.4844,
           "promotion_probability": 0.0,
-          "warning": "DrewWright17 is currently 9 of 10 and sits in the relegation zone."
+          "warning": "Hendrick82 is currently 9 of 10 and sits in the relegation zone."
         },
         {
           "roster_id": 10,
@@ -403,7 +403,7 @@
           "analytical_rank": 10,
           "in_relegation_zone": true,
           "in_promotion_position": false,
-          "relegation_probability": 0.8831,
+          "relegation_probability": 0.7395,
           "promotion_probability": 0.0,
           "warning": "JBThink is currently 10 of 10 and sits in the relegation zone."
         }
@@ -419,89 +419,89 @@
           "roster_id": 5,
           "manager_name": "NeilCarlson",
           "wins": 9,
-          "losses": 1,
+          "losses": 2,
           "ties": 0,
-          "points_for": 1353.72,
-          "points_against": 1112.72,
-          "all_play_percentage": 0.64285714,
-          "expected_wins": 6.42857145,
-          "luck_wins": 2.57142855
+          "points_for": 1471.78,
+          "points_against": 1266.12,
+          "all_play_percentage": 0.62337662,
+          "expected_wins": 6.85714288,
+          "luck_wins": 2.14285712
         },
         {
           "analytical_rank": 2,
           "roster_id": 6,
           "manager_name": "tlt292001",
-          "wins": 7,
+          "wins": 8,
           "losses": 3,
           "ties": 0,
-          "points_for": 1381.32,
-          "points_against": 1122.12,
-          "all_play_percentage": 0.6,
-          "expected_wins": 5.99999999,
-          "luck_wins": 1.00000001
+          "points_for": 1536.66,
+          "points_against": 1183.72,
+          "all_play_percentage": 0.62337662,
+          "expected_wins": 6.85714285,
+          "luck_wins": 1.14285715
         },
         {
           "analytical_rank": 3,
-          "roster_id": 2,
-          "manager_name": "Bitcoin89",
-          "wins": 5,
+          "roster_id": 1,
+          "manager_name": "Nafedog1",
+          "wins": 6,
           "losses": 5,
           "ties": 0,
-          "points_for": 1325.74,
-          "points_against": 1350.4,
-          "all_play_percentage": 0.6,
-          "expected_wins": 5.99999999,
-          "luck_wins": -0.99999999
+          "points_for": 1462.48,
+          "points_against": 1482.2,
+          "all_play_percentage": 0.58441558,
+          "expected_wins": 6.42857142,
+          "luck_wins": -0.42857142
         },
         {
           "analytical_rank": 4,
-          "roster_id": 1,
-          "manager_name": "Nafedog1",
-          "wins": 5,
+          "roster_id": 3,
+          "manager_name": "DOATGOAT",
+          "wins": 6,
           "losses": 5,
           "ties": 0,
-          "points_for": 1309.08,
-          "points_against": 1364.14,
-          "all_play_percentage": 0.57142857,
-          "expected_wins": 5.71428571,
-          "luck_wins": -0.71428571
+          "points_for": 1461.78,
+          "points_against": 1355.48,
+          "all_play_percentage": 0.5974026,
+          "expected_wins": 6.57142859,
+          "luck_wins": -0.57142859
         },
         {
           "analytical_rank": 5,
-          "roster_id": 3,
-          "manager_name": "DOATGOAT",
-          "wins": 5,
+          "roster_id": 2,
+          "manager_name": "Bitcoin89",
+          "wins": 6,
           "losses": 5,
           "ties": 0,
-          "points_for": 1299.72,
-          "points_against": 1255.92,
-          "all_play_percentage": 0.55714286,
-          "expected_wins": 5.57142859,
-          "luck_wins": -0.57142859
+          "points_for": 1444.84,
+          "points_against": 1426.66,
+          "all_play_percentage": 0.5974026,
+          "expected_wins": 6.57142856,
+          "luck_wins": -0.57142856
         },
         {
           "analytical_rank": 6,
           "roster_id": 4,
           "manager_name": "DBMixer",
           "wins": 4,
-          "losses": 6,
+          "losses": 7,
           "ties": 0,
-          "points_for": 1214.24,
-          "points_against": 1282.1,
-          "all_play_percentage": 0.47142857,
-          "expected_wins": 4.71428571,
-          "luck_wins": -0.71428571
+          "points_for": 1290.5,
+          "points_against": 1401.2,
+          "all_play_percentage": 0.44155844,
+          "expected_wins": 4.85714285,
+          "luck_wins": -0.85714285
         },
         {
           "analytical_rank": 7,
           "roster_id": 7,
           "manager_name": "sofiacaballero",
           "wins": 3,
-          "losses": 7,
+          "losses": 8,
           "ties": 0,
-          "points_for": 1109.98,
-          "points_against": 1308.52,
-          "all_play_percentage": 0.31428571,
+          "points_for": 1171.58,
+          "points_against": 1463.86,
+          "all_play_percentage": 0.28571429,
           "expected_wins": 3.14285714,
           "luck_wins": -0.14285714
         },
@@ -510,13 +510,13 @@
           "roster_id": 8,
           "manager_name": "AGCallinAudible",
           "wins": 2,
-          "losses": 8,
+          "losses": 9,
           "ties": 0,
-          "points_for": 1048.9,
-          "points_against": 1246.78,
-          "all_play_percentage": 0.24285714,
-          "expected_wins": 2.42857142,
-          "luck_wins": -0.42857142
+          "points_for": 1148.46,
+          "points_against": 1408.84,
+          "all_play_percentage": 0.24675325,
+          "expected_wins": 2.71428571,
+          "luck_wins": -0.71428571
         }
       ],
       "power_rankings": [
@@ -526,31 +526,31 @@
           "rank_change": null,
           "roster_id": 6,
           "manager_name": "tlt292001",
-          "composite_score": 85.35714286
+          "composite_score": 91.07142857
         },
         {
           "current_rank": 2,
           "previous_rank": null,
           "rank_change": null,
-          "roster_id": 2,
-          "manager_name": "Bitcoin89",
-          "composite_score": 80.35714286
+          "roster_id": 1,
+          "manager_name": "Nafedog1",
+          "composite_score": 68.57142857
         },
         {
           "current_rank": 3,
           "previous_rank": null,
           "rank_change": null,
-          "roster_id": 5,
-          "manager_name": "NeilCarlson",
-          "composite_score": 71.42857143
+          "roster_id": 2,
+          "manager_name": "Bitcoin89",
+          "composite_score": 63.92857143
         },
         {
           "current_rank": 4,
           "previous_rank": null,
           "rank_change": null,
-          "roster_id": 1,
-          "manager_name": "Nafedog1",
-          "composite_score": 70.0
+          "roster_id": 5,
+          "manager_name": "NeilCarlson",
+          "composite_score": 62.5
         },
         {
           "current_rank": 5,
@@ -558,7 +558,7 @@
           "rank_change": null,
           "roster_id": 3,
           "manager_name": "DOATGOAT",
-          "composite_score": 47.14285715
+          "composite_score": 58.92857143
         },
         {
           "current_rank": 6,
@@ -566,23 +566,23 @@
           "rank_change": null,
           "roster_id": 4,
           "manager_name": "DBMixer",
-          "composite_score": 27.14285714
+          "composite_score": 30.0
         },
         {
           "current_rank": 7,
           "previous_rank": null,
           "rank_change": null,
-          "roster_id": 7,
-          "manager_name": "sofiacaballero",
-          "composite_score": 13.57142857
+          "roster_id": 8,
+          "manager_name": "AGCallinAudible",
+          "composite_score": 17.14285714
         },
         {
           "current_rank": 8,
           "previous_rank": null,
           "rank_change": null,
-          "roster_id": 8,
-          "manager_name": "AGCallinAudible",
-          "composite_score": 5.0
+          "roster_id": 7,
+          "manager_name": "sofiacaballero",
+          "composite_score": 7.85714286
         }
       ],
       "simulation": {
@@ -592,50 +592,50 @@
           {
             "roster_id": 1,
             "manager_name": "Nafedog1",
-            "playoff_probability": 0.0488,
+            "playoff_probability": 0.0864,
             "relegation_probability": 0.0,
-            "promotion_probability": 0.0488,
-            "expected_regular_season_wins": 9.33675
+            "promotion_probability": 0.0864,
+            "expected_regular_season_wins": 10.0696
           },
           {
             "roster_id": 2,
             "manager_name": "Bitcoin89",
-            "playoff_probability": 0.0671,
+            "playoff_probability": 0.0598,
             "relegation_probability": 0.0,
-            "promotion_probability": 0.0671,
-            "expected_regular_season_wins": 9.7364
+            "promotion_probability": 0.0598,
+            "expected_regular_season_wins": 10.01605
           },
           {
             "roster_id": 3,
             "manager_name": "DOATGOAT",
-            "playoff_probability": 0.0399,
+            "playoff_probability": 0.0775,
             "relegation_probability": 0.0,
-            "promotion_probability": 0.0399,
-            "expected_regular_season_wins": 9.6386
+            "promotion_probability": 0.0775,
+            "expected_regular_season_wins": 10.18515
           },
           {
             "roster_id": 4,
             "manager_name": "DBMixer",
-            "playoff_probability": 0.0011,
+            "playoff_probability": 0.0001,
             "relegation_probability": 0.0,
-            "promotion_probability": 0.0011,
-            "expected_regular_season_wins": 7.4597
+            "promotion_probability": 0.0001,
+            "expected_regular_season_wins": 6.836
           },
           {
             "roster_id": 5,
             "manager_name": "NeilCarlson",
-            "playoff_probability": 0.954,
+            "playoff_probability": 0.8644,
             "relegation_probability": 0.0,
-            "promotion_probability": 0.954,
-            "expected_regular_season_wins": 13.9581
+            "promotion_probability": 0.8644,
+            "expected_regular_season_wins": 13.26025
           },
           {
             "roster_id": 6,
             "manager_name": "tlt292001",
-            "playoff_probability": 0.8891,
+            "playoff_probability": 0.9118,
             "relegation_probability": 0.0,
-            "promotion_probability": 0.8891,
-            "expected_regular_season_wins": 12.60895
+            "promotion_probability": 0.9118,
+            "expected_regular_season_wins": 12.958
           },
           {
             "roster_id": 7,
@@ -643,7 +643,7 @@
             "playoff_probability": 0.0,
             "relegation_probability": 0.0,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 5.3493
+            "expected_regular_season_wins": 4.9782
           },
           {
             "roster_id": 8,
@@ -651,7 +651,7 @@
             "playoff_probability": 0.0,
             "relegation_probability": 0.0,
             "promotion_probability": 0.0,
-            "expected_regular_season_wins": 3.9122
+            "expected_regular_season_wins": 3.69675
           }
         ]
       },
@@ -663,7 +663,7 @@
           "in_relegation_zone": false,
           "in_promotion_position": true,
           "relegation_probability": 0.0,
-          "promotion_probability": 0.954,
+          "promotion_probability": 0.8644,
           "warning": null
         },
         {
@@ -673,37 +673,37 @@
           "in_relegation_zone": false,
           "in_promotion_position": true,
           "relegation_probability": 0.0,
-          "promotion_probability": 0.8891,
-          "warning": null
-        },
-        {
-          "roster_id": 2,
-          "manager_name": "Bitcoin89",
-          "analytical_rank": 3,
-          "in_relegation_zone": false,
-          "in_promotion_position": false,
-          "relegation_probability": 0.0,
-          "promotion_probability": 0.0671,
+          "promotion_probability": 0.9118,
           "warning": null
         },
         {
           "roster_id": 1,
           "manager_name": "Nafedog1",
-          "analytical_rank": 4,
+          "analytical_rank": 3,
           "in_relegation_zone": false,
           "in_promotion_position": false,
           "relegation_probability": 0.0,
-          "promotion_probability": 0.0488,
+          "promotion_probability": 0.0864,
           "warning": null
         },
         {
           "roster_id": 3,
           "manager_name": "DOATGOAT",
+          "analytical_rank": 4,
+          "in_relegation_zone": false,
+          "in_promotion_position": false,
+          "relegation_probability": 0.0,
+          "promotion_probability": 0.0775,
+          "warning": null
+        },
+        {
+          "roster_id": 2,
+          "manager_name": "Bitcoin89",
           "analytical_rank": 5,
           "in_relegation_zone": false,
           "in_promotion_position": false,
           "relegation_probability": 0.0,
-          "promotion_probability": 0.0399,
+          "promotion_probability": 0.0598,
           "warning": null
         },
         {
@@ -713,7 +713,7 @@
           "in_relegation_zone": false,
           "in_promotion_position": false,
           "relegation_probability": 0.0,
-          "promotion_probability": 0.0011,
+          "promotion_probability": 0.0001,
           "warning": null
         },
         {
@@ -741,7 +741,7 @@
     }
   ],
   "luck": {
-    "through_week": 10,
+    "through_week": 11,
     "weeks": [
       {
         "week": 1,
@@ -3672,6 +3672,299 @@
             "note": "Scored 1 of 18 across both leagues (all-play 9-0); the result matched the performance."
           }
         ]
+      },
+      {
+        "week": 11,
+        "teams": [
+          {
+            "league_key": "doats",
+            "roster_id": 1,
+            "manager_name": "Nafedog1",
+            "points_for": 153.4,
+            "points_against": 118.06,
+            "opponent_manager_name": "NeilCarlson",
+            "result": "win",
+            "expected_wins": 0.71428571,
+            "luck_wins": 0.28571429,
+            "league_score_rank": 3,
+            "cross_league_score_rank": 3,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 3 of 18 across both leagues (all-play 5-2); the result matched the performance."
+          },
+          {
+            "league_key": "doats",
+            "roster_id": 2,
+            "manager_name": "Bitcoin89",
+            "points_for": 119.1,
+            "points_against": 76.26,
+            "opponent_manager_name": "DBMixer",
+            "result": "win",
+            "expected_wins": 0.57142857,
+            "luck_wins": 0.42857143,
+            "league_score_rank": 4,
+            "cross_league_score_rank": 8,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 8 of 18 across both leagues (all-play 4-3); the result matched the performance."
+          },
+          {
+            "league_key": "doats",
+            "roster_id": 3,
+            "manager_name": "DOATGOAT",
+            "points_for": 162.06,
+            "points_against": 99.56,
+            "opponent_manager_name": "AGCallinAudible",
+            "result": "win",
+            "expected_wins": 1.0,
+            "luck_wins": 0.0,
+            "league_score_rank": 1,
+            "cross_league_score_rank": 1,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 1 of 18 across both leagues (all-play 7-0); the result matched the performance."
+          },
+          {
+            "league_key": "doats",
+            "roster_id": 4,
+            "manager_name": "DBMixer",
+            "points_for": 76.26,
+            "points_against": 119.1,
+            "opponent_manager_name": "Bitcoin89",
+            "result": "loss",
+            "expected_wins": 0.14285714,
+            "luck_wins": -0.14285714,
+            "league_score_rank": 7,
+            "cross_league_score_rank": 17,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 17 of 18 across both leagues (all-play 1-6); the result matched the performance."
+          },
+          {
+            "league_key": "doats",
+            "roster_id": 5,
+            "manager_name": "NeilCarlson",
+            "points_for": 118.06,
+            "points_against": 153.4,
+            "opponent_manager_name": "Nafedog1",
+            "result": "loss",
+            "expected_wins": 0.42857143,
+            "luck_wins": -0.42857143,
+            "league_score_rank": 5,
+            "cross_league_score_rank": 10,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 10 of 18 across both leagues (all-play 3-4); the result matched the performance."
+          },
+          {
+            "league_key": "doats",
+            "roster_id": 6,
+            "manager_name": "tlt292001",
+            "points_for": 155.34,
+            "points_against": 61.6,
+            "opponent_manager_name": "sofiacaballero",
+            "result": "win",
+            "expected_wins": 0.85714286,
+            "luck_wins": 0.14285714,
+            "league_score_rank": 2,
+            "cross_league_score_rank": 2,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 2 of 18 across both leagues (all-play 6-1); the result matched the performance."
+          },
+          {
+            "league_key": "doats",
+            "roster_id": 7,
+            "manager_name": "sofiacaballero",
+            "points_for": 61.6,
+            "points_against": 155.34,
+            "opponent_manager_name": "tlt292001",
+            "result": "loss",
+            "expected_wins": 0.0,
+            "luck_wins": 0.0,
+            "league_score_rank": 8,
+            "cross_league_score_rank": 18,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 18 of 18 across both leagues (all-play 0-7); the result matched the performance."
+          },
+          {
+            "league_key": "doats",
+            "roster_id": 8,
+            "manager_name": "AGCallinAudible",
+            "points_for": 99.56,
+            "points_against": 162.06,
+            "opponent_manager_name": "DOATGOAT",
+            "result": "loss",
+            "expected_wins": 0.28571429,
+            "luck_wins": -0.28571429,
+            "league_score_rank": 6,
+            "cross_league_score_rank": 15,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 15 of 18 across both leagues (all-play 2-5); the result matched the performance."
+          },
+          {
+            "league_key": "goats",
+            "roster_id": 1,
+            "manager_name": "timmassie",
+            "points_for": 136.24,
+            "points_against": 103.04,
+            "opponent_manager_name": "pdearani",
+            "result": "win",
+            "expected_wins": 0.88888889,
+            "luck_wins": 0.11111111,
+            "league_score_rank": 2,
+            "cross_league_score_rank": 5,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 5 of 18 across both leagues (all-play 8-1); the result matched the performance."
+          },
+          {
+            "league_key": "goats",
+            "roster_id": 10,
+            "manager_name": "JBThink",
+            "points_for": 115.06,
+            "points_against": 105.96,
+            "opponent_manager_name": "jevinjensen",
+            "result": "win",
+            "expected_wins": 0.33333333,
+            "luck_wins": 0.66666667,
+            "league_score_rank": 7,
+            "cross_league_score_rank": 12,
+            "cross_league_team_count": 18,
+            "classification": "lucky",
+            "note": "Won while scoring 12 of 18 across both leagues (all-play 3-6)."
+          },
+          {
+            "league_key": "goats",
+            "roster_id": 2,
+            "manager_name": "DrewWright17",
+            "points_for": 122.46,
+            "points_against": 120.8,
+            "opponent_manager_name": "Hendrick82",
+            "result": "win",
+            "expected_wins": 0.77777778,
+            "luck_wins": 0.22222222,
+            "league_score_rank": 3,
+            "cross_league_score_rank": 6,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 6 of 18 across both leagues (all-play 7-2); the result matched the performance."
+          },
+          {
+            "league_key": "goats",
+            "roster_id": 3,
+            "manager_name": "pdearani",
+            "points_for": 103.04,
+            "points_against": 136.24,
+            "opponent_manager_name": "timmassie",
+            "result": "loss",
+            "expected_wins": 0.11111111,
+            "luck_wins": -0.11111111,
+            "league_score_rank": 9,
+            "cross_league_score_rank": 14,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 14 of 18 across both leagues (all-play 1-8); the result matched the performance."
+          },
+          {
+            "league_key": "goats",
+            "roster_id": 4,
+            "manager_name": "jevinjensen",
+            "points_for": 105.96,
+            "points_against": 115.06,
+            "opponent_manager_name": "JBThink",
+            "result": "loss",
+            "expected_wins": 0.22222222,
+            "luck_wins": -0.22222222,
+            "league_score_rank": 8,
+            "cross_league_score_rank": 13,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 13 of 18 across both leagues (all-play 2-7); the result matched the performance."
+          },
+          {
+            "league_key": "goats",
+            "roster_id": 5,
+            "manager_name": "shawnthegoat33",
+            "points_for": 117.96,
+            "points_against": 82.5,
+            "opponent_manager_name": "Porter1511",
+            "result": "win",
+            "expected_wins": 0.44444444,
+            "luck_wins": 0.55555556,
+            "league_score_rank": 6,
+            "cross_league_score_rank": 11,
+            "cross_league_team_count": 18,
+            "classification": "lucky",
+            "note": "Won while scoring 11 of 18 across both leagues (all-play 4-5)."
+          },
+          {
+            "league_key": "goats",
+            "roster_id": 6,
+            "manager_name": "rachelknowssports",
+            "points_for": 118.46,
+            "points_against": 145.8,
+            "opponent_manager_name": "BF14",
+            "result": "loss",
+            "expected_wins": 0.55555556,
+            "luck_wins": -0.55555556,
+            "league_score_rank": 5,
+            "cross_league_score_rank": 9,
+            "cross_league_team_count": 18,
+            "classification": "unlucky",
+            "note": "Lost despite scoring 9 of 18 across both leagues (all-play 5-4)."
+          },
+          {
+            "league_key": "goats",
+            "roster_id": 7,
+            "manager_name": "BF14",
+            "points_for": 145.8,
+            "points_against": 118.46,
+            "opponent_manager_name": "rachelknowssports",
+            "result": "win",
+            "expected_wins": 1.0,
+            "luck_wins": 0.0,
+            "league_score_rank": 1,
+            "cross_league_score_rank": 4,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 4 of 18 across both leagues (all-play 9-0); the result matched the performance."
+          },
+          {
+            "league_key": "goats",
+            "roster_id": 8,
+            "manager_name": "Hendrick82",
+            "points_for": 120.8,
+            "points_against": 122.46,
+            "opponent_manager_name": "DrewWright17",
+            "result": "loss",
+            "expected_wins": 0.66666667,
+            "luck_wins": -0.66666667,
+            "league_score_rank": 4,
+            "cross_league_score_rank": 7,
+            "cross_league_team_count": 18,
+            "classification": "unlucky",
+            "note": "Lost despite scoring 7 of 18 across both leagues (all-play 6-3)."
+          },
+          {
+            "league_key": "goats",
+            "roster_id": 9,
+            "manager_name": "Porter1511",
+            "points_for": 82.5,
+            "points_against": 117.96,
+            "opponent_manager_name": "shawnthegoat33",
+            "result": "loss",
+            "expected_wins": 0.0,
+            "luck_wins": 0.0,
+            "league_score_rank": 10,
+            "cross_league_score_rank": 16,
+            "cross_league_team_count": 18,
+            "classification": "neutral",
+            "note": "Scored 16 of 18 across both leagues (all-play 0-9); the result matched the performance."
+          }
+        ]
       }
     ],
     "season": [
@@ -3679,23 +3972,75 @@
         "league_key": "goats",
         "roster_id": 2,
         "manager_name": "DrewWright17",
-        "games": 10,
-        "actual_win_equivalent": 3.0,
-        "expected_wins": 5.0,
-        "luck_wins": -2.0,
+        "games": 11,
+        "actual_win_equivalent": 4.0,
+        "expected_wins": 5.77777778,
+        "luck_wins": -1.77777778,
         "unlucky_weeks": 2,
         "lucky_weeks": 0,
         "best_cross_league_rank": 4,
         "worst_cross_league_rank": 15
       },
       {
+        "league_key": "goats",
+        "roster_id": 9,
+        "manager_name": "Porter1511",
+        "games": 11,
+        "actual_win_equivalent": 4.0,
+        "expected_wins": 4.88888888,
+        "luck_wins": -0.8888888799999998,
+        "unlucky_weeks": 1,
+        "lucky_weeks": 1,
+        "best_cross_league_rank": 1,
+        "worst_cross_league_rank": 16
+      },
+      {
+        "league_key": "doats",
+        "roster_id": 4,
+        "manager_name": "DBMixer",
+        "games": 11,
+        "actual_win_equivalent": 4.0,
+        "expected_wins": 4.85714285,
+        "luck_wins": -0.85714285,
+        "unlucky_weeks": 1,
+        "lucky_weeks": 0,
+        "best_cross_league_rank": 3,
+        "worst_cross_league_rank": 17
+      },
+      {
+        "league_key": "doats",
+        "roster_id": 8,
+        "manager_name": "AGCallinAudible",
+        "games": 11,
+        "actual_win_equivalent": 2.0,
+        "expected_wins": 2.71428571,
+        "luck_wins": -0.71428571,
+        "unlucky_weeks": 1,
+        "lucky_weeks": 1,
+        "best_cross_league_rank": 9,
+        "worst_cross_league_rank": 18
+      },
+      {
+        "league_key": "doats",
+        "roster_id": 3,
+        "manager_name": "DOATGOAT",
+        "games": 11,
+        "actual_win_equivalent": 6.0,
+        "expected_wins": 6.571428589999999,
+        "luck_wins": -0.5714285899999996,
+        "unlucky_weeks": 0,
+        "lucky_weeks": 1,
+        "best_cross_league_rank": 1,
+        "worst_cross_league_rank": 14
+      },
+      {
         "league_key": "doats",
         "roster_id": 2,
         "manager_name": "Bitcoin89",
-        "games": 10,
-        "actual_win_equivalent": 5.0,
-        "expected_wins": 5.999999989999999,
-        "luck_wins": -0.9999999899999998,
+        "games": 11,
+        "actual_win_equivalent": 6.0,
+        "expected_wins": 6.571428559999999,
+        "luck_wins": -0.5714285599999999,
         "unlucky_weeks": 3,
         "lucky_weeks": 1,
         "best_cross_league_rank": 3,
@@ -3703,90 +4048,12 @@
       },
       {
         "league_key": "goats",
-        "roster_id": 9,
-        "manager_name": "Porter1511",
-        "games": 10,
-        "actual_win_equivalent": 4.0,
-        "expected_wins": 4.88888888,
-        "luck_wins": -0.8888888799999998,
-        "unlucky_weeks": 1,
-        "lucky_weeks": 1,
-        "best_cross_league_rank": 1,
-        "worst_cross_league_rank": 15
-      },
-      {
-        "league_key": "doats",
-        "roster_id": 1,
-        "manager_name": "Nafedog1",
-        "games": 10,
-        "actual_win_equivalent": 5.0,
-        "expected_wins": 5.71428571,
-        "luck_wins": -0.71428571,
-        "unlucky_weeks": 1,
-        "lucky_weeks": 0,
-        "best_cross_league_rank": 1,
-        "worst_cross_league_rank": 17
-      },
-      {
-        "league_key": "doats",
-        "roster_id": 4,
-        "manager_name": "DBMixer",
-        "games": 10,
-        "actual_win_equivalent": 4.0,
-        "expected_wins": 4.7142857099999995,
-        "luck_wins": -0.71428571,
-        "unlucky_weeks": 1,
-        "lucky_weeks": 0,
-        "best_cross_league_rank": 3,
-        "worst_cross_league_rank": 17
-      },
-      {
-        "league_key": "goats",
-        "roster_id": 5,
-        "manager_name": "shawnthegoat33",
-        "games": 10,
-        "actual_win_equivalent": 6.0,
-        "expected_wins": 6.666666680000001,
-        "luck_wins": -0.6666666799999998,
-        "unlucky_weeks": 2,
-        "lucky_weeks": 0,
-        "best_cross_league_rank": 1,
-        "worst_cross_league_rank": 16
-      },
-      {
-        "league_key": "doats",
-        "roster_id": 3,
-        "manager_name": "DOATGOAT",
-        "games": 10,
-        "actual_win_equivalent": 5.0,
-        "expected_wins": 5.571428589999999,
-        "luck_wins": -0.5714285899999996,
-        "unlucky_weeks": 0,
-        "lucky_weeks": 1,
-        "best_cross_league_rank": 3,
-        "worst_cross_league_rank": 14
-      },
-      {
-        "league_key": "doats",
-        "roster_id": 8,
-        "manager_name": "AGCallinAudible",
-        "games": 10,
-        "actual_win_equivalent": 2.0,
-        "expected_wins": 2.42857142,
-        "luck_wins": -0.42857142,
-        "unlucky_weeks": 1,
-        "lucky_weeks": 1,
-        "best_cross_league_rank": 9,
-        "worst_cross_league_rank": 18
-      },
-      {
-        "league_key": "goats",
         "roster_id": 4,
         "manager_name": "jevinjensen",
-        "games": 10,
+        "games": 11,
         "actual_win_equivalent": 4.0,
-        "expected_wins": 4.22222221,
-        "luck_wins": -0.22222221000000014,
+        "expected_wins": 4.44444443,
+        "luck_wins": -0.4444444300000001,
         "unlucky_weeks": 1,
         "lucky_weeks": 2,
         "best_cross_league_rank": 1,
@@ -3794,9 +4061,35 @@
       },
       {
         "league_key": "doats",
+        "roster_id": 1,
+        "manager_name": "Nafedog1",
+        "games": 11,
+        "actual_win_equivalent": 6.0,
+        "expected_wins": 6.428571420000001,
+        "luck_wins": -0.42857142,
+        "unlucky_weeks": 1,
+        "lucky_weeks": 0,
+        "best_cross_league_rank": 1,
+        "worst_cross_league_rank": 17
+      },
+      {
+        "league_key": "goats",
+        "roster_id": 6,
+        "manager_name": "rachelknowssports",
+        "games": 11,
+        "actual_win_equivalent": 8.0,
+        "expected_wins": 8.22222223,
+        "luck_wins": -0.2222222299999999,
+        "unlucky_weeks": 2,
+        "lucky_weeks": 1,
+        "best_cross_league_rank": 1,
+        "worst_cross_league_rank": 11
+      },
+      {
+        "league_key": "doats",
         "roster_id": 7,
         "manager_name": "sofiacaballero",
-        "games": 10,
+        "games": 11,
         "actual_win_equivalent": 3.0,
         "expected_wins": 3.1428571400000003,
         "luck_wins": -0.14285713999999994,
@@ -3807,12 +4100,25 @@
       },
       {
         "league_key": "goats",
+        "roster_id": 5,
+        "manager_name": "shawnthegoat33",
+        "games": 11,
+        "actual_win_equivalent": 7.0,
+        "expected_wins": 7.111111120000001,
+        "luck_wins": -0.1111111199999999,
+        "unlucky_weeks": 2,
+        "lucky_weeks": 1,
+        "best_cross_league_rank": 1,
+        "worst_cross_league_rank": 16
+      },
+      {
+        "league_key": "goats",
         "roster_id": 3,
         "manager_name": "pdearani",
-        "games": 10,
+        "games": 11,
         "actual_win_equivalent": 4.0,
-        "expected_wins": 3.9999999899999996,
-        "luck_wins": 1.0000000078003168e-08,
+        "expected_wins": 4.1111111,
+        "luck_wins": -0.11111109999999992,
         "unlucky_weeks": 1,
         "lucky_weeks": 2,
         "best_cross_league_rank": 1,
@@ -3820,37 +4126,24 @@
       },
       {
         "league_key": "goats",
-        "roster_id": 6,
-        "manager_name": "rachelknowssports",
-        "games": 10,
-        "actual_win_equivalent": 8.0,
-        "expected_wins": 7.66666667,
-        "luck_wins": 0.33333333000000004,
+        "roster_id": 8,
+        "manager_name": "Hendrick82",
+        "games": 11,
+        "actual_win_equivalent": 4.0,
+        "expected_wins": 3.4444444499999998,
+        "luck_wins": 0.5555555500000001,
         "unlucky_weeks": 1,
         "lucky_weeks": 1,
-        "best_cross_league_rank": 1,
-        "worst_cross_league_rank": 11
-      },
-      {
-        "league_key": "goats",
-        "roster_id": 10,
-        "manager_name": "JBThink",
-        "games": 10,
-        "actual_win_equivalent": 3.0,
-        "expected_wins": 2.66666665,
-        "luck_wins": 0.33333335000000003,
-        "unlucky_weeks": 1,
-        "lucky_weeks": 3,
-        "best_cross_league_rank": 6,
+        "best_cross_league_rank": 7,
         "worst_cross_league_rank": 18
       },
       {
         "league_key": "goats",
         "roster_id": 7,
         "manager_name": "BF14",
-        "games": 10,
-        "actual_win_equivalent": 8.0,
-        "expected_wins": 7.22222224,
+        "games": 11,
+        "actual_win_equivalent": 9.0,
+        "expected_wins": 8.22222224,
         "luck_wins": 0.77777776,
         "unlucky_weeks": 1,
         "lucky_weeks": 0,
@@ -3858,13 +4151,26 @@
         "worst_cross_league_rank": 13
       },
       {
+        "league_key": "goats",
+        "roster_id": 10,
+        "manager_name": "JBThink",
+        "games": 11,
+        "actual_win_equivalent": 4.0,
+        "expected_wins": 2.9999999799999997,
+        "luck_wins": 1.00000002,
+        "unlucky_weeks": 1,
+        "lucky_weeks": 4,
+        "best_cross_league_rank": 6,
+        "worst_cross_league_rank": 18
+      },
+      {
         "league_key": "doats",
         "roster_id": 6,
         "manager_name": "tlt292001",
-        "games": 10,
-        "actual_win_equivalent": 7.0,
-        "expected_wins": 5.999999990000001,
-        "luck_wins": 1.00000001,
+        "games": 11,
+        "actual_win_equivalent": 8.0,
+        "expected_wins": 6.857142850000001,
+        "luck_wins": 1.14285715,
         "unlucky_weeks": 1,
         "lucky_weeks": 1,
         "best_cross_league_rank": 2,
@@ -3874,36 +4180,23 @@
         "league_key": "goats",
         "roster_id": 1,
         "manager_name": "timmassie",
-        "games": 10,
-        "actual_win_equivalent": 6.0,
-        "expected_wins": 4.8888888999999995,
-        "luck_wins": 1.1111111,
+        "games": 11,
+        "actual_win_equivalent": 7.0,
+        "expected_wins": 5.77777779,
+        "luck_wins": 1.22222221,
         "unlucky_weeks": 1,
         "lucky_weeks": 1,
         "best_cross_league_rank": 1,
         "worst_cross_league_rank": 18
       },
       {
-        "league_key": "goats",
-        "roster_id": 8,
-        "manager_name": "Hendrick82",
-        "games": 10,
-        "actual_win_equivalent": 4.0,
-        "expected_wins": 2.7777777799999996,
-        "luck_wins": 1.2222222200000001,
-        "unlucky_weeks": 0,
-        "lucky_weeks": 1,
-        "best_cross_league_rank": 7,
-        "worst_cross_league_rank": 18
-      },
-      {
         "league_key": "doats",
         "roster_id": 5,
         "manager_name": "NeilCarlson",
-        "games": 10,
+        "games": 11,
         "actual_win_equivalent": 9.0,
-        "expected_wins": 6.428571449999999,
-        "luck_wins": 2.5714285499999994,
+        "expected_wins": 6.857142879999999,
+        "luck_wins": 2.1428571199999995,
         "unlucky_weeks": 0,
         "lucky_weeks": 3,
         "best_cross_league_rank": 2,
